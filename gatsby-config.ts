@@ -2,13 +2,14 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `new`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `AdverStud`,
+    siteUrl: `https://adverstud.gatsbyjs.io/`
   },
   plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/images/icon.png"
+      "icon": "src/images/favicon.png",
+      "title": "AdverStud"
     }
   }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
