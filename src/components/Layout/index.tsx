@@ -1,6 +1,9 @@
 import React from "react";
 import { Fonts } from "./Fonts";
-import { Page } from "./styles";
+import { Page, Content } from "./styles";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+import "../../styles/global.css";
 
 interface ILayoutProps {
   title: string;
@@ -9,11 +12,13 @@ interface ILayoutProps {
 export const Layout: React.FC<ILayoutProps> = ({ title, children }) => {
   return (
     <>
-      <head>
-        <title>{title}</title>
-        <Fonts />
-      </head>
-      <Page>{children}</Page>
+      <title>{title}</title>
+      <Fonts />
+      <Page>
+        <Header />
+        <Content>{children}</Content>
+        <Footer />
+      </Page>
     </>
   );
 };
