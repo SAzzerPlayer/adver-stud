@@ -7,8 +7,10 @@ import {
   SiteChapters,
   SocialIcons,
 } from "./styles";
-import { siteChapters, socialSiteChapters } from "./options";
+import { siteChapters, socialSiteChapters } from "../../../options";
 import { HoverLink } from "../../shared/HoverLink";
+import { Icon } from "../../Icon";
+import { colors } from "../../../styles";
 
 export const Header: React.FC = () => {
   return (
@@ -24,7 +26,7 @@ export const Header: React.FC = () => {
       <SocialIcons>
         {socialSiteChapters.map((s, i) => (
           <HoverLink key={i} to={s.link}>
-            <MockIconBody>{s.title}</MockIconBody>
+            {s.icon ? <Icon name={s.icon} color={colors.accentBlack} /> : null}
           </HoverLink>
         ))}
       </SocialIcons>

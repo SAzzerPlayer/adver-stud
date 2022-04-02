@@ -10,8 +10,10 @@ import {
   SocialIcons,
   MockIconBody,
 } from "./styles";
-import { outsideSiteLinks, socialSiteChapters } from "./options";
+import { outsideSiteLinks, socialSiteChapters } from "../../../options";
 import { HoverLink } from "../../shared/HoverLink";
+import { Icon } from "../../Icon";
+import { colors } from "../../../styles";
 
 export const Footer: React.FC = () => {
   return (
@@ -28,7 +30,9 @@ export const Footer: React.FC = () => {
         <SocialIcons>
           {socialSiteChapters.map((s, i) => (
             <HoverLink key={i} to={s.link}>
-              <MockIconBody>{s.title}</MockIconBody>
+              {s.icon ? (
+                <Icon name={s.icon} color={colors.backgroundGray} />
+              ) : null}
             </HoverLink>
           ))}
         </SocialIcons>

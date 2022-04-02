@@ -65,6 +65,9 @@ export const SocialIcons = styled.div`
   display: flex;
   align-items: center;
   gap: 1em;
+  & a {
+    max-height: 32px;
+  }
 `;
 
 export const MockIconBody = styled.div`

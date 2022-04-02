@@ -50,7 +50,10 @@ export const OnChapterLink = styled(HoverLink)`
 export const SocialIcons = styled.div`
   display: flex;
   align-items: center;
-  gap: 1em;
+  column-gap: 1em;
+  & a {
+    max-height: 32px;
+  }
 `;
 
 export const MockIconBody = styled.div`
