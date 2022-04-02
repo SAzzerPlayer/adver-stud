@@ -2,13 +2,14 @@ import React from "react";
 import {
   HeaderContainer,
   LogoLink,
-  MockIconBody,
   OnChapterLink,
   SiteChapters,
   SocialIcons,
 } from "./styles";
-import { siteChapters, socialSiteChapters } from "./options";
-import { HoverLink } from "../../shared/HoverLink";
+import { siteChapters, socialSiteChapters } from "../../../options";
+import { HoverExternalLink } from "../../shared/HoverExternalLink";
+import { Icon } from "../../Icon";
+import { colors } from "../../../styles";
 
 export const Header: React.FC = () => {
   return (
@@ -23,9 +24,9 @@ export const Header: React.FC = () => {
       </SiteChapters>
       <SocialIcons>
         {socialSiteChapters.map((s, i) => (
-          <HoverLink key={i} to={s.link}>
-            <MockIconBody>{s.title}</MockIconBody>
-          </HoverLink>
+          <HoverExternalLink key={i} href={s.link}>
+            {s.icon ? <Icon name={s.icon} color={colors.accentBlack} /> : null}
+          </HoverExternalLink>
         ))}
       </SocialIcons>
     </HeaderContainer>

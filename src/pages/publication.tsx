@@ -1,11 +1,15 @@
 import * as React from "react";
 import { Layout } from "../components/Layout";
+import { SEO } from "../components/SEO";
 
 const PublicationPage = () => {
   return (
-    <Layout title={"Публікації"}>
-      <h3 style={{ textAlign: "center" }}>Публікації - Кульний контент :)</h3>
-    </Layout>
+    <>
+      <SEO title={"Публікації"} />
+      <Layout>
+        <h3 style={{ textAlign: "center" }}>Публікації - Кульний контент :)</h3>
+      </Layout>
+    </>
   );
 };
 

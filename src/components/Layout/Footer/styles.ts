@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../../styles";
-import { HoverLink } from "../../shared/HoverLink";
+import { HoverExternalLink } from "../../shared/HoverExternalLink";
+import { HoverInternalLink } from "../../shared/HoverInternalLink";
 
 export const FooterContainer = styled.footer`
   display: flex;
@@ -20,7 +21,7 @@ export const LinksRow = styled.div`
   gap: 5em;
 `;
 
-export const FooterLogoLink = styled(HoverLink)`
+export const FooterLogoLink = styled(HoverInternalLink)`
   font-family: Merriweather, sans-serif;
   font-style: normal;
   font-weight: 900;
@@ -35,7 +36,7 @@ export const OutsideLinksRow = styled.div`
   gap: 3em;
 `;
 
-export const OutsideTextLink = styled(HoverLink)`
+export const OutsideTextLink = styled(HoverExternalLink)`
   font-family: Lora, serif;
   font-style: normal;
   font-weight: 600;
@@ -65,11 +66,7 @@ export const SocialIcons = styled.div`
   display: flex;
   align-items: center;
   gap: 1em;
-`;
-
-export const MockIconBody = styled.div`
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  background: ${colors.backgroundGray};
+  & a {
+    max-height: 32px;
+  }
 `;

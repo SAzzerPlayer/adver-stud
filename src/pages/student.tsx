@@ -1,11 +1,15 @@
 import * as React from "react";
 import { Layout } from "../components/Layout";
+import { SEO } from "../components/SEO";
 
 const StudentPage = () => {
   return (
-    <Layout title={"Студентам"}>
-      <h3 style={{ textAlign: "center" }}>Студентам - Кульний контент :)</h3>
-    </Layout>
+    <>
+      <SEO title={"Студентам"} />
+      <Layout>
+        <h3 style={{ textAlign: "center" }}>Студентам - Кульний контент :)</h3>
+      </Layout>
+    </>
   );
 };
 

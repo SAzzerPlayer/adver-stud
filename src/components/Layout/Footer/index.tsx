@@ -8,10 +8,11 @@ import {
   AboutInformationRow,
   AboutText,
   SocialIcons,
-  MockIconBody,
 } from "./styles";
-import { outsideSiteLinks, socialSiteChapters } from "./options";
-import { HoverLink } from "../../shared/HoverLink";
+import { outsideSiteLinks, socialSiteChapters } from "../../../options";
+import { HoverExternalLink } from "../../shared/HoverExternalLink";
+import { Icon } from "../../Icon";
+import { colors } from "../../../styles";
 
 export const Footer: React.FC = () => {
   return (
@@ -20,16 +21,18 @@ export const Footer: React.FC = () => {
         <FooterLogoLink to={"/"}>AdverStud</FooterLogoLink>
         <OutsideLinksRow>
           {outsideSiteLinks.map((s, i) => (
-            <OutsideTextLink key={i} to={s.link}>
+            <OutsideTextLink key={i} href={s.link}>
               {s.title}
             </OutsideTextLink>
           ))}
         </OutsideLinksRow>
         <SocialIcons>
           {socialSiteChapters.map((s, i) => (
-            <HoverLink key={i} to={s.link}>
-              <MockIconBody>{s.title}</MockIconBody>
-            </HoverLink>
+            <HoverExternalLink key={i} href={s.link}>
+              {s.icon ? (
+                <Icon name={s.icon} color={colors.backgroundGray} />
+              ) : null}
+            </HoverExternalLink>
           ))}
         </SocialIcons>
       </LinksRow>
