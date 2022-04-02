@@ -9,7 +9,6 @@ const config: GatsbyConfig = {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/images/favicon.png",
-      "title": "AdverStud"
     }
   }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
