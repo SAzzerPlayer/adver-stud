@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors, shadows } from "../../../styles";
-import { HoverLink } from "../../shared/HoverLink";
+import { HoverInternalLink } from "../../shared/HoverInternalLink";
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -17,7 +17,7 @@ export const HeaderContainer = styled.header`
   box-shadow: ${shadows.soft};
 `;
 
-export const LogoLink = styled(HoverLink)`
+export const LogoLink = styled(HoverInternalLink)`
   font-family: Merriweather, sans-serif;
   font-style: normal;
   font-weight: 900;
@@ -36,7 +36,7 @@ export const SiteChapters = styled.div`
   gap: 3em;
 `;
 
-export const OnChapterLink = styled(HoverLink)`
+export const OnChapterLink = styled(HoverInternalLink)`
   font-family: Lora, serif;
   font-style: normal;
   font-weight: 500;
@@ -54,11 +54,4 @@ export const SocialIcons = styled.div`
   & a {
     max-height: 32px;
   }
-`;
-
-export const MockIconBody = styled.div`
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  background: ${colors.backgroundDarkGray};
 `;
