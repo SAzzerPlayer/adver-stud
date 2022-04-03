@@ -15,7 +15,10 @@ export const Page = styled.main`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 4em 10em 10em 10em;
   flex: 1;
+  max-width: 1280px;
+  align-self: center;
 `;
 
 export const Footer = styled.footer`

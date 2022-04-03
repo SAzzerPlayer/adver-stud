@@ -1,29 +1,27 @@
 import * as React from "react";
 import { Layout } from "../components/Layout";
 import { SEO } from "../components/SEO";
-import { Sticker } from "../components/Sticker";
-import { colors } from "../styles";
+import styled from "styled-components";
+import { attentionBlocks } from "../options/pages/start";
+import { AttentionInfoBlock } from "../components/blocks/AttentionInfoBlock";
+
+const ColumnContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 192px;
+`;
 
 const IndexPage = () => {
   return (
     <>
       <SEO title={"Абітурієнтам"} />
       <Layout>
-        <h3 style={{ textAlign: "center" }}>
-          Абітурієнтам - Кульний контент :)
-        </h3>
-          <div style={{display: 'flex', flexDirection: 'row'}}>
-        <Sticker
-          title={"Follow"}
-          contentColor={colors.backgroundWhite}
-          stickerColor={colors.accentGreen}
-        />
-        <Sticker
-          title={""}
-          icon={"star"}
-          contentColor={colors.backgroundWhite}
-          stickerColor={colors.accentGreen}
-        /></div>
+        <ColumnContent>
+          {attentionBlocks.map((block, i) => (
+            <AttentionInfoBlock key={i} {...block} reversed={!!(i % 2)} />
+          ))}
+        </ColumnContent>
       </Layout>
     </>
   );

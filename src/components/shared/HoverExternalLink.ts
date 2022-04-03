@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { yellowButtonStyle } from "../../styles/common";
 
 export const HoverExternalLink = styled.a`
   text-decoration: none;
@@ -9,3 +10,7 @@ export const HoverExternalLink = styled.a`
     opacity: 0.85;
   }
 `;
+
+export const YellowHoverExternalLink = styled(HoverExternalLink)(
+  () => yellowButtonStyle
+);
