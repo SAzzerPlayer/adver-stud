@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import styled from "styled-components";
+import { yellowButtonStyle } from "../../styles/common";
 
 export const HoverInternalLink = styled(Link)`
   text-decoration: none;
@@ -10,3 +11,7 @@ export const HoverInternalLink = styled(Link)`
     opacity: 0.85;
   }
 `;
+
+export const YellowHoverInternalLink = styled(HoverInternalLink)(
+  () => yellowButtonStyle
+);
