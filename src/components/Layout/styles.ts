@@ -26,16 +26,5 @@ export const Content = styled.div`
   flex-direction: column;
   padding: 4em 0 10em 0;
   flex: 1;
-  max-width: 1280px;
   align-self: center;
-`;
-
-export const Footer = styled.footer`
-  display: flex;
-  flex-direction: column;
-  left: 0;
-  right: 0;
-  background-color: ${colors.accentBlack};
-  padding: 38px 8em 28px 8em;
-  ${getGapStyle("2em", "column")}
 `;
