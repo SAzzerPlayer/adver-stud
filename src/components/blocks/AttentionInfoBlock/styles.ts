@@ -1,18 +1,19 @@
 import styled from "styled-components";
 import { colors } from "../../../styles";
+import { getGapStyle } from "../../../styles/common";
 
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 8em;
+  ${getGapStyle("8em", "row")}
 `;
 
 export const TextContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  ${getGapStyle("20px", "column")}
   flex: 1;
 `;
 

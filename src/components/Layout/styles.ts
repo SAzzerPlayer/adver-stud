@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
+import {getGapStyle} from "../../styles/common";
 
 export const Page = styled.main`
   display: flex;
@@ -24,9 +25,9 @@ export const Content = styled.div`
 export const Footer = styled.footer`
   display: flex;
   flex-direction: column;
-  gap: 2em;
   left: 0;
   right: 0;
   background-color: ${colors.accentBlack};
   padding: 38px 8em 28px 8em;
+  ${getGapStyle("2em", "column")}
 `;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colors, shadows } from "../../../styles";
-import { HoverInternalLink } from "../../shared/HoverInternalLink";
+import { HoverInternalLink } from "../../shared";
+import { getGapStyle } from "../../../styles/common";
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -12,9 +13,9 @@ export const HeaderContainer = styled.header`
   right: 0;
   height: 72px;
   padding: 18px 5em;
-  gap: 1.5em;
   background-color: ${colors.backgroundGray};
   box-shadow: ${shadows.soft};
+  ${getGapStyle("1.5em", "row")}
 `;
 
 export const LogoLink = styled(HoverInternalLink)`
@@ -33,7 +34,7 @@ export const LogoLink = styled(HoverInternalLink)`
 export const SiteChapters = styled.div`
   display: flex;
   align-items: center;
-  gap: 3em;
+  ${getGapStyle("3em", "row")}
 `;
 
 export const OnChapterLink = styled(HoverInternalLink)`
@@ -50,7 +51,7 @@ export const OnChapterLink = styled(HoverInternalLink)`
 export const SocialIcons = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 1em;
+  ${getGapStyle("1em", "row")}
   & a {
     max-height: 32px;
   }

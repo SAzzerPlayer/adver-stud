@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { colors } from "../../../styles";
-import { HoverExternalLink } from "../../shared/HoverExternalLink";
-import { HoverInternalLink } from "../../shared/HoverInternalLink";
+import { HoverExternalLink, HoverInternalLink } from "../../shared";
+import { getGapStyle } from "../../../styles/common";
 
 export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  ${getGapStyle("2em", "column")}
   left: 0;
   right: 0;
   background-color: ${colors.accentBlack};
@@ -18,7 +18,7 @@ export const LinksRow = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 5em;
+  ${getGapStyle("5em", "row")}
 `;
 
 export const FooterLogoLink = styled(HoverInternalLink)`
@@ -33,7 +33,7 @@ export const FooterLogoLink = styled(HoverInternalLink)`
 export const OutsideLinksRow = styled.div`
   display: flex;
   align-items: center;
-  gap: 3em;
+  ${getGapStyle("3em", "row")}
 `;
 
 export const OutsideTextLink = styled(HoverExternalLink)`
@@ -65,7 +65,7 @@ export const AboutText = styled.span`
 export const SocialIcons = styled.div`
   display: flex;
   align-items: center;
-  gap: 1em;
+  ${getGapStyle("1em", "row")}
   & a {
     max-height: 32px;
   }

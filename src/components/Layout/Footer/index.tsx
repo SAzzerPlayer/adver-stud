@@ -10,7 +10,7 @@ import {
   SocialIcons,
 } from "./styles";
 import { outsideSiteLinks, socialSiteChapters } from "../../../options";
-import { HoverExternalLink } from "../../shared/HoverExternalLink";
+import { HoverExternalLink } from "../../shared";
 import { Icon } from "../../Icon";
 import { colors } from "../../../styles";
 
