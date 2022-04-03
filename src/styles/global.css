@@ -4,3 +4,10 @@ body {
   background: #fefefe;
   min-width: 1024px;
 }
+
+@media all {
+  /* sets the base font size for all user agents that support media queries */
+  html {
+    font-size: 14px;
+  }
+}

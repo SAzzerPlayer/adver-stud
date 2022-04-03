@@ -23,36 +23,27 @@ export const AttentionInfoBlock: React.FC<IAttentionInfoBlockProps> = ({
   children: description,
   reversed = false,
 }) => {
-  return (
-    <Container
-      style={
-        reversed
-          ? {
-              flexDirection: "row-reverse",
-            }
-          : undefined
-      }
-    >
-      <TextContent>
-        <Title style={{ whiteSpace: "pre-wrap" }}>{title}</Title>
-        {description}
-        {!!link &&
-          (link.type === "external" ? (
-            <YellowHoverExternalLink href={link.url}>
-              {link.title}
-            </YellowHoverExternalLink>
-          ) : (
-            <YellowHoverInternalLink to={link.url}>
-              {link.title}
-            </YellowHoverInternalLink>
-          ))}
-      </TextContent>
-      <img
-        src={imageSrcPath}
-        alt={imageAlt || "Іллюстрація"}
-        width={418}
-        height={418}
-      />
-    </Container>
-  );
+  const content = [
+    <TextContent>
+      <Title style={{ whiteSpace: "pre-wrap" }}>{title}</Title>
+      {description}
+      {!!link &&
+        (link.type === "external" ? (
+          <YellowHoverExternalLink href={link.url}>
+            {link.title}
+          </YellowHoverExternalLink>
+        ) : (
+          <YellowHoverInternalLink to={link.url}>
+            {link.title}
+          </YellowHoverInternalLink>
+        ))}
+    </TextContent>,
+    <img
+      src={imageSrcPath}
+      alt={imageAlt || "Іллюстрація"}
+      width={418}
+      height={418}
+    />,
+  ];
+  return <Container>{reversed ? content.reverse() : content}</Container>;
 };
