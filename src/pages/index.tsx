@@ -4,12 +4,13 @@ import { SEO } from "../components/SEO";
 import styled from "styled-components";
 import { attentionBlocks } from "../options/pages/start";
 import { AttentionInfoBlock } from "../components/blocks/AttentionInfoBlock";
+import { getGapStyle } from "../styles/common";
 
 const ColumnContent = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 192px;
+  ${getGapStyle("192px", "column")}
 `;
 
 const IndexPage = () => {
