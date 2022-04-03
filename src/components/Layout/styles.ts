@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
-import {getGapStyle} from "../../styles/common";
+import { getGapStyle } from "../../styles/common";
 
 export const Page = styled.main`
   display: flex;
@@ -13,10 +13,18 @@ export const Page = styled.main`
   background: ${colors.backgroundGray};
 `;
 
+export const Margins = styled.div`
+  display: flex;
+  flex: 1;
+  margin: 0 5%;
+  max-width: 1280px;
+  align-self: center;
+`;
+
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 4em 10em 10em 10em;
+  padding: 4em 0 10em 0;
   flex: 1;
   max-width: 1280px;
   align-self: center;
