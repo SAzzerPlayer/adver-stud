@@ -13,7 +13,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
     imageAlt: "Іллюстрація: машинка для письма. Стікери: зірка та слово NICE",
     link: {
       title: "Дізнатися більше",
-      url: "/student",
+      url: "/enrollee/info",
       type: "internal",
     },
     children: (
