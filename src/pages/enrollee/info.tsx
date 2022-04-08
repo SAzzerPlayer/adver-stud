@@ -3,16 +3,7 @@ import { Layout } from "../../components/Layout";
 import { attentionBlocks } from "../../options/pages/enrollee/info";
 import { AttentionInfoBlock } from "../../components/blocks/AttentionInfoBlock";
 import * as React from "react";
-import styled from "styled-components";
-import { getGapStyle } from "../../styles/common";
-
-const ColumnContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  ${getGapStyle("192px", "column")};
-  box-sizing: border-box;
-`;
+import { ColumnContent } from "../../components/shared/ColumnContent";
 
 const IndexPage = () => {
   return (
