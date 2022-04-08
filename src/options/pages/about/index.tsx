@@ -10,7 +10,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
     imageAlt: "Іллюстрація: Мікрофон. Стікери: слово GOOD та слово TALK",
     link: {
       title: "Дізнатися більше",
-      url: "/student",
+      url: "/about/graduates",
       type: "internal",
     },
     children: (
