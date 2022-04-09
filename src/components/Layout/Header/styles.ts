@@ -13,6 +13,7 @@ export const HeaderContainer = styled.header`
   right: 0;
   height: 72px;
   padding: 0 5em;
+  z-index: 100;
   background-color: ${colors.backgroundGray};
   box-shadow: ${shadows.soft};
   ${getGapStyle("1.5em", "row")}
