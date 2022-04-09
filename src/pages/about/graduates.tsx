@@ -2,8 +2,8 @@ import * as React from "react";
 import { Layout } from "../../components/Layout";
 import { SEO } from "../../components/SEO";
 import { attentionBlocks } from "../../options/pages/about/graduates";
-import { AttentionInfoBlock } from "../../components/blocks/AttentionInfoBlock";
-import { ColumnContent } from "../../components/shared/ColumnContent";
+import { AttentionInfoBlock, TitleBlock } from "../../components/blocks";
+import { ColumnContent } from "../../components/shared";
 
 const AboutGraduatesPage = () => {
   return (
@@ -11,6 +11,13 @@ const AboutGraduatesPage = () => {
       <SEO title={"Видатні випускники"} />
       <Layout>
         <ColumnContent>
+          <TitleBlock
+            title={"Видатні випускники"}
+            description={
+              "Факультет систем і засобів масової комунікації Дніпровського національного університету імені Олеся Гончара – це найталановитіші студенти, найпрофесійніші викладачі, дружня атмосфера і безмежні можливості!\n" +
+              "Наші випускники працюють по всьому світу і в самих різних областях. Хтось подався за моря покращувати західну журналістику, хтось залишився тут і створив власні проекти, а хтось - зовсім змінив професію і зайнявся створенням фільмів. Але всіх їх об'єднує одне – любов і вдячність до факультету, а головне – працюючих на ньому людей."
+            }
+          />
           {attentionBlocks.map((block, i) => (
             <AttentionInfoBlock key={i} {...block} reversed={!!(i % 2)} />
           ))}

@@ -5,11 +5,11 @@ import { Paragraph } from "../../../components/shared";
 export const attentionBlocks: IAttentionInfoBlockProps[] = [
   {
     title: "Розклад",
-    imageName: 'schedule',
+    imageName: "schedule",
     imageAlt: "Іллюстрація: блокнот. Стікери: вподобайка та слово TIME",
     link: {
       title: "Дізнатися більше",
-      url: "/student/",
+      url: "/student/schedule",
       type: "internal",
     },
     children: (
@@ -22,7 +22,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Рeєстр додаткових балів",
-    imageName: 'bonuses',
+    imageName: "bonuses",
     imageAlt: "Іллюстрація: золотий кубок. Стікери: зірка та слово LIKE",
     link: {
       title: "Дізнатися більше",
@@ -39,11 +39,11 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Навчально-методичні праці",
-    imageName: 'readingMaterial',
+    imageName: "readingMaterial",
     imageAlt: "Іллюстрація: книжка. Стікери: вподобайка та слово LIKE",
     link: {
       title: "Дізнатися більше",
-      url: "/student/",
+      url: "/student/resources",
       type: "internal",
     },
     children: (
@@ -57,7 +57,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Рада студентів факультету",
-    imageName: 'guitar',
+    imageName: "guitar",
     imageAlt: "Іллюстрація: гитара. Стікери: вподобайка та зірка",
     link: {
       title: "Дізнатися більше",
@@ -75,7 +75,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Топ-5 книг з PR",
-    imageName: 'booksToRead',
+    imageName: "booksToRead",
     imageAlt: "Іллюстрація: стопа книг. Стікери: слова READ та BOOK",
     link: {
       title: "Дізнатися більше",
@@ -91,7 +91,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Топ-5 книг від класиків реклами",
-    imageName: 'classics',
+    imageName: "classics",
     imageAlt:
       "Іллюстрація: книга та чашка з чаєм. Стікери: вподобайка та слово CLASSICS",
     link: {

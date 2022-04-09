@@ -1,8 +1,10 @@
 export const colors = {
   backgroundWhite: "#FFFFFF",
   backgroundGray: "#FEFEFE",
+  backgroundLightGray: "rgba(247, 247, 247, 1)",
   tintBlack: "rgba(100, 99, 99, 0.2)",
   backgroundDarkGray: "rgba(100, 99, 99, 1)",
+  black: "rgba(0,0,0,1)",
   accentBlack: "rgba(80, 77, 77, 1)",
   accentDarkBlack: "rgba(80, 77, 77, 1)",
   accentYellow: "rgba(255, 221, 101, 1)",

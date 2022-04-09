@@ -7,6 +7,6 @@ export const Quote = styled.p`
   font-weight: 600;
   font-size: 16px;
   line-height: 136%;
-  color ${colors.accentBlack};
+  color: ${colors.accentBlack};
   white-space: pre-wrap;
 `;
