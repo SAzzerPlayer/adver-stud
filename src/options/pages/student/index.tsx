@@ -1,17 +1,11 @@
 import React from "react";
 import { IAttentionInfoBlockProps } from "../../../components/blocks/AttentionInfoBlock";
-import schedulePath from "../../../images/illustrations/schedule.png";
-import bonusesPath from "../../../images/illustrations/bonuses.png";
-import readingMaterialPath from "../../../images/illustrations/readingMaterial.png";
-import guitarPath from "../../../images/illustrations/guitar.png";
-import booksToReadPath from "../../../images/illustrations/booksToRead.png";
-import classicsPath from "../../../images/illustrations/classics.png";
 import { Paragraph } from "../../../components/shared";
 
 export const attentionBlocks: IAttentionInfoBlockProps[] = [
   {
     title: "Розклад",
-    imageSrcPath: schedulePath,
+    imageName: 'schedule',
     imageAlt: "Іллюстрація: блокнот. Стікери: вподобайка та слово TIME",
     link: {
       title: "Дізнатися більше",
@@ -28,7 +22,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Рeєстр додаткових балів",
-    imageSrcPath: bonusesPath,
+    imageName: 'bonuses',
     imageAlt: "Іллюстрація: золотий кубок. Стікери: зірка та слово LIKE",
     link: {
       title: "Дізнатися більше",
@@ -45,7 +39,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Навчально-методичні праці",
-    imageSrcPath: readingMaterialPath,
+    imageName: 'readingMaterial',
     imageAlt: "Іллюстрація: книжка. Стікери: вподобайка та слово LIKE",
     link: {
       title: "Дізнатися більше",
@@ -63,7 +57,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Рада студентів факультету",
-    imageSrcPath: guitarPath,
+    imageName: 'guitar',
     imageAlt: "Іллюстрація: гитара. Стікери: вподобайка та зірка",
     link: {
       title: "Дізнатися більше",
@@ -81,7 +75,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Топ-5 книг з PR",
-    imageSrcPath: booksToReadPath,
+    imageName: 'booksToRead',
     imageAlt: "Іллюстрація: стопа книг. Стікери: слова READ та BOOK",
     link: {
       title: "Дізнатися більше",
@@ -97,7 +91,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Топ-5 книг від класиків реклами",
-    imageSrcPath: classicsPath,
+    imageName: 'classics',
     imageAlt:
       "Іллюстрація: книга та чашка з чаєм. Стікери: вподобайка та слово CLASSICS",
     link: {

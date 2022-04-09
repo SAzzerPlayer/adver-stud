@@ -1,16 +1,11 @@
 import React from "react";
 import { IAttentionInfoBlockProps } from "../../../../components/blocks/AttentionInfoBlock";
-import publicRelationsPath from "../../../../images/books/publicRelations.png";
-import strategicCommunicationPath from "../../../../images/books/strategicCommunication.png";
-import newMarketingRulesPath from "../../../../images/books/newMarketingRules.png";
-import prOnTheHighLevelPath from "../../../../images/books/prOnTheHighLevel.png";
-import pr100Path from "../../../../images/books/100%pr.png";
 import { Paragraph } from "../../../../components/shared";
 
 export const attentionBlocks: IAttentionInfoBlockProps[] = [
   {
     title: '1. "Паблік Рілейшнз", \n' + "Г. Почепцов",
-    imageSrcPath: publicRelationsPath,
+    imageName: "publicRelations",
     imageAlt: "Іллюстрація: книга. Стікери: вподобайка та зірка",
     children: (
       <Paragraph>
@@ -26,7 +21,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   {
     title:
       "2. «Strategic Communication Management. Making PR Work», John White, Laura Mazur",
-    imageSrcPath: strategicCommunicationPath,
+    imageName: "strategicCommunication",
     imageAlt: "Іллюстрація: книга. Стікери: вподобайка та зірка",
     children: (
       <Paragraph>
@@ -42,7 +37,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "3. «Нові правила маркетингу \n" + "та PR», Д.М. Скотт",
-    imageSrcPath: newMarketingRulesPath,
+    imageName: "newMarketingRules",
     imageAlt: "Іллюстрація: книга. Стікери: вподобайка та зірка",
     children: (
       <Paragraph>
@@ -66,7 +61,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "4. «PR високого польоту», І. Алєксєєва, Т. Гуляєва",
-    imageSrcPath: prOnTheHighLevelPath,
+    imageName: "prOnTheHighLevel",
     imageAlt: "Іллюстрація: книга. Стікери: вподобайка та зірка",
     children: (
       <Paragraph>
@@ -89,7 +84,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "5. «PR на 100%», \n" + "І.Манн, М. Горкіна, \n" + "А. Мамонтов",
-    imageSrcPath: pr100Path,
+    imageName: "100%pr",
     imageAlt: "Іллюстрація: книга. Стікери: вподобайка та зірка",
     children: (
       <Paragraph>

@@ -1,19 +1,11 @@
 import React from "react";
 import { IAttentionInfoBlockProps } from "../../../components/blocks/AttentionInfoBlock";
-import mariaPath from "../../../images/people/maria.png";
-import allaShorinaPath from "../../../images/people/allaShorina.png";
-import juliaBrikShorinaPath from "../../../images/people/juliaBrikShorina.png";
-import nataliaGusakPath from "../../../images/people/nataliaGusak.png";
-import juliaBrikShorina2Path from "../../../images/people/juliaBrikShorina2.png";
-import tsibulyaGusakPath from "../../../images/people/tsibulyaGusak.png";
-import nataliaMagdaBrikShorinaPath from "../../../images/people/nataliaMagdaBrikShorina.png";
-import verngeslyaukaytePath from "../../../images/people/verngeslyaukayte.png";
 import { Paragraph, Quote, H6 } from "../../../components/shared";
 
 export const attentionBlocks: IAttentionInfoBlockProps[] = [
   {
     title: "Марія Коренюк (Кореспондент BBCNewsУкраїна)",
-    imageSrcPath: mariaPath,
+    imageName: "maria",
     imageAlt: "Іллюстрація: фото. Стікери: вподобайка та зірка",
     children: (
       <>
@@ -44,7 +36,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Алла Шоріна (Керуючий партнер комунікаційної групи «Імпульс»)",
-    imageSrcPath: allaShorinaPath,
+    imageName: "allaShorina",
     imageAlt: "Іллюстрація: фото. Стікери: вподобайка та зірка",
     children: (
       <>
@@ -72,7 +64,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Юлія Брик (Кореспондент СТБ)",
-    imageSrcPath: juliaBrikShorinaPath,
+    imageName: "juliaBrikShorina",
     imageAlt: "Іллюстрація: фото. Стікери: вподобайка та зірка",
     children: (
       <>
@@ -89,7 +81,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Наталія Гусак (Кореспондент телеканалу UATV)",
-    imageSrcPath: nataliaGusakPath,
+    imageName: "nataliaGusak",
     imageAlt: "Іллюстрація: фото. Стікери: вподобайка та зірка",
     children: (
       <>
@@ -109,7 +101,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Ольга Шандра",
-    imageSrcPath: juliaBrikShorina2Path,
+    imageName: "juliaBrikShorina2",
     imageAlt: "Іллюстрація: фото. Стікери: вподобайка та зірка",
     children: (
       <>
@@ -130,7 +122,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Оксана Цибуля ",
-    imageSrcPath: tsibulyaGusakPath,
+    imageName: "tsibulyaGusak",
     imageAlt: "Іллюстрація: фото. Стікери: вподобайка та зірка",
     children: (
       <>
@@ -154,7 +146,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   {
     title:
       "Наталія Магда, голова департаменту Інформаційного мовлення 34 Телеканалу",
-    imageSrcPath: nataliaMagdaBrikShorinaPath,
+    imageName: "nataliaMagdaBrikShorina",
     imageAlt: "Іллюстрація: фото. Стікери: вподобайка та зірка",
     children: (
       <>
@@ -184,7 +176,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
     title:
       "Кристина Венгеляускайте, кореспондент програми «Факти» \n" +
       "в Дніпрі,  ICTV",
-    imageSrcPath: verngeslyaukaytePath,
+    imageName: "verngeslyaukayte",
     imageAlt: "Іллюстрація: фото. Стікери: вподобайка та зірка",
     children: (
       <>

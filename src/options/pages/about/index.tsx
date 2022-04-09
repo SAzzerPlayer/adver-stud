@@ -1,12 +1,11 @@
 import React from "react";
 import { IAttentionInfoBlockProps } from "../../../components/blocks/AttentionInfoBlock";
-import goodIdeaPath from "../../../images/illustrations/graduators.png";
 import { Paragraph } from "../../../components/shared";
 
 export const attentionBlocks: IAttentionInfoBlockProps[] = [
   {
     title: "Видатні випускники",
-    imageSrcPath: goodIdeaPath,
+    imageName: "goodIdea",
     imageAlt: "Іллюстрація: Мікрофон. Стікери: слово GOOD та слово TALK",
     link: {
       title: "Дізнатися більше",

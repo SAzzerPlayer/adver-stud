@@ -1,16 +1,11 @@
 import React from "react";
 import { IAttentionInfoBlockProps } from "../../../../components/blocks/AttentionInfoBlock";
-import ogilvyPath from "../../../../images/books/ogilvy.png";
-import aboutTheAdvertisementPath from "../../../../images/books/aboutTheAdvertisement.png";
-import myLifeInAdvertisementPath from "../../../../images/books/myLifeInAdvertisement.png";
-import doOrDiePath from "../../../../images/books/doOrDie.png";
-import checkedAdvertisementMethodsPath from "../../../../images/books/checkedAdvertisementMethods.png";
 import { Paragraph, H6 } from "../../../../components/shared";
 
 export const attentionBlocks: IAttentionInfoBlockProps[] = [
   {
     title: "1.«Одкровення рекламного агента», \n" + "Д. Огілві",
-    imageSrcPath: ogilvyPath,
+    imageName: "ogilvy",
     imageAlt: "Іллюстрація: книга. Стікери: вподобайка та зірка",
     children: (
       <>
@@ -42,7 +37,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "2. «Огілви про рекламу», Д. Огілві",
-    imageSrcPath: aboutTheAdvertisementPath,
+    imageName: "aboutTheAdvertisement",
     imageAlt: "Іллюстрація: книга. Стікери: вподобайка та зірка",
     children: (
       <>
@@ -75,7 +70,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "3. «Моє життя в рекламі», Клод Хопкінс",
-    imageSrcPath: myLifeInAdvertisementPath,
+    imageName: "myLifeInAdvertisement",
     imageAlt: "Іллюстрація: книга. Стікери: вподобайка та зірка",
     children: (
       <>
@@ -109,7 +104,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "4. «Диференціюйся або вмирай!», Дж. Траут, \n" + "С. Рівкін",
-    imageSrcPath: doOrDiePath,
+    imageName: "doOrDie",
     imageAlt: "Іллюстрація: книга. Стікери: вподобайка та зірка",
     children: (
       <>
@@ -138,7 +133,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "5. «Перевірені методи реклами», Дж. Кейплз",
-    imageSrcPath: checkedAdvertisementMethodsPath,
+    imageName: "checkedAdvertisementMethods",
     imageAlt: "Іллюстрація: книга. Стікери: вподобайка та зірка",
     children: (
       <>

@@ -1,15 +1,11 @@
 import React from "react";
 import { IAttentionInfoBlockProps } from "../../components/blocks/AttentionInfoBlock";
-import writingMachinePath from "../../images/illustrations/writingMachine.png";
-import clocksPath from "../../images/illustrations/clocks.png";
-import notesPath from "../../images/illustrations/notes.png";
-import goodIdeaPath from "../../images/illustrations/goodIdea.png";
 import { Paragraph } from "../../components/shared";
 
 export const attentionBlocks: IAttentionInfoBlockProps[] = [
   {
     title: "Абітурієнту на замітку: \n" + "як вступити \n" + "на факультет",
-    imageSrcPath: writingMachinePath,
+    imageName: "writingMachine",
     imageAlt: "Іллюстрація: машинка для письма. Стікери: зірка та слово NICE",
     link: {
       title: "Дізнатися більше",
@@ -26,7 +22,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Для абітурієнтів, бакалаврів та магістрів!",
-    imageSrcPath: clocksPath,
+    imageName: "clocks",
     imageAlt: "Іллюстрація: будильник. Стікери: вподобайка та слово WOW",
     link: {
       title: "Дізнатися більше",
@@ -43,7 +39,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Бути магістром \n" + "— круто!",
-    imageSrcPath: notesPath,
+    imageName: "notes",
     imageAlt: "Іллюстрація: Записник. Стікери: вподобайка та слово FOLLOW",
     link: {
       title: "Дізнатися більше",
@@ -60,7 +56,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Що таке аспірантура?",
-    imageSrcPath: goodIdeaPath,
+    imageName: "goodIdea",
     imageAlt: "Іллюстрація: Лампа накалювання. Стікери: зірка та слово LIKE",
     link: {
       title: "Дізнатися більше",

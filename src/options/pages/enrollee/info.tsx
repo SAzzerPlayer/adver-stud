@@ -1,13 +1,11 @@
 import React from "react";
 import { IAttentionInfoBlockProps } from "../../../components/blocks/AttentionInfoBlock";
-import ourOfficePath from "../../../images/illustrations/ourOffice.png";
-import contactsPath from "../../../images/illustrations/contacts.png";
 import { Paragraph, H6 } from "../../../components/shared";
 
 export const attentionBlocks: IAttentionInfoBlockProps[] = [
   {
     title: "Приймальна комісія",
-    imageSrcPath: ourOfficePath,
+    imageName: "ourOffice",
     imageAlt: "Іллюстрація: відкритий конверт. Стікери: зірка та вподобайка",
     children: (
       <>
@@ -29,7 +27,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
   },
   {
     title: "Контакти факультету",
-    imageSrcPath: contactsPath,
+    imageName: "contacts",
     imageAlt: "Іллюстрація: телефон. Стікери: зірка та слово Follow",
     children: (
       <>
