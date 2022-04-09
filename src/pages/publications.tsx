@@ -20,7 +20,10 @@ const TabView = styled.div`
 `;
 
 const PublicationPage = () => {
-  const isMasterView = window.location.search.includes("master");
+  const isMasterView =
+    typeof window !== "undefined"
+      ? window.location.search.includes("master")
+      : false;
   return (
     <>
       <SEO title={"Публікації"} />
