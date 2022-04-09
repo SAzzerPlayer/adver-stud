@@ -3,7 +3,7 @@ import { TLinkToSite } from "../types";
 export const siteChapters: TLinkToSite[] = [
   { title: "Абітурієнтам", link: "/" },
   { title: "Про нас", link: "/about" },
-  { title: "Публікації", link: "/publication" },
+  { title: "Публікації", link: "/publications" },
   { title: "Наша кафедра", link: "/department" },
   { title: "Студентам", link: "/student" },
 ];

@@ -6,3 +6,4 @@ export * from "./H2";
 export * from "./H6";
 export * from "./Quote";
 export * from "./ColumnContent";
+export * from './ButtonInternalLink';
