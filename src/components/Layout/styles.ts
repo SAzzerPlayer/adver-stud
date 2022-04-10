@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
-import { getGapStyle } from "../../styles/common";
 
 export const Page = styled.main`
   display: flex;

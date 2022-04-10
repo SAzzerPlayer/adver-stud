@@ -55,6 +55,14 @@ const config: GatsbyConfig = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Lora", "Merriweather"],
+        },
+      },
+    },
   ],
 };
 
