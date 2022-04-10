@@ -61,6 +61,7 @@ const config: GatsbyConfig = {
         google: {
           families: ["Lora", "Merriweather"],
         },
+        display: "swap",
       },
     },
   ],
