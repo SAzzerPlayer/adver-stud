@@ -1,14 +1,14 @@
 import { SEO } from "../../components/SEO";
 import { Layout } from "../../components/Layout";
-import { attentionBlocks } from "../../options/pages/enrollee/info";
-import { AttentionInfoBlock } from "../../components/blocks/AttentionInfoBlock";
+import { attentionBlocks } from "../../options/pages/enrollee/intro";
+import { AttentionInfoBlock } from "../../components/blocks";
 import * as React from "react";
-import { ColumnContent } from "../../components/shared/ColumnContent";
+import { ColumnContent } from "../../components/shared";
 
-const IndexPage = () => {
+const IntroPage = () => {
   return (
     <>
-      <SEO title={"Контакти"} />
+      <SEO title={"Абітурієнту на замітку: як вступити на факультет"} />
       <Layout>
         <ColumnContent>
           {attentionBlocks.map((block, i) => (
@@ -20,4 +20,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default IntroPage;

@@ -1,5 +1,5 @@
 import React from "react";
-import { IAttentionInfoBlockProps } from "../../components/blocks/AttentionInfoBlock";
+import { IAttentionInfoBlockProps } from "../../components/blocks";
 import { Paragraph } from "../../components/shared";
 
 export const attentionBlocks: IAttentionInfoBlockProps[] = [
@@ -9,7 +9,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
     imageAlt: "Іллюстрація: машинка для письма. Стікери: зірка та слово NICE",
     link: {
       title: "Дізнатися більше",
-      url: "/enrollee/info",
+      url: "/enrollee/intro",
       type: "internal",
     },
     children: (
@@ -26,7 +26,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
     imageAlt: "Іллюстрація: будильник. Стікери: вподобайка та слово WOW",
     link: {
       title: "Дізнатися більше",
-      url: "/student",
+      url: "/enrollee/resume",
       type: "internal",
     },
     children: (
@@ -43,7 +43,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
     imageAlt: "Іллюстрація: Записник. Стікери: вподобайка та слово FOLLOW",
     link: {
       title: "Дізнатися більше",
-      url: "/student",
+      url: "/enrollee",
       type: "internal",
     },
     children: (
@@ -60,7 +60,7 @@ export const attentionBlocks: IAttentionInfoBlockProps[] = [
     imageAlt: "Іллюстрація: Лампа накалювання. Стікери: зірка та слово LIKE",
     link: {
       title: "Дізнатися більше",
-      url: "/student",
+      url: "/enrollee",
       type: "internal",
     },
     children: (

@@ -1,5 +1,5 @@
 import React from "react";
-import { IAttentionInfoBlockProps } from "../../../components/blocks/AttentionInfoBlock";
+import { IAttentionInfoBlockProps } from "../../../components/blocks";
 import { Paragraph, H6 } from "../../../components/shared";
 
 export const attentionBlocks: IAttentionInfoBlockProps[] = [
