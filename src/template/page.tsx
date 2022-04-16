@@ -1,14 +1,15 @@
 import React from "react";
 import { SEO } from "../components/SEO";
 import { Layout } from "../components/Layout";
+import { ContentfulPage } from "../../graphql/generated";
 
-const Template: React.FC = (props) => {
+const Template: React.FC<any> = ({ pageContext, children }) => {
+  const { title } = pageContext as ContentfulPage;
+
   return (
     <>
-      <SEO title={"template"} />
-      <Layout>
-        <h4>template</h4>
-      </Layout>
+      <SEO title={title!} />
+      <Layout>{children}</Layout>
     </>
   );
 };
