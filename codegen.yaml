@@ -1,0 +1,13 @@
+schema: http://localhost:8000/___graphql
+documents:
+  - ./src/**/*.{tsx,graphql}
+  - ./node_modules/gatsby*/!(node_modules)/**/*.js
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+generates:
+  graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
