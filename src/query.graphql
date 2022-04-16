@@ -1,0 +1,34 @@
+query GetAllSiteContent {
+  allContentfulPage {
+    nodes {
+      title
+      url
+      node_locale
+      sys {
+        contentType {
+          sys {
+            id
+            type
+          }
+        }
+        revision
+      }
+      description {
+        description
+        sys {
+          type
+        }
+      }
+      content {
+        ... on ContentfulAttentionBlock {
+          id
+          title
+        }
+        ... on ContentfulAuthor {
+          id
+          name
+        }
+      }
+    }
+  }
+}

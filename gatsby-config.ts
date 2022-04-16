@@ -25,7 +25,6 @@ const config: GatsbyConfig = {
         name: "images",
         path: "./src/images/",
       },
-      __key: "images",
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -33,7 +32,6 @@ const config: GatsbyConfig = {
         name: "pages",
         path: "./src/pages/",
       },
-      __key: "pages",
     },
     {
       resolve: "gatsby-plugin-sharp",
@@ -62,6 +60,13 @@ const config: GatsbyConfig = {
           families: ["Lora", "Merriweather"],
         },
         display: "swap",
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `7l842l07s140`,
+        accessToken: `7XYHTS07k1_--aBxCAxwW3l3Pufp3mxK05PREmgDwuc`,
       },
     },
   ],
