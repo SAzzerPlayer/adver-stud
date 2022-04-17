@@ -23,6 +23,7 @@ const Content = styled.div`
   flex: 1;
   padding: 0 2em;
 `;
+
 const MenuID = "menu-checkbox";
 
 const MenuCheckbox = styled.input.attrs({
@@ -69,6 +70,7 @@ const Tabs = styled.div.attrs({ className: "tabs" })`
   margin: 0 16px;
   > a {
     > h6 {
+      text-align: center;
       font-weight: 500;
     }
   }
@@ -88,15 +90,15 @@ const Tabs = styled.div.attrs({ className: "tabs" })`
     left: 0;
     background-color: ${colors.backgroundGray};
     box-shadow: ${shadows.soft};
-    padding-bottom: 8px;
     margin: 0;
     width: inherit;
 
     > a {
       width: 80vw;
-      padding: 16px 2em;
+      padding: 8px 2em 24px 2em;
       margin: 0;
       > h6 {
+        text-align: left;
         font-weight: 400;
       }
     }
