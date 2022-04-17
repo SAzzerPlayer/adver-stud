@@ -69,6 +69,14 @@ const config: GatsbyConfig = {
         accessToken: `7XYHTS07k1_--aBxCAxwW3l3Pufp3mxK05PREmgDwuc`,
       },
     },
+    {
+      resolve: `gatsby-source-contentful-locales`,
+      options: {
+        spaceId: `7l842l07s140`,
+        accessToken: `7XYHTS07k1_--aBxCAxwW3l3Pufp3mxK05PREmgDwuc`,
+      },
+    },
+    "gatsby-plugin-root-import",
   ],
 };
 
