@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     @media (max-width: ${breakpoints.device}) {
-      font-size: 10px;
+      font-size: 11px;
     }
   }
   
@@ -19,9 +19,10 @@ export const GlobalStyle = createGlobalStyle`
     background: ${colors.backgroundGray};
   }
   
-  h1, h2, h3, h4, h5, h6, p {
+  h1, h2, h3, h4, h5, h6, p, a {
     margin: 0;
     padding: 0;
+    white-space: pre-wrap;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -29,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: 900;
     line-height: 124%;
-    color: ${colors.black};
+    color: ${colors.accentBlack};
   }
   
   h1 {
@@ -45,15 +46,24 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   h4 {
-    font-size: 2em;
+    font-size: 1.75em;
   }
   
   h5 {
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
   
   h6 {
-    font-size: 1.25em;
+    font-size: 1.1em;
+  }
+  
+  p, a {
+    font-family: Lora, Roboto, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 136%;
+    color: ${colors.accentBlack};
   }
   
   @font-face {
