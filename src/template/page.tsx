@@ -1,8 +1,8 @@
 import React from "react";
-import { SEO } from "../comps/SEO";
-import { Page, Header, Content, Footer } from "src/comps/structure";
-import { ContentfulPage } from "../../graphql/generated";
-import { GlobalStyle } from "src/comps/GlobalStyle";
+import { SEO } from "src/components/SEO";
+import { Page, Header, Content, Footer } from "src/components/structure";
+import { ContentfulPage } from "graphql/generated";
+import { GlobalStyle } from "src/components/GlobalStyle";
 
 const Template: React.FC<any> = ({ pageContext }) => {
   const { title, description } = pageContext as ContentfulPage;
@@ -12,7 +12,7 @@ const Template: React.FC<any> = ({ pageContext }) => {
       <SEO title={title!} description={description?.description} />
       <GlobalStyle />
       <Page>
-        <Header tabs={[]} iconTabs={[]} />
+        <Header />
         <Content>
           <h1>Hello</h1>
           <h2>Hello</h2>
@@ -21,7 +21,7 @@ const Template: React.FC<any> = ({ pageContext }) => {
           <h5>Hello</h5>
           <h6>Hello</h6>
         </Content>
-        <Footer tabs={[]} iconTabs={[]} />
+        <Footer />
       </Page>
     </>
   );

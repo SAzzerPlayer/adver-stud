@@ -11,13 +11,13 @@ const path = require("path");
 
 const createPages: GatsbyNode["createPages"] = async ({ actions, graphql }) => {
   const result = await graphql(GetAllSiteContentDocument);
-  const data = result.data as GetAllSiteContentQuery;
-  for (const node of data?.allContentfulPage?.nodes) {
+  const data = result?.data as GetAllSiteContentQuery;
+  for (const edge of (data?.allContentfulPage?.edges || [])) {
     actions.createPage({
-      path: node.url!,
+      path: edge.node.url!,
       component: path.resolve("src/template/page.tsx"),
       context: {
-        ...node,
+        ...edge.node,
       },
     });
   }

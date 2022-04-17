@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
+import { breakpoints } from "./src/styles";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -40,7 +41,10 @@ const config: GatsbyConfig = {
           formats: ["auto", "webp", "png"],
           placeholder: `blurred`,
           quality: 80,
-          breakpoints: [750, 1080, 1366, 1920],
+          breakpoints: Object.values(breakpoints)
+            .map((s) => s.split("px")[0])
+            .map(Number)
+            .sort(),
           backgroundColor: `transparent`,
           tracedSVGOptions: {},
           blurredOptions: {},
