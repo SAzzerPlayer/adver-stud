@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     @media (max-width: ${breakpoints.device}) {
-      font-size: 11px;
+      font-size: 12px;
     }
   }
   
