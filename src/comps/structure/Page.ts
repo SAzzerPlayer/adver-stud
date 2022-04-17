@@ -8,5 +8,5 @@ export default styled.div`
   align-self: center;
   min-height: 100vh;
   max-width: 100vw;
-  background-color: gray;
+  min-width: 320px;
 `;
