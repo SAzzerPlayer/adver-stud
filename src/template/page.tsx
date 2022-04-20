@@ -1,11 +1,23 @@
 import React from "react";
 import { SEO } from "src/components/SEO";
 import { Page, Header, Content, Footer } from "src/components/structure";
-import { ContentfulPage } from "graphql/generated";
+import { ContentfulActionInfoBlock, ContentfulPage } from "graphql/generated";
 import { GlobalStyle } from "src/components/GlobalStyle";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
 
 const Template: React.FC<any> = ({ pageContext }) => {
-  const { title, description } = pageContext as ContentfulPage;
+  const { title, description, content } = pageContext as ContentfulPage;
+
+  const actionBlocks: ContentfulActionInfoBlock[] = [];
+  content?.forEach((c) => {
+    c?.blocks?.forEach((b) => {
+      if (!!b && (b as ContentfulActionInfoBlock).article?.raw) {
+        actionBlocks.push(b as ContentfulActionInfoBlock);
+      }
+    });
+  });
+
+  console.log();
 
   return (
     <>
@@ -13,13 +25,20 @@ const Template: React.FC<any> = ({ pageContext }) => {
       <GlobalStyle />
       <Page>
         <Header />
-        <Content>
-          <h1>Hello</h1>
-          <h2>Hello</h2>
-          <h3>Hello</h3>
-          <h4>Hello</h4>
-          <h5>Hello</h5>
-          <h6>Hello</h6>
+        <Content
+          style={{
+            alignItems: "flex-start",
+            textAlign: "center",
+            whiteSpace: "pre-wrap",
+          }}
+        >
+          {actionBlocks.map((b, index) => {
+            return (
+              <div key={index} style={{ margin: "4em" }}>
+                {renderRichText(b!.article as any)}
+              </div>
+            );
+          })}
         </Content>
         <Footer />
       </Page>

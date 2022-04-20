@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Layout } from "../../components/Layout";
-import { SEO } from "../../components/SEO";
-import { attentionBlocks } from "../../options/pages/about/graduates";
-import { AttentionInfoBlock, TitleBlock } from "../../components/blocks";
-import { ColumnContent } from "../../components/shared";
+import { Layout } from "src/_components/Layout";
+import { SEO } from "src/_components/SEO";
+import { attentionBlocks } from "src/options/pages/about/graduates";
+import { AttentionInfoBlock, TitleBlock } from "src/_components/blocks";
+import { ColumnContent } from "src/_components/shared";
 
 const AboutGraduatesPage = () => {
   return (

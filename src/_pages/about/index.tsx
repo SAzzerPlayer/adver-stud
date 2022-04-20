@@ -1,13 +1,13 @@
 import * as React from "react";
-import { Layout } from "../../components/Layout";
-import { SEO } from "../../components/SEO";
+import { Layout } from "src/_components/Layout";
+import { SEO } from "src/_components/SEO";
 import {
   attentionBlocks,
   badgeCollectionItems,
-} from "../../options/pages/about";
-import { AttentionInfoBlock, TitleBlock } from "../../components/blocks";
-import { ColumnContent, H2, Paragraph } from "../../components/shared";
-import { BadgeCollectionBlock } from "../../components/blocks/BadgeCollectionBlock";
+} from "src/options/pages/about";
+import { AttentionInfoBlock, TitleBlock } from "src/_components/blocks";
+import { ColumnContent, H2, Paragraph } from "src/_components/shared";
+import { BadgeCollectionBlock } from "src/_components/blocks/BadgeCollectionBlock";
 
 const AboutPage = () => {
   return (

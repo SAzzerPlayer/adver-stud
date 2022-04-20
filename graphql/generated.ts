@@ -68,6 +68,865 @@ export type BooleanQueryOperatorInput = {
   nin?: InputMaybe<Array<InputMaybe<Scalars["Boolean"]>>>;
 };
 
+export type ContentfulActionInfoBlock = ContentfulEntry &
+  ContentfulReference &
+  Node & {
+    __typename?: "ContentfulActionInfoBlock";
+    article?: Maybe<ContentfulActionInfoBlockArticle>;
+    button?: Maybe<ContentfulLink>;
+    children: Array<Node>;
+    contentblock?: Maybe<Array<Maybe<ContentfulContentBlock>>>;
+    contentful_id: Scalars["String"];
+    createdAt?: Maybe<Scalars["Date"]>;
+    id: Scalars["ID"];
+    internal: Internal;
+    node_locale: Scalars["String"];
+    parent?: Maybe<Node>;
+    spaceId?: Maybe<Scalars["String"]>;
+    sys?: Maybe<ContentfulActionInfoBlockSys>;
+    textPosition?: Maybe<Scalars["String"]>;
+    uniqueId?: Maybe<Scalars["String"]>;
+    updatedAt?: Maybe<Scalars["Date"]>;
+  };
+
+export type ContentfulActionInfoBlockCreatedAtArgs = {
+  difference?: InputMaybe<Scalars["String"]>;
+  formatString?: InputMaybe<Scalars["String"]>;
+  fromNow?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars["String"]>;
+};
+
+export type ContentfulActionInfoBlockUpdatedAtArgs = {
+  difference?: InputMaybe<Scalars["String"]>;
+  formatString?: InputMaybe<Scalars["String"]>;
+  fromNow?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars["String"]>;
+};
+
+export type ContentfulActionInfoBlockArticle = {
+  __typename?: "ContentfulActionInfoBlockArticle";
+  raw?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulActionInfoBlockArticleFilterInput = {
+  raw?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulActionInfoBlockConnection = {
+  __typename?: "ContentfulActionInfoBlockConnection";
+  distinct: Array<Scalars["String"]>;
+  edges: Array<ContentfulActionInfoBlockEdge>;
+  group: Array<ContentfulActionInfoBlockGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<ContentfulActionInfoBlock>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type ContentfulActionInfoBlockConnectionDistinctArgs = {
+  field: ContentfulActionInfoBlockFieldsEnum;
+};
+
+export type ContentfulActionInfoBlockConnectionGroupArgs = {
+  field: ContentfulActionInfoBlockFieldsEnum;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+};
+
+export type ContentfulActionInfoBlockConnectionMaxArgs = {
+  field: ContentfulActionInfoBlockFieldsEnum;
+};
+
+export type ContentfulActionInfoBlockConnectionMinArgs = {
+  field: ContentfulActionInfoBlockFieldsEnum;
+};
+
+export type ContentfulActionInfoBlockConnectionSumArgs = {
+  field: ContentfulActionInfoBlockFieldsEnum;
+};
+
+export type ContentfulActionInfoBlockContentfulAuthorAvatarBlockContentfulRichTextBlockUnion =
+
+    | ContentfulActionInfoBlock
+    | ContentfulAuthorAvatarBlock
+    | ContentfulRichTextBlock;
+
+export type ContentfulActionInfoBlockEdge = {
+  __typename?: "ContentfulActionInfoBlockEdge";
+  next?: Maybe<ContentfulActionInfoBlock>;
+  node: ContentfulActionInfoBlock;
+  previous?: Maybe<ContentfulActionInfoBlock>;
+};
+
+export enum ContentfulActionInfoBlockFieldsEnum {
+  ArticleRaw = "article___raw",
+  ButtonActioninfoblock = "button___actioninfoblock",
+  ButtonActioninfoblockArticleRaw = "button___actioninfoblock___article___raw",
+  ButtonActioninfoblockButtonActioninfoblock = "button___actioninfoblock___button___actioninfoblock",
+  ButtonActioninfoblockButtonAuthoravatarblock = "button___actioninfoblock___button___authoravatarblock",
+  ButtonActioninfoblockButtonChildren = "button___actioninfoblock___button___children",
+  ButtonActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "button___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  ButtonActioninfoblockButtonContentfulId = "button___actioninfoblock___button___contentful_id",
+  ButtonActioninfoblockButtonContentfulid = "button___actioninfoblock___button___contentfulid",
+  ButtonActioninfoblockButtonCreatedAt = "button___actioninfoblock___button___createdAt",
+  ButtonActioninfoblockButtonId = "button___actioninfoblock___button___id",
+  ButtonActioninfoblockButtonNodeLocale = "button___actioninfoblock___button___node_locale",
+  ButtonActioninfoblockButtonOptions = "button___actioninfoblock___button___options",
+  ButtonActioninfoblockButtonSpaceId = "button___actioninfoblock___button___spaceId",
+  ButtonActioninfoblockButtonTitle = "button___actioninfoblock___button___title",
+  ButtonActioninfoblockButtonUpdatedAt = "button___actioninfoblock___button___updatedAt",
+  ButtonActioninfoblockChildren = "button___actioninfoblock___children",
+  ButtonActioninfoblockChildrenChildren = "button___actioninfoblock___children___children",
+  ButtonActioninfoblockChildrenId = "button___actioninfoblock___children___id",
+  ButtonActioninfoblockContentblock = "button___actioninfoblock___contentblock",
+  ButtonActioninfoblockContentblockChildren = "button___actioninfoblock___contentblock___children",
+  ButtonActioninfoblockContentblockContentfulId = "button___actioninfoblock___contentblock___contentful_id",
+  ButtonActioninfoblockContentblockCreatedAt = "button___actioninfoblock___contentblock___createdAt",
+  ButtonActioninfoblockContentblockId = "button___actioninfoblock___contentblock___id",
+  ButtonActioninfoblockContentblockMargin = "button___actioninfoblock___contentblock___margin",
+  ButtonActioninfoblockContentblockNodeLocale = "button___actioninfoblock___contentblock___node_locale",
+  ButtonActioninfoblockContentblockPage = "button___actioninfoblock___contentblock___page",
+  ButtonActioninfoblockContentblockSpaceId = "button___actioninfoblock___contentblock___spaceId",
+  ButtonActioninfoblockContentblockUniqueId = "button___actioninfoblock___contentblock___uniqueId",
+  ButtonActioninfoblockContentblockUpdatedAt = "button___actioninfoblock___contentblock___updatedAt",
+  ButtonActioninfoblockContentfulId = "button___actioninfoblock___contentful_id",
+  ButtonActioninfoblockCreatedAt = "button___actioninfoblock___createdAt",
+  ButtonActioninfoblockId = "button___actioninfoblock___id",
+  ButtonActioninfoblockInternalContent = "button___actioninfoblock___internal___content",
+  ButtonActioninfoblockInternalContentDigest = "button___actioninfoblock___internal___contentDigest",
+  ButtonActioninfoblockInternalDescription = "button___actioninfoblock___internal___description",
+  ButtonActioninfoblockInternalFieldOwners = "button___actioninfoblock___internal___fieldOwners",
+  ButtonActioninfoblockInternalIgnoreType = "button___actioninfoblock___internal___ignoreType",
+  ButtonActioninfoblockInternalMediaType = "button___actioninfoblock___internal___mediaType",
+  ButtonActioninfoblockInternalOwner = "button___actioninfoblock___internal___owner",
+  ButtonActioninfoblockInternalType = "button___actioninfoblock___internal___type",
+  ButtonActioninfoblockNodeLocale = "button___actioninfoblock___node_locale",
+  ButtonActioninfoblockParentChildren = "button___actioninfoblock___parent___children",
+  ButtonActioninfoblockParentId = "button___actioninfoblock___parent___id",
+  ButtonActioninfoblockSpaceId = "button___actioninfoblock___spaceId",
+  ButtonActioninfoblockSysRevision = "button___actioninfoblock___sys___revision",
+  ButtonActioninfoblockSysType = "button___actioninfoblock___sys___type",
+  ButtonActioninfoblockTextPosition = "button___actioninfoblock___textPosition",
+  ButtonActioninfoblockUniqueId = "button___actioninfoblock___uniqueId",
+  ButtonActioninfoblockUpdatedAt = "button___actioninfoblock___updatedAt",
+  ButtonAuthoravatarblock = "button___authoravatarblock",
+  ButtonAuthoravatarblockAvatarChildren = "button___authoravatarblock___avatar___children",
+  ButtonAuthoravatarblockAvatarContentfulId = "button___authoravatarblock___avatar___contentful_id",
+  ButtonAuthoravatarblockAvatarCreatedAt = "button___authoravatarblock___avatar___createdAt",
+  ButtonAuthoravatarblockAvatarDescription = "button___authoravatarblock___avatar___description",
+  ButtonAuthoravatarblockAvatarFilename = "button___authoravatarblock___avatar___filename",
+  ButtonAuthoravatarblockAvatarFilesize = "button___authoravatarblock___avatar___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonAuthoravatarblockAvatarGatsbyImage = "button___authoravatarblock___avatar___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonAuthoravatarblockAvatarGatsbyImageData = "button___authoravatarblock___avatar___gatsbyImageData",
+  ButtonAuthoravatarblockAvatarHeight = "button___authoravatarblock___avatar___height",
+  ButtonAuthoravatarblockAvatarId = "button___authoravatarblock___avatar___id",
+  ButtonAuthoravatarblockAvatarMimeType = "button___authoravatarblock___avatar___mimeType",
+  ButtonAuthoravatarblockAvatarNodeLocale = "button___authoravatarblock___avatar___node_locale",
+  ButtonAuthoravatarblockAvatarPlaceholderUrl = "button___authoravatarblock___avatar___placeholderUrl",
+  ButtonAuthoravatarblockAvatarPublicUrl = "button___authoravatarblock___avatar___publicUrl",
+  ButtonAuthoravatarblockAvatarSpaceId = "button___authoravatarblock___avatar___spaceId",
+  ButtonAuthoravatarblockAvatarTitle = "button___authoravatarblock___avatar___title",
+  ButtonAuthoravatarblockAvatarUpdatedAt = "button___authoravatarblock___avatar___updatedAt",
+  ButtonAuthoravatarblockAvatarUrl = "button___authoravatarblock___avatar___url",
+  ButtonAuthoravatarblockAvatarWidth = "button___authoravatarblock___avatar___width",
+  ButtonAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "button___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  ButtonAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "button___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  ButtonAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "button___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  ButtonAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeId = "button___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  ButtonAuthoravatarblockChildren = "button___authoravatarblock___children",
+  ButtonAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "button___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  ButtonAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "button___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  ButtonAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "button___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  ButtonAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "button___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  ButtonAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeId = "button___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  ButtonAuthoravatarblockChildrenChildren = "button___authoravatarblock___children___children",
+  ButtonAuthoravatarblockChildrenId = "button___authoravatarblock___children___id",
+  ButtonAuthoravatarblockContentblock = "button___authoravatarblock___contentblock",
+  ButtonAuthoravatarblockContentblockChildren = "button___authoravatarblock___contentblock___children",
+  ButtonAuthoravatarblockContentblockContentfulId = "button___authoravatarblock___contentblock___contentful_id",
+  ButtonAuthoravatarblockContentblockCreatedAt = "button___authoravatarblock___contentblock___createdAt",
+  ButtonAuthoravatarblockContentblockId = "button___authoravatarblock___contentblock___id",
+  ButtonAuthoravatarblockContentblockMargin = "button___authoravatarblock___contentblock___margin",
+  ButtonAuthoravatarblockContentblockNodeLocale = "button___authoravatarblock___contentblock___node_locale",
+  ButtonAuthoravatarblockContentblockPage = "button___authoravatarblock___contentblock___page",
+  ButtonAuthoravatarblockContentblockSpaceId = "button___authoravatarblock___contentblock___spaceId",
+  ButtonAuthoravatarblockContentblockUniqueId = "button___authoravatarblock___contentblock___uniqueId",
+  ButtonAuthoravatarblockContentblockUpdatedAt = "button___authoravatarblock___contentblock___updatedAt",
+  ButtonAuthoravatarblockContentfulId = "button___authoravatarblock___contentful_id",
+  ButtonAuthoravatarblockCreatedAt = "button___authoravatarblock___createdAt",
+  ButtonAuthoravatarblockDescriptionChildren = "button___authoravatarblock___description___children",
+  ButtonAuthoravatarblockDescriptionChildrenMdx = "button___authoravatarblock___description___childrenMdx",
+  ButtonAuthoravatarblockDescriptionDescription = "button___authoravatarblock___description___description",
+  ButtonAuthoravatarblockDescriptionId = "button___authoravatarblock___description___id",
+  ButtonAuthoravatarblockFullName = "button___authoravatarblock___fullName",
+  ButtonAuthoravatarblockId = "button___authoravatarblock___id",
+  ButtonAuthoravatarblockInternalContent = "button___authoravatarblock___internal___content",
+  ButtonAuthoravatarblockInternalContentDigest = "button___authoravatarblock___internal___contentDigest",
+  ButtonAuthoravatarblockInternalDescription = "button___authoravatarblock___internal___description",
+  ButtonAuthoravatarblockInternalFieldOwners = "button___authoravatarblock___internal___fieldOwners",
+  ButtonAuthoravatarblockInternalIgnoreType = "button___authoravatarblock___internal___ignoreType",
+  ButtonAuthoravatarblockInternalMediaType = "button___authoravatarblock___internal___mediaType",
+  ButtonAuthoravatarblockInternalOwner = "button___authoravatarblock___internal___owner",
+  ButtonAuthoravatarblockInternalType = "button___authoravatarblock___internal___type",
+  ButtonAuthoravatarblockNodeLocale = "button___authoravatarblock___node_locale",
+  ButtonAuthoravatarblockParentChildren = "button___authoravatarblock___parent___children",
+  ButtonAuthoravatarblockParentId = "button___authoravatarblock___parent___id",
+  ButtonAuthoravatarblockSocialSiteLinks = "button___authoravatarblock___socialSiteLinks",
+  ButtonAuthoravatarblockSocialSiteLinksActioninfoblock = "button___authoravatarblock___socialSiteLinks___actioninfoblock",
+  ButtonAuthoravatarblockSocialSiteLinksAuthoravatarblock = "button___authoravatarblock___socialSiteLinks___authoravatarblock",
+  ButtonAuthoravatarblockSocialSiteLinksChildren = "button___authoravatarblock___socialSiteLinks___children",
+  ButtonAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "button___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  ButtonAuthoravatarblockSocialSiteLinksContentfulId = "button___authoravatarblock___socialSiteLinks___contentful_id",
+  ButtonAuthoravatarblockSocialSiteLinksContentfulid = "button___authoravatarblock___socialSiteLinks___contentfulid",
+  ButtonAuthoravatarblockSocialSiteLinksCreatedAt = "button___authoravatarblock___socialSiteLinks___createdAt",
+  ButtonAuthoravatarblockSocialSiteLinksId = "button___authoravatarblock___socialSiteLinks___id",
+  ButtonAuthoravatarblockSocialSiteLinksNodeLocale = "button___authoravatarblock___socialSiteLinks___node_locale",
+  ButtonAuthoravatarblockSocialSiteLinksOptions = "button___authoravatarblock___socialSiteLinks___options",
+  ButtonAuthoravatarblockSocialSiteLinksSpaceId = "button___authoravatarblock___socialSiteLinks___spaceId",
+  ButtonAuthoravatarblockSocialSiteLinksTitle = "button___authoravatarblock___socialSiteLinks___title",
+  ButtonAuthoravatarblockSocialSiteLinksUpdatedAt = "button___authoravatarblock___socialSiteLinks___updatedAt",
+  ButtonAuthoravatarblockSpaceId = "button___authoravatarblock___spaceId",
+  ButtonAuthoravatarblockSysRevision = "button___authoravatarblock___sys___revision",
+  ButtonAuthoravatarblockSysType = "button___authoravatarblock___sys___type",
+  ButtonAuthoravatarblockUniqueId = "button___authoravatarblock___uniqueId",
+  ButtonAuthoravatarblockUpdatedAt = "button___authoravatarblock___updatedAt",
+  ButtonChildContentfulLinkUrlTextNodeChildMdxBody = "button___childContentfulLinkUrlTextNode___childMdx___body",
+  ButtonChildContentfulLinkUrlTextNodeChildMdxChildren = "button___childContentfulLinkUrlTextNode___childMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonChildContentfulLinkUrlTextNodeChildMdxExcerpt = "button___childContentfulLinkUrlTextNode___childMdx___excerpt",
+  ButtonChildContentfulLinkUrlTextNodeChildMdxFileAbsolutePath = "button___childContentfulLinkUrlTextNode___childMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonChildContentfulLinkUrlTextNodeChildMdxHeadings = "button___childContentfulLinkUrlTextNode___childMdx___headings",
+  ButtonChildContentfulLinkUrlTextNodeChildMdxHtml = "button___childContentfulLinkUrlTextNode___childMdx___html",
+  ButtonChildContentfulLinkUrlTextNodeChildMdxId = "button___childContentfulLinkUrlTextNode___childMdx___id",
+  ButtonChildContentfulLinkUrlTextNodeChildMdxMdxAst = "button___childContentfulLinkUrlTextNode___childMdx___mdxAST",
+  ButtonChildContentfulLinkUrlTextNodeChildMdxRawBody = "button___childContentfulLinkUrlTextNode___childMdx___rawBody",
+  ButtonChildContentfulLinkUrlTextNodeChildMdxSlug = "button___childContentfulLinkUrlTextNode___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonChildContentfulLinkUrlTextNodeChildMdxTableOfContents = "button___childContentfulLinkUrlTextNode___childMdx___tableOfContents",
+  ButtonChildContentfulLinkUrlTextNodeChildMdxTimeToRead = "button___childContentfulLinkUrlTextNode___childMdx___timeToRead",
+  ButtonChildContentfulLinkUrlTextNodeChildren = "button___childContentfulLinkUrlTextNode___children",
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdx = "button___childContentfulLinkUrlTextNode___childrenMdx",
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdxBody = "button___childContentfulLinkUrlTextNode___childrenMdx___body",
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdxChildren = "button___childContentfulLinkUrlTextNode___childrenMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdxExcerpt = "button___childContentfulLinkUrlTextNode___childrenMdx___excerpt",
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdxFileAbsolutePath = "button___childContentfulLinkUrlTextNode___childrenMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdxHeadings = "button___childContentfulLinkUrlTextNode___childrenMdx___headings",
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdxHtml = "button___childContentfulLinkUrlTextNode___childrenMdx___html",
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdxId = "button___childContentfulLinkUrlTextNode___childrenMdx___id",
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdxMdxAst = "button___childContentfulLinkUrlTextNode___childrenMdx___mdxAST",
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdxRawBody = "button___childContentfulLinkUrlTextNode___childrenMdx___rawBody",
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdxSlug = "button___childContentfulLinkUrlTextNode___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdxTableOfContents = "button___childContentfulLinkUrlTextNode___childrenMdx___tableOfContents",
+  ButtonChildContentfulLinkUrlTextNodeChildrenMdxTimeToRead = "button___childContentfulLinkUrlTextNode___childrenMdx___timeToRead",
+  ButtonChildContentfulLinkUrlTextNodeChildrenChildren = "button___childContentfulLinkUrlTextNode___children___children",
+  ButtonChildContentfulLinkUrlTextNodeChildrenId = "button___childContentfulLinkUrlTextNode___children___id",
+  ButtonChildContentfulLinkUrlTextNodeId = "button___childContentfulLinkUrlTextNode___id",
+  ButtonChildContentfulLinkUrlTextNodeInternalContent = "button___childContentfulLinkUrlTextNode___internal___content",
+  ButtonChildContentfulLinkUrlTextNodeInternalContentDigest = "button___childContentfulLinkUrlTextNode___internal___contentDigest",
+  ButtonChildContentfulLinkUrlTextNodeInternalDescription = "button___childContentfulLinkUrlTextNode___internal___description",
+  ButtonChildContentfulLinkUrlTextNodeInternalFieldOwners = "button___childContentfulLinkUrlTextNode___internal___fieldOwners",
+  ButtonChildContentfulLinkUrlTextNodeInternalIgnoreType = "button___childContentfulLinkUrlTextNode___internal___ignoreType",
+  ButtonChildContentfulLinkUrlTextNodeInternalMediaType = "button___childContentfulLinkUrlTextNode___internal___mediaType",
+  ButtonChildContentfulLinkUrlTextNodeInternalOwner = "button___childContentfulLinkUrlTextNode___internal___owner",
+  ButtonChildContentfulLinkUrlTextNodeInternalType = "button___childContentfulLinkUrlTextNode___internal___type",
+  ButtonChildContentfulLinkUrlTextNodeParentChildren = "button___childContentfulLinkUrlTextNode___parent___children",
+  ButtonChildContentfulLinkUrlTextNodeParentId = "button___childContentfulLinkUrlTextNode___parent___id",
+  ButtonChildContentfulLinkUrlTextNodeSysType = "button___childContentfulLinkUrlTextNode___sys___type",
+  ButtonChildContentfulLinkUrlTextNodeUrl = "button___childContentfulLinkUrlTextNode___url",
+  ButtonChildren = "button___children",
+  ButtonChildrenContentfulLinkUrlTextNode = "button___childrenContentfulLinkUrlTextNode",
+  ButtonChildrenContentfulLinkUrlTextNodeChildMdxBody = "button___childrenContentfulLinkUrlTextNode___childMdx___body",
+  ButtonChildrenContentfulLinkUrlTextNodeChildMdxChildren = "button___childrenContentfulLinkUrlTextNode___childMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonChildrenContentfulLinkUrlTextNodeChildMdxExcerpt = "button___childrenContentfulLinkUrlTextNode___childMdx___excerpt",
+  ButtonChildrenContentfulLinkUrlTextNodeChildMdxFileAbsolutePath = "button___childrenContentfulLinkUrlTextNode___childMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonChildrenContentfulLinkUrlTextNodeChildMdxHeadings = "button___childrenContentfulLinkUrlTextNode___childMdx___headings",
+  ButtonChildrenContentfulLinkUrlTextNodeChildMdxHtml = "button___childrenContentfulLinkUrlTextNode___childMdx___html",
+  ButtonChildrenContentfulLinkUrlTextNodeChildMdxId = "button___childrenContentfulLinkUrlTextNode___childMdx___id",
+  ButtonChildrenContentfulLinkUrlTextNodeChildMdxMdxAst = "button___childrenContentfulLinkUrlTextNode___childMdx___mdxAST",
+  ButtonChildrenContentfulLinkUrlTextNodeChildMdxRawBody = "button___childrenContentfulLinkUrlTextNode___childMdx___rawBody",
+  ButtonChildrenContentfulLinkUrlTextNodeChildMdxSlug = "button___childrenContentfulLinkUrlTextNode___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonChildrenContentfulLinkUrlTextNodeChildMdxTableOfContents = "button___childrenContentfulLinkUrlTextNode___childMdx___tableOfContents",
+  ButtonChildrenContentfulLinkUrlTextNodeChildMdxTimeToRead = "button___childrenContentfulLinkUrlTextNode___childMdx___timeToRead",
+  ButtonChildrenContentfulLinkUrlTextNodeChildren = "button___childrenContentfulLinkUrlTextNode___children",
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdx = "button___childrenContentfulLinkUrlTextNode___childrenMdx",
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdxBody = "button___childrenContentfulLinkUrlTextNode___childrenMdx___body",
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdxChildren = "button___childrenContentfulLinkUrlTextNode___childrenMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdxExcerpt = "button___childrenContentfulLinkUrlTextNode___childrenMdx___excerpt",
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdxFileAbsolutePath = "button___childrenContentfulLinkUrlTextNode___childrenMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdxHeadings = "button___childrenContentfulLinkUrlTextNode___childrenMdx___headings",
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdxHtml = "button___childrenContentfulLinkUrlTextNode___childrenMdx___html",
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdxId = "button___childrenContentfulLinkUrlTextNode___childrenMdx___id",
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdxMdxAst = "button___childrenContentfulLinkUrlTextNode___childrenMdx___mdxAST",
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdxRawBody = "button___childrenContentfulLinkUrlTextNode___childrenMdx___rawBody",
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdxSlug = "button___childrenContentfulLinkUrlTextNode___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdxTableOfContents = "button___childrenContentfulLinkUrlTextNode___childrenMdx___tableOfContents",
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenMdxTimeToRead = "button___childrenContentfulLinkUrlTextNode___childrenMdx___timeToRead",
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenChildren = "button___childrenContentfulLinkUrlTextNode___children___children",
+  ButtonChildrenContentfulLinkUrlTextNodeChildrenId = "button___childrenContentfulLinkUrlTextNode___children___id",
+  ButtonChildrenContentfulLinkUrlTextNodeId = "button___childrenContentfulLinkUrlTextNode___id",
+  ButtonChildrenContentfulLinkUrlTextNodeInternalContent = "button___childrenContentfulLinkUrlTextNode___internal___content",
+  ButtonChildrenContentfulLinkUrlTextNodeInternalContentDigest = "button___childrenContentfulLinkUrlTextNode___internal___contentDigest",
+  ButtonChildrenContentfulLinkUrlTextNodeInternalDescription = "button___childrenContentfulLinkUrlTextNode___internal___description",
+  ButtonChildrenContentfulLinkUrlTextNodeInternalFieldOwners = "button___childrenContentfulLinkUrlTextNode___internal___fieldOwners",
+  ButtonChildrenContentfulLinkUrlTextNodeInternalIgnoreType = "button___childrenContentfulLinkUrlTextNode___internal___ignoreType",
+  ButtonChildrenContentfulLinkUrlTextNodeInternalMediaType = "button___childrenContentfulLinkUrlTextNode___internal___mediaType",
+  ButtonChildrenContentfulLinkUrlTextNodeInternalOwner = "button___childrenContentfulLinkUrlTextNode___internal___owner",
+  ButtonChildrenContentfulLinkUrlTextNodeInternalType = "button___childrenContentfulLinkUrlTextNode___internal___type",
+  ButtonChildrenContentfulLinkUrlTextNodeParentChildren = "button___childrenContentfulLinkUrlTextNode___parent___children",
+  ButtonChildrenContentfulLinkUrlTextNodeParentId = "button___childrenContentfulLinkUrlTextNode___parent___id",
+  ButtonChildrenContentfulLinkUrlTextNodeSysType = "button___childrenContentfulLinkUrlTextNode___sys___type",
+  ButtonChildrenContentfulLinkUrlTextNodeUrl = "button___childrenContentfulLinkUrlTextNode___url",
+  ButtonChildrenChildren = "button___children___children",
+  ButtonChildrenChildrenChildren = "button___children___children___children",
+  ButtonChildrenChildrenId = "button___children___children___id",
+  ButtonChildrenId = "button___children___id",
+  ButtonChildrenInternalContent = "button___children___internal___content",
+  ButtonChildrenInternalContentDigest = "button___children___internal___contentDigest",
+  ButtonChildrenInternalDescription = "button___children___internal___description",
+  ButtonChildrenInternalFieldOwners = "button___children___internal___fieldOwners",
+  ButtonChildrenInternalIgnoreType = "button___children___internal___ignoreType",
+  ButtonChildrenInternalMediaType = "button___children___internal___mediaType",
+  ButtonChildrenInternalOwner = "button___children___internal___owner",
+  ButtonChildrenInternalType = "button___children___internal___type",
+  ButtonChildrenParentChildren = "button___children___parent___children",
+  ButtonChildrenParentId = "button___children___parent___id",
+  ButtonContentfulId = "button___contentful_id",
+  ButtonContentfulid = "button___contentfulid",
+  ButtonCreatedAt = "button___createdAt",
+  ButtonId = "button___id",
+  ButtonImageChildren = "button___image___children",
+  ButtonImageChildrenChildren = "button___image___children___children",
+  ButtonImageChildrenId = "button___image___children___id",
+  ButtonImageContentfulId = "button___image___contentful_id",
+  ButtonImageCreatedAt = "button___image___createdAt",
+  ButtonImageDescription = "button___image___description",
+  ButtonImageFileContentType = "button___image___file___contentType",
+  ButtonImageFileFileName = "button___image___file___fileName",
+  ButtonImageFileUrl = "button___image___file___url",
+  ButtonImageFilename = "button___image___filename",
+  ButtonImageFilesize = "button___image___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonImageGatsbyImage = "button___image___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonImageGatsbyImageData = "button___image___gatsbyImageData",
+  ButtonImageHeight = "button___image___height",
+  ButtonImageId = "button___image___id",
+  ButtonImageInternalContent = "button___image___internal___content",
+  ButtonImageInternalContentDigest = "button___image___internal___contentDigest",
+  ButtonImageInternalDescription = "button___image___internal___description",
+  ButtonImageInternalFieldOwners = "button___image___internal___fieldOwners",
+  ButtonImageInternalIgnoreType = "button___image___internal___ignoreType",
+  ButtonImageInternalMediaType = "button___image___internal___mediaType",
+  ButtonImageInternalOwner = "button___image___internal___owner",
+  ButtonImageInternalType = "button___image___internal___type",
+  ButtonImageMimeType = "button___image___mimeType",
+  ButtonImageNodeLocale = "button___image___node_locale",
+  ButtonImageParentChildren = "button___image___parent___children",
+  ButtonImageParentId = "button___image___parent___id",
+  ButtonImagePlaceholderUrl = "button___image___placeholderUrl",
+  ButtonImagePublicUrl = "button___image___publicUrl",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonImageResizeHeight = "button___image___resize___height",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonImageResizeSrc = "button___image___resize___src",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonImageResizeWidth = "button___image___resize___width",
+  ButtonImageSpaceId = "button___image___spaceId",
+  ButtonImageSysRevision = "button___image___sys___revision",
+  ButtonImageSysType = "button___image___sys___type",
+  ButtonImageTitle = "button___image___title",
+  ButtonImageUpdatedAt = "button___image___updatedAt",
+  ButtonImageUrl = "button___image___url",
+  ButtonImageWidth = "button___image___width",
+  ButtonInternalContent = "button___internal___content",
+  ButtonInternalContentDigest = "button___internal___contentDigest",
+  ButtonInternalDescription = "button___internal___description",
+  ButtonInternalFieldOwners = "button___internal___fieldOwners",
+  ButtonInternalIgnoreType = "button___internal___ignoreType",
+  ButtonInternalMediaType = "button___internal___mediaType",
+  ButtonInternalOwner = "button___internal___owner",
+  ButtonInternalType = "button___internal___type",
+  ButtonNodeLocale = "button___node_locale",
+  ButtonOptions = "button___options",
+  ButtonOptionsBottomBarLogoActioninfoblock = "button___options___bottomBarLogo___actioninfoblock",
+  ButtonOptionsBottomBarLogoAuthoravatarblock = "button___options___bottomBarLogo___authoravatarblock",
+  ButtonOptionsBottomBarLogoChildren = "button___options___bottomBarLogo___children",
+  ButtonOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "button___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
+  ButtonOptionsBottomBarLogoContentfulId = "button___options___bottomBarLogo___contentful_id",
+  ButtonOptionsBottomBarLogoContentfulid = "button___options___bottomBarLogo___contentfulid",
+  ButtonOptionsBottomBarLogoCreatedAt = "button___options___bottomBarLogo___createdAt",
+  ButtonOptionsBottomBarLogoId = "button___options___bottomBarLogo___id",
+  ButtonOptionsBottomBarLogoNodeLocale = "button___options___bottomBarLogo___node_locale",
+  ButtonOptionsBottomBarLogoOptions = "button___options___bottomBarLogo___options",
+  ButtonOptionsBottomBarLogoSpaceId = "button___options___bottomBarLogo___spaceId",
+  ButtonOptionsBottomBarLogoTitle = "button___options___bottomBarLogo___title",
+  ButtonOptionsBottomBarLogoUpdatedAt = "button___options___bottomBarLogo___updatedAt",
+  ButtonOptionsBottomBarSocialLinks = "button___options___bottomBarSocialLinks",
+  ButtonOptionsBottomBarSocialLinksActioninfoblock = "button___options___bottomBarSocialLinks___actioninfoblock",
+  ButtonOptionsBottomBarSocialLinksAuthoravatarblock = "button___options___bottomBarSocialLinks___authoravatarblock",
+  ButtonOptionsBottomBarSocialLinksChildren = "button___options___bottomBarSocialLinks___children",
+  ButtonOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "button___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  ButtonOptionsBottomBarSocialLinksContentfulId = "button___options___bottomBarSocialLinks___contentful_id",
+  ButtonOptionsBottomBarSocialLinksContentfulid = "button___options___bottomBarSocialLinks___contentfulid",
+  ButtonOptionsBottomBarSocialLinksCreatedAt = "button___options___bottomBarSocialLinks___createdAt",
+  ButtonOptionsBottomBarSocialLinksId = "button___options___bottomBarSocialLinks___id",
+  ButtonOptionsBottomBarSocialLinksNodeLocale = "button___options___bottomBarSocialLinks___node_locale",
+  ButtonOptionsBottomBarSocialLinksOptions = "button___options___bottomBarSocialLinks___options",
+  ButtonOptionsBottomBarSocialLinksSpaceId = "button___options___bottomBarSocialLinks___spaceId",
+  ButtonOptionsBottomBarSocialLinksTitle = "button___options___bottomBarSocialLinks___title",
+  ButtonOptionsBottomBarSocialLinksUpdatedAt = "button___options___bottomBarSocialLinks___updatedAt",
+  ButtonOptionsBottomBarTabs = "button___options___bottomBarTabs",
+  ButtonOptionsBottomBarTabsActioninfoblock = "button___options___bottomBarTabs___actioninfoblock",
+  ButtonOptionsBottomBarTabsAuthoravatarblock = "button___options___bottomBarTabs___authoravatarblock",
+  ButtonOptionsBottomBarTabsChildren = "button___options___bottomBarTabs___children",
+  ButtonOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "button___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
+  ButtonOptionsBottomBarTabsContentfulId = "button___options___bottomBarTabs___contentful_id",
+  ButtonOptionsBottomBarTabsContentfulid = "button___options___bottomBarTabs___contentfulid",
+  ButtonOptionsBottomBarTabsCreatedAt = "button___options___bottomBarTabs___createdAt",
+  ButtonOptionsBottomBarTabsId = "button___options___bottomBarTabs___id",
+  ButtonOptionsBottomBarTabsNodeLocale = "button___options___bottomBarTabs___node_locale",
+  ButtonOptionsBottomBarTabsOptions = "button___options___bottomBarTabs___options",
+  ButtonOptionsBottomBarTabsSpaceId = "button___options___bottomBarTabs___spaceId",
+  ButtonOptionsBottomBarTabsTitle = "button___options___bottomBarTabs___title",
+  ButtonOptionsBottomBarTabsUpdatedAt = "button___options___bottomBarTabs___updatedAt",
+  ButtonOptionsChildren = "button___options___children",
+  ButtonOptionsChildrenChildren = "button___options___children___children",
+  ButtonOptionsChildrenId = "button___options___children___id",
+  ButtonOptionsContentfulId = "button___options___contentful_id",
+  ButtonOptionsContentfulid = "button___options___contentfulid",
+  ButtonOptionsCreatedAt = "button___options___createdAt",
+  ButtonOptionsId = "button___options___id",
+  ButtonOptionsInternalContent = "button___options___internal___content",
+  ButtonOptionsInternalContentDigest = "button___options___internal___contentDigest",
+  ButtonOptionsInternalDescription = "button___options___internal___description",
+  ButtonOptionsInternalFieldOwners = "button___options___internal___fieldOwners",
+  ButtonOptionsInternalIgnoreType = "button___options___internal___ignoreType",
+  ButtonOptionsInternalMediaType = "button___options___internal___mediaType",
+  ButtonOptionsInternalOwner = "button___options___internal___owner",
+  ButtonOptionsInternalType = "button___options___internal___type",
+  ButtonOptionsNodeLocale = "button___options___node_locale",
+  ButtonOptionsParentChildren = "button___options___parent___children",
+  ButtonOptionsParentId = "button___options___parent___id",
+  ButtonOptionsSpaceId = "button___options___spaceId",
+  ButtonOptionsSysRevision = "button___options___sys___revision",
+  ButtonOptionsSysType = "button___options___sys___type",
+  ButtonOptionsTopBarLogoActioninfoblock = "button___options___topBarLogo___actioninfoblock",
+  ButtonOptionsTopBarLogoAuthoravatarblock = "button___options___topBarLogo___authoravatarblock",
+  ButtonOptionsTopBarLogoChildren = "button___options___topBarLogo___children",
+  ButtonOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "button___options___topBarLogo___childrenContentfulLinkUrlTextNode",
+  ButtonOptionsTopBarLogoContentfulId = "button___options___topBarLogo___contentful_id",
+  ButtonOptionsTopBarLogoContentfulid = "button___options___topBarLogo___contentfulid",
+  ButtonOptionsTopBarLogoCreatedAt = "button___options___topBarLogo___createdAt",
+  ButtonOptionsTopBarLogoId = "button___options___topBarLogo___id",
+  ButtonOptionsTopBarLogoNodeLocale = "button___options___topBarLogo___node_locale",
+  ButtonOptionsTopBarLogoOptions = "button___options___topBarLogo___options",
+  ButtonOptionsTopBarLogoSpaceId = "button___options___topBarLogo___spaceId",
+  ButtonOptionsTopBarLogoTitle = "button___options___topBarLogo___title",
+  ButtonOptionsTopBarLogoUpdatedAt = "button___options___topBarLogo___updatedAt",
+  ButtonOptionsTopBarSocialLinks = "button___options___topBarSocialLinks",
+  ButtonOptionsTopBarSocialLinksActioninfoblock = "button___options___topBarSocialLinks___actioninfoblock",
+  ButtonOptionsTopBarSocialLinksAuthoravatarblock = "button___options___topBarSocialLinks___authoravatarblock",
+  ButtonOptionsTopBarSocialLinksChildren = "button___options___topBarSocialLinks___children",
+  ButtonOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "button___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  ButtonOptionsTopBarSocialLinksContentfulId = "button___options___topBarSocialLinks___contentful_id",
+  ButtonOptionsTopBarSocialLinksContentfulid = "button___options___topBarSocialLinks___contentfulid",
+  ButtonOptionsTopBarSocialLinksCreatedAt = "button___options___topBarSocialLinks___createdAt",
+  ButtonOptionsTopBarSocialLinksId = "button___options___topBarSocialLinks___id",
+  ButtonOptionsTopBarSocialLinksNodeLocale = "button___options___topBarSocialLinks___node_locale",
+  ButtonOptionsTopBarSocialLinksOptions = "button___options___topBarSocialLinks___options",
+  ButtonOptionsTopBarSocialLinksSpaceId = "button___options___topBarSocialLinks___spaceId",
+  ButtonOptionsTopBarSocialLinksTitle = "button___options___topBarSocialLinks___title",
+  ButtonOptionsTopBarSocialLinksUpdatedAt = "button___options___topBarSocialLinks___updatedAt",
+  ButtonOptionsTopBarTabs = "button___options___topBarTabs",
+  ButtonOptionsTopBarTabsActioninfoblock = "button___options___topBarTabs___actioninfoblock",
+  ButtonOptionsTopBarTabsAuthoravatarblock = "button___options___topBarTabs___authoravatarblock",
+  ButtonOptionsTopBarTabsChildren = "button___options___topBarTabs___children",
+  ButtonOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "button___options___topBarTabs___childrenContentfulLinkUrlTextNode",
+  ButtonOptionsTopBarTabsContentfulId = "button___options___topBarTabs___contentful_id",
+  ButtonOptionsTopBarTabsContentfulid = "button___options___topBarTabs___contentfulid",
+  ButtonOptionsTopBarTabsCreatedAt = "button___options___topBarTabs___createdAt",
+  ButtonOptionsTopBarTabsId = "button___options___topBarTabs___id",
+  ButtonOptionsTopBarTabsNodeLocale = "button___options___topBarTabs___node_locale",
+  ButtonOptionsTopBarTabsOptions = "button___options___topBarTabs___options",
+  ButtonOptionsTopBarTabsSpaceId = "button___options___topBarTabs___spaceId",
+  ButtonOptionsTopBarTabsTitle = "button___options___topBarTabs___title",
+  ButtonOptionsTopBarTabsUpdatedAt = "button___options___topBarTabs___updatedAt",
+  ButtonOptionsUpdatedAt = "button___options___updatedAt",
+  ButtonParentChildren = "button___parent___children",
+  ButtonParentChildrenChildren = "button___parent___children___children",
+  ButtonParentChildrenId = "button___parent___children___id",
+  ButtonParentId = "button___parent___id",
+  ButtonParentInternalContent = "button___parent___internal___content",
+  ButtonParentInternalContentDigest = "button___parent___internal___contentDigest",
+  ButtonParentInternalDescription = "button___parent___internal___description",
+  ButtonParentInternalFieldOwners = "button___parent___internal___fieldOwners",
+  ButtonParentInternalIgnoreType = "button___parent___internal___ignoreType",
+  ButtonParentInternalMediaType = "button___parent___internal___mediaType",
+  ButtonParentInternalOwner = "button___parent___internal___owner",
+  ButtonParentInternalType = "button___parent___internal___type",
+  ButtonParentParentChildren = "button___parent___parent___children",
+  ButtonParentParentId = "button___parent___parent___id",
+  ButtonSpaceId = "button___spaceId",
+  ButtonSysRevision = "button___sys___revision",
+  ButtonSysType = "button___sys___type",
+  ButtonTitle = "button___title",
+  ButtonUpdatedAt = "button___updatedAt",
+  ButtonUrlChildMdxBody = "button___url___childMdx___body",
+  ButtonUrlChildMdxChildren = "button___url___childMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonUrlChildMdxExcerpt = "button___url___childMdx___excerpt",
+  ButtonUrlChildMdxFileAbsolutePath = "button___url___childMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonUrlChildMdxHeadings = "button___url___childMdx___headings",
+  ButtonUrlChildMdxHtml = "button___url___childMdx___html",
+  ButtonUrlChildMdxId = "button___url___childMdx___id",
+  ButtonUrlChildMdxMdxAst = "button___url___childMdx___mdxAST",
+  ButtonUrlChildMdxRawBody = "button___url___childMdx___rawBody",
+  ButtonUrlChildMdxSlug = "button___url___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonUrlChildMdxTableOfContents = "button___url___childMdx___tableOfContents",
+  ButtonUrlChildMdxTimeToRead = "button___url___childMdx___timeToRead",
+  ButtonUrlChildren = "button___url___children",
+  ButtonUrlChildrenMdx = "button___url___childrenMdx",
+  ButtonUrlChildrenMdxBody = "button___url___childrenMdx___body",
+  ButtonUrlChildrenMdxChildren = "button___url___childrenMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonUrlChildrenMdxExcerpt = "button___url___childrenMdx___excerpt",
+  ButtonUrlChildrenMdxFileAbsolutePath = "button___url___childrenMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonUrlChildrenMdxHeadings = "button___url___childrenMdx___headings",
+  ButtonUrlChildrenMdxHtml = "button___url___childrenMdx___html",
+  ButtonUrlChildrenMdxId = "button___url___childrenMdx___id",
+  ButtonUrlChildrenMdxMdxAst = "button___url___childrenMdx___mdxAST",
+  ButtonUrlChildrenMdxRawBody = "button___url___childrenMdx___rawBody",
+  ButtonUrlChildrenMdxSlug = "button___url___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ButtonUrlChildrenMdxTableOfContents = "button___url___childrenMdx___tableOfContents",
+  ButtonUrlChildrenMdxTimeToRead = "button___url___childrenMdx___timeToRead",
+  ButtonUrlChildrenChildren = "button___url___children___children",
+  ButtonUrlChildrenId = "button___url___children___id",
+  ButtonUrlId = "button___url___id",
+  ButtonUrlInternalContent = "button___url___internal___content",
+  ButtonUrlInternalContentDigest = "button___url___internal___contentDigest",
+  ButtonUrlInternalDescription = "button___url___internal___description",
+  ButtonUrlInternalFieldOwners = "button___url___internal___fieldOwners",
+  ButtonUrlInternalIgnoreType = "button___url___internal___ignoreType",
+  ButtonUrlInternalMediaType = "button___url___internal___mediaType",
+  ButtonUrlInternalOwner = "button___url___internal___owner",
+  ButtonUrlInternalType = "button___url___internal___type",
+  ButtonUrlParentChildren = "button___url___parent___children",
+  ButtonUrlParentId = "button___url___parent___id",
+  ButtonUrlSysType = "button___url___sys___type",
+  ButtonUrlUrl = "button___url___url",
+  Children = "children",
+  ChildrenChildren = "children___children",
+  ChildrenChildrenChildren = "children___children___children",
+  ChildrenChildrenChildrenChildren = "children___children___children___children",
+  ChildrenChildrenChildrenId = "children___children___children___id",
+  ChildrenChildrenId = "children___children___id",
+  ChildrenChildrenInternalContent = "children___children___internal___content",
+  ChildrenChildrenInternalContentDigest = "children___children___internal___contentDigest",
+  ChildrenChildrenInternalDescription = "children___children___internal___description",
+  ChildrenChildrenInternalFieldOwners = "children___children___internal___fieldOwners",
+  ChildrenChildrenInternalIgnoreType = "children___children___internal___ignoreType",
+  ChildrenChildrenInternalMediaType = "children___children___internal___mediaType",
+  ChildrenChildrenInternalOwner = "children___children___internal___owner",
+  ChildrenChildrenInternalType = "children___children___internal___type",
+  ChildrenChildrenParentChildren = "children___children___parent___children",
+  ChildrenChildrenParentId = "children___children___parent___id",
+  ChildrenId = "children___id",
+  ChildrenInternalContent = "children___internal___content",
+  ChildrenInternalContentDigest = "children___internal___contentDigest",
+  ChildrenInternalDescription = "children___internal___description",
+  ChildrenInternalFieldOwners = "children___internal___fieldOwners",
+  ChildrenInternalIgnoreType = "children___internal___ignoreType",
+  ChildrenInternalMediaType = "children___internal___mediaType",
+  ChildrenInternalOwner = "children___internal___owner",
+  ChildrenInternalType = "children___internal___type",
+  ChildrenParentChildren = "children___parent___children",
+  ChildrenParentChildrenChildren = "children___parent___children___children",
+  ChildrenParentChildrenId = "children___parent___children___id",
+  ChildrenParentId = "children___parent___id",
+  ChildrenParentInternalContent = "children___parent___internal___content",
+  ChildrenParentInternalContentDigest = "children___parent___internal___contentDigest",
+  ChildrenParentInternalDescription = "children___parent___internal___description",
+  ChildrenParentInternalFieldOwners = "children___parent___internal___fieldOwners",
+  ChildrenParentInternalIgnoreType = "children___parent___internal___ignoreType",
+  ChildrenParentInternalMediaType = "children___parent___internal___mediaType",
+  ChildrenParentInternalOwner = "children___parent___internal___owner",
+  ChildrenParentInternalType = "children___parent___internal___type",
+  ChildrenParentParentChildren = "children___parent___parent___children",
+  ChildrenParentParentId = "children___parent___parent___id",
+  Contentblock = "contentblock",
+  ContentblockChildren = "contentblock___children",
+  ContentblockChildrenChildren = "contentblock___children___children",
+  ContentblockChildrenChildrenChildren = "contentblock___children___children___children",
+  ContentblockChildrenChildrenId = "contentblock___children___children___id",
+  ContentblockChildrenId = "contentblock___children___id",
+  ContentblockChildrenInternalContent = "contentblock___children___internal___content",
+  ContentblockChildrenInternalContentDigest = "contentblock___children___internal___contentDigest",
+  ContentblockChildrenInternalDescription = "contentblock___children___internal___description",
+  ContentblockChildrenInternalFieldOwners = "contentblock___children___internal___fieldOwners",
+  ContentblockChildrenInternalIgnoreType = "contentblock___children___internal___ignoreType",
+  ContentblockChildrenInternalMediaType = "contentblock___children___internal___mediaType",
+  ContentblockChildrenInternalOwner = "contentblock___children___internal___owner",
+  ContentblockChildrenInternalType = "contentblock___children___internal___type",
+  ContentblockChildrenParentChildren = "contentblock___children___parent___children",
+  ContentblockChildrenParentId = "contentblock___children___parent___id",
+  ContentblockContentfulId = "contentblock___contentful_id",
+  ContentblockCreatedAt = "contentblock___createdAt",
+  ContentblockId = "contentblock___id",
+  ContentblockInternalContent = "contentblock___internal___content",
+  ContentblockInternalContentDigest = "contentblock___internal___contentDigest",
+  ContentblockInternalDescription = "contentblock___internal___description",
+  ContentblockInternalFieldOwners = "contentblock___internal___fieldOwners",
+  ContentblockInternalIgnoreType = "contentblock___internal___ignoreType",
+  ContentblockInternalMediaType = "contentblock___internal___mediaType",
+  ContentblockInternalOwner = "contentblock___internal___owner",
+  ContentblockInternalType = "contentblock___internal___type",
+  ContentblockMargin = "contentblock___margin",
+  ContentblockNodeLocale = "contentblock___node_locale",
+  ContentblockPage = "contentblock___page",
+  ContentblockPageChildContentfulPageDescriptionTextNodeChildren = "contentblock___page___childContentfulPageDescriptionTextNode___children",
+  ContentblockPageChildContentfulPageDescriptionTextNodeChildrenMdx = "contentblock___page___childContentfulPageDescriptionTextNode___childrenMdx",
+  ContentblockPageChildContentfulPageDescriptionTextNodeDescription = "contentblock___page___childContentfulPageDescriptionTextNode___description",
+  ContentblockPageChildContentfulPageDescriptionTextNodeId = "contentblock___page___childContentfulPageDescriptionTextNode___id",
+  ContentblockPageChildren = "contentblock___page___children",
+  ContentblockPageChildrenContentfulPageDescriptionTextNode = "contentblock___page___childrenContentfulPageDescriptionTextNode",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeChildren = "contentblock___page___childrenContentfulPageDescriptionTextNode___children",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeChildrenMdx = "contentblock___page___childrenContentfulPageDescriptionTextNode___childrenMdx",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeDescription = "contentblock___page___childrenContentfulPageDescriptionTextNode___description",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeId = "contentblock___page___childrenContentfulPageDescriptionTextNode___id",
+  ContentblockPageChildrenChildren = "contentblock___page___children___children",
+  ContentblockPageChildrenId = "contentblock___page___children___id",
+  ContentblockPageContent = "contentblock___page___content",
+  ContentblockPageContentChildren = "contentblock___page___content___children",
+  ContentblockPageContentContentfulId = "contentblock___page___content___contentful_id",
+  ContentblockPageContentCreatedAt = "contentblock___page___content___createdAt",
+  ContentblockPageContentId = "contentblock___page___content___id",
+  ContentblockPageContentMargin = "contentblock___page___content___margin",
+  ContentblockPageContentNodeLocale = "contentblock___page___content___node_locale",
+  ContentblockPageContentPage = "contentblock___page___content___page",
+  ContentblockPageContentSpaceId = "contentblock___page___content___spaceId",
+  ContentblockPageContentUniqueId = "contentblock___page___content___uniqueId",
+  ContentblockPageContentUpdatedAt = "contentblock___page___content___updatedAt",
+  ContentblockPageContentfulId = "contentblock___page___contentful_id",
+  ContentblockPageCreatedAt = "contentblock___page___createdAt",
+  ContentblockPageDescriptionChildren = "contentblock___page___description___children",
+  ContentblockPageDescriptionChildrenMdx = "contentblock___page___description___childrenMdx",
+  ContentblockPageDescriptionDescription = "contentblock___page___description___description",
+  ContentblockPageDescriptionId = "contentblock___page___description___id",
+  ContentblockPageId = "contentblock___page___id",
+  ContentblockPageInternalContent = "contentblock___page___internal___content",
+  ContentblockPageInternalContentDigest = "contentblock___page___internal___contentDigest",
+  ContentblockPageInternalDescription = "contentblock___page___internal___description",
+  ContentblockPageInternalFieldOwners = "contentblock___page___internal___fieldOwners",
+  ContentblockPageInternalIgnoreType = "contentblock___page___internal___ignoreType",
+  ContentblockPageInternalMediaType = "contentblock___page___internal___mediaType",
+  ContentblockPageInternalOwner = "contentblock___page___internal___owner",
+  ContentblockPageInternalType = "contentblock___page___internal___type",
+  ContentblockPageNodeLocale = "contentblock___page___node_locale",
+  ContentblockPageParentChildren = "contentblock___page___parent___children",
+  ContentblockPageParentId = "contentblock___page___parent___id",
+  ContentblockPageSpaceId = "contentblock___page___spaceId",
+  ContentblockPageSysRevision = "contentblock___page___sys___revision",
+  ContentblockPageSysType = "contentblock___page___sys___type",
+  ContentblockPageTitle = "contentblock___page___title",
+  ContentblockPageUpdatedAt = "contentblock___page___updatedAt",
+  ContentblockPageUrl = "contentblock___page___url",
+  ContentblockParentChildren = "contentblock___parent___children",
+  ContentblockParentChildrenChildren = "contentblock___parent___children___children",
+  ContentblockParentChildrenId = "contentblock___parent___children___id",
+  ContentblockParentId = "contentblock___parent___id",
+  ContentblockParentInternalContent = "contentblock___parent___internal___content",
+  ContentblockParentInternalContentDigest = "contentblock___parent___internal___contentDigest",
+  ContentblockParentInternalDescription = "contentblock___parent___internal___description",
+  ContentblockParentInternalFieldOwners = "contentblock___parent___internal___fieldOwners",
+  ContentblockParentInternalIgnoreType = "contentblock___parent___internal___ignoreType",
+  ContentblockParentInternalMediaType = "contentblock___parent___internal___mediaType",
+  ContentblockParentInternalOwner = "contentblock___parent___internal___owner",
+  ContentblockParentInternalType = "contentblock___parent___internal___type",
+  ContentblockParentParentChildren = "contentblock___parent___parent___children",
+  ContentblockParentParentId = "contentblock___parent___parent___id",
+  ContentblockSpaceId = "contentblock___spaceId",
+  ContentblockSysRevision = "contentblock___sys___revision",
+  ContentblockSysType = "contentblock___sys___type",
+  ContentblockUniqueId = "contentblock___uniqueId",
+  ContentblockUpdatedAt = "contentblock___updatedAt",
+  ContentfulId = "contentful_id",
+  CreatedAt = "createdAt",
+  Id = "id",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalDescription = "internal___description",
+  InternalFieldOwners = "internal___fieldOwners",
+  InternalIgnoreType = "internal___ignoreType",
+  InternalMediaType = "internal___mediaType",
+  InternalOwner = "internal___owner",
+  InternalType = "internal___type",
+  NodeLocale = "node_locale",
+  ParentChildren = "parent___children",
+  ParentChildrenChildren = "parent___children___children",
+  ParentChildrenChildrenChildren = "parent___children___children___children",
+  ParentChildrenChildrenId = "parent___children___children___id",
+  ParentChildrenId = "parent___children___id",
+  ParentChildrenInternalContent = "parent___children___internal___content",
+  ParentChildrenInternalContentDigest = "parent___children___internal___contentDigest",
+  ParentChildrenInternalDescription = "parent___children___internal___description",
+  ParentChildrenInternalFieldOwners = "parent___children___internal___fieldOwners",
+  ParentChildrenInternalIgnoreType = "parent___children___internal___ignoreType",
+  ParentChildrenInternalMediaType = "parent___children___internal___mediaType",
+  ParentChildrenInternalOwner = "parent___children___internal___owner",
+  ParentChildrenInternalType = "parent___children___internal___type",
+  ParentChildrenParentChildren = "parent___children___parent___children",
+  ParentChildrenParentId = "parent___children___parent___id",
+  ParentId = "parent___id",
+  ParentInternalContent = "parent___internal___content",
+  ParentInternalContentDigest = "parent___internal___contentDigest",
+  ParentInternalDescription = "parent___internal___description",
+  ParentInternalFieldOwners = "parent___internal___fieldOwners",
+  ParentInternalIgnoreType = "parent___internal___ignoreType",
+  ParentInternalMediaType = "parent___internal___mediaType",
+  ParentInternalOwner = "parent___internal___owner",
+  ParentInternalType = "parent___internal___type",
+  ParentParentChildren = "parent___parent___children",
+  ParentParentChildrenChildren = "parent___parent___children___children",
+  ParentParentChildrenId = "parent___parent___children___id",
+  ParentParentId = "parent___parent___id",
+  ParentParentInternalContent = "parent___parent___internal___content",
+  ParentParentInternalContentDigest = "parent___parent___internal___contentDigest",
+  ParentParentInternalDescription = "parent___parent___internal___description",
+  ParentParentInternalFieldOwners = "parent___parent___internal___fieldOwners",
+  ParentParentInternalIgnoreType = "parent___parent___internal___ignoreType",
+  ParentParentInternalMediaType = "parent___parent___internal___mediaType",
+  ParentParentInternalOwner = "parent___parent___internal___owner",
+  ParentParentInternalType = "parent___parent___internal___type",
+  ParentParentParentChildren = "parent___parent___parent___children",
+  ParentParentParentId = "parent___parent___parent___id",
+  SpaceId = "spaceId",
+  SysContentTypeSysId = "sys___contentType___sys___id",
+  SysContentTypeSysLinkType = "sys___contentType___sys___linkType",
+  SysContentTypeSysType = "sys___contentType___sys___type",
+  SysRevision = "sys___revision",
+  SysType = "sys___type",
+  TextPosition = "textPosition",
+  UniqueId = "uniqueId",
+  UpdatedAt = "updatedAt",
+}
+
+export type ContentfulActionInfoBlockFilterInput = {
+  article?: InputMaybe<ContentfulActionInfoBlockArticleFilterInput>;
+  button?: InputMaybe<ContentfulLinkFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentful_id?: InputMaybe<StringQueryOperatorInput>;
+  createdAt?: InputMaybe<DateQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  node_locale?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  spaceId?: InputMaybe<StringQueryOperatorInput>;
+  sys?: InputMaybe<ContentfulActionInfoBlockSysFilterInput>;
+  textPosition?: InputMaybe<StringQueryOperatorInput>;
+  uniqueId?: InputMaybe<StringQueryOperatorInput>;
+  updatedAt?: InputMaybe<DateQueryOperatorInput>;
+};
+
+export type ContentfulActionInfoBlockFilterListInput = {
+  elemMatch?: InputMaybe<ContentfulActionInfoBlockFilterInput>;
+};
+
+export type ContentfulActionInfoBlockGroupConnection = {
+  __typename?: "ContentfulActionInfoBlockGroupConnection";
+  distinct: Array<Scalars["String"]>;
+  edges: Array<ContentfulActionInfoBlockEdge>;
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+  group: Array<ContentfulActionInfoBlockGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<ContentfulActionInfoBlock>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type ContentfulActionInfoBlockGroupConnectionDistinctArgs = {
+  field: ContentfulActionInfoBlockFieldsEnum;
+};
+
+export type ContentfulActionInfoBlockGroupConnectionGroupArgs = {
+  field: ContentfulActionInfoBlockFieldsEnum;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+};
+
+export type ContentfulActionInfoBlockGroupConnectionMaxArgs = {
+  field: ContentfulActionInfoBlockFieldsEnum;
+};
+
+export type ContentfulActionInfoBlockGroupConnectionMinArgs = {
+  field: ContentfulActionInfoBlockFieldsEnum;
+};
+
+export type ContentfulActionInfoBlockGroupConnectionSumArgs = {
+  field: ContentfulActionInfoBlockFieldsEnum;
+};
+
+export type ContentfulActionInfoBlockSortInput = {
+  fields?: InputMaybe<Array<InputMaybe<ContentfulActionInfoBlockFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
+
+export type ContentfulActionInfoBlockSys = {
+  __typename?: "ContentfulActionInfoBlockSys";
+  contentType?: Maybe<ContentfulActionInfoBlockSysContentType>;
+  revision?: Maybe<Scalars["Int"]>;
+  type?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulActionInfoBlockSysContentType = {
+  __typename?: "ContentfulActionInfoBlockSysContentType";
+  sys?: Maybe<ContentfulActionInfoBlockSysContentTypeSys>;
+};
+
+export type ContentfulActionInfoBlockSysContentTypeFilterInput = {
+  sys?: InputMaybe<ContentfulActionInfoBlockSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulActionInfoBlockSysContentTypeSys = {
+  __typename?: "ContentfulActionInfoBlockSysContentTypeSys";
+  id?: Maybe<Scalars["String"]>;
+  linkType?: Maybe<Scalars["String"]>;
+  type?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulActionInfoBlockSysContentTypeSysFilterInput = {
+  id?: InputMaybe<StringQueryOperatorInput>;
+  linkType?: InputMaybe<StringQueryOperatorInput>;
+  type?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulActionInfoBlockSysFilterInput = {
+  contentType?: InputMaybe<ContentfulActionInfoBlockSysContentTypeFilterInput>;
+  revision?: InputMaybe<IntQueryOperatorInput>;
+  type?: InputMaybe<StringQueryOperatorInput>;
+};
+
 export type ContentfulAsset = ContentfulReference &
   Node &
   RemoteFile & {
@@ -434,6 +1293,1767 @@ export type ContentfulAssetSys = {
 };
 
 export type ContentfulAssetSysFilterInput = {
+  revision?: InputMaybe<IntQueryOperatorInput>;
+  type?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulAuthorAvatarBlock = ContentfulEntry &
+  ContentfulReference &
+  Node & {
+    __typename?: "ContentfulAuthorAvatarBlock";
+    avatar?: Maybe<ContentfulAsset>;
+    /** Returns the first child node of type contentfulAuthorAvatarBlockDescriptionTextNode or null if there are no children of given type on this node */
+    childContentfulAuthorAvatarBlockDescriptionTextNode?: Maybe<ContentfulAuthorAvatarBlockDescriptionTextNode>;
+    children: Array<Node>;
+    /** Returns all children nodes filtered by type contentfulAuthorAvatarBlockDescriptionTextNode */
+    childrenContentfulAuthorAvatarBlockDescriptionTextNode?: Maybe<
+      Array<Maybe<ContentfulAuthorAvatarBlockDescriptionTextNode>>
+    >;
+    contentblock?: Maybe<Array<Maybe<ContentfulContentBlock>>>;
+    contentful_id: Scalars["String"];
+    createdAt?: Maybe<Scalars["Date"]>;
+    description?: Maybe<ContentfulAuthorAvatarBlockDescriptionTextNode>;
+    fullName?: Maybe<Scalars["String"]>;
+    id: Scalars["ID"];
+    internal: Internal;
+    node_locale: Scalars["String"];
+    parent?: Maybe<Node>;
+    socialSiteLinks?: Maybe<Array<Maybe<ContentfulLink>>>;
+    spaceId?: Maybe<Scalars["String"]>;
+    sys?: Maybe<ContentfulAuthorAvatarBlockSys>;
+    uniqueId?: Maybe<Scalars["String"]>;
+    updatedAt?: Maybe<Scalars["Date"]>;
+  };
+
+export type ContentfulAuthorAvatarBlockCreatedAtArgs = {
+  difference?: InputMaybe<Scalars["String"]>;
+  formatString?: InputMaybe<Scalars["String"]>;
+  fromNow?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars["String"]>;
+};
+
+export type ContentfulAuthorAvatarBlockUpdatedAtArgs = {
+  difference?: InputMaybe<Scalars["String"]>;
+  formatString?: InputMaybe<Scalars["String"]>;
+  fromNow?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars["String"]>;
+};
+
+export type ContentfulAuthorAvatarBlockConnection = {
+  __typename?: "ContentfulAuthorAvatarBlockConnection";
+  distinct: Array<Scalars["String"]>;
+  edges: Array<ContentfulAuthorAvatarBlockEdge>;
+  group: Array<ContentfulAuthorAvatarBlockGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<ContentfulAuthorAvatarBlock>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type ContentfulAuthorAvatarBlockConnectionDistinctArgs = {
+  field: ContentfulAuthorAvatarBlockFieldsEnum;
+};
+
+export type ContentfulAuthorAvatarBlockConnectionGroupArgs = {
+  field: ContentfulAuthorAvatarBlockFieldsEnum;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+};
+
+export type ContentfulAuthorAvatarBlockConnectionMaxArgs = {
+  field: ContentfulAuthorAvatarBlockFieldsEnum;
+};
+
+export type ContentfulAuthorAvatarBlockConnectionMinArgs = {
+  field: ContentfulAuthorAvatarBlockFieldsEnum;
+};
+
+export type ContentfulAuthorAvatarBlockConnectionSumArgs = {
+  field: ContentfulAuthorAvatarBlockFieldsEnum;
+};
+
+export type ContentfulAuthorAvatarBlockEdge = {
+  __typename?: "ContentfulAuthorAvatarBlockEdge";
+  next?: Maybe<ContentfulAuthorAvatarBlock>;
+  node: ContentfulAuthorAvatarBlock;
+  previous?: Maybe<ContentfulAuthorAvatarBlock>;
+};
+
+export enum ContentfulAuthorAvatarBlockFieldsEnum {
+  AvatarChildren = "avatar___children",
+  AvatarChildrenChildren = "avatar___children___children",
+  AvatarChildrenChildrenChildren = "avatar___children___children___children",
+  AvatarChildrenChildrenId = "avatar___children___children___id",
+  AvatarChildrenId = "avatar___children___id",
+  AvatarChildrenInternalContent = "avatar___children___internal___content",
+  AvatarChildrenInternalContentDigest = "avatar___children___internal___contentDigest",
+  AvatarChildrenInternalDescription = "avatar___children___internal___description",
+  AvatarChildrenInternalFieldOwners = "avatar___children___internal___fieldOwners",
+  AvatarChildrenInternalIgnoreType = "avatar___children___internal___ignoreType",
+  AvatarChildrenInternalMediaType = "avatar___children___internal___mediaType",
+  AvatarChildrenInternalOwner = "avatar___children___internal___owner",
+  AvatarChildrenInternalType = "avatar___children___internal___type",
+  AvatarChildrenParentChildren = "avatar___children___parent___children",
+  AvatarChildrenParentId = "avatar___children___parent___id",
+  AvatarContentfulId = "avatar___contentful_id",
+  AvatarCreatedAt = "avatar___createdAt",
+  AvatarDescription = "avatar___description",
+  AvatarFileContentType = "avatar___file___contentType",
+  AvatarFileDetailsSize = "avatar___file___details___size",
+  AvatarFileFileName = "avatar___file___fileName",
+  AvatarFileUrl = "avatar___file___url",
+  AvatarFilename = "avatar___filename",
+  AvatarFilesize = "avatar___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AvatarGatsbyImage = "avatar___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AvatarGatsbyImageData = "avatar___gatsbyImageData",
+  AvatarHeight = "avatar___height",
+  AvatarId = "avatar___id",
+  AvatarInternalContent = "avatar___internal___content",
+  AvatarInternalContentDigest = "avatar___internal___contentDigest",
+  AvatarInternalDescription = "avatar___internal___description",
+  AvatarInternalFieldOwners = "avatar___internal___fieldOwners",
+  AvatarInternalIgnoreType = "avatar___internal___ignoreType",
+  AvatarInternalMediaType = "avatar___internal___mediaType",
+  AvatarInternalOwner = "avatar___internal___owner",
+  AvatarInternalType = "avatar___internal___type",
+  AvatarMimeType = "avatar___mimeType",
+  AvatarNodeLocale = "avatar___node_locale",
+  AvatarParentChildren = "avatar___parent___children",
+  AvatarParentChildrenChildren = "avatar___parent___children___children",
+  AvatarParentChildrenId = "avatar___parent___children___id",
+  AvatarParentId = "avatar___parent___id",
+  AvatarParentInternalContent = "avatar___parent___internal___content",
+  AvatarParentInternalContentDigest = "avatar___parent___internal___contentDigest",
+  AvatarParentInternalDescription = "avatar___parent___internal___description",
+  AvatarParentInternalFieldOwners = "avatar___parent___internal___fieldOwners",
+  AvatarParentInternalIgnoreType = "avatar___parent___internal___ignoreType",
+  AvatarParentInternalMediaType = "avatar___parent___internal___mediaType",
+  AvatarParentInternalOwner = "avatar___parent___internal___owner",
+  AvatarParentInternalType = "avatar___parent___internal___type",
+  AvatarParentParentChildren = "avatar___parent___parent___children",
+  AvatarParentParentId = "avatar___parent___parent___id",
+  AvatarPlaceholderUrl = "avatar___placeholderUrl",
+  AvatarPublicUrl = "avatar___publicUrl",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AvatarResizeHeight = "avatar___resize___height",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AvatarResizeSrc = "avatar___resize___src",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AvatarResizeWidth = "avatar___resize___width",
+  AvatarSpaceId = "avatar___spaceId",
+  AvatarSysRevision = "avatar___sys___revision",
+  AvatarSysType = "avatar___sys___type",
+  AvatarTitle = "avatar___title",
+  AvatarUpdatedAt = "avatar___updatedAt",
+  AvatarUrl = "avatar___url",
+  AvatarWidth = "avatar___width",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxBody = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___body",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxChildrenChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___children___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxChildrenId = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___children___id",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxExcerpt = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___excerpt",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxFileAbsolutePath = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___fileAbsolutePath",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxFrontmatterTitle = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___frontmatter___title",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxHeadings = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___headings",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxHeadingsDepth = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___headings___depth",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxHeadingsValue = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___headings___value",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxHtml = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___html",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxId = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___id",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalContent = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___content",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalContentDigest = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___contentDigest",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalDescription = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___description",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalFieldOwners = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___fieldOwners",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalIgnoreType = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___ignoreType",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalMediaType = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___mediaType",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalOwner = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___owner",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalType = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___type",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxMdxAst = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___mdxAST",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxParentChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___parent___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxParentId = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___parent___id",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxRawBody = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___rawBody",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxSlug = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxTableOfContents = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___tableOfContents",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxTimeToRead = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___timeToRead",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxWordCountParagraphs = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___wordCount___paragraphs",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxWordCountSentences = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___wordCount___sentences",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxWordCountWords = "childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___wordCount___words",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxBody = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___body",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxChildrenChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___children___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxChildrenId = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___children___id",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxExcerpt = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___excerpt",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxFileAbsolutePath = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___fileAbsolutePath",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxFrontmatterTitle = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___frontmatter___title",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxHeadings = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___headings",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxHeadingsDepth = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___headings___depth",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxHeadingsValue = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___headings___value",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxHtml = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___html",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxId = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___id",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalContent = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___content",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalContentDigest = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___contentDigest",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalDescription = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___description",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalFieldOwners = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___fieldOwners",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalIgnoreType = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___ignoreType",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalMediaType = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___mediaType",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalOwner = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___owner",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalType = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___type",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxMdxAst = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___mdxAST",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxParentChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___parent___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxParentId = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___parent___id",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxRawBody = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___rawBody",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxSlug = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxTableOfContents = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___tableOfContents",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxTimeToRead = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___timeToRead",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxWordCountParagraphs = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___wordCount___paragraphs",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxWordCountSentences = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___wordCount___sentences",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxWordCountWords = "childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___wordCount___words",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenChildrenChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___children___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenChildrenId = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___children___id",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenId = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___id",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalContent = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___content",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalContentDigest = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___contentDigest",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalDescription = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___description",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalFieldOwners = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___fieldOwners",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalIgnoreType = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___ignoreType",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalMediaType = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___mediaType",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalOwner = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___owner",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalType = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___type",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenParentChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___parent___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenParentId = "childContentfulAuthorAvatarBlockDescriptionTextNode___children___parent___id",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "childContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeId = "childContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalContent = "childContentfulAuthorAvatarBlockDescriptionTextNode___internal___content",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalContentDigest = "childContentfulAuthorAvatarBlockDescriptionTextNode___internal___contentDigest",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalDescription = "childContentfulAuthorAvatarBlockDescriptionTextNode___internal___description",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalFieldOwners = "childContentfulAuthorAvatarBlockDescriptionTextNode___internal___fieldOwners",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalIgnoreType = "childContentfulAuthorAvatarBlockDescriptionTextNode___internal___ignoreType",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalMediaType = "childContentfulAuthorAvatarBlockDescriptionTextNode___internal___mediaType",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalOwner = "childContentfulAuthorAvatarBlockDescriptionTextNode___internal___owner",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalType = "childContentfulAuthorAvatarBlockDescriptionTextNode___internal___type",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentChildrenChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___children___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentChildrenId = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___children___id",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentId = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___id",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalContent = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___content",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalContentDigest = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___contentDigest",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalDescription = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___description",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalFieldOwners = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___fieldOwners",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalIgnoreType = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___ignoreType",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalMediaType = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___mediaType",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalOwner = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___owner",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalType = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___type",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentParentChildren = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___parent___children",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeParentParentId = "childContentfulAuthorAvatarBlockDescriptionTextNode___parent___parent___id",
+  ChildContentfulAuthorAvatarBlockDescriptionTextNodeSysType = "childContentfulAuthorAvatarBlockDescriptionTextNode___sys___type",
+  Children = "children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxBody = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___body",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxChildrenChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___children___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxChildrenId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___children___id",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxExcerpt = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___excerpt",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxFileAbsolutePath = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___fileAbsolutePath",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxFrontmatterTitle = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___frontmatter___title",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxHeadings = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___headings",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxHeadingsDepth = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___headings___depth",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxHeadingsValue = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___headings___value",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxHtml = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___html",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___id",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalContent = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___content",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalContentDigest = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___contentDigest",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalDescription = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___description",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalFieldOwners = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___fieldOwners",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalIgnoreType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___ignoreType",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalMediaType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___mediaType",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalOwner = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___owner",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxInternalType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___internal___type",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxMdxAst = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___mdxAST",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxParentChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___parent___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxParentId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___parent___id",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxRawBody = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___rawBody",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxSlug = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxTableOfContents = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___tableOfContents",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxTimeToRead = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___timeToRead",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxWordCountParagraphs = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___wordCount___paragraphs",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxWordCountSentences = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___wordCount___sentences",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxWordCountWords = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___wordCount___words",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxBody = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___body",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxChildrenChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___children___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxChildrenId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___children___id",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxExcerpt = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___excerpt",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxFileAbsolutePath = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___fileAbsolutePath",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxFrontmatterTitle = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___frontmatter___title",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxHeadings = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___headings",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxHeadingsDepth = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___headings___depth",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxHeadingsValue = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___headings___value",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxHtml = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___html",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___id",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalContent = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___content",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalContentDigest = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___contentDigest",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalDescription = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___description",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalFieldOwners = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___fieldOwners",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalIgnoreType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___ignoreType",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalMediaType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___mediaType",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalOwner = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___owner",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxInternalType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___internal___type",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxMdxAst = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___mdxAST",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxParentChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___parent___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxParentId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___parent___id",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxRawBody = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___rawBody",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxSlug = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxTableOfContents = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___tableOfContents",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxTimeToRead = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___timeToRead",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxWordCountParagraphs = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___wordCount___paragraphs",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxWordCountSentences = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___wordCount___sentences",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxWordCountWords = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___wordCount___words",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenChildrenChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___children___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenChildrenId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___children___id",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___id",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalContent = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___content",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalContentDigest = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___contentDigest",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalDescription = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___description",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalFieldOwners = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___fieldOwners",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalIgnoreType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___ignoreType",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalMediaType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___mediaType",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalOwner = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___owner",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenInternalType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___internal___type",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenParentChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___parent___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenParentId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___parent___id",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalContent = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___content",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalContentDigest = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___contentDigest",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalDescription = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___description",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalFieldOwners = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___fieldOwners",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalIgnoreType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___ignoreType",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalMediaType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___mediaType",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalOwner = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___owner",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___type",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentChildrenChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___children___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentChildrenId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___children___id",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___id",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalContent = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___content",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalContentDigest = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___contentDigest",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalDescription = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___description",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalFieldOwners = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___fieldOwners",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalIgnoreType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___ignoreType",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalMediaType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___mediaType",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalOwner = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___owner",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentInternalType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___internal___type",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentParentChildren = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___parent___children",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentParentId = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___parent___id",
+  ChildrenContentfulAuthorAvatarBlockDescriptionTextNodeSysType = "childrenContentfulAuthorAvatarBlockDescriptionTextNode___sys___type",
+  ChildrenChildren = "children___children",
+  ChildrenChildrenChildren = "children___children___children",
+  ChildrenChildrenChildrenChildren = "children___children___children___children",
+  ChildrenChildrenChildrenId = "children___children___children___id",
+  ChildrenChildrenId = "children___children___id",
+  ChildrenChildrenInternalContent = "children___children___internal___content",
+  ChildrenChildrenInternalContentDigest = "children___children___internal___contentDigest",
+  ChildrenChildrenInternalDescription = "children___children___internal___description",
+  ChildrenChildrenInternalFieldOwners = "children___children___internal___fieldOwners",
+  ChildrenChildrenInternalIgnoreType = "children___children___internal___ignoreType",
+  ChildrenChildrenInternalMediaType = "children___children___internal___mediaType",
+  ChildrenChildrenInternalOwner = "children___children___internal___owner",
+  ChildrenChildrenInternalType = "children___children___internal___type",
+  ChildrenChildrenParentChildren = "children___children___parent___children",
+  ChildrenChildrenParentId = "children___children___parent___id",
+  ChildrenId = "children___id",
+  ChildrenInternalContent = "children___internal___content",
+  ChildrenInternalContentDigest = "children___internal___contentDigest",
+  ChildrenInternalDescription = "children___internal___description",
+  ChildrenInternalFieldOwners = "children___internal___fieldOwners",
+  ChildrenInternalIgnoreType = "children___internal___ignoreType",
+  ChildrenInternalMediaType = "children___internal___mediaType",
+  ChildrenInternalOwner = "children___internal___owner",
+  ChildrenInternalType = "children___internal___type",
+  ChildrenParentChildren = "children___parent___children",
+  ChildrenParentChildrenChildren = "children___parent___children___children",
+  ChildrenParentChildrenId = "children___parent___children___id",
+  ChildrenParentId = "children___parent___id",
+  ChildrenParentInternalContent = "children___parent___internal___content",
+  ChildrenParentInternalContentDigest = "children___parent___internal___contentDigest",
+  ChildrenParentInternalDescription = "children___parent___internal___description",
+  ChildrenParentInternalFieldOwners = "children___parent___internal___fieldOwners",
+  ChildrenParentInternalIgnoreType = "children___parent___internal___ignoreType",
+  ChildrenParentInternalMediaType = "children___parent___internal___mediaType",
+  ChildrenParentInternalOwner = "children___parent___internal___owner",
+  ChildrenParentInternalType = "children___parent___internal___type",
+  ChildrenParentParentChildren = "children___parent___parent___children",
+  ChildrenParentParentId = "children___parent___parent___id",
+  Contentblock = "contentblock",
+  ContentblockChildren = "contentblock___children",
+  ContentblockChildrenChildren = "contentblock___children___children",
+  ContentblockChildrenChildrenChildren = "contentblock___children___children___children",
+  ContentblockChildrenChildrenId = "contentblock___children___children___id",
+  ContentblockChildrenId = "contentblock___children___id",
+  ContentblockChildrenInternalContent = "contentblock___children___internal___content",
+  ContentblockChildrenInternalContentDigest = "contentblock___children___internal___contentDigest",
+  ContentblockChildrenInternalDescription = "contentblock___children___internal___description",
+  ContentblockChildrenInternalFieldOwners = "contentblock___children___internal___fieldOwners",
+  ContentblockChildrenInternalIgnoreType = "contentblock___children___internal___ignoreType",
+  ContentblockChildrenInternalMediaType = "contentblock___children___internal___mediaType",
+  ContentblockChildrenInternalOwner = "contentblock___children___internal___owner",
+  ContentblockChildrenInternalType = "contentblock___children___internal___type",
+  ContentblockChildrenParentChildren = "contentblock___children___parent___children",
+  ContentblockChildrenParentId = "contentblock___children___parent___id",
+  ContentblockContentfulId = "contentblock___contentful_id",
+  ContentblockCreatedAt = "contentblock___createdAt",
+  ContentblockId = "contentblock___id",
+  ContentblockInternalContent = "contentblock___internal___content",
+  ContentblockInternalContentDigest = "contentblock___internal___contentDigest",
+  ContentblockInternalDescription = "contentblock___internal___description",
+  ContentblockInternalFieldOwners = "contentblock___internal___fieldOwners",
+  ContentblockInternalIgnoreType = "contentblock___internal___ignoreType",
+  ContentblockInternalMediaType = "contentblock___internal___mediaType",
+  ContentblockInternalOwner = "contentblock___internal___owner",
+  ContentblockInternalType = "contentblock___internal___type",
+  ContentblockMargin = "contentblock___margin",
+  ContentblockNodeLocale = "contentblock___node_locale",
+  ContentblockPage = "contentblock___page",
+  ContentblockPageChildContentfulPageDescriptionTextNodeChildren = "contentblock___page___childContentfulPageDescriptionTextNode___children",
+  ContentblockPageChildContentfulPageDescriptionTextNodeChildrenMdx = "contentblock___page___childContentfulPageDescriptionTextNode___childrenMdx",
+  ContentblockPageChildContentfulPageDescriptionTextNodeDescription = "contentblock___page___childContentfulPageDescriptionTextNode___description",
+  ContentblockPageChildContentfulPageDescriptionTextNodeId = "contentblock___page___childContentfulPageDescriptionTextNode___id",
+  ContentblockPageChildren = "contentblock___page___children",
+  ContentblockPageChildrenContentfulPageDescriptionTextNode = "contentblock___page___childrenContentfulPageDescriptionTextNode",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeChildren = "contentblock___page___childrenContentfulPageDescriptionTextNode___children",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeChildrenMdx = "contentblock___page___childrenContentfulPageDescriptionTextNode___childrenMdx",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeDescription = "contentblock___page___childrenContentfulPageDescriptionTextNode___description",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeId = "contentblock___page___childrenContentfulPageDescriptionTextNode___id",
+  ContentblockPageChildrenChildren = "contentblock___page___children___children",
+  ContentblockPageChildrenId = "contentblock___page___children___id",
+  ContentblockPageContent = "contentblock___page___content",
+  ContentblockPageContentChildren = "contentblock___page___content___children",
+  ContentblockPageContentContentfulId = "contentblock___page___content___contentful_id",
+  ContentblockPageContentCreatedAt = "contentblock___page___content___createdAt",
+  ContentblockPageContentId = "contentblock___page___content___id",
+  ContentblockPageContentMargin = "contentblock___page___content___margin",
+  ContentblockPageContentNodeLocale = "contentblock___page___content___node_locale",
+  ContentblockPageContentPage = "contentblock___page___content___page",
+  ContentblockPageContentSpaceId = "contentblock___page___content___spaceId",
+  ContentblockPageContentUniqueId = "contentblock___page___content___uniqueId",
+  ContentblockPageContentUpdatedAt = "contentblock___page___content___updatedAt",
+  ContentblockPageContentfulId = "contentblock___page___contentful_id",
+  ContentblockPageCreatedAt = "contentblock___page___createdAt",
+  ContentblockPageDescriptionChildren = "contentblock___page___description___children",
+  ContentblockPageDescriptionChildrenMdx = "contentblock___page___description___childrenMdx",
+  ContentblockPageDescriptionDescription = "contentblock___page___description___description",
+  ContentblockPageDescriptionId = "contentblock___page___description___id",
+  ContentblockPageId = "contentblock___page___id",
+  ContentblockPageInternalContent = "contentblock___page___internal___content",
+  ContentblockPageInternalContentDigest = "contentblock___page___internal___contentDigest",
+  ContentblockPageInternalDescription = "contentblock___page___internal___description",
+  ContentblockPageInternalFieldOwners = "contentblock___page___internal___fieldOwners",
+  ContentblockPageInternalIgnoreType = "contentblock___page___internal___ignoreType",
+  ContentblockPageInternalMediaType = "contentblock___page___internal___mediaType",
+  ContentblockPageInternalOwner = "contentblock___page___internal___owner",
+  ContentblockPageInternalType = "contentblock___page___internal___type",
+  ContentblockPageNodeLocale = "contentblock___page___node_locale",
+  ContentblockPageParentChildren = "contentblock___page___parent___children",
+  ContentblockPageParentId = "contentblock___page___parent___id",
+  ContentblockPageSpaceId = "contentblock___page___spaceId",
+  ContentblockPageSysRevision = "contentblock___page___sys___revision",
+  ContentblockPageSysType = "contentblock___page___sys___type",
+  ContentblockPageTitle = "contentblock___page___title",
+  ContentblockPageUpdatedAt = "contentblock___page___updatedAt",
+  ContentblockPageUrl = "contentblock___page___url",
+  ContentblockParentChildren = "contentblock___parent___children",
+  ContentblockParentChildrenChildren = "contentblock___parent___children___children",
+  ContentblockParentChildrenId = "contentblock___parent___children___id",
+  ContentblockParentId = "contentblock___parent___id",
+  ContentblockParentInternalContent = "contentblock___parent___internal___content",
+  ContentblockParentInternalContentDigest = "contentblock___parent___internal___contentDigest",
+  ContentblockParentInternalDescription = "contentblock___parent___internal___description",
+  ContentblockParentInternalFieldOwners = "contentblock___parent___internal___fieldOwners",
+  ContentblockParentInternalIgnoreType = "contentblock___parent___internal___ignoreType",
+  ContentblockParentInternalMediaType = "contentblock___parent___internal___mediaType",
+  ContentblockParentInternalOwner = "contentblock___parent___internal___owner",
+  ContentblockParentInternalType = "contentblock___parent___internal___type",
+  ContentblockParentParentChildren = "contentblock___parent___parent___children",
+  ContentblockParentParentId = "contentblock___parent___parent___id",
+  ContentblockSpaceId = "contentblock___spaceId",
+  ContentblockSysRevision = "contentblock___sys___revision",
+  ContentblockSysType = "contentblock___sys___type",
+  ContentblockUniqueId = "contentblock___uniqueId",
+  ContentblockUpdatedAt = "contentblock___updatedAt",
+  ContentfulId = "contentful_id",
+  CreatedAt = "createdAt",
+  DescriptionChildMdxBody = "description___childMdx___body",
+  DescriptionChildMdxChildren = "description___childMdx___children",
+  DescriptionChildMdxChildrenChildren = "description___childMdx___children___children",
+  DescriptionChildMdxChildrenId = "description___childMdx___children___id",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  DescriptionChildMdxExcerpt = "description___childMdx___excerpt",
+  DescriptionChildMdxFileAbsolutePath = "description___childMdx___fileAbsolutePath",
+  DescriptionChildMdxFrontmatterTitle = "description___childMdx___frontmatter___title",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  DescriptionChildMdxHeadings = "description___childMdx___headings",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  DescriptionChildMdxHeadingsDepth = "description___childMdx___headings___depth",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  DescriptionChildMdxHeadingsValue = "description___childMdx___headings___value",
+  DescriptionChildMdxHtml = "description___childMdx___html",
+  DescriptionChildMdxId = "description___childMdx___id",
+  DescriptionChildMdxInternalContent = "description___childMdx___internal___content",
+  DescriptionChildMdxInternalContentDigest = "description___childMdx___internal___contentDigest",
+  DescriptionChildMdxInternalDescription = "description___childMdx___internal___description",
+  DescriptionChildMdxInternalFieldOwners = "description___childMdx___internal___fieldOwners",
+  DescriptionChildMdxInternalIgnoreType = "description___childMdx___internal___ignoreType",
+  DescriptionChildMdxInternalMediaType = "description___childMdx___internal___mediaType",
+  DescriptionChildMdxInternalOwner = "description___childMdx___internal___owner",
+  DescriptionChildMdxInternalType = "description___childMdx___internal___type",
+  DescriptionChildMdxMdxAst = "description___childMdx___mdxAST",
+  DescriptionChildMdxParentChildren = "description___childMdx___parent___children",
+  DescriptionChildMdxParentId = "description___childMdx___parent___id",
+  DescriptionChildMdxRawBody = "description___childMdx___rawBody",
+  DescriptionChildMdxSlug = "description___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  DescriptionChildMdxTableOfContents = "description___childMdx___tableOfContents",
+  DescriptionChildMdxTimeToRead = "description___childMdx___timeToRead",
+  DescriptionChildMdxWordCountParagraphs = "description___childMdx___wordCount___paragraphs",
+  DescriptionChildMdxWordCountSentences = "description___childMdx___wordCount___sentences",
+  DescriptionChildMdxWordCountWords = "description___childMdx___wordCount___words",
+  DescriptionChildren = "description___children",
+  DescriptionChildrenMdx = "description___childrenMdx",
+  DescriptionChildrenMdxBody = "description___childrenMdx___body",
+  DescriptionChildrenMdxChildren = "description___childrenMdx___children",
+  DescriptionChildrenMdxChildrenChildren = "description___childrenMdx___children___children",
+  DescriptionChildrenMdxChildrenId = "description___childrenMdx___children___id",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  DescriptionChildrenMdxExcerpt = "description___childrenMdx___excerpt",
+  DescriptionChildrenMdxFileAbsolutePath = "description___childrenMdx___fileAbsolutePath",
+  DescriptionChildrenMdxFrontmatterTitle = "description___childrenMdx___frontmatter___title",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  DescriptionChildrenMdxHeadings = "description___childrenMdx___headings",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  DescriptionChildrenMdxHeadingsDepth = "description___childrenMdx___headings___depth",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  DescriptionChildrenMdxHeadingsValue = "description___childrenMdx___headings___value",
+  DescriptionChildrenMdxHtml = "description___childrenMdx___html",
+  DescriptionChildrenMdxId = "description___childrenMdx___id",
+  DescriptionChildrenMdxInternalContent = "description___childrenMdx___internal___content",
+  DescriptionChildrenMdxInternalContentDigest = "description___childrenMdx___internal___contentDigest",
+  DescriptionChildrenMdxInternalDescription = "description___childrenMdx___internal___description",
+  DescriptionChildrenMdxInternalFieldOwners = "description___childrenMdx___internal___fieldOwners",
+  DescriptionChildrenMdxInternalIgnoreType = "description___childrenMdx___internal___ignoreType",
+  DescriptionChildrenMdxInternalMediaType = "description___childrenMdx___internal___mediaType",
+  DescriptionChildrenMdxInternalOwner = "description___childrenMdx___internal___owner",
+  DescriptionChildrenMdxInternalType = "description___childrenMdx___internal___type",
+  DescriptionChildrenMdxMdxAst = "description___childrenMdx___mdxAST",
+  DescriptionChildrenMdxParentChildren = "description___childrenMdx___parent___children",
+  DescriptionChildrenMdxParentId = "description___childrenMdx___parent___id",
+  DescriptionChildrenMdxRawBody = "description___childrenMdx___rawBody",
+  DescriptionChildrenMdxSlug = "description___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  DescriptionChildrenMdxTableOfContents = "description___childrenMdx___tableOfContents",
+  DescriptionChildrenMdxTimeToRead = "description___childrenMdx___timeToRead",
+  DescriptionChildrenMdxWordCountParagraphs = "description___childrenMdx___wordCount___paragraphs",
+  DescriptionChildrenMdxWordCountSentences = "description___childrenMdx___wordCount___sentences",
+  DescriptionChildrenMdxWordCountWords = "description___childrenMdx___wordCount___words",
+  DescriptionChildrenChildren = "description___children___children",
+  DescriptionChildrenChildrenChildren = "description___children___children___children",
+  DescriptionChildrenChildrenId = "description___children___children___id",
+  DescriptionChildrenId = "description___children___id",
+  DescriptionChildrenInternalContent = "description___children___internal___content",
+  DescriptionChildrenInternalContentDigest = "description___children___internal___contentDigest",
+  DescriptionChildrenInternalDescription = "description___children___internal___description",
+  DescriptionChildrenInternalFieldOwners = "description___children___internal___fieldOwners",
+  DescriptionChildrenInternalIgnoreType = "description___children___internal___ignoreType",
+  DescriptionChildrenInternalMediaType = "description___children___internal___mediaType",
+  DescriptionChildrenInternalOwner = "description___children___internal___owner",
+  DescriptionChildrenInternalType = "description___children___internal___type",
+  DescriptionChildrenParentChildren = "description___children___parent___children",
+  DescriptionChildrenParentId = "description___children___parent___id",
+  DescriptionDescription = "description___description",
+  DescriptionId = "description___id",
+  DescriptionInternalContent = "description___internal___content",
+  DescriptionInternalContentDigest = "description___internal___contentDigest",
+  DescriptionInternalDescription = "description___internal___description",
+  DescriptionInternalFieldOwners = "description___internal___fieldOwners",
+  DescriptionInternalIgnoreType = "description___internal___ignoreType",
+  DescriptionInternalMediaType = "description___internal___mediaType",
+  DescriptionInternalOwner = "description___internal___owner",
+  DescriptionInternalType = "description___internal___type",
+  DescriptionParentChildren = "description___parent___children",
+  DescriptionParentChildrenChildren = "description___parent___children___children",
+  DescriptionParentChildrenId = "description___parent___children___id",
+  DescriptionParentId = "description___parent___id",
+  DescriptionParentInternalContent = "description___parent___internal___content",
+  DescriptionParentInternalContentDigest = "description___parent___internal___contentDigest",
+  DescriptionParentInternalDescription = "description___parent___internal___description",
+  DescriptionParentInternalFieldOwners = "description___parent___internal___fieldOwners",
+  DescriptionParentInternalIgnoreType = "description___parent___internal___ignoreType",
+  DescriptionParentInternalMediaType = "description___parent___internal___mediaType",
+  DescriptionParentInternalOwner = "description___parent___internal___owner",
+  DescriptionParentInternalType = "description___parent___internal___type",
+  DescriptionParentParentChildren = "description___parent___parent___children",
+  DescriptionParentParentId = "description___parent___parent___id",
+  DescriptionSysType = "description___sys___type",
+  FullName = "fullName",
+  Id = "id",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalDescription = "internal___description",
+  InternalFieldOwners = "internal___fieldOwners",
+  InternalIgnoreType = "internal___ignoreType",
+  InternalMediaType = "internal___mediaType",
+  InternalOwner = "internal___owner",
+  InternalType = "internal___type",
+  NodeLocale = "node_locale",
+  ParentChildren = "parent___children",
+  ParentChildrenChildren = "parent___children___children",
+  ParentChildrenChildrenChildren = "parent___children___children___children",
+  ParentChildrenChildrenId = "parent___children___children___id",
+  ParentChildrenId = "parent___children___id",
+  ParentChildrenInternalContent = "parent___children___internal___content",
+  ParentChildrenInternalContentDigest = "parent___children___internal___contentDigest",
+  ParentChildrenInternalDescription = "parent___children___internal___description",
+  ParentChildrenInternalFieldOwners = "parent___children___internal___fieldOwners",
+  ParentChildrenInternalIgnoreType = "parent___children___internal___ignoreType",
+  ParentChildrenInternalMediaType = "parent___children___internal___mediaType",
+  ParentChildrenInternalOwner = "parent___children___internal___owner",
+  ParentChildrenInternalType = "parent___children___internal___type",
+  ParentChildrenParentChildren = "parent___children___parent___children",
+  ParentChildrenParentId = "parent___children___parent___id",
+  ParentId = "parent___id",
+  ParentInternalContent = "parent___internal___content",
+  ParentInternalContentDigest = "parent___internal___contentDigest",
+  ParentInternalDescription = "parent___internal___description",
+  ParentInternalFieldOwners = "parent___internal___fieldOwners",
+  ParentInternalIgnoreType = "parent___internal___ignoreType",
+  ParentInternalMediaType = "parent___internal___mediaType",
+  ParentInternalOwner = "parent___internal___owner",
+  ParentInternalType = "parent___internal___type",
+  ParentParentChildren = "parent___parent___children",
+  ParentParentChildrenChildren = "parent___parent___children___children",
+  ParentParentChildrenId = "parent___parent___children___id",
+  ParentParentId = "parent___parent___id",
+  ParentParentInternalContent = "parent___parent___internal___content",
+  ParentParentInternalContentDigest = "parent___parent___internal___contentDigest",
+  ParentParentInternalDescription = "parent___parent___internal___description",
+  ParentParentInternalFieldOwners = "parent___parent___internal___fieldOwners",
+  ParentParentInternalIgnoreType = "parent___parent___internal___ignoreType",
+  ParentParentInternalMediaType = "parent___parent___internal___mediaType",
+  ParentParentInternalOwner = "parent___parent___internal___owner",
+  ParentParentInternalType = "parent___parent___internal___type",
+  ParentParentParentChildren = "parent___parent___parent___children",
+  ParentParentParentId = "parent___parent___parent___id",
+  SocialSiteLinks = "socialSiteLinks",
+  SocialSiteLinksActioninfoblock = "socialSiteLinks___actioninfoblock",
+  SocialSiteLinksActioninfoblockArticleRaw = "socialSiteLinks___actioninfoblock___article___raw",
+  SocialSiteLinksActioninfoblockButtonActioninfoblock = "socialSiteLinks___actioninfoblock___button___actioninfoblock",
+  SocialSiteLinksActioninfoblockButtonAuthoravatarblock = "socialSiteLinks___actioninfoblock___button___authoravatarblock",
+  SocialSiteLinksActioninfoblockButtonChildren = "socialSiteLinks___actioninfoblock___button___children",
+  SocialSiteLinksActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "socialSiteLinks___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksActioninfoblockButtonContentfulId = "socialSiteLinks___actioninfoblock___button___contentful_id",
+  SocialSiteLinksActioninfoblockButtonContentfulid = "socialSiteLinks___actioninfoblock___button___contentfulid",
+  SocialSiteLinksActioninfoblockButtonCreatedAt = "socialSiteLinks___actioninfoblock___button___createdAt",
+  SocialSiteLinksActioninfoblockButtonId = "socialSiteLinks___actioninfoblock___button___id",
+  SocialSiteLinksActioninfoblockButtonNodeLocale = "socialSiteLinks___actioninfoblock___button___node_locale",
+  SocialSiteLinksActioninfoblockButtonOptions = "socialSiteLinks___actioninfoblock___button___options",
+  SocialSiteLinksActioninfoblockButtonSpaceId = "socialSiteLinks___actioninfoblock___button___spaceId",
+  SocialSiteLinksActioninfoblockButtonTitle = "socialSiteLinks___actioninfoblock___button___title",
+  SocialSiteLinksActioninfoblockButtonUpdatedAt = "socialSiteLinks___actioninfoblock___button___updatedAt",
+  SocialSiteLinksActioninfoblockChildren = "socialSiteLinks___actioninfoblock___children",
+  SocialSiteLinksActioninfoblockChildrenChildren = "socialSiteLinks___actioninfoblock___children___children",
+  SocialSiteLinksActioninfoblockChildrenId = "socialSiteLinks___actioninfoblock___children___id",
+  SocialSiteLinksActioninfoblockContentblock = "socialSiteLinks___actioninfoblock___contentblock",
+  SocialSiteLinksActioninfoblockContentblockChildren = "socialSiteLinks___actioninfoblock___contentblock___children",
+  SocialSiteLinksActioninfoblockContentblockContentfulId = "socialSiteLinks___actioninfoblock___contentblock___contentful_id",
+  SocialSiteLinksActioninfoblockContentblockCreatedAt = "socialSiteLinks___actioninfoblock___contentblock___createdAt",
+  SocialSiteLinksActioninfoblockContentblockId = "socialSiteLinks___actioninfoblock___contentblock___id",
+  SocialSiteLinksActioninfoblockContentblockMargin = "socialSiteLinks___actioninfoblock___contentblock___margin",
+  SocialSiteLinksActioninfoblockContentblockNodeLocale = "socialSiteLinks___actioninfoblock___contentblock___node_locale",
+  SocialSiteLinksActioninfoblockContentblockPage = "socialSiteLinks___actioninfoblock___contentblock___page",
+  SocialSiteLinksActioninfoblockContentblockSpaceId = "socialSiteLinks___actioninfoblock___contentblock___spaceId",
+  SocialSiteLinksActioninfoblockContentblockUniqueId = "socialSiteLinks___actioninfoblock___contentblock___uniqueId",
+  SocialSiteLinksActioninfoblockContentblockUpdatedAt = "socialSiteLinks___actioninfoblock___contentblock___updatedAt",
+  SocialSiteLinksActioninfoblockContentfulId = "socialSiteLinks___actioninfoblock___contentful_id",
+  SocialSiteLinksActioninfoblockCreatedAt = "socialSiteLinks___actioninfoblock___createdAt",
+  SocialSiteLinksActioninfoblockId = "socialSiteLinks___actioninfoblock___id",
+  SocialSiteLinksActioninfoblockInternalContent = "socialSiteLinks___actioninfoblock___internal___content",
+  SocialSiteLinksActioninfoblockInternalContentDigest = "socialSiteLinks___actioninfoblock___internal___contentDigest",
+  SocialSiteLinksActioninfoblockInternalDescription = "socialSiteLinks___actioninfoblock___internal___description",
+  SocialSiteLinksActioninfoblockInternalFieldOwners = "socialSiteLinks___actioninfoblock___internal___fieldOwners",
+  SocialSiteLinksActioninfoblockInternalIgnoreType = "socialSiteLinks___actioninfoblock___internal___ignoreType",
+  SocialSiteLinksActioninfoblockInternalMediaType = "socialSiteLinks___actioninfoblock___internal___mediaType",
+  SocialSiteLinksActioninfoblockInternalOwner = "socialSiteLinks___actioninfoblock___internal___owner",
+  SocialSiteLinksActioninfoblockInternalType = "socialSiteLinks___actioninfoblock___internal___type",
+  SocialSiteLinksActioninfoblockNodeLocale = "socialSiteLinks___actioninfoblock___node_locale",
+  SocialSiteLinksActioninfoblockParentChildren = "socialSiteLinks___actioninfoblock___parent___children",
+  SocialSiteLinksActioninfoblockParentId = "socialSiteLinks___actioninfoblock___parent___id",
+  SocialSiteLinksActioninfoblockSpaceId = "socialSiteLinks___actioninfoblock___spaceId",
+  SocialSiteLinksActioninfoblockSysRevision = "socialSiteLinks___actioninfoblock___sys___revision",
+  SocialSiteLinksActioninfoblockSysType = "socialSiteLinks___actioninfoblock___sys___type",
+  SocialSiteLinksActioninfoblockTextPosition = "socialSiteLinks___actioninfoblock___textPosition",
+  SocialSiteLinksActioninfoblockUniqueId = "socialSiteLinks___actioninfoblock___uniqueId",
+  SocialSiteLinksActioninfoblockUpdatedAt = "socialSiteLinks___actioninfoblock___updatedAt",
+  SocialSiteLinksAuthoravatarblock = "socialSiteLinks___authoravatarblock",
+  SocialSiteLinksAuthoravatarblockAvatarChildren = "socialSiteLinks___authoravatarblock___avatar___children",
+  SocialSiteLinksAuthoravatarblockAvatarContentfulId = "socialSiteLinks___authoravatarblock___avatar___contentful_id",
+  SocialSiteLinksAuthoravatarblockAvatarCreatedAt = "socialSiteLinks___authoravatarblock___avatar___createdAt",
+  SocialSiteLinksAuthoravatarblockAvatarDescription = "socialSiteLinks___authoravatarblock___avatar___description",
+  SocialSiteLinksAuthoravatarblockAvatarFilename = "socialSiteLinks___authoravatarblock___avatar___filename",
+  SocialSiteLinksAuthoravatarblockAvatarFilesize = "socialSiteLinks___authoravatarblock___avatar___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksAuthoravatarblockAvatarGatsbyImage = "socialSiteLinks___authoravatarblock___avatar___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksAuthoravatarblockAvatarGatsbyImageData = "socialSiteLinks___authoravatarblock___avatar___gatsbyImageData",
+  SocialSiteLinksAuthoravatarblockAvatarHeight = "socialSiteLinks___authoravatarblock___avatar___height",
+  SocialSiteLinksAuthoravatarblockAvatarId = "socialSiteLinks___authoravatarblock___avatar___id",
+  SocialSiteLinksAuthoravatarblockAvatarMimeType = "socialSiteLinks___authoravatarblock___avatar___mimeType",
+  SocialSiteLinksAuthoravatarblockAvatarNodeLocale = "socialSiteLinks___authoravatarblock___avatar___node_locale",
+  SocialSiteLinksAuthoravatarblockAvatarPlaceholderUrl = "socialSiteLinks___authoravatarblock___avatar___placeholderUrl",
+  SocialSiteLinksAuthoravatarblockAvatarPublicUrl = "socialSiteLinks___authoravatarblock___avatar___publicUrl",
+  SocialSiteLinksAuthoravatarblockAvatarSpaceId = "socialSiteLinks___authoravatarblock___avatar___spaceId",
+  SocialSiteLinksAuthoravatarblockAvatarTitle = "socialSiteLinks___authoravatarblock___avatar___title",
+  SocialSiteLinksAuthoravatarblockAvatarUpdatedAt = "socialSiteLinks___authoravatarblock___avatar___updatedAt",
+  SocialSiteLinksAuthoravatarblockAvatarUrl = "socialSiteLinks___authoravatarblock___avatar___url",
+  SocialSiteLinksAuthoravatarblockAvatarWidth = "socialSiteLinks___authoravatarblock___avatar___width",
+  SocialSiteLinksAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "socialSiteLinks___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  SocialSiteLinksAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "socialSiteLinks___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  SocialSiteLinksAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "socialSiteLinks___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  SocialSiteLinksAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeId = "socialSiteLinks___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  SocialSiteLinksAuthoravatarblockChildren = "socialSiteLinks___authoravatarblock___children",
+  SocialSiteLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "socialSiteLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  SocialSiteLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "socialSiteLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  SocialSiteLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "socialSiteLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  SocialSiteLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "socialSiteLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  SocialSiteLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeId = "socialSiteLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  SocialSiteLinksAuthoravatarblockChildrenChildren = "socialSiteLinks___authoravatarblock___children___children",
+  SocialSiteLinksAuthoravatarblockChildrenId = "socialSiteLinks___authoravatarblock___children___id",
+  SocialSiteLinksAuthoravatarblockContentblock = "socialSiteLinks___authoravatarblock___contentblock",
+  SocialSiteLinksAuthoravatarblockContentblockChildren = "socialSiteLinks___authoravatarblock___contentblock___children",
+  SocialSiteLinksAuthoravatarblockContentblockContentfulId = "socialSiteLinks___authoravatarblock___contentblock___contentful_id",
+  SocialSiteLinksAuthoravatarblockContentblockCreatedAt = "socialSiteLinks___authoravatarblock___contentblock___createdAt",
+  SocialSiteLinksAuthoravatarblockContentblockId = "socialSiteLinks___authoravatarblock___contentblock___id",
+  SocialSiteLinksAuthoravatarblockContentblockMargin = "socialSiteLinks___authoravatarblock___contentblock___margin",
+  SocialSiteLinksAuthoravatarblockContentblockNodeLocale = "socialSiteLinks___authoravatarblock___contentblock___node_locale",
+  SocialSiteLinksAuthoravatarblockContentblockPage = "socialSiteLinks___authoravatarblock___contentblock___page",
+  SocialSiteLinksAuthoravatarblockContentblockSpaceId = "socialSiteLinks___authoravatarblock___contentblock___spaceId",
+  SocialSiteLinksAuthoravatarblockContentblockUniqueId = "socialSiteLinks___authoravatarblock___contentblock___uniqueId",
+  SocialSiteLinksAuthoravatarblockContentblockUpdatedAt = "socialSiteLinks___authoravatarblock___contentblock___updatedAt",
+  SocialSiteLinksAuthoravatarblockContentfulId = "socialSiteLinks___authoravatarblock___contentful_id",
+  SocialSiteLinksAuthoravatarblockCreatedAt = "socialSiteLinks___authoravatarblock___createdAt",
+  SocialSiteLinksAuthoravatarblockDescriptionChildren = "socialSiteLinks___authoravatarblock___description___children",
+  SocialSiteLinksAuthoravatarblockDescriptionChildrenMdx = "socialSiteLinks___authoravatarblock___description___childrenMdx",
+  SocialSiteLinksAuthoravatarblockDescriptionDescription = "socialSiteLinks___authoravatarblock___description___description",
+  SocialSiteLinksAuthoravatarblockDescriptionId = "socialSiteLinks___authoravatarblock___description___id",
+  SocialSiteLinksAuthoravatarblockFullName = "socialSiteLinks___authoravatarblock___fullName",
+  SocialSiteLinksAuthoravatarblockId = "socialSiteLinks___authoravatarblock___id",
+  SocialSiteLinksAuthoravatarblockInternalContent = "socialSiteLinks___authoravatarblock___internal___content",
+  SocialSiteLinksAuthoravatarblockInternalContentDigest = "socialSiteLinks___authoravatarblock___internal___contentDigest",
+  SocialSiteLinksAuthoravatarblockInternalDescription = "socialSiteLinks___authoravatarblock___internal___description",
+  SocialSiteLinksAuthoravatarblockInternalFieldOwners = "socialSiteLinks___authoravatarblock___internal___fieldOwners",
+  SocialSiteLinksAuthoravatarblockInternalIgnoreType = "socialSiteLinks___authoravatarblock___internal___ignoreType",
+  SocialSiteLinksAuthoravatarblockInternalMediaType = "socialSiteLinks___authoravatarblock___internal___mediaType",
+  SocialSiteLinksAuthoravatarblockInternalOwner = "socialSiteLinks___authoravatarblock___internal___owner",
+  SocialSiteLinksAuthoravatarblockInternalType = "socialSiteLinks___authoravatarblock___internal___type",
+  SocialSiteLinksAuthoravatarblockNodeLocale = "socialSiteLinks___authoravatarblock___node_locale",
+  SocialSiteLinksAuthoravatarblockParentChildren = "socialSiteLinks___authoravatarblock___parent___children",
+  SocialSiteLinksAuthoravatarblockParentId = "socialSiteLinks___authoravatarblock___parent___id",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinks = "socialSiteLinks___authoravatarblock___socialSiteLinks",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksActioninfoblock = "socialSiteLinks___authoravatarblock___socialSiteLinks___actioninfoblock",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksAuthoravatarblock = "socialSiteLinks___authoravatarblock___socialSiteLinks___authoravatarblock",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksChildren = "socialSiteLinks___authoravatarblock___socialSiteLinks___children",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "socialSiteLinks___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksContentfulId = "socialSiteLinks___authoravatarblock___socialSiteLinks___contentful_id",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksContentfulid = "socialSiteLinks___authoravatarblock___socialSiteLinks___contentfulid",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksCreatedAt = "socialSiteLinks___authoravatarblock___socialSiteLinks___createdAt",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksId = "socialSiteLinks___authoravatarblock___socialSiteLinks___id",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksNodeLocale = "socialSiteLinks___authoravatarblock___socialSiteLinks___node_locale",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksOptions = "socialSiteLinks___authoravatarblock___socialSiteLinks___options",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksSpaceId = "socialSiteLinks___authoravatarblock___socialSiteLinks___spaceId",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksTitle = "socialSiteLinks___authoravatarblock___socialSiteLinks___title",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksUpdatedAt = "socialSiteLinks___authoravatarblock___socialSiteLinks___updatedAt",
+  SocialSiteLinksAuthoravatarblockSpaceId = "socialSiteLinks___authoravatarblock___spaceId",
+  SocialSiteLinksAuthoravatarblockSysRevision = "socialSiteLinks___authoravatarblock___sys___revision",
+  SocialSiteLinksAuthoravatarblockSysType = "socialSiteLinks___authoravatarblock___sys___type",
+  SocialSiteLinksAuthoravatarblockUniqueId = "socialSiteLinks___authoravatarblock___uniqueId",
+  SocialSiteLinksAuthoravatarblockUpdatedAt = "socialSiteLinks___authoravatarblock___updatedAt",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildMdxBody = "socialSiteLinks___childContentfulLinkUrlTextNode___childMdx___body",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildMdxChildren = "socialSiteLinks___childContentfulLinkUrlTextNode___childMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildMdxExcerpt = "socialSiteLinks___childContentfulLinkUrlTextNode___childMdx___excerpt",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildMdxFileAbsolutePath = "socialSiteLinks___childContentfulLinkUrlTextNode___childMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildMdxHeadings = "socialSiteLinks___childContentfulLinkUrlTextNode___childMdx___headings",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildMdxHtml = "socialSiteLinks___childContentfulLinkUrlTextNode___childMdx___html",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildMdxId = "socialSiteLinks___childContentfulLinkUrlTextNode___childMdx___id",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildMdxMdxAst = "socialSiteLinks___childContentfulLinkUrlTextNode___childMdx___mdxAST",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildMdxRawBody = "socialSiteLinks___childContentfulLinkUrlTextNode___childMdx___rawBody",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildMdxSlug = "socialSiteLinks___childContentfulLinkUrlTextNode___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildMdxTableOfContents = "socialSiteLinks___childContentfulLinkUrlTextNode___childMdx___tableOfContents",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildMdxTimeToRead = "socialSiteLinks___childContentfulLinkUrlTextNode___childMdx___timeToRead",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildren = "socialSiteLinks___childContentfulLinkUrlTextNode___children",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdx = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdxBody = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx___body",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdxChildren = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdxExcerpt = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx___excerpt",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdxFileAbsolutePath = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdxHeadings = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx___headings",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdxHtml = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx___html",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdxId = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx___id",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdxMdxAst = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx___mdxAST",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdxRawBody = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx___rawBody",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdxSlug = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdxTableOfContents = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx___tableOfContents",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdxTimeToRead = "socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx___timeToRead",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenChildren = "socialSiteLinks___childContentfulLinkUrlTextNode___children___children",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeChildrenId = "socialSiteLinks___childContentfulLinkUrlTextNode___children___id",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeId = "socialSiteLinks___childContentfulLinkUrlTextNode___id",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeInternalContent = "socialSiteLinks___childContentfulLinkUrlTextNode___internal___content",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeInternalContentDigest = "socialSiteLinks___childContentfulLinkUrlTextNode___internal___contentDigest",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeInternalDescription = "socialSiteLinks___childContentfulLinkUrlTextNode___internal___description",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeInternalFieldOwners = "socialSiteLinks___childContentfulLinkUrlTextNode___internal___fieldOwners",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeInternalIgnoreType = "socialSiteLinks___childContentfulLinkUrlTextNode___internal___ignoreType",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeInternalMediaType = "socialSiteLinks___childContentfulLinkUrlTextNode___internal___mediaType",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeInternalOwner = "socialSiteLinks___childContentfulLinkUrlTextNode___internal___owner",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeInternalType = "socialSiteLinks___childContentfulLinkUrlTextNode___internal___type",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeParentChildren = "socialSiteLinks___childContentfulLinkUrlTextNode___parent___children",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeParentId = "socialSiteLinks___childContentfulLinkUrlTextNode___parent___id",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeSysType = "socialSiteLinks___childContentfulLinkUrlTextNode___sys___type",
+  SocialSiteLinksChildContentfulLinkUrlTextNodeUrl = "socialSiteLinks___childContentfulLinkUrlTextNode___url",
+  SocialSiteLinksChildren = "socialSiteLinks___children",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNode = "socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildMdxBody = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childMdx___body",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildMdxChildren = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildMdxExcerpt = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childMdx___excerpt",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildMdxFileAbsolutePath = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildMdxHeadings = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childMdx___headings",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildMdxHtml = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childMdx___html",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildMdxId = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childMdx___id",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildMdxMdxAst = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childMdx___mdxAST",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildMdxRawBody = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childMdx___rawBody",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildMdxSlug = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildMdxTableOfContents = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childMdx___tableOfContents",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildMdxTimeToRead = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childMdx___timeToRead",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildren = "socialSiteLinks___childrenContentfulLinkUrlTextNode___children",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdx = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdxBody = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx___body",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdxChildren = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdxExcerpt = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx___excerpt",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdxFileAbsolutePath = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdxHeadings = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx___headings",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdxHtml = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx___html",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdxId = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx___id",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdxMdxAst = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx___mdxAST",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdxRawBody = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx___rawBody",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdxSlug = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdxTableOfContents = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx___tableOfContents",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdxTimeToRead = "socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx___timeToRead",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenChildren = "socialSiteLinks___childrenContentfulLinkUrlTextNode___children___children",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenId = "socialSiteLinks___childrenContentfulLinkUrlTextNode___children___id",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeId = "socialSiteLinks___childrenContentfulLinkUrlTextNode___id",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeInternalContent = "socialSiteLinks___childrenContentfulLinkUrlTextNode___internal___content",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeInternalContentDigest = "socialSiteLinks___childrenContentfulLinkUrlTextNode___internal___contentDigest",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeInternalDescription = "socialSiteLinks___childrenContentfulLinkUrlTextNode___internal___description",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeInternalFieldOwners = "socialSiteLinks___childrenContentfulLinkUrlTextNode___internal___fieldOwners",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeInternalIgnoreType = "socialSiteLinks___childrenContentfulLinkUrlTextNode___internal___ignoreType",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeInternalMediaType = "socialSiteLinks___childrenContentfulLinkUrlTextNode___internal___mediaType",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeInternalOwner = "socialSiteLinks___childrenContentfulLinkUrlTextNode___internal___owner",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeInternalType = "socialSiteLinks___childrenContentfulLinkUrlTextNode___internal___type",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeParentChildren = "socialSiteLinks___childrenContentfulLinkUrlTextNode___parent___children",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeParentId = "socialSiteLinks___childrenContentfulLinkUrlTextNode___parent___id",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeSysType = "socialSiteLinks___childrenContentfulLinkUrlTextNode___sys___type",
+  SocialSiteLinksChildrenContentfulLinkUrlTextNodeUrl = "socialSiteLinks___childrenContentfulLinkUrlTextNode___url",
+  SocialSiteLinksChildrenChildren = "socialSiteLinks___children___children",
+  SocialSiteLinksChildrenChildrenChildren = "socialSiteLinks___children___children___children",
+  SocialSiteLinksChildrenChildrenId = "socialSiteLinks___children___children___id",
+  SocialSiteLinksChildrenId = "socialSiteLinks___children___id",
+  SocialSiteLinksChildrenInternalContent = "socialSiteLinks___children___internal___content",
+  SocialSiteLinksChildrenInternalContentDigest = "socialSiteLinks___children___internal___contentDigest",
+  SocialSiteLinksChildrenInternalDescription = "socialSiteLinks___children___internal___description",
+  SocialSiteLinksChildrenInternalFieldOwners = "socialSiteLinks___children___internal___fieldOwners",
+  SocialSiteLinksChildrenInternalIgnoreType = "socialSiteLinks___children___internal___ignoreType",
+  SocialSiteLinksChildrenInternalMediaType = "socialSiteLinks___children___internal___mediaType",
+  SocialSiteLinksChildrenInternalOwner = "socialSiteLinks___children___internal___owner",
+  SocialSiteLinksChildrenInternalType = "socialSiteLinks___children___internal___type",
+  SocialSiteLinksChildrenParentChildren = "socialSiteLinks___children___parent___children",
+  SocialSiteLinksChildrenParentId = "socialSiteLinks___children___parent___id",
+  SocialSiteLinksContentfulId = "socialSiteLinks___contentful_id",
+  SocialSiteLinksContentfulid = "socialSiteLinks___contentfulid",
+  SocialSiteLinksCreatedAt = "socialSiteLinks___createdAt",
+  SocialSiteLinksId = "socialSiteLinks___id",
+  SocialSiteLinksImageChildren = "socialSiteLinks___image___children",
+  SocialSiteLinksImageChildrenChildren = "socialSiteLinks___image___children___children",
+  SocialSiteLinksImageChildrenId = "socialSiteLinks___image___children___id",
+  SocialSiteLinksImageContentfulId = "socialSiteLinks___image___contentful_id",
+  SocialSiteLinksImageCreatedAt = "socialSiteLinks___image___createdAt",
+  SocialSiteLinksImageDescription = "socialSiteLinks___image___description",
+  SocialSiteLinksImageFileContentType = "socialSiteLinks___image___file___contentType",
+  SocialSiteLinksImageFileFileName = "socialSiteLinks___image___file___fileName",
+  SocialSiteLinksImageFileUrl = "socialSiteLinks___image___file___url",
+  SocialSiteLinksImageFilename = "socialSiteLinks___image___filename",
+  SocialSiteLinksImageFilesize = "socialSiteLinks___image___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksImageGatsbyImage = "socialSiteLinks___image___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksImageGatsbyImageData = "socialSiteLinks___image___gatsbyImageData",
+  SocialSiteLinksImageHeight = "socialSiteLinks___image___height",
+  SocialSiteLinksImageId = "socialSiteLinks___image___id",
+  SocialSiteLinksImageInternalContent = "socialSiteLinks___image___internal___content",
+  SocialSiteLinksImageInternalContentDigest = "socialSiteLinks___image___internal___contentDigest",
+  SocialSiteLinksImageInternalDescription = "socialSiteLinks___image___internal___description",
+  SocialSiteLinksImageInternalFieldOwners = "socialSiteLinks___image___internal___fieldOwners",
+  SocialSiteLinksImageInternalIgnoreType = "socialSiteLinks___image___internal___ignoreType",
+  SocialSiteLinksImageInternalMediaType = "socialSiteLinks___image___internal___mediaType",
+  SocialSiteLinksImageInternalOwner = "socialSiteLinks___image___internal___owner",
+  SocialSiteLinksImageInternalType = "socialSiteLinks___image___internal___type",
+  SocialSiteLinksImageMimeType = "socialSiteLinks___image___mimeType",
+  SocialSiteLinksImageNodeLocale = "socialSiteLinks___image___node_locale",
+  SocialSiteLinksImageParentChildren = "socialSiteLinks___image___parent___children",
+  SocialSiteLinksImageParentId = "socialSiteLinks___image___parent___id",
+  SocialSiteLinksImagePlaceholderUrl = "socialSiteLinks___image___placeholderUrl",
+  SocialSiteLinksImagePublicUrl = "socialSiteLinks___image___publicUrl",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksImageResizeHeight = "socialSiteLinks___image___resize___height",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksImageResizeSrc = "socialSiteLinks___image___resize___src",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksImageResizeWidth = "socialSiteLinks___image___resize___width",
+  SocialSiteLinksImageSpaceId = "socialSiteLinks___image___spaceId",
+  SocialSiteLinksImageSysRevision = "socialSiteLinks___image___sys___revision",
+  SocialSiteLinksImageSysType = "socialSiteLinks___image___sys___type",
+  SocialSiteLinksImageTitle = "socialSiteLinks___image___title",
+  SocialSiteLinksImageUpdatedAt = "socialSiteLinks___image___updatedAt",
+  SocialSiteLinksImageUrl = "socialSiteLinks___image___url",
+  SocialSiteLinksImageWidth = "socialSiteLinks___image___width",
+  SocialSiteLinksInternalContent = "socialSiteLinks___internal___content",
+  SocialSiteLinksInternalContentDigest = "socialSiteLinks___internal___contentDigest",
+  SocialSiteLinksInternalDescription = "socialSiteLinks___internal___description",
+  SocialSiteLinksInternalFieldOwners = "socialSiteLinks___internal___fieldOwners",
+  SocialSiteLinksInternalIgnoreType = "socialSiteLinks___internal___ignoreType",
+  SocialSiteLinksInternalMediaType = "socialSiteLinks___internal___mediaType",
+  SocialSiteLinksInternalOwner = "socialSiteLinks___internal___owner",
+  SocialSiteLinksInternalType = "socialSiteLinks___internal___type",
+  SocialSiteLinksNodeLocale = "socialSiteLinks___node_locale",
+  SocialSiteLinksOptions = "socialSiteLinks___options",
+  SocialSiteLinksOptionsBottomBarLogoActioninfoblock = "socialSiteLinks___options___bottomBarLogo___actioninfoblock",
+  SocialSiteLinksOptionsBottomBarLogoAuthoravatarblock = "socialSiteLinks___options___bottomBarLogo___authoravatarblock",
+  SocialSiteLinksOptionsBottomBarLogoChildren = "socialSiteLinks___options___bottomBarLogo___children",
+  SocialSiteLinksOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "socialSiteLinks___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksOptionsBottomBarLogoContentfulId = "socialSiteLinks___options___bottomBarLogo___contentful_id",
+  SocialSiteLinksOptionsBottomBarLogoContentfulid = "socialSiteLinks___options___bottomBarLogo___contentfulid",
+  SocialSiteLinksOptionsBottomBarLogoCreatedAt = "socialSiteLinks___options___bottomBarLogo___createdAt",
+  SocialSiteLinksOptionsBottomBarLogoId = "socialSiteLinks___options___bottomBarLogo___id",
+  SocialSiteLinksOptionsBottomBarLogoNodeLocale = "socialSiteLinks___options___bottomBarLogo___node_locale",
+  SocialSiteLinksOptionsBottomBarLogoOptions = "socialSiteLinks___options___bottomBarLogo___options",
+  SocialSiteLinksOptionsBottomBarLogoSpaceId = "socialSiteLinks___options___bottomBarLogo___spaceId",
+  SocialSiteLinksOptionsBottomBarLogoTitle = "socialSiteLinks___options___bottomBarLogo___title",
+  SocialSiteLinksOptionsBottomBarLogoUpdatedAt = "socialSiteLinks___options___bottomBarLogo___updatedAt",
+  SocialSiteLinksOptionsBottomBarSocialLinks = "socialSiteLinks___options___bottomBarSocialLinks",
+  SocialSiteLinksOptionsBottomBarSocialLinksActioninfoblock = "socialSiteLinks___options___bottomBarSocialLinks___actioninfoblock",
+  SocialSiteLinksOptionsBottomBarSocialLinksAuthoravatarblock = "socialSiteLinks___options___bottomBarSocialLinks___authoravatarblock",
+  SocialSiteLinksOptionsBottomBarSocialLinksChildren = "socialSiteLinks___options___bottomBarSocialLinks___children",
+  SocialSiteLinksOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "socialSiteLinks___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksOptionsBottomBarSocialLinksContentfulId = "socialSiteLinks___options___bottomBarSocialLinks___contentful_id",
+  SocialSiteLinksOptionsBottomBarSocialLinksContentfulid = "socialSiteLinks___options___bottomBarSocialLinks___contentfulid",
+  SocialSiteLinksOptionsBottomBarSocialLinksCreatedAt = "socialSiteLinks___options___bottomBarSocialLinks___createdAt",
+  SocialSiteLinksOptionsBottomBarSocialLinksId = "socialSiteLinks___options___bottomBarSocialLinks___id",
+  SocialSiteLinksOptionsBottomBarSocialLinksNodeLocale = "socialSiteLinks___options___bottomBarSocialLinks___node_locale",
+  SocialSiteLinksOptionsBottomBarSocialLinksOptions = "socialSiteLinks___options___bottomBarSocialLinks___options",
+  SocialSiteLinksOptionsBottomBarSocialLinksSpaceId = "socialSiteLinks___options___bottomBarSocialLinks___spaceId",
+  SocialSiteLinksOptionsBottomBarSocialLinksTitle = "socialSiteLinks___options___bottomBarSocialLinks___title",
+  SocialSiteLinksOptionsBottomBarSocialLinksUpdatedAt = "socialSiteLinks___options___bottomBarSocialLinks___updatedAt",
+  SocialSiteLinksOptionsBottomBarTabs = "socialSiteLinks___options___bottomBarTabs",
+  SocialSiteLinksOptionsBottomBarTabsActioninfoblock = "socialSiteLinks___options___bottomBarTabs___actioninfoblock",
+  SocialSiteLinksOptionsBottomBarTabsAuthoravatarblock = "socialSiteLinks___options___bottomBarTabs___authoravatarblock",
+  SocialSiteLinksOptionsBottomBarTabsChildren = "socialSiteLinks___options___bottomBarTabs___children",
+  SocialSiteLinksOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "socialSiteLinks___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksOptionsBottomBarTabsContentfulId = "socialSiteLinks___options___bottomBarTabs___contentful_id",
+  SocialSiteLinksOptionsBottomBarTabsContentfulid = "socialSiteLinks___options___bottomBarTabs___contentfulid",
+  SocialSiteLinksOptionsBottomBarTabsCreatedAt = "socialSiteLinks___options___bottomBarTabs___createdAt",
+  SocialSiteLinksOptionsBottomBarTabsId = "socialSiteLinks___options___bottomBarTabs___id",
+  SocialSiteLinksOptionsBottomBarTabsNodeLocale = "socialSiteLinks___options___bottomBarTabs___node_locale",
+  SocialSiteLinksOptionsBottomBarTabsOptions = "socialSiteLinks___options___bottomBarTabs___options",
+  SocialSiteLinksOptionsBottomBarTabsSpaceId = "socialSiteLinks___options___bottomBarTabs___spaceId",
+  SocialSiteLinksOptionsBottomBarTabsTitle = "socialSiteLinks___options___bottomBarTabs___title",
+  SocialSiteLinksOptionsBottomBarTabsUpdatedAt = "socialSiteLinks___options___bottomBarTabs___updatedAt",
+  SocialSiteLinksOptionsChildren = "socialSiteLinks___options___children",
+  SocialSiteLinksOptionsChildrenChildren = "socialSiteLinks___options___children___children",
+  SocialSiteLinksOptionsChildrenId = "socialSiteLinks___options___children___id",
+  SocialSiteLinksOptionsContentfulId = "socialSiteLinks___options___contentful_id",
+  SocialSiteLinksOptionsContentfulid = "socialSiteLinks___options___contentfulid",
+  SocialSiteLinksOptionsCreatedAt = "socialSiteLinks___options___createdAt",
+  SocialSiteLinksOptionsId = "socialSiteLinks___options___id",
+  SocialSiteLinksOptionsInternalContent = "socialSiteLinks___options___internal___content",
+  SocialSiteLinksOptionsInternalContentDigest = "socialSiteLinks___options___internal___contentDigest",
+  SocialSiteLinksOptionsInternalDescription = "socialSiteLinks___options___internal___description",
+  SocialSiteLinksOptionsInternalFieldOwners = "socialSiteLinks___options___internal___fieldOwners",
+  SocialSiteLinksOptionsInternalIgnoreType = "socialSiteLinks___options___internal___ignoreType",
+  SocialSiteLinksOptionsInternalMediaType = "socialSiteLinks___options___internal___mediaType",
+  SocialSiteLinksOptionsInternalOwner = "socialSiteLinks___options___internal___owner",
+  SocialSiteLinksOptionsInternalType = "socialSiteLinks___options___internal___type",
+  SocialSiteLinksOptionsNodeLocale = "socialSiteLinks___options___node_locale",
+  SocialSiteLinksOptionsParentChildren = "socialSiteLinks___options___parent___children",
+  SocialSiteLinksOptionsParentId = "socialSiteLinks___options___parent___id",
+  SocialSiteLinksOptionsSpaceId = "socialSiteLinks___options___spaceId",
+  SocialSiteLinksOptionsSysRevision = "socialSiteLinks___options___sys___revision",
+  SocialSiteLinksOptionsSysType = "socialSiteLinks___options___sys___type",
+  SocialSiteLinksOptionsTopBarLogoActioninfoblock = "socialSiteLinks___options___topBarLogo___actioninfoblock",
+  SocialSiteLinksOptionsTopBarLogoAuthoravatarblock = "socialSiteLinks___options___topBarLogo___authoravatarblock",
+  SocialSiteLinksOptionsTopBarLogoChildren = "socialSiteLinks___options___topBarLogo___children",
+  SocialSiteLinksOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "socialSiteLinks___options___topBarLogo___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksOptionsTopBarLogoContentfulId = "socialSiteLinks___options___topBarLogo___contentful_id",
+  SocialSiteLinksOptionsTopBarLogoContentfulid = "socialSiteLinks___options___topBarLogo___contentfulid",
+  SocialSiteLinksOptionsTopBarLogoCreatedAt = "socialSiteLinks___options___topBarLogo___createdAt",
+  SocialSiteLinksOptionsTopBarLogoId = "socialSiteLinks___options___topBarLogo___id",
+  SocialSiteLinksOptionsTopBarLogoNodeLocale = "socialSiteLinks___options___topBarLogo___node_locale",
+  SocialSiteLinksOptionsTopBarLogoOptions = "socialSiteLinks___options___topBarLogo___options",
+  SocialSiteLinksOptionsTopBarLogoSpaceId = "socialSiteLinks___options___topBarLogo___spaceId",
+  SocialSiteLinksOptionsTopBarLogoTitle = "socialSiteLinks___options___topBarLogo___title",
+  SocialSiteLinksOptionsTopBarLogoUpdatedAt = "socialSiteLinks___options___topBarLogo___updatedAt",
+  SocialSiteLinksOptionsTopBarSocialLinks = "socialSiteLinks___options___topBarSocialLinks",
+  SocialSiteLinksOptionsTopBarSocialLinksActioninfoblock = "socialSiteLinks___options___topBarSocialLinks___actioninfoblock",
+  SocialSiteLinksOptionsTopBarSocialLinksAuthoravatarblock = "socialSiteLinks___options___topBarSocialLinks___authoravatarblock",
+  SocialSiteLinksOptionsTopBarSocialLinksChildren = "socialSiteLinks___options___topBarSocialLinks___children",
+  SocialSiteLinksOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "socialSiteLinks___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksOptionsTopBarSocialLinksContentfulId = "socialSiteLinks___options___topBarSocialLinks___contentful_id",
+  SocialSiteLinksOptionsTopBarSocialLinksContentfulid = "socialSiteLinks___options___topBarSocialLinks___contentfulid",
+  SocialSiteLinksOptionsTopBarSocialLinksCreatedAt = "socialSiteLinks___options___topBarSocialLinks___createdAt",
+  SocialSiteLinksOptionsTopBarSocialLinksId = "socialSiteLinks___options___topBarSocialLinks___id",
+  SocialSiteLinksOptionsTopBarSocialLinksNodeLocale = "socialSiteLinks___options___topBarSocialLinks___node_locale",
+  SocialSiteLinksOptionsTopBarSocialLinksOptions = "socialSiteLinks___options___topBarSocialLinks___options",
+  SocialSiteLinksOptionsTopBarSocialLinksSpaceId = "socialSiteLinks___options___topBarSocialLinks___spaceId",
+  SocialSiteLinksOptionsTopBarSocialLinksTitle = "socialSiteLinks___options___topBarSocialLinks___title",
+  SocialSiteLinksOptionsTopBarSocialLinksUpdatedAt = "socialSiteLinks___options___topBarSocialLinks___updatedAt",
+  SocialSiteLinksOptionsTopBarTabs = "socialSiteLinks___options___topBarTabs",
+  SocialSiteLinksOptionsTopBarTabsActioninfoblock = "socialSiteLinks___options___topBarTabs___actioninfoblock",
+  SocialSiteLinksOptionsTopBarTabsAuthoravatarblock = "socialSiteLinks___options___topBarTabs___authoravatarblock",
+  SocialSiteLinksOptionsTopBarTabsChildren = "socialSiteLinks___options___topBarTabs___children",
+  SocialSiteLinksOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "socialSiteLinks___options___topBarTabs___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksOptionsTopBarTabsContentfulId = "socialSiteLinks___options___topBarTabs___contentful_id",
+  SocialSiteLinksOptionsTopBarTabsContentfulid = "socialSiteLinks___options___topBarTabs___contentfulid",
+  SocialSiteLinksOptionsTopBarTabsCreatedAt = "socialSiteLinks___options___topBarTabs___createdAt",
+  SocialSiteLinksOptionsTopBarTabsId = "socialSiteLinks___options___topBarTabs___id",
+  SocialSiteLinksOptionsTopBarTabsNodeLocale = "socialSiteLinks___options___topBarTabs___node_locale",
+  SocialSiteLinksOptionsTopBarTabsOptions = "socialSiteLinks___options___topBarTabs___options",
+  SocialSiteLinksOptionsTopBarTabsSpaceId = "socialSiteLinks___options___topBarTabs___spaceId",
+  SocialSiteLinksOptionsTopBarTabsTitle = "socialSiteLinks___options___topBarTabs___title",
+  SocialSiteLinksOptionsTopBarTabsUpdatedAt = "socialSiteLinks___options___topBarTabs___updatedAt",
+  SocialSiteLinksOptionsUpdatedAt = "socialSiteLinks___options___updatedAt",
+  SocialSiteLinksParentChildren = "socialSiteLinks___parent___children",
+  SocialSiteLinksParentChildrenChildren = "socialSiteLinks___parent___children___children",
+  SocialSiteLinksParentChildrenId = "socialSiteLinks___parent___children___id",
+  SocialSiteLinksParentId = "socialSiteLinks___parent___id",
+  SocialSiteLinksParentInternalContent = "socialSiteLinks___parent___internal___content",
+  SocialSiteLinksParentInternalContentDigest = "socialSiteLinks___parent___internal___contentDigest",
+  SocialSiteLinksParentInternalDescription = "socialSiteLinks___parent___internal___description",
+  SocialSiteLinksParentInternalFieldOwners = "socialSiteLinks___parent___internal___fieldOwners",
+  SocialSiteLinksParentInternalIgnoreType = "socialSiteLinks___parent___internal___ignoreType",
+  SocialSiteLinksParentInternalMediaType = "socialSiteLinks___parent___internal___mediaType",
+  SocialSiteLinksParentInternalOwner = "socialSiteLinks___parent___internal___owner",
+  SocialSiteLinksParentInternalType = "socialSiteLinks___parent___internal___type",
+  SocialSiteLinksParentParentChildren = "socialSiteLinks___parent___parent___children",
+  SocialSiteLinksParentParentId = "socialSiteLinks___parent___parent___id",
+  SocialSiteLinksSpaceId = "socialSiteLinks___spaceId",
+  SocialSiteLinksSysRevision = "socialSiteLinks___sys___revision",
+  SocialSiteLinksSysType = "socialSiteLinks___sys___type",
+  SocialSiteLinksTitle = "socialSiteLinks___title",
+  SocialSiteLinksUpdatedAt = "socialSiteLinks___updatedAt",
+  SocialSiteLinksUrlChildMdxBody = "socialSiteLinks___url___childMdx___body",
+  SocialSiteLinksUrlChildMdxChildren = "socialSiteLinks___url___childMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksUrlChildMdxExcerpt = "socialSiteLinks___url___childMdx___excerpt",
+  SocialSiteLinksUrlChildMdxFileAbsolutePath = "socialSiteLinks___url___childMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksUrlChildMdxHeadings = "socialSiteLinks___url___childMdx___headings",
+  SocialSiteLinksUrlChildMdxHtml = "socialSiteLinks___url___childMdx___html",
+  SocialSiteLinksUrlChildMdxId = "socialSiteLinks___url___childMdx___id",
+  SocialSiteLinksUrlChildMdxMdxAst = "socialSiteLinks___url___childMdx___mdxAST",
+  SocialSiteLinksUrlChildMdxRawBody = "socialSiteLinks___url___childMdx___rawBody",
+  SocialSiteLinksUrlChildMdxSlug = "socialSiteLinks___url___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksUrlChildMdxTableOfContents = "socialSiteLinks___url___childMdx___tableOfContents",
+  SocialSiteLinksUrlChildMdxTimeToRead = "socialSiteLinks___url___childMdx___timeToRead",
+  SocialSiteLinksUrlChildren = "socialSiteLinks___url___children",
+  SocialSiteLinksUrlChildrenMdx = "socialSiteLinks___url___childrenMdx",
+  SocialSiteLinksUrlChildrenMdxBody = "socialSiteLinks___url___childrenMdx___body",
+  SocialSiteLinksUrlChildrenMdxChildren = "socialSiteLinks___url___childrenMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksUrlChildrenMdxExcerpt = "socialSiteLinks___url___childrenMdx___excerpt",
+  SocialSiteLinksUrlChildrenMdxFileAbsolutePath = "socialSiteLinks___url___childrenMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksUrlChildrenMdxHeadings = "socialSiteLinks___url___childrenMdx___headings",
+  SocialSiteLinksUrlChildrenMdxHtml = "socialSiteLinks___url___childrenMdx___html",
+  SocialSiteLinksUrlChildrenMdxId = "socialSiteLinks___url___childrenMdx___id",
+  SocialSiteLinksUrlChildrenMdxMdxAst = "socialSiteLinks___url___childrenMdx___mdxAST",
+  SocialSiteLinksUrlChildrenMdxRawBody = "socialSiteLinks___url___childrenMdx___rawBody",
+  SocialSiteLinksUrlChildrenMdxSlug = "socialSiteLinks___url___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  SocialSiteLinksUrlChildrenMdxTableOfContents = "socialSiteLinks___url___childrenMdx___tableOfContents",
+  SocialSiteLinksUrlChildrenMdxTimeToRead = "socialSiteLinks___url___childrenMdx___timeToRead",
+  SocialSiteLinksUrlChildrenChildren = "socialSiteLinks___url___children___children",
+  SocialSiteLinksUrlChildrenId = "socialSiteLinks___url___children___id",
+  SocialSiteLinksUrlId = "socialSiteLinks___url___id",
+  SocialSiteLinksUrlInternalContent = "socialSiteLinks___url___internal___content",
+  SocialSiteLinksUrlInternalContentDigest = "socialSiteLinks___url___internal___contentDigest",
+  SocialSiteLinksUrlInternalDescription = "socialSiteLinks___url___internal___description",
+  SocialSiteLinksUrlInternalFieldOwners = "socialSiteLinks___url___internal___fieldOwners",
+  SocialSiteLinksUrlInternalIgnoreType = "socialSiteLinks___url___internal___ignoreType",
+  SocialSiteLinksUrlInternalMediaType = "socialSiteLinks___url___internal___mediaType",
+  SocialSiteLinksUrlInternalOwner = "socialSiteLinks___url___internal___owner",
+  SocialSiteLinksUrlInternalType = "socialSiteLinks___url___internal___type",
+  SocialSiteLinksUrlParentChildren = "socialSiteLinks___url___parent___children",
+  SocialSiteLinksUrlParentId = "socialSiteLinks___url___parent___id",
+  SocialSiteLinksUrlSysType = "socialSiteLinks___url___sys___type",
+  SocialSiteLinksUrlUrl = "socialSiteLinks___url___url",
+  SpaceId = "spaceId",
+  SysContentTypeSysId = "sys___contentType___sys___id",
+  SysContentTypeSysLinkType = "sys___contentType___sys___linkType",
+  SysContentTypeSysType = "sys___contentType___sys___type",
+  SysRevision = "sys___revision",
+  SysType = "sys___type",
+  UniqueId = "uniqueId",
+  UpdatedAt = "updatedAt",
+}
+
+export type ContentfulAuthorAvatarBlockFilterInput = {
+  avatar?: InputMaybe<ContentfulAssetFilterInput>;
+  childContentfulAuthorAvatarBlockDescriptionTextNode?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  childrenContentfulAuthorAvatarBlockDescriptionTextNode?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFilterListInput>;
+  contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentful_id?: InputMaybe<StringQueryOperatorInput>;
+  createdAt?: InputMaybe<DateQueryOperatorInput>;
+  description?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFilterInput>;
+  fullName?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  node_locale?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  socialSiteLinks?: InputMaybe<ContentfulLinkFilterListInput>;
+  spaceId?: InputMaybe<StringQueryOperatorInput>;
+  sys?: InputMaybe<ContentfulAuthorAvatarBlockSysFilterInput>;
+  uniqueId?: InputMaybe<StringQueryOperatorInput>;
+  updatedAt?: InputMaybe<DateQueryOperatorInput>;
+};
+
+export type ContentfulAuthorAvatarBlockFilterListInput = {
+  elemMatch?: InputMaybe<ContentfulAuthorAvatarBlockFilterInput>;
+};
+
+export type ContentfulAuthorAvatarBlockGroupConnection = {
+  __typename?: "ContentfulAuthorAvatarBlockGroupConnection";
+  distinct: Array<Scalars["String"]>;
+  edges: Array<ContentfulAuthorAvatarBlockEdge>;
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+  group: Array<ContentfulAuthorAvatarBlockGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<ContentfulAuthorAvatarBlock>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type ContentfulAuthorAvatarBlockGroupConnectionDistinctArgs = {
+  field: ContentfulAuthorAvatarBlockFieldsEnum;
+};
+
+export type ContentfulAuthorAvatarBlockGroupConnectionGroupArgs = {
+  field: ContentfulAuthorAvatarBlockFieldsEnum;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+};
+
+export type ContentfulAuthorAvatarBlockGroupConnectionMaxArgs = {
+  field: ContentfulAuthorAvatarBlockFieldsEnum;
+};
+
+export type ContentfulAuthorAvatarBlockGroupConnectionMinArgs = {
+  field: ContentfulAuthorAvatarBlockFieldsEnum;
+};
+
+export type ContentfulAuthorAvatarBlockGroupConnectionSumArgs = {
+  field: ContentfulAuthorAvatarBlockFieldsEnum;
+};
+
+export type ContentfulAuthorAvatarBlockSortInput = {
+  fields?: InputMaybe<Array<InputMaybe<ContentfulAuthorAvatarBlockFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
+
+export type ContentfulAuthorAvatarBlockSys = {
+  __typename?: "ContentfulAuthorAvatarBlockSys";
+  contentType?: Maybe<ContentfulAuthorAvatarBlockSysContentType>;
+  revision?: Maybe<Scalars["Int"]>;
+  type?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulAuthorAvatarBlockSysContentType = {
+  __typename?: "ContentfulAuthorAvatarBlockSysContentType";
+  sys?: Maybe<ContentfulAuthorAvatarBlockSysContentTypeSys>;
+};
+
+export type ContentfulAuthorAvatarBlockSysContentTypeFilterInput = {
+  sys?: InputMaybe<ContentfulAuthorAvatarBlockSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulAuthorAvatarBlockSysContentTypeSys = {
+  __typename?: "ContentfulAuthorAvatarBlockSysContentTypeSys";
+  id?: Maybe<Scalars["String"]>;
+  linkType?: Maybe<Scalars["String"]>;
+  type?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulAuthorAvatarBlockSysContentTypeSysFilterInput = {
+  id?: InputMaybe<StringQueryOperatorInput>;
+  linkType?: InputMaybe<StringQueryOperatorInput>;
+  type?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulAuthorAvatarBlockSysFilterInput = {
+  contentType?: InputMaybe<ContentfulAuthorAvatarBlockSysContentTypeFilterInput>;
+  revision?: InputMaybe<IntQueryOperatorInput>;
+  type?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulContentBlock = ContentfulEntry &
+  ContentfulReference &
+  Node & {
+    __typename?: "ContentfulContentBlock";
+    blocks?: Maybe<
+      Array<
+        Maybe<ContentfulActionInfoBlockContentfulAuthorAvatarBlockContentfulRichTextBlockUnion>
+      >
+    >;
+    children: Array<Node>;
+    contentful_id: Scalars["String"];
+    createdAt?: Maybe<Scalars["Date"]>;
+    id: Scalars["ID"];
+    internal: Internal;
+    margin?: Maybe<Scalars["String"]>;
+    node_locale: Scalars["String"];
+    page?: Maybe<Array<Maybe<ContentfulPage>>>;
+    parent?: Maybe<Node>;
+    spaceId?: Maybe<Scalars["String"]>;
+    sys?: Maybe<ContentfulContentBlockSys>;
+    uniqueId?: Maybe<Scalars["String"]>;
+    updatedAt?: Maybe<Scalars["Date"]>;
+  };
+
+export type ContentfulContentBlockCreatedAtArgs = {
+  difference?: InputMaybe<Scalars["String"]>;
+  formatString?: InputMaybe<Scalars["String"]>;
+  fromNow?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars["String"]>;
+};
+
+export type ContentfulContentBlockUpdatedAtArgs = {
+  difference?: InputMaybe<Scalars["String"]>;
+  formatString?: InputMaybe<Scalars["String"]>;
+  fromNow?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars["String"]>;
+};
+
+export type ContentfulContentBlockConnection = {
+  __typename?: "ContentfulContentBlockConnection";
+  distinct: Array<Scalars["String"]>;
+  edges: Array<ContentfulContentBlockEdge>;
+  group: Array<ContentfulContentBlockGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<ContentfulContentBlock>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type ContentfulContentBlockConnectionDistinctArgs = {
+  field: ContentfulContentBlockFieldsEnum;
+};
+
+export type ContentfulContentBlockConnectionGroupArgs = {
+  field: ContentfulContentBlockFieldsEnum;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+};
+
+export type ContentfulContentBlockConnectionMaxArgs = {
+  field: ContentfulContentBlockFieldsEnum;
+};
+
+export type ContentfulContentBlockConnectionMinArgs = {
+  field: ContentfulContentBlockFieldsEnum;
+};
+
+export type ContentfulContentBlockConnectionSumArgs = {
+  field: ContentfulContentBlockFieldsEnum;
+};
+
+export type ContentfulContentBlockEdge = {
+  __typename?: "ContentfulContentBlockEdge";
+  next?: Maybe<ContentfulContentBlock>;
+  node: ContentfulContentBlock;
+  previous?: Maybe<ContentfulContentBlock>;
+};
+
+export enum ContentfulContentBlockFieldsEnum {
+  Children = "children",
+  ChildrenChildren = "children___children",
+  ChildrenChildrenChildren = "children___children___children",
+  ChildrenChildrenChildrenChildren = "children___children___children___children",
+  ChildrenChildrenChildrenId = "children___children___children___id",
+  ChildrenChildrenId = "children___children___id",
+  ChildrenChildrenInternalContent = "children___children___internal___content",
+  ChildrenChildrenInternalContentDigest = "children___children___internal___contentDigest",
+  ChildrenChildrenInternalDescription = "children___children___internal___description",
+  ChildrenChildrenInternalFieldOwners = "children___children___internal___fieldOwners",
+  ChildrenChildrenInternalIgnoreType = "children___children___internal___ignoreType",
+  ChildrenChildrenInternalMediaType = "children___children___internal___mediaType",
+  ChildrenChildrenInternalOwner = "children___children___internal___owner",
+  ChildrenChildrenInternalType = "children___children___internal___type",
+  ChildrenChildrenParentChildren = "children___children___parent___children",
+  ChildrenChildrenParentId = "children___children___parent___id",
+  ChildrenId = "children___id",
+  ChildrenInternalContent = "children___internal___content",
+  ChildrenInternalContentDigest = "children___internal___contentDigest",
+  ChildrenInternalDescription = "children___internal___description",
+  ChildrenInternalFieldOwners = "children___internal___fieldOwners",
+  ChildrenInternalIgnoreType = "children___internal___ignoreType",
+  ChildrenInternalMediaType = "children___internal___mediaType",
+  ChildrenInternalOwner = "children___internal___owner",
+  ChildrenInternalType = "children___internal___type",
+  ChildrenParentChildren = "children___parent___children",
+  ChildrenParentChildrenChildren = "children___parent___children___children",
+  ChildrenParentChildrenId = "children___parent___children___id",
+  ChildrenParentId = "children___parent___id",
+  ChildrenParentInternalContent = "children___parent___internal___content",
+  ChildrenParentInternalContentDigest = "children___parent___internal___contentDigest",
+  ChildrenParentInternalDescription = "children___parent___internal___description",
+  ChildrenParentInternalFieldOwners = "children___parent___internal___fieldOwners",
+  ChildrenParentInternalIgnoreType = "children___parent___internal___ignoreType",
+  ChildrenParentInternalMediaType = "children___parent___internal___mediaType",
+  ChildrenParentInternalOwner = "children___parent___internal___owner",
+  ChildrenParentInternalType = "children___parent___internal___type",
+  ChildrenParentParentChildren = "children___parent___parent___children",
+  ChildrenParentParentId = "children___parent___parent___id",
+  ContentfulId = "contentful_id",
+  CreatedAt = "createdAt",
+  Id = "id",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalDescription = "internal___description",
+  InternalFieldOwners = "internal___fieldOwners",
+  InternalIgnoreType = "internal___ignoreType",
+  InternalMediaType = "internal___mediaType",
+  InternalOwner = "internal___owner",
+  InternalType = "internal___type",
+  Margin = "margin",
+  NodeLocale = "node_locale",
+  Page = "page",
+  PageChildContentfulPageDescriptionTextNodeChildMdxBody = "page___childContentfulPageDescriptionTextNode___childMdx___body",
+  PageChildContentfulPageDescriptionTextNodeChildMdxChildren = "page___childContentfulPageDescriptionTextNode___childMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageChildContentfulPageDescriptionTextNodeChildMdxExcerpt = "page___childContentfulPageDescriptionTextNode___childMdx___excerpt",
+  PageChildContentfulPageDescriptionTextNodeChildMdxFileAbsolutePath = "page___childContentfulPageDescriptionTextNode___childMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageChildContentfulPageDescriptionTextNodeChildMdxHeadings = "page___childContentfulPageDescriptionTextNode___childMdx___headings",
+  PageChildContentfulPageDescriptionTextNodeChildMdxHtml = "page___childContentfulPageDescriptionTextNode___childMdx___html",
+  PageChildContentfulPageDescriptionTextNodeChildMdxId = "page___childContentfulPageDescriptionTextNode___childMdx___id",
+  PageChildContentfulPageDescriptionTextNodeChildMdxMdxAst = "page___childContentfulPageDescriptionTextNode___childMdx___mdxAST",
+  PageChildContentfulPageDescriptionTextNodeChildMdxRawBody = "page___childContentfulPageDescriptionTextNode___childMdx___rawBody",
+  PageChildContentfulPageDescriptionTextNodeChildMdxSlug = "page___childContentfulPageDescriptionTextNode___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageChildContentfulPageDescriptionTextNodeChildMdxTableOfContents = "page___childContentfulPageDescriptionTextNode___childMdx___tableOfContents",
+  PageChildContentfulPageDescriptionTextNodeChildMdxTimeToRead = "page___childContentfulPageDescriptionTextNode___childMdx___timeToRead",
+  PageChildContentfulPageDescriptionTextNodeChildren = "page___childContentfulPageDescriptionTextNode___children",
+  PageChildContentfulPageDescriptionTextNodeChildrenMdx = "page___childContentfulPageDescriptionTextNode___childrenMdx",
+  PageChildContentfulPageDescriptionTextNodeChildrenMdxBody = "page___childContentfulPageDescriptionTextNode___childrenMdx___body",
+  PageChildContentfulPageDescriptionTextNodeChildrenMdxChildren = "page___childContentfulPageDescriptionTextNode___childrenMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageChildContentfulPageDescriptionTextNodeChildrenMdxExcerpt = "page___childContentfulPageDescriptionTextNode___childrenMdx___excerpt",
+  PageChildContentfulPageDescriptionTextNodeChildrenMdxFileAbsolutePath = "page___childContentfulPageDescriptionTextNode___childrenMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageChildContentfulPageDescriptionTextNodeChildrenMdxHeadings = "page___childContentfulPageDescriptionTextNode___childrenMdx___headings",
+  PageChildContentfulPageDescriptionTextNodeChildrenMdxHtml = "page___childContentfulPageDescriptionTextNode___childrenMdx___html",
+  PageChildContentfulPageDescriptionTextNodeChildrenMdxId = "page___childContentfulPageDescriptionTextNode___childrenMdx___id",
+  PageChildContentfulPageDescriptionTextNodeChildrenMdxMdxAst = "page___childContentfulPageDescriptionTextNode___childrenMdx___mdxAST",
+  PageChildContentfulPageDescriptionTextNodeChildrenMdxRawBody = "page___childContentfulPageDescriptionTextNode___childrenMdx___rawBody",
+  PageChildContentfulPageDescriptionTextNodeChildrenMdxSlug = "page___childContentfulPageDescriptionTextNode___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageChildContentfulPageDescriptionTextNodeChildrenMdxTableOfContents = "page___childContentfulPageDescriptionTextNode___childrenMdx___tableOfContents",
+  PageChildContentfulPageDescriptionTextNodeChildrenMdxTimeToRead = "page___childContentfulPageDescriptionTextNode___childrenMdx___timeToRead",
+  PageChildContentfulPageDescriptionTextNodeChildrenChildren = "page___childContentfulPageDescriptionTextNode___children___children",
+  PageChildContentfulPageDescriptionTextNodeChildrenId = "page___childContentfulPageDescriptionTextNode___children___id",
+  PageChildContentfulPageDescriptionTextNodeDescription = "page___childContentfulPageDescriptionTextNode___description",
+  PageChildContentfulPageDescriptionTextNodeId = "page___childContentfulPageDescriptionTextNode___id",
+  PageChildContentfulPageDescriptionTextNodeInternalContent = "page___childContentfulPageDescriptionTextNode___internal___content",
+  PageChildContentfulPageDescriptionTextNodeInternalContentDigest = "page___childContentfulPageDescriptionTextNode___internal___contentDigest",
+  PageChildContentfulPageDescriptionTextNodeInternalDescription = "page___childContentfulPageDescriptionTextNode___internal___description",
+  PageChildContentfulPageDescriptionTextNodeInternalFieldOwners = "page___childContentfulPageDescriptionTextNode___internal___fieldOwners",
+  PageChildContentfulPageDescriptionTextNodeInternalIgnoreType = "page___childContentfulPageDescriptionTextNode___internal___ignoreType",
+  PageChildContentfulPageDescriptionTextNodeInternalMediaType = "page___childContentfulPageDescriptionTextNode___internal___mediaType",
+  PageChildContentfulPageDescriptionTextNodeInternalOwner = "page___childContentfulPageDescriptionTextNode___internal___owner",
+  PageChildContentfulPageDescriptionTextNodeInternalType = "page___childContentfulPageDescriptionTextNode___internal___type",
+  PageChildContentfulPageDescriptionTextNodeParentChildren = "page___childContentfulPageDescriptionTextNode___parent___children",
+  PageChildContentfulPageDescriptionTextNodeParentId = "page___childContentfulPageDescriptionTextNode___parent___id",
+  PageChildContentfulPageDescriptionTextNodeSysType = "page___childContentfulPageDescriptionTextNode___sys___type",
+  PageChildren = "page___children",
+  PageChildrenContentfulPageDescriptionTextNode = "page___childrenContentfulPageDescriptionTextNode",
+  PageChildrenContentfulPageDescriptionTextNodeChildMdxBody = "page___childrenContentfulPageDescriptionTextNode___childMdx___body",
+  PageChildrenContentfulPageDescriptionTextNodeChildMdxChildren = "page___childrenContentfulPageDescriptionTextNode___childMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageChildrenContentfulPageDescriptionTextNodeChildMdxExcerpt = "page___childrenContentfulPageDescriptionTextNode___childMdx___excerpt",
+  PageChildrenContentfulPageDescriptionTextNodeChildMdxFileAbsolutePath = "page___childrenContentfulPageDescriptionTextNode___childMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageChildrenContentfulPageDescriptionTextNodeChildMdxHeadings = "page___childrenContentfulPageDescriptionTextNode___childMdx___headings",
+  PageChildrenContentfulPageDescriptionTextNodeChildMdxHtml = "page___childrenContentfulPageDescriptionTextNode___childMdx___html",
+  PageChildrenContentfulPageDescriptionTextNodeChildMdxId = "page___childrenContentfulPageDescriptionTextNode___childMdx___id",
+  PageChildrenContentfulPageDescriptionTextNodeChildMdxMdxAst = "page___childrenContentfulPageDescriptionTextNode___childMdx___mdxAST",
+  PageChildrenContentfulPageDescriptionTextNodeChildMdxRawBody = "page___childrenContentfulPageDescriptionTextNode___childMdx___rawBody",
+  PageChildrenContentfulPageDescriptionTextNodeChildMdxSlug = "page___childrenContentfulPageDescriptionTextNode___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageChildrenContentfulPageDescriptionTextNodeChildMdxTableOfContents = "page___childrenContentfulPageDescriptionTextNode___childMdx___tableOfContents",
+  PageChildrenContentfulPageDescriptionTextNodeChildMdxTimeToRead = "page___childrenContentfulPageDescriptionTextNode___childMdx___timeToRead",
+  PageChildrenContentfulPageDescriptionTextNodeChildren = "page___childrenContentfulPageDescriptionTextNode___children",
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdx = "page___childrenContentfulPageDescriptionTextNode___childrenMdx",
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdxBody = "page___childrenContentfulPageDescriptionTextNode___childrenMdx___body",
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdxChildren = "page___childrenContentfulPageDescriptionTextNode___childrenMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdxExcerpt = "page___childrenContentfulPageDescriptionTextNode___childrenMdx___excerpt",
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdxFileAbsolutePath = "page___childrenContentfulPageDescriptionTextNode___childrenMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdxHeadings = "page___childrenContentfulPageDescriptionTextNode___childrenMdx___headings",
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdxHtml = "page___childrenContentfulPageDescriptionTextNode___childrenMdx___html",
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdxId = "page___childrenContentfulPageDescriptionTextNode___childrenMdx___id",
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdxMdxAst = "page___childrenContentfulPageDescriptionTextNode___childrenMdx___mdxAST",
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdxRawBody = "page___childrenContentfulPageDescriptionTextNode___childrenMdx___rawBody",
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdxSlug = "page___childrenContentfulPageDescriptionTextNode___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdxTableOfContents = "page___childrenContentfulPageDescriptionTextNode___childrenMdx___tableOfContents",
+  PageChildrenContentfulPageDescriptionTextNodeChildrenMdxTimeToRead = "page___childrenContentfulPageDescriptionTextNode___childrenMdx___timeToRead",
+  PageChildrenContentfulPageDescriptionTextNodeChildrenChildren = "page___childrenContentfulPageDescriptionTextNode___children___children",
+  PageChildrenContentfulPageDescriptionTextNodeChildrenId = "page___childrenContentfulPageDescriptionTextNode___children___id",
+  PageChildrenContentfulPageDescriptionTextNodeDescription = "page___childrenContentfulPageDescriptionTextNode___description",
+  PageChildrenContentfulPageDescriptionTextNodeId = "page___childrenContentfulPageDescriptionTextNode___id",
+  PageChildrenContentfulPageDescriptionTextNodeInternalContent = "page___childrenContentfulPageDescriptionTextNode___internal___content",
+  PageChildrenContentfulPageDescriptionTextNodeInternalContentDigest = "page___childrenContentfulPageDescriptionTextNode___internal___contentDigest",
+  PageChildrenContentfulPageDescriptionTextNodeInternalDescription = "page___childrenContentfulPageDescriptionTextNode___internal___description",
+  PageChildrenContentfulPageDescriptionTextNodeInternalFieldOwners = "page___childrenContentfulPageDescriptionTextNode___internal___fieldOwners",
+  PageChildrenContentfulPageDescriptionTextNodeInternalIgnoreType = "page___childrenContentfulPageDescriptionTextNode___internal___ignoreType",
+  PageChildrenContentfulPageDescriptionTextNodeInternalMediaType = "page___childrenContentfulPageDescriptionTextNode___internal___mediaType",
+  PageChildrenContentfulPageDescriptionTextNodeInternalOwner = "page___childrenContentfulPageDescriptionTextNode___internal___owner",
+  PageChildrenContentfulPageDescriptionTextNodeInternalType = "page___childrenContentfulPageDescriptionTextNode___internal___type",
+  PageChildrenContentfulPageDescriptionTextNodeParentChildren = "page___childrenContentfulPageDescriptionTextNode___parent___children",
+  PageChildrenContentfulPageDescriptionTextNodeParentId = "page___childrenContentfulPageDescriptionTextNode___parent___id",
+  PageChildrenContentfulPageDescriptionTextNodeSysType = "page___childrenContentfulPageDescriptionTextNode___sys___type",
+  PageChildrenChildren = "page___children___children",
+  PageChildrenChildrenChildren = "page___children___children___children",
+  PageChildrenChildrenId = "page___children___children___id",
+  PageChildrenId = "page___children___id",
+  PageChildrenInternalContent = "page___children___internal___content",
+  PageChildrenInternalContentDigest = "page___children___internal___contentDigest",
+  PageChildrenInternalDescription = "page___children___internal___description",
+  PageChildrenInternalFieldOwners = "page___children___internal___fieldOwners",
+  PageChildrenInternalIgnoreType = "page___children___internal___ignoreType",
+  PageChildrenInternalMediaType = "page___children___internal___mediaType",
+  PageChildrenInternalOwner = "page___children___internal___owner",
+  PageChildrenInternalType = "page___children___internal___type",
+  PageChildrenParentChildren = "page___children___parent___children",
+  PageChildrenParentId = "page___children___parent___id",
+  PageContent = "page___content",
+  PageContentChildren = "page___content___children",
+  PageContentChildrenChildren = "page___content___children___children",
+  PageContentChildrenId = "page___content___children___id",
+  PageContentContentfulId = "page___content___contentful_id",
+  PageContentCreatedAt = "page___content___createdAt",
+  PageContentId = "page___content___id",
+  PageContentInternalContent = "page___content___internal___content",
+  PageContentInternalContentDigest = "page___content___internal___contentDigest",
+  PageContentInternalDescription = "page___content___internal___description",
+  PageContentInternalFieldOwners = "page___content___internal___fieldOwners",
+  PageContentInternalIgnoreType = "page___content___internal___ignoreType",
+  PageContentInternalMediaType = "page___content___internal___mediaType",
+  PageContentInternalOwner = "page___content___internal___owner",
+  PageContentInternalType = "page___content___internal___type",
+  PageContentMargin = "page___content___margin",
+  PageContentNodeLocale = "page___content___node_locale",
+  PageContentPage = "page___content___page",
+  PageContentPageChildren = "page___content___page___children",
+  PageContentPageChildrenContentfulPageDescriptionTextNode = "page___content___page___childrenContentfulPageDescriptionTextNode",
+  PageContentPageContent = "page___content___page___content",
+  PageContentPageContentfulId = "page___content___page___contentful_id",
+  PageContentPageCreatedAt = "page___content___page___createdAt",
+  PageContentPageId = "page___content___page___id",
+  PageContentPageNodeLocale = "page___content___page___node_locale",
+  PageContentPageSpaceId = "page___content___page___spaceId",
+  PageContentPageTitle = "page___content___page___title",
+  PageContentPageUpdatedAt = "page___content___page___updatedAt",
+  PageContentPageUrl = "page___content___page___url",
+  PageContentParentChildren = "page___content___parent___children",
+  PageContentParentId = "page___content___parent___id",
+  PageContentSpaceId = "page___content___spaceId",
+  PageContentSysRevision = "page___content___sys___revision",
+  PageContentSysType = "page___content___sys___type",
+  PageContentUniqueId = "page___content___uniqueId",
+  PageContentUpdatedAt = "page___content___updatedAt",
+  PageContentfulId = "page___contentful_id",
+  PageCreatedAt = "page___createdAt",
+  PageDescriptionChildMdxBody = "page___description___childMdx___body",
+  PageDescriptionChildMdxChildren = "page___description___childMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageDescriptionChildMdxExcerpt = "page___description___childMdx___excerpt",
+  PageDescriptionChildMdxFileAbsolutePath = "page___description___childMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageDescriptionChildMdxHeadings = "page___description___childMdx___headings",
+  PageDescriptionChildMdxHtml = "page___description___childMdx___html",
+  PageDescriptionChildMdxId = "page___description___childMdx___id",
+  PageDescriptionChildMdxMdxAst = "page___description___childMdx___mdxAST",
+  PageDescriptionChildMdxRawBody = "page___description___childMdx___rawBody",
+  PageDescriptionChildMdxSlug = "page___description___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageDescriptionChildMdxTableOfContents = "page___description___childMdx___tableOfContents",
+  PageDescriptionChildMdxTimeToRead = "page___description___childMdx___timeToRead",
+  PageDescriptionChildren = "page___description___children",
+  PageDescriptionChildrenMdx = "page___description___childrenMdx",
+  PageDescriptionChildrenMdxBody = "page___description___childrenMdx___body",
+  PageDescriptionChildrenMdxChildren = "page___description___childrenMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageDescriptionChildrenMdxExcerpt = "page___description___childrenMdx___excerpt",
+  PageDescriptionChildrenMdxFileAbsolutePath = "page___description___childrenMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageDescriptionChildrenMdxHeadings = "page___description___childrenMdx___headings",
+  PageDescriptionChildrenMdxHtml = "page___description___childrenMdx___html",
+  PageDescriptionChildrenMdxId = "page___description___childrenMdx___id",
+  PageDescriptionChildrenMdxMdxAst = "page___description___childrenMdx___mdxAST",
+  PageDescriptionChildrenMdxRawBody = "page___description___childrenMdx___rawBody",
+  PageDescriptionChildrenMdxSlug = "page___description___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  PageDescriptionChildrenMdxTableOfContents = "page___description___childrenMdx___tableOfContents",
+  PageDescriptionChildrenMdxTimeToRead = "page___description___childrenMdx___timeToRead",
+  PageDescriptionChildrenChildren = "page___description___children___children",
+  PageDescriptionChildrenId = "page___description___children___id",
+  PageDescriptionDescription = "page___description___description",
+  PageDescriptionId = "page___description___id",
+  PageDescriptionInternalContent = "page___description___internal___content",
+  PageDescriptionInternalContentDigest = "page___description___internal___contentDigest",
+  PageDescriptionInternalDescription = "page___description___internal___description",
+  PageDescriptionInternalFieldOwners = "page___description___internal___fieldOwners",
+  PageDescriptionInternalIgnoreType = "page___description___internal___ignoreType",
+  PageDescriptionInternalMediaType = "page___description___internal___mediaType",
+  PageDescriptionInternalOwner = "page___description___internal___owner",
+  PageDescriptionInternalType = "page___description___internal___type",
+  PageDescriptionParentChildren = "page___description___parent___children",
+  PageDescriptionParentId = "page___description___parent___id",
+  PageDescriptionSysType = "page___description___sys___type",
+  PageId = "page___id",
+  PageInternalContent = "page___internal___content",
+  PageInternalContentDigest = "page___internal___contentDigest",
+  PageInternalDescription = "page___internal___description",
+  PageInternalFieldOwners = "page___internal___fieldOwners",
+  PageInternalIgnoreType = "page___internal___ignoreType",
+  PageInternalMediaType = "page___internal___mediaType",
+  PageInternalOwner = "page___internal___owner",
+  PageInternalType = "page___internal___type",
+  PageNodeLocale = "page___node_locale",
+  PageParentChildren = "page___parent___children",
+  PageParentChildrenChildren = "page___parent___children___children",
+  PageParentChildrenId = "page___parent___children___id",
+  PageParentId = "page___parent___id",
+  PageParentInternalContent = "page___parent___internal___content",
+  PageParentInternalContentDigest = "page___parent___internal___contentDigest",
+  PageParentInternalDescription = "page___parent___internal___description",
+  PageParentInternalFieldOwners = "page___parent___internal___fieldOwners",
+  PageParentInternalIgnoreType = "page___parent___internal___ignoreType",
+  PageParentInternalMediaType = "page___parent___internal___mediaType",
+  PageParentInternalOwner = "page___parent___internal___owner",
+  PageParentInternalType = "page___parent___internal___type",
+  PageParentParentChildren = "page___parent___parent___children",
+  PageParentParentId = "page___parent___parent___id",
+  PageSpaceId = "page___spaceId",
+  PageSysRevision = "page___sys___revision",
+  PageSysType = "page___sys___type",
+  PageTitle = "page___title",
+  PageUpdatedAt = "page___updatedAt",
+  PageUrl = "page___url",
+  ParentChildren = "parent___children",
+  ParentChildrenChildren = "parent___children___children",
+  ParentChildrenChildrenChildren = "parent___children___children___children",
+  ParentChildrenChildrenId = "parent___children___children___id",
+  ParentChildrenId = "parent___children___id",
+  ParentChildrenInternalContent = "parent___children___internal___content",
+  ParentChildrenInternalContentDigest = "parent___children___internal___contentDigest",
+  ParentChildrenInternalDescription = "parent___children___internal___description",
+  ParentChildrenInternalFieldOwners = "parent___children___internal___fieldOwners",
+  ParentChildrenInternalIgnoreType = "parent___children___internal___ignoreType",
+  ParentChildrenInternalMediaType = "parent___children___internal___mediaType",
+  ParentChildrenInternalOwner = "parent___children___internal___owner",
+  ParentChildrenInternalType = "parent___children___internal___type",
+  ParentChildrenParentChildren = "parent___children___parent___children",
+  ParentChildrenParentId = "parent___children___parent___id",
+  ParentId = "parent___id",
+  ParentInternalContent = "parent___internal___content",
+  ParentInternalContentDigest = "parent___internal___contentDigest",
+  ParentInternalDescription = "parent___internal___description",
+  ParentInternalFieldOwners = "parent___internal___fieldOwners",
+  ParentInternalIgnoreType = "parent___internal___ignoreType",
+  ParentInternalMediaType = "parent___internal___mediaType",
+  ParentInternalOwner = "parent___internal___owner",
+  ParentInternalType = "parent___internal___type",
+  ParentParentChildren = "parent___parent___children",
+  ParentParentChildrenChildren = "parent___parent___children___children",
+  ParentParentChildrenId = "parent___parent___children___id",
+  ParentParentId = "parent___parent___id",
+  ParentParentInternalContent = "parent___parent___internal___content",
+  ParentParentInternalContentDigest = "parent___parent___internal___contentDigest",
+  ParentParentInternalDescription = "parent___parent___internal___description",
+  ParentParentInternalFieldOwners = "parent___parent___internal___fieldOwners",
+  ParentParentInternalIgnoreType = "parent___parent___internal___ignoreType",
+  ParentParentInternalMediaType = "parent___parent___internal___mediaType",
+  ParentParentInternalOwner = "parent___parent___internal___owner",
+  ParentParentInternalType = "parent___parent___internal___type",
+  ParentParentParentChildren = "parent___parent___parent___children",
+  ParentParentParentId = "parent___parent___parent___id",
+  SpaceId = "spaceId",
+  SysContentTypeSysId = "sys___contentType___sys___id",
+  SysContentTypeSysLinkType = "sys___contentType___sys___linkType",
+  SysContentTypeSysType = "sys___contentType___sys___type",
+  SysRevision = "sys___revision",
+  SysType = "sys___type",
+  UniqueId = "uniqueId",
+  UpdatedAt = "updatedAt",
+}
+
+export type ContentfulContentBlockFilterInput = {
+  children?: InputMaybe<NodeFilterListInput>;
+  contentful_id?: InputMaybe<StringQueryOperatorInput>;
+  createdAt?: InputMaybe<DateQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  margin?: InputMaybe<StringQueryOperatorInput>;
+  node_locale?: InputMaybe<StringQueryOperatorInput>;
+  page?: InputMaybe<ContentfulPageFilterListInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  spaceId?: InputMaybe<StringQueryOperatorInput>;
+  sys?: InputMaybe<ContentfulContentBlockSysFilterInput>;
+  uniqueId?: InputMaybe<StringQueryOperatorInput>;
+  updatedAt?: InputMaybe<DateQueryOperatorInput>;
+};
+
+export type ContentfulContentBlockFilterListInput = {
+  elemMatch?: InputMaybe<ContentfulContentBlockFilterInput>;
+};
+
+export type ContentfulContentBlockGroupConnection = {
+  __typename?: "ContentfulContentBlockGroupConnection";
+  distinct: Array<Scalars["String"]>;
+  edges: Array<ContentfulContentBlockEdge>;
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+  group: Array<ContentfulContentBlockGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<ContentfulContentBlock>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type ContentfulContentBlockGroupConnectionDistinctArgs = {
+  field: ContentfulContentBlockFieldsEnum;
+};
+
+export type ContentfulContentBlockGroupConnectionGroupArgs = {
+  field: ContentfulContentBlockFieldsEnum;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+};
+
+export type ContentfulContentBlockGroupConnectionMaxArgs = {
+  field: ContentfulContentBlockFieldsEnum;
+};
+
+export type ContentfulContentBlockGroupConnectionMinArgs = {
+  field: ContentfulContentBlockFieldsEnum;
+};
+
+export type ContentfulContentBlockGroupConnectionSumArgs = {
+  field: ContentfulContentBlockFieldsEnum;
+};
+
+export type ContentfulContentBlockSortInput = {
+  fields?: InputMaybe<Array<InputMaybe<ContentfulContentBlockFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
+
+export type ContentfulContentBlockSys = {
+  __typename?: "ContentfulContentBlockSys";
+  contentType?: Maybe<ContentfulContentBlockSysContentType>;
+  revision?: Maybe<Scalars["Int"]>;
+  type?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulContentBlockSysContentType = {
+  __typename?: "ContentfulContentBlockSysContentType";
+  sys?: Maybe<ContentfulContentBlockSysContentTypeSys>;
+};
+
+export type ContentfulContentBlockSysContentTypeFilterInput = {
+  sys?: InputMaybe<ContentfulContentBlockSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulContentBlockSysContentTypeSys = {
+  __typename?: "ContentfulContentBlockSysContentTypeSys";
+  id?: Maybe<Scalars["String"]>;
+  linkType?: Maybe<Scalars["String"]>;
+  type?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulContentBlockSysContentTypeSysFilterInput = {
+  id?: InputMaybe<StringQueryOperatorInput>;
+  linkType?: InputMaybe<StringQueryOperatorInput>;
+  type?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulContentBlockSysFilterInput = {
+  contentType?: InputMaybe<ContentfulContentBlockSysContentTypeFilterInput>;
   revision?: InputMaybe<IntQueryOperatorInput>;
   type?: InputMaybe<StringQueryOperatorInput>;
 };
@@ -858,6 +3478,8 @@ export type ContentfulLink = ContentfulEntry &
   ContentfulReference &
   Node & {
     __typename?: "ContentfulLink";
+    actioninfoblock?: Maybe<Array<Maybe<ContentfulActionInfoBlock>>>;
+    authoravatarblock?: Maybe<Array<Maybe<ContentfulAuthorAvatarBlock>>>;
     /** Returns the first child node of type contentfulLinkUrlTextNode or null if there are no children of given type on this node */
     childContentfulLinkUrlTextNode?: Maybe<ContentfulLinkUrlTextNode>;
     children: Array<Node>;
@@ -938,6 +3560,550 @@ export type ContentfulLinkEdge = {
 };
 
 export enum ContentfulLinkFieldsEnum {
+  Actioninfoblock = "actioninfoblock",
+  ActioninfoblockArticleRaw = "actioninfoblock___article___raw",
+  ActioninfoblockButtonActioninfoblock = "actioninfoblock___button___actioninfoblock",
+  ActioninfoblockButtonActioninfoblockChildren = "actioninfoblock___button___actioninfoblock___children",
+  ActioninfoblockButtonActioninfoblockContentblock = "actioninfoblock___button___actioninfoblock___contentblock",
+  ActioninfoblockButtonActioninfoblockContentfulId = "actioninfoblock___button___actioninfoblock___contentful_id",
+  ActioninfoblockButtonActioninfoblockCreatedAt = "actioninfoblock___button___actioninfoblock___createdAt",
+  ActioninfoblockButtonActioninfoblockId = "actioninfoblock___button___actioninfoblock___id",
+  ActioninfoblockButtonActioninfoblockNodeLocale = "actioninfoblock___button___actioninfoblock___node_locale",
+  ActioninfoblockButtonActioninfoblockSpaceId = "actioninfoblock___button___actioninfoblock___spaceId",
+  ActioninfoblockButtonActioninfoblockTextPosition = "actioninfoblock___button___actioninfoblock___textPosition",
+  ActioninfoblockButtonActioninfoblockUniqueId = "actioninfoblock___button___actioninfoblock___uniqueId",
+  ActioninfoblockButtonActioninfoblockUpdatedAt = "actioninfoblock___button___actioninfoblock___updatedAt",
+  ActioninfoblockButtonAuthoravatarblock = "actioninfoblock___button___authoravatarblock",
+  ActioninfoblockButtonAuthoravatarblockChildren = "actioninfoblock___button___authoravatarblock___children",
+  ActioninfoblockButtonAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "actioninfoblock___button___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  ActioninfoblockButtonAuthoravatarblockContentblock = "actioninfoblock___button___authoravatarblock___contentblock",
+  ActioninfoblockButtonAuthoravatarblockContentfulId = "actioninfoblock___button___authoravatarblock___contentful_id",
+  ActioninfoblockButtonAuthoravatarblockCreatedAt = "actioninfoblock___button___authoravatarblock___createdAt",
+  ActioninfoblockButtonAuthoravatarblockFullName = "actioninfoblock___button___authoravatarblock___fullName",
+  ActioninfoblockButtonAuthoravatarblockId = "actioninfoblock___button___authoravatarblock___id",
+  ActioninfoblockButtonAuthoravatarblockNodeLocale = "actioninfoblock___button___authoravatarblock___node_locale",
+  ActioninfoblockButtonAuthoravatarblockSocialSiteLinks = "actioninfoblock___button___authoravatarblock___socialSiteLinks",
+  ActioninfoblockButtonAuthoravatarblockSpaceId = "actioninfoblock___button___authoravatarblock___spaceId",
+  ActioninfoblockButtonAuthoravatarblockUniqueId = "actioninfoblock___button___authoravatarblock___uniqueId",
+  ActioninfoblockButtonAuthoravatarblockUpdatedAt = "actioninfoblock___button___authoravatarblock___updatedAt",
+  ActioninfoblockButtonChildContentfulLinkUrlTextNodeChildren = "actioninfoblock___button___childContentfulLinkUrlTextNode___children",
+  ActioninfoblockButtonChildContentfulLinkUrlTextNodeChildrenMdx = "actioninfoblock___button___childContentfulLinkUrlTextNode___childrenMdx",
+  ActioninfoblockButtonChildContentfulLinkUrlTextNodeId = "actioninfoblock___button___childContentfulLinkUrlTextNode___id",
+  ActioninfoblockButtonChildContentfulLinkUrlTextNodeUrl = "actioninfoblock___button___childContentfulLinkUrlTextNode___url",
+  ActioninfoblockButtonChildren = "actioninfoblock___button___children",
+  ActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  ActioninfoblockButtonChildrenContentfulLinkUrlTextNodeChildren = "actioninfoblock___button___childrenContentfulLinkUrlTextNode___children",
+  ActioninfoblockButtonChildrenContentfulLinkUrlTextNodeChildrenMdx = "actioninfoblock___button___childrenContentfulLinkUrlTextNode___childrenMdx",
+  ActioninfoblockButtonChildrenContentfulLinkUrlTextNodeId = "actioninfoblock___button___childrenContentfulLinkUrlTextNode___id",
+  ActioninfoblockButtonChildrenContentfulLinkUrlTextNodeUrl = "actioninfoblock___button___childrenContentfulLinkUrlTextNode___url",
+  ActioninfoblockButtonChildrenChildren = "actioninfoblock___button___children___children",
+  ActioninfoblockButtonChildrenId = "actioninfoblock___button___children___id",
+  ActioninfoblockButtonContentfulId = "actioninfoblock___button___contentful_id",
+  ActioninfoblockButtonContentfulid = "actioninfoblock___button___contentfulid",
+  ActioninfoblockButtonCreatedAt = "actioninfoblock___button___createdAt",
+  ActioninfoblockButtonId = "actioninfoblock___button___id",
+  ActioninfoblockButtonImageChildren = "actioninfoblock___button___image___children",
+  ActioninfoblockButtonImageContentfulId = "actioninfoblock___button___image___contentful_id",
+  ActioninfoblockButtonImageCreatedAt = "actioninfoblock___button___image___createdAt",
+  ActioninfoblockButtonImageDescription = "actioninfoblock___button___image___description",
+  ActioninfoblockButtonImageFilename = "actioninfoblock___button___image___filename",
+  ActioninfoblockButtonImageFilesize = "actioninfoblock___button___image___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ActioninfoblockButtonImageGatsbyImage = "actioninfoblock___button___image___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ActioninfoblockButtonImageGatsbyImageData = "actioninfoblock___button___image___gatsbyImageData",
+  ActioninfoblockButtonImageHeight = "actioninfoblock___button___image___height",
+  ActioninfoblockButtonImageId = "actioninfoblock___button___image___id",
+  ActioninfoblockButtonImageMimeType = "actioninfoblock___button___image___mimeType",
+  ActioninfoblockButtonImageNodeLocale = "actioninfoblock___button___image___node_locale",
+  ActioninfoblockButtonImagePlaceholderUrl = "actioninfoblock___button___image___placeholderUrl",
+  ActioninfoblockButtonImagePublicUrl = "actioninfoblock___button___image___publicUrl",
+  ActioninfoblockButtonImageSpaceId = "actioninfoblock___button___image___spaceId",
+  ActioninfoblockButtonImageTitle = "actioninfoblock___button___image___title",
+  ActioninfoblockButtonImageUpdatedAt = "actioninfoblock___button___image___updatedAt",
+  ActioninfoblockButtonImageUrl = "actioninfoblock___button___image___url",
+  ActioninfoblockButtonImageWidth = "actioninfoblock___button___image___width",
+  ActioninfoblockButtonInternalContent = "actioninfoblock___button___internal___content",
+  ActioninfoblockButtonInternalContentDigest = "actioninfoblock___button___internal___contentDigest",
+  ActioninfoblockButtonInternalDescription = "actioninfoblock___button___internal___description",
+  ActioninfoblockButtonInternalFieldOwners = "actioninfoblock___button___internal___fieldOwners",
+  ActioninfoblockButtonInternalIgnoreType = "actioninfoblock___button___internal___ignoreType",
+  ActioninfoblockButtonInternalMediaType = "actioninfoblock___button___internal___mediaType",
+  ActioninfoblockButtonInternalOwner = "actioninfoblock___button___internal___owner",
+  ActioninfoblockButtonInternalType = "actioninfoblock___button___internal___type",
+  ActioninfoblockButtonNodeLocale = "actioninfoblock___button___node_locale",
+  ActioninfoblockButtonOptions = "actioninfoblock___button___options",
+  ActioninfoblockButtonOptionsBottomBarSocialLinks = "actioninfoblock___button___options___bottomBarSocialLinks",
+  ActioninfoblockButtonOptionsBottomBarTabs = "actioninfoblock___button___options___bottomBarTabs",
+  ActioninfoblockButtonOptionsChildren = "actioninfoblock___button___options___children",
+  ActioninfoblockButtonOptionsContentfulId = "actioninfoblock___button___options___contentful_id",
+  ActioninfoblockButtonOptionsContentfulid = "actioninfoblock___button___options___contentfulid",
+  ActioninfoblockButtonOptionsCreatedAt = "actioninfoblock___button___options___createdAt",
+  ActioninfoblockButtonOptionsId = "actioninfoblock___button___options___id",
+  ActioninfoblockButtonOptionsNodeLocale = "actioninfoblock___button___options___node_locale",
+  ActioninfoblockButtonOptionsSpaceId = "actioninfoblock___button___options___spaceId",
+  ActioninfoblockButtonOptionsTopBarSocialLinks = "actioninfoblock___button___options___topBarSocialLinks",
+  ActioninfoblockButtonOptionsTopBarTabs = "actioninfoblock___button___options___topBarTabs",
+  ActioninfoblockButtonOptionsUpdatedAt = "actioninfoblock___button___options___updatedAt",
+  ActioninfoblockButtonParentChildren = "actioninfoblock___button___parent___children",
+  ActioninfoblockButtonParentId = "actioninfoblock___button___parent___id",
+  ActioninfoblockButtonSpaceId = "actioninfoblock___button___spaceId",
+  ActioninfoblockButtonSysRevision = "actioninfoblock___button___sys___revision",
+  ActioninfoblockButtonSysType = "actioninfoblock___button___sys___type",
+  ActioninfoblockButtonTitle = "actioninfoblock___button___title",
+  ActioninfoblockButtonUpdatedAt = "actioninfoblock___button___updatedAt",
+  ActioninfoblockButtonUrlChildren = "actioninfoblock___button___url___children",
+  ActioninfoblockButtonUrlChildrenMdx = "actioninfoblock___button___url___childrenMdx",
+  ActioninfoblockButtonUrlId = "actioninfoblock___button___url___id",
+  ActioninfoblockButtonUrlUrl = "actioninfoblock___button___url___url",
+  ActioninfoblockChildren = "actioninfoblock___children",
+  ActioninfoblockChildrenChildren = "actioninfoblock___children___children",
+  ActioninfoblockChildrenChildrenChildren = "actioninfoblock___children___children___children",
+  ActioninfoblockChildrenChildrenId = "actioninfoblock___children___children___id",
+  ActioninfoblockChildrenId = "actioninfoblock___children___id",
+  ActioninfoblockChildrenInternalContent = "actioninfoblock___children___internal___content",
+  ActioninfoblockChildrenInternalContentDigest = "actioninfoblock___children___internal___contentDigest",
+  ActioninfoblockChildrenInternalDescription = "actioninfoblock___children___internal___description",
+  ActioninfoblockChildrenInternalFieldOwners = "actioninfoblock___children___internal___fieldOwners",
+  ActioninfoblockChildrenInternalIgnoreType = "actioninfoblock___children___internal___ignoreType",
+  ActioninfoblockChildrenInternalMediaType = "actioninfoblock___children___internal___mediaType",
+  ActioninfoblockChildrenInternalOwner = "actioninfoblock___children___internal___owner",
+  ActioninfoblockChildrenInternalType = "actioninfoblock___children___internal___type",
+  ActioninfoblockChildrenParentChildren = "actioninfoblock___children___parent___children",
+  ActioninfoblockChildrenParentId = "actioninfoblock___children___parent___id",
+  ActioninfoblockContentblock = "actioninfoblock___contentblock",
+  ActioninfoblockContentblockChildren = "actioninfoblock___contentblock___children",
+  ActioninfoblockContentblockChildrenChildren = "actioninfoblock___contentblock___children___children",
+  ActioninfoblockContentblockChildrenId = "actioninfoblock___contentblock___children___id",
+  ActioninfoblockContentblockContentfulId = "actioninfoblock___contentblock___contentful_id",
+  ActioninfoblockContentblockCreatedAt = "actioninfoblock___contentblock___createdAt",
+  ActioninfoblockContentblockId = "actioninfoblock___contentblock___id",
+  ActioninfoblockContentblockInternalContent = "actioninfoblock___contentblock___internal___content",
+  ActioninfoblockContentblockInternalContentDigest = "actioninfoblock___contentblock___internal___contentDigest",
+  ActioninfoblockContentblockInternalDescription = "actioninfoblock___contentblock___internal___description",
+  ActioninfoblockContentblockInternalFieldOwners = "actioninfoblock___contentblock___internal___fieldOwners",
+  ActioninfoblockContentblockInternalIgnoreType = "actioninfoblock___contentblock___internal___ignoreType",
+  ActioninfoblockContentblockInternalMediaType = "actioninfoblock___contentblock___internal___mediaType",
+  ActioninfoblockContentblockInternalOwner = "actioninfoblock___contentblock___internal___owner",
+  ActioninfoblockContentblockInternalType = "actioninfoblock___contentblock___internal___type",
+  ActioninfoblockContentblockMargin = "actioninfoblock___contentblock___margin",
+  ActioninfoblockContentblockNodeLocale = "actioninfoblock___contentblock___node_locale",
+  ActioninfoblockContentblockPage = "actioninfoblock___contentblock___page",
+  ActioninfoblockContentblockPageChildren = "actioninfoblock___contentblock___page___children",
+  ActioninfoblockContentblockPageChildrenContentfulPageDescriptionTextNode = "actioninfoblock___contentblock___page___childrenContentfulPageDescriptionTextNode",
+  ActioninfoblockContentblockPageContent = "actioninfoblock___contentblock___page___content",
+  ActioninfoblockContentblockPageContentfulId = "actioninfoblock___contentblock___page___contentful_id",
+  ActioninfoblockContentblockPageCreatedAt = "actioninfoblock___contentblock___page___createdAt",
+  ActioninfoblockContentblockPageId = "actioninfoblock___contentblock___page___id",
+  ActioninfoblockContentblockPageNodeLocale = "actioninfoblock___contentblock___page___node_locale",
+  ActioninfoblockContentblockPageSpaceId = "actioninfoblock___contentblock___page___spaceId",
+  ActioninfoblockContentblockPageTitle = "actioninfoblock___contentblock___page___title",
+  ActioninfoblockContentblockPageUpdatedAt = "actioninfoblock___contentblock___page___updatedAt",
+  ActioninfoblockContentblockPageUrl = "actioninfoblock___contentblock___page___url",
+  ActioninfoblockContentblockParentChildren = "actioninfoblock___contentblock___parent___children",
+  ActioninfoblockContentblockParentId = "actioninfoblock___contentblock___parent___id",
+  ActioninfoblockContentblockSpaceId = "actioninfoblock___contentblock___spaceId",
+  ActioninfoblockContentblockSysRevision = "actioninfoblock___contentblock___sys___revision",
+  ActioninfoblockContentblockSysType = "actioninfoblock___contentblock___sys___type",
+  ActioninfoblockContentblockUniqueId = "actioninfoblock___contentblock___uniqueId",
+  ActioninfoblockContentblockUpdatedAt = "actioninfoblock___contentblock___updatedAt",
+  ActioninfoblockContentfulId = "actioninfoblock___contentful_id",
+  ActioninfoblockCreatedAt = "actioninfoblock___createdAt",
+  ActioninfoblockId = "actioninfoblock___id",
+  ActioninfoblockInternalContent = "actioninfoblock___internal___content",
+  ActioninfoblockInternalContentDigest = "actioninfoblock___internal___contentDigest",
+  ActioninfoblockInternalDescription = "actioninfoblock___internal___description",
+  ActioninfoblockInternalFieldOwners = "actioninfoblock___internal___fieldOwners",
+  ActioninfoblockInternalIgnoreType = "actioninfoblock___internal___ignoreType",
+  ActioninfoblockInternalMediaType = "actioninfoblock___internal___mediaType",
+  ActioninfoblockInternalOwner = "actioninfoblock___internal___owner",
+  ActioninfoblockInternalType = "actioninfoblock___internal___type",
+  ActioninfoblockNodeLocale = "actioninfoblock___node_locale",
+  ActioninfoblockParentChildren = "actioninfoblock___parent___children",
+  ActioninfoblockParentChildrenChildren = "actioninfoblock___parent___children___children",
+  ActioninfoblockParentChildrenId = "actioninfoblock___parent___children___id",
+  ActioninfoblockParentId = "actioninfoblock___parent___id",
+  ActioninfoblockParentInternalContent = "actioninfoblock___parent___internal___content",
+  ActioninfoblockParentInternalContentDigest = "actioninfoblock___parent___internal___contentDigest",
+  ActioninfoblockParentInternalDescription = "actioninfoblock___parent___internal___description",
+  ActioninfoblockParentInternalFieldOwners = "actioninfoblock___parent___internal___fieldOwners",
+  ActioninfoblockParentInternalIgnoreType = "actioninfoblock___parent___internal___ignoreType",
+  ActioninfoblockParentInternalMediaType = "actioninfoblock___parent___internal___mediaType",
+  ActioninfoblockParentInternalOwner = "actioninfoblock___parent___internal___owner",
+  ActioninfoblockParentInternalType = "actioninfoblock___parent___internal___type",
+  ActioninfoblockParentParentChildren = "actioninfoblock___parent___parent___children",
+  ActioninfoblockParentParentId = "actioninfoblock___parent___parent___id",
+  ActioninfoblockSpaceId = "actioninfoblock___spaceId",
+  ActioninfoblockSysRevision = "actioninfoblock___sys___revision",
+  ActioninfoblockSysType = "actioninfoblock___sys___type",
+  ActioninfoblockTextPosition = "actioninfoblock___textPosition",
+  ActioninfoblockUniqueId = "actioninfoblock___uniqueId",
+  ActioninfoblockUpdatedAt = "actioninfoblock___updatedAt",
+  Authoravatarblock = "authoravatarblock",
+  AuthoravatarblockAvatarChildren = "authoravatarblock___avatar___children",
+  AuthoravatarblockAvatarChildrenChildren = "authoravatarblock___avatar___children___children",
+  AuthoravatarblockAvatarChildrenId = "authoravatarblock___avatar___children___id",
+  AuthoravatarblockAvatarContentfulId = "authoravatarblock___avatar___contentful_id",
+  AuthoravatarblockAvatarCreatedAt = "authoravatarblock___avatar___createdAt",
+  AuthoravatarblockAvatarDescription = "authoravatarblock___avatar___description",
+  AuthoravatarblockAvatarFileContentType = "authoravatarblock___avatar___file___contentType",
+  AuthoravatarblockAvatarFileFileName = "authoravatarblock___avatar___file___fileName",
+  AuthoravatarblockAvatarFileUrl = "authoravatarblock___avatar___file___url",
+  AuthoravatarblockAvatarFilename = "authoravatarblock___avatar___filename",
+  AuthoravatarblockAvatarFilesize = "authoravatarblock___avatar___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockAvatarGatsbyImage = "authoravatarblock___avatar___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockAvatarGatsbyImageData = "authoravatarblock___avatar___gatsbyImageData",
+  AuthoravatarblockAvatarHeight = "authoravatarblock___avatar___height",
+  AuthoravatarblockAvatarId = "authoravatarblock___avatar___id",
+  AuthoravatarblockAvatarInternalContent = "authoravatarblock___avatar___internal___content",
+  AuthoravatarblockAvatarInternalContentDigest = "authoravatarblock___avatar___internal___contentDigest",
+  AuthoravatarblockAvatarInternalDescription = "authoravatarblock___avatar___internal___description",
+  AuthoravatarblockAvatarInternalFieldOwners = "authoravatarblock___avatar___internal___fieldOwners",
+  AuthoravatarblockAvatarInternalIgnoreType = "authoravatarblock___avatar___internal___ignoreType",
+  AuthoravatarblockAvatarInternalMediaType = "authoravatarblock___avatar___internal___mediaType",
+  AuthoravatarblockAvatarInternalOwner = "authoravatarblock___avatar___internal___owner",
+  AuthoravatarblockAvatarInternalType = "authoravatarblock___avatar___internal___type",
+  AuthoravatarblockAvatarMimeType = "authoravatarblock___avatar___mimeType",
+  AuthoravatarblockAvatarNodeLocale = "authoravatarblock___avatar___node_locale",
+  AuthoravatarblockAvatarParentChildren = "authoravatarblock___avatar___parent___children",
+  AuthoravatarblockAvatarParentId = "authoravatarblock___avatar___parent___id",
+  AuthoravatarblockAvatarPlaceholderUrl = "authoravatarblock___avatar___placeholderUrl",
+  AuthoravatarblockAvatarPublicUrl = "authoravatarblock___avatar___publicUrl",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockAvatarResizeHeight = "authoravatarblock___avatar___resize___height",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockAvatarResizeSrc = "authoravatarblock___avatar___resize___src",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockAvatarResizeWidth = "authoravatarblock___avatar___resize___width",
+  AuthoravatarblockAvatarSpaceId = "authoravatarblock___avatar___spaceId",
+  AuthoravatarblockAvatarSysRevision = "authoravatarblock___avatar___sys___revision",
+  AuthoravatarblockAvatarSysType = "authoravatarblock___avatar___sys___type",
+  AuthoravatarblockAvatarTitle = "authoravatarblock___avatar___title",
+  AuthoravatarblockAvatarUpdatedAt = "authoravatarblock___avatar___updatedAt",
+  AuthoravatarblockAvatarUrl = "authoravatarblock___avatar___url",
+  AuthoravatarblockAvatarWidth = "authoravatarblock___avatar___width",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxBody = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___body",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxChildren = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxExcerpt = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___excerpt",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxFileAbsolutePath = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxHeadings = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___headings",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxHtml = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___html",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxId = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___id",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxMdxAst = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___mdxAST",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxRawBody = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___rawBody",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxSlug = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxTableOfContents = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___tableOfContents",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxTimeToRead = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___timeToRead",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxBody = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___body",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxChildren = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxExcerpt = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___excerpt",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxFileAbsolutePath = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxHeadings = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___headings",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxHtml = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___html",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxId = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___id",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxMdxAst = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___mdxAST",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxRawBody = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___rawBody",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxSlug = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxTableOfContents = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___tableOfContents",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxTimeToRead = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___timeToRead",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenChildren = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___children___children",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenId = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___children___id",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeId = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalContent = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___internal___content",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalContentDigest = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___internal___contentDigest",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalDescription = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___internal___description",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalFieldOwners = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___internal___fieldOwners",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalIgnoreType = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___internal___ignoreType",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalMediaType = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___internal___mediaType",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalOwner = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___internal___owner",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeInternalType = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___internal___type",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeParentChildren = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___parent___children",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeParentId = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___parent___id",
+  AuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeSysType = "authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___sys___type",
+  AuthoravatarblockChildren = "authoravatarblock___children",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxBody = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___body",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxChildren = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxExcerpt = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___excerpt",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxFileAbsolutePath = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxHeadings = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___headings",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxHtml = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___html",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxId = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___id",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxMdxAst = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___mdxAST",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxRawBody = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___rawBody",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxSlug = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxTableOfContents = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___tableOfContents",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildMdxTimeToRead = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childMdx___timeToRead",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxBody = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___body",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxChildren = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxExcerpt = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___excerpt",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxFileAbsolutePath = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxHeadings = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___headings",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxHtml = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___html",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxId = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___id",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxMdxAst = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___mdxAST",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxRawBody = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___rawBody",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxSlug = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxTableOfContents = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___tableOfContents",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdxTimeToRead = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx___timeToRead",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenChildren = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___children",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenId = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___children___id",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeId = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalContent = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___content",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalContentDigest = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___contentDigest",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalDescription = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___description",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalFieldOwners = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___fieldOwners",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalIgnoreType = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___ignoreType",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalMediaType = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___mediaType",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalOwner = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___owner",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeInternalType = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___internal___type",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentChildren = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___children",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeParentId = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___parent___id",
+  AuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeSysType = "authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___sys___type",
+  AuthoravatarblockChildrenChildren = "authoravatarblock___children___children",
+  AuthoravatarblockChildrenChildrenChildren = "authoravatarblock___children___children___children",
+  AuthoravatarblockChildrenChildrenId = "authoravatarblock___children___children___id",
+  AuthoravatarblockChildrenId = "authoravatarblock___children___id",
+  AuthoravatarblockChildrenInternalContent = "authoravatarblock___children___internal___content",
+  AuthoravatarblockChildrenInternalContentDigest = "authoravatarblock___children___internal___contentDigest",
+  AuthoravatarblockChildrenInternalDescription = "authoravatarblock___children___internal___description",
+  AuthoravatarblockChildrenInternalFieldOwners = "authoravatarblock___children___internal___fieldOwners",
+  AuthoravatarblockChildrenInternalIgnoreType = "authoravatarblock___children___internal___ignoreType",
+  AuthoravatarblockChildrenInternalMediaType = "authoravatarblock___children___internal___mediaType",
+  AuthoravatarblockChildrenInternalOwner = "authoravatarblock___children___internal___owner",
+  AuthoravatarblockChildrenInternalType = "authoravatarblock___children___internal___type",
+  AuthoravatarblockChildrenParentChildren = "authoravatarblock___children___parent___children",
+  AuthoravatarblockChildrenParentId = "authoravatarblock___children___parent___id",
+  AuthoravatarblockContentblock = "authoravatarblock___contentblock",
+  AuthoravatarblockContentblockChildren = "authoravatarblock___contentblock___children",
+  AuthoravatarblockContentblockChildrenChildren = "authoravatarblock___contentblock___children___children",
+  AuthoravatarblockContentblockChildrenId = "authoravatarblock___contentblock___children___id",
+  AuthoravatarblockContentblockContentfulId = "authoravatarblock___contentblock___contentful_id",
+  AuthoravatarblockContentblockCreatedAt = "authoravatarblock___contentblock___createdAt",
+  AuthoravatarblockContentblockId = "authoravatarblock___contentblock___id",
+  AuthoravatarblockContentblockInternalContent = "authoravatarblock___contentblock___internal___content",
+  AuthoravatarblockContentblockInternalContentDigest = "authoravatarblock___contentblock___internal___contentDigest",
+  AuthoravatarblockContentblockInternalDescription = "authoravatarblock___contentblock___internal___description",
+  AuthoravatarblockContentblockInternalFieldOwners = "authoravatarblock___contentblock___internal___fieldOwners",
+  AuthoravatarblockContentblockInternalIgnoreType = "authoravatarblock___contentblock___internal___ignoreType",
+  AuthoravatarblockContentblockInternalMediaType = "authoravatarblock___contentblock___internal___mediaType",
+  AuthoravatarblockContentblockInternalOwner = "authoravatarblock___contentblock___internal___owner",
+  AuthoravatarblockContentblockInternalType = "authoravatarblock___contentblock___internal___type",
+  AuthoravatarblockContentblockMargin = "authoravatarblock___contentblock___margin",
+  AuthoravatarblockContentblockNodeLocale = "authoravatarblock___contentblock___node_locale",
+  AuthoravatarblockContentblockPage = "authoravatarblock___contentblock___page",
+  AuthoravatarblockContentblockPageChildren = "authoravatarblock___contentblock___page___children",
+  AuthoravatarblockContentblockPageChildrenContentfulPageDescriptionTextNode = "authoravatarblock___contentblock___page___childrenContentfulPageDescriptionTextNode",
+  AuthoravatarblockContentblockPageContent = "authoravatarblock___contentblock___page___content",
+  AuthoravatarblockContentblockPageContentfulId = "authoravatarblock___contentblock___page___contentful_id",
+  AuthoravatarblockContentblockPageCreatedAt = "authoravatarblock___contentblock___page___createdAt",
+  AuthoravatarblockContentblockPageId = "authoravatarblock___contentblock___page___id",
+  AuthoravatarblockContentblockPageNodeLocale = "authoravatarblock___contentblock___page___node_locale",
+  AuthoravatarblockContentblockPageSpaceId = "authoravatarblock___contentblock___page___spaceId",
+  AuthoravatarblockContentblockPageTitle = "authoravatarblock___contentblock___page___title",
+  AuthoravatarblockContentblockPageUpdatedAt = "authoravatarblock___contentblock___page___updatedAt",
+  AuthoravatarblockContentblockPageUrl = "authoravatarblock___contentblock___page___url",
+  AuthoravatarblockContentblockParentChildren = "authoravatarblock___contentblock___parent___children",
+  AuthoravatarblockContentblockParentId = "authoravatarblock___contentblock___parent___id",
+  AuthoravatarblockContentblockSpaceId = "authoravatarblock___contentblock___spaceId",
+  AuthoravatarblockContentblockSysRevision = "authoravatarblock___contentblock___sys___revision",
+  AuthoravatarblockContentblockSysType = "authoravatarblock___contentblock___sys___type",
+  AuthoravatarblockContentblockUniqueId = "authoravatarblock___contentblock___uniqueId",
+  AuthoravatarblockContentblockUpdatedAt = "authoravatarblock___contentblock___updatedAt",
+  AuthoravatarblockContentfulId = "authoravatarblock___contentful_id",
+  AuthoravatarblockCreatedAt = "authoravatarblock___createdAt",
+  AuthoravatarblockDescriptionChildMdxBody = "authoravatarblock___description___childMdx___body",
+  AuthoravatarblockDescriptionChildMdxChildren = "authoravatarblock___description___childMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockDescriptionChildMdxExcerpt = "authoravatarblock___description___childMdx___excerpt",
+  AuthoravatarblockDescriptionChildMdxFileAbsolutePath = "authoravatarblock___description___childMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockDescriptionChildMdxHeadings = "authoravatarblock___description___childMdx___headings",
+  AuthoravatarblockDescriptionChildMdxHtml = "authoravatarblock___description___childMdx___html",
+  AuthoravatarblockDescriptionChildMdxId = "authoravatarblock___description___childMdx___id",
+  AuthoravatarblockDescriptionChildMdxMdxAst = "authoravatarblock___description___childMdx___mdxAST",
+  AuthoravatarblockDescriptionChildMdxRawBody = "authoravatarblock___description___childMdx___rawBody",
+  AuthoravatarblockDescriptionChildMdxSlug = "authoravatarblock___description___childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockDescriptionChildMdxTableOfContents = "authoravatarblock___description___childMdx___tableOfContents",
+  AuthoravatarblockDescriptionChildMdxTimeToRead = "authoravatarblock___description___childMdx___timeToRead",
+  AuthoravatarblockDescriptionChildren = "authoravatarblock___description___children",
+  AuthoravatarblockDescriptionChildrenMdx = "authoravatarblock___description___childrenMdx",
+  AuthoravatarblockDescriptionChildrenMdxBody = "authoravatarblock___description___childrenMdx___body",
+  AuthoravatarblockDescriptionChildrenMdxChildren = "authoravatarblock___description___childrenMdx___children",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockDescriptionChildrenMdxExcerpt = "authoravatarblock___description___childrenMdx___excerpt",
+  AuthoravatarblockDescriptionChildrenMdxFileAbsolutePath = "authoravatarblock___description___childrenMdx___fileAbsolutePath",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockDescriptionChildrenMdxHeadings = "authoravatarblock___description___childrenMdx___headings",
+  AuthoravatarblockDescriptionChildrenMdxHtml = "authoravatarblock___description___childrenMdx___html",
+  AuthoravatarblockDescriptionChildrenMdxId = "authoravatarblock___description___childrenMdx___id",
+  AuthoravatarblockDescriptionChildrenMdxMdxAst = "authoravatarblock___description___childrenMdx___mdxAST",
+  AuthoravatarblockDescriptionChildrenMdxRawBody = "authoravatarblock___description___childrenMdx___rawBody",
+  AuthoravatarblockDescriptionChildrenMdxSlug = "authoravatarblock___description___childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockDescriptionChildrenMdxTableOfContents = "authoravatarblock___description___childrenMdx___tableOfContents",
+  AuthoravatarblockDescriptionChildrenMdxTimeToRead = "authoravatarblock___description___childrenMdx___timeToRead",
+  AuthoravatarblockDescriptionChildrenChildren = "authoravatarblock___description___children___children",
+  AuthoravatarblockDescriptionChildrenId = "authoravatarblock___description___children___id",
+  AuthoravatarblockDescriptionDescription = "authoravatarblock___description___description",
+  AuthoravatarblockDescriptionId = "authoravatarblock___description___id",
+  AuthoravatarblockDescriptionInternalContent = "authoravatarblock___description___internal___content",
+  AuthoravatarblockDescriptionInternalContentDigest = "authoravatarblock___description___internal___contentDigest",
+  AuthoravatarblockDescriptionInternalDescription = "authoravatarblock___description___internal___description",
+  AuthoravatarblockDescriptionInternalFieldOwners = "authoravatarblock___description___internal___fieldOwners",
+  AuthoravatarblockDescriptionInternalIgnoreType = "authoravatarblock___description___internal___ignoreType",
+  AuthoravatarblockDescriptionInternalMediaType = "authoravatarblock___description___internal___mediaType",
+  AuthoravatarblockDescriptionInternalOwner = "authoravatarblock___description___internal___owner",
+  AuthoravatarblockDescriptionInternalType = "authoravatarblock___description___internal___type",
+  AuthoravatarblockDescriptionParentChildren = "authoravatarblock___description___parent___children",
+  AuthoravatarblockDescriptionParentId = "authoravatarblock___description___parent___id",
+  AuthoravatarblockDescriptionSysType = "authoravatarblock___description___sys___type",
+  AuthoravatarblockFullName = "authoravatarblock___fullName",
+  AuthoravatarblockId = "authoravatarblock___id",
+  AuthoravatarblockInternalContent = "authoravatarblock___internal___content",
+  AuthoravatarblockInternalContentDigest = "authoravatarblock___internal___contentDigest",
+  AuthoravatarblockInternalDescription = "authoravatarblock___internal___description",
+  AuthoravatarblockInternalFieldOwners = "authoravatarblock___internal___fieldOwners",
+  AuthoravatarblockInternalIgnoreType = "authoravatarblock___internal___ignoreType",
+  AuthoravatarblockInternalMediaType = "authoravatarblock___internal___mediaType",
+  AuthoravatarblockInternalOwner = "authoravatarblock___internal___owner",
+  AuthoravatarblockInternalType = "authoravatarblock___internal___type",
+  AuthoravatarblockNodeLocale = "authoravatarblock___node_locale",
+  AuthoravatarblockParentChildren = "authoravatarblock___parent___children",
+  AuthoravatarblockParentChildrenChildren = "authoravatarblock___parent___children___children",
+  AuthoravatarblockParentChildrenId = "authoravatarblock___parent___children___id",
+  AuthoravatarblockParentId = "authoravatarblock___parent___id",
+  AuthoravatarblockParentInternalContent = "authoravatarblock___parent___internal___content",
+  AuthoravatarblockParentInternalContentDigest = "authoravatarblock___parent___internal___contentDigest",
+  AuthoravatarblockParentInternalDescription = "authoravatarblock___parent___internal___description",
+  AuthoravatarblockParentInternalFieldOwners = "authoravatarblock___parent___internal___fieldOwners",
+  AuthoravatarblockParentInternalIgnoreType = "authoravatarblock___parent___internal___ignoreType",
+  AuthoravatarblockParentInternalMediaType = "authoravatarblock___parent___internal___mediaType",
+  AuthoravatarblockParentInternalOwner = "authoravatarblock___parent___internal___owner",
+  AuthoravatarblockParentInternalType = "authoravatarblock___parent___internal___type",
+  AuthoravatarblockParentParentChildren = "authoravatarblock___parent___parent___children",
+  AuthoravatarblockParentParentId = "authoravatarblock___parent___parent___id",
+  AuthoravatarblockSocialSiteLinks = "authoravatarblock___socialSiteLinks",
+  AuthoravatarblockSocialSiteLinksActioninfoblock = "authoravatarblock___socialSiteLinks___actioninfoblock",
+  AuthoravatarblockSocialSiteLinksActioninfoblockChildren = "authoravatarblock___socialSiteLinks___actioninfoblock___children",
+  AuthoravatarblockSocialSiteLinksActioninfoblockContentblock = "authoravatarblock___socialSiteLinks___actioninfoblock___contentblock",
+  AuthoravatarblockSocialSiteLinksActioninfoblockContentfulId = "authoravatarblock___socialSiteLinks___actioninfoblock___contentful_id",
+  AuthoravatarblockSocialSiteLinksActioninfoblockCreatedAt = "authoravatarblock___socialSiteLinks___actioninfoblock___createdAt",
+  AuthoravatarblockSocialSiteLinksActioninfoblockId = "authoravatarblock___socialSiteLinks___actioninfoblock___id",
+  AuthoravatarblockSocialSiteLinksActioninfoblockNodeLocale = "authoravatarblock___socialSiteLinks___actioninfoblock___node_locale",
+  AuthoravatarblockSocialSiteLinksActioninfoblockSpaceId = "authoravatarblock___socialSiteLinks___actioninfoblock___spaceId",
+  AuthoravatarblockSocialSiteLinksActioninfoblockTextPosition = "authoravatarblock___socialSiteLinks___actioninfoblock___textPosition",
+  AuthoravatarblockSocialSiteLinksActioninfoblockUniqueId = "authoravatarblock___socialSiteLinks___actioninfoblock___uniqueId",
+  AuthoravatarblockSocialSiteLinksActioninfoblockUpdatedAt = "authoravatarblock___socialSiteLinks___actioninfoblock___updatedAt",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblock = "authoravatarblock___socialSiteLinks___authoravatarblock",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockChildren = "authoravatarblock___socialSiteLinks___authoravatarblock___children",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "authoravatarblock___socialSiteLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockContentblock = "authoravatarblock___socialSiteLinks___authoravatarblock___contentblock",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockContentfulId = "authoravatarblock___socialSiteLinks___authoravatarblock___contentful_id",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockCreatedAt = "authoravatarblock___socialSiteLinks___authoravatarblock___createdAt",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockFullName = "authoravatarblock___socialSiteLinks___authoravatarblock___fullName",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockId = "authoravatarblock___socialSiteLinks___authoravatarblock___id",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockNodeLocale = "authoravatarblock___socialSiteLinks___authoravatarblock___node_locale",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockSocialSiteLinks = "authoravatarblock___socialSiteLinks___authoravatarblock___socialSiteLinks",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockSpaceId = "authoravatarblock___socialSiteLinks___authoravatarblock___spaceId",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockUniqueId = "authoravatarblock___socialSiteLinks___authoravatarblock___uniqueId",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockUpdatedAt = "authoravatarblock___socialSiteLinks___authoravatarblock___updatedAt",
+  AuthoravatarblockSocialSiteLinksChildContentfulLinkUrlTextNodeChildren = "authoravatarblock___socialSiteLinks___childContentfulLinkUrlTextNode___children",
+  AuthoravatarblockSocialSiteLinksChildContentfulLinkUrlTextNodeChildrenMdx = "authoravatarblock___socialSiteLinks___childContentfulLinkUrlTextNode___childrenMdx",
+  AuthoravatarblockSocialSiteLinksChildContentfulLinkUrlTextNodeId = "authoravatarblock___socialSiteLinks___childContentfulLinkUrlTextNode___id",
+  AuthoravatarblockSocialSiteLinksChildContentfulLinkUrlTextNodeUrl = "authoravatarblock___socialSiteLinks___childContentfulLinkUrlTextNode___url",
+  AuthoravatarblockSocialSiteLinksChildren = "authoravatarblock___socialSiteLinks___children",
+  AuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  AuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNodeChildren = "authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode___children",
+  AuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNodeChildrenMdx = "authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode___childrenMdx",
+  AuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNodeId = "authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode___id",
+  AuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNodeUrl = "authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode___url",
+  AuthoravatarblockSocialSiteLinksChildrenChildren = "authoravatarblock___socialSiteLinks___children___children",
+  AuthoravatarblockSocialSiteLinksChildrenId = "authoravatarblock___socialSiteLinks___children___id",
+  AuthoravatarblockSocialSiteLinksContentfulId = "authoravatarblock___socialSiteLinks___contentful_id",
+  AuthoravatarblockSocialSiteLinksContentfulid = "authoravatarblock___socialSiteLinks___contentfulid",
+  AuthoravatarblockSocialSiteLinksCreatedAt = "authoravatarblock___socialSiteLinks___createdAt",
+  AuthoravatarblockSocialSiteLinksId = "authoravatarblock___socialSiteLinks___id",
+  AuthoravatarblockSocialSiteLinksImageChildren = "authoravatarblock___socialSiteLinks___image___children",
+  AuthoravatarblockSocialSiteLinksImageContentfulId = "authoravatarblock___socialSiteLinks___image___contentful_id",
+  AuthoravatarblockSocialSiteLinksImageCreatedAt = "authoravatarblock___socialSiteLinks___image___createdAt",
+  AuthoravatarblockSocialSiteLinksImageDescription = "authoravatarblock___socialSiteLinks___image___description",
+  AuthoravatarblockSocialSiteLinksImageFilename = "authoravatarblock___socialSiteLinks___image___filename",
+  AuthoravatarblockSocialSiteLinksImageFilesize = "authoravatarblock___socialSiteLinks___image___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockSocialSiteLinksImageGatsbyImage = "authoravatarblock___socialSiteLinks___image___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  AuthoravatarblockSocialSiteLinksImageGatsbyImageData = "authoravatarblock___socialSiteLinks___image___gatsbyImageData",
+  AuthoravatarblockSocialSiteLinksImageHeight = "authoravatarblock___socialSiteLinks___image___height",
+  AuthoravatarblockSocialSiteLinksImageId = "authoravatarblock___socialSiteLinks___image___id",
+  AuthoravatarblockSocialSiteLinksImageMimeType = "authoravatarblock___socialSiteLinks___image___mimeType",
+  AuthoravatarblockSocialSiteLinksImageNodeLocale = "authoravatarblock___socialSiteLinks___image___node_locale",
+  AuthoravatarblockSocialSiteLinksImagePlaceholderUrl = "authoravatarblock___socialSiteLinks___image___placeholderUrl",
+  AuthoravatarblockSocialSiteLinksImagePublicUrl = "authoravatarblock___socialSiteLinks___image___publicUrl",
+  AuthoravatarblockSocialSiteLinksImageSpaceId = "authoravatarblock___socialSiteLinks___image___spaceId",
+  AuthoravatarblockSocialSiteLinksImageTitle = "authoravatarblock___socialSiteLinks___image___title",
+  AuthoravatarblockSocialSiteLinksImageUpdatedAt = "authoravatarblock___socialSiteLinks___image___updatedAt",
+  AuthoravatarblockSocialSiteLinksImageUrl = "authoravatarblock___socialSiteLinks___image___url",
+  AuthoravatarblockSocialSiteLinksImageWidth = "authoravatarblock___socialSiteLinks___image___width",
+  AuthoravatarblockSocialSiteLinksInternalContent = "authoravatarblock___socialSiteLinks___internal___content",
+  AuthoravatarblockSocialSiteLinksInternalContentDigest = "authoravatarblock___socialSiteLinks___internal___contentDigest",
+  AuthoravatarblockSocialSiteLinksInternalDescription = "authoravatarblock___socialSiteLinks___internal___description",
+  AuthoravatarblockSocialSiteLinksInternalFieldOwners = "authoravatarblock___socialSiteLinks___internal___fieldOwners",
+  AuthoravatarblockSocialSiteLinksInternalIgnoreType = "authoravatarblock___socialSiteLinks___internal___ignoreType",
+  AuthoravatarblockSocialSiteLinksInternalMediaType = "authoravatarblock___socialSiteLinks___internal___mediaType",
+  AuthoravatarblockSocialSiteLinksInternalOwner = "authoravatarblock___socialSiteLinks___internal___owner",
+  AuthoravatarblockSocialSiteLinksInternalType = "authoravatarblock___socialSiteLinks___internal___type",
+  AuthoravatarblockSocialSiteLinksNodeLocale = "authoravatarblock___socialSiteLinks___node_locale",
+  AuthoravatarblockSocialSiteLinksOptions = "authoravatarblock___socialSiteLinks___options",
+  AuthoravatarblockSocialSiteLinksOptionsBottomBarSocialLinks = "authoravatarblock___socialSiteLinks___options___bottomBarSocialLinks",
+  AuthoravatarblockSocialSiteLinksOptionsBottomBarTabs = "authoravatarblock___socialSiteLinks___options___bottomBarTabs",
+  AuthoravatarblockSocialSiteLinksOptionsChildren = "authoravatarblock___socialSiteLinks___options___children",
+  AuthoravatarblockSocialSiteLinksOptionsContentfulId = "authoravatarblock___socialSiteLinks___options___contentful_id",
+  AuthoravatarblockSocialSiteLinksOptionsContentfulid = "authoravatarblock___socialSiteLinks___options___contentfulid",
+  AuthoravatarblockSocialSiteLinksOptionsCreatedAt = "authoravatarblock___socialSiteLinks___options___createdAt",
+  AuthoravatarblockSocialSiteLinksOptionsId = "authoravatarblock___socialSiteLinks___options___id",
+  AuthoravatarblockSocialSiteLinksOptionsNodeLocale = "authoravatarblock___socialSiteLinks___options___node_locale",
+  AuthoravatarblockSocialSiteLinksOptionsSpaceId = "authoravatarblock___socialSiteLinks___options___spaceId",
+  AuthoravatarblockSocialSiteLinksOptionsTopBarSocialLinks = "authoravatarblock___socialSiteLinks___options___topBarSocialLinks",
+  AuthoravatarblockSocialSiteLinksOptionsTopBarTabs = "authoravatarblock___socialSiteLinks___options___topBarTabs",
+  AuthoravatarblockSocialSiteLinksOptionsUpdatedAt = "authoravatarblock___socialSiteLinks___options___updatedAt",
+  AuthoravatarblockSocialSiteLinksParentChildren = "authoravatarblock___socialSiteLinks___parent___children",
+  AuthoravatarblockSocialSiteLinksParentId = "authoravatarblock___socialSiteLinks___parent___id",
+  AuthoravatarblockSocialSiteLinksSpaceId = "authoravatarblock___socialSiteLinks___spaceId",
+  AuthoravatarblockSocialSiteLinksSysRevision = "authoravatarblock___socialSiteLinks___sys___revision",
+  AuthoravatarblockSocialSiteLinksSysType = "authoravatarblock___socialSiteLinks___sys___type",
+  AuthoravatarblockSocialSiteLinksTitle = "authoravatarblock___socialSiteLinks___title",
+  AuthoravatarblockSocialSiteLinksUpdatedAt = "authoravatarblock___socialSiteLinks___updatedAt",
+  AuthoravatarblockSocialSiteLinksUrlChildren = "authoravatarblock___socialSiteLinks___url___children",
+  AuthoravatarblockSocialSiteLinksUrlChildrenMdx = "authoravatarblock___socialSiteLinks___url___childrenMdx",
+  AuthoravatarblockSocialSiteLinksUrlId = "authoravatarblock___socialSiteLinks___url___id",
+  AuthoravatarblockSocialSiteLinksUrlUrl = "authoravatarblock___socialSiteLinks___url___url",
+  AuthoravatarblockSpaceId = "authoravatarblock___spaceId",
+  AuthoravatarblockSysRevision = "authoravatarblock___sys___revision",
+  AuthoravatarblockSysType = "authoravatarblock___sys___type",
+  AuthoravatarblockUniqueId = "authoravatarblock___uniqueId",
+  AuthoravatarblockUpdatedAt = "authoravatarblock___updatedAt",
   ChildContentfulLinkUrlTextNodeChildMdxBody = "childContentfulLinkUrlTextNode___childMdx___body",
   ChildContentfulLinkUrlTextNodeChildMdxChildren = "childContentfulLinkUrlTextNode___childMdx___children",
   ChildContentfulLinkUrlTextNodeChildMdxChildrenChildren = "childContentfulLinkUrlTextNode___childMdx___children___children",
@@ -1283,6 +4449,30 @@ export enum ContentfulLinkFieldsEnum {
   InternalType = "internal___type",
   NodeLocale = "node_locale",
   Options = "options",
+  OptionsBottomBarLogoActioninfoblock = "options___bottomBarLogo___actioninfoblock",
+  OptionsBottomBarLogoActioninfoblockChildren = "options___bottomBarLogo___actioninfoblock___children",
+  OptionsBottomBarLogoActioninfoblockContentblock = "options___bottomBarLogo___actioninfoblock___contentblock",
+  OptionsBottomBarLogoActioninfoblockContentfulId = "options___bottomBarLogo___actioninfoblock___contentful_id",
+  OptionsBottomBarLogoActioninfoblockCreatedAt = "options___bottomBarLogo___actioninfoblock___createdAt",
+  OptionsBottomBarLogoActioninfoblockId = "options___bottomBarLogo___actioninfoblock___id",
+  OptionsBottomBarLogoActioninfoblockNodeLocale = "options___bottomBarLogo___actioninfoblock___node_locale",
+  OptionsBottomBarLogoActioninfoblockSpaceId = "options___bottomBarLogo___actioninfoblock___spaceId",
+  OptionsBottomBarLogoActioninfoblockTextPosition = "options___bottomBarLogo___actioninfoblock___textPosition",
+  OptionsBottomBarLogoActioninfoblockUniqueId = "options___bottomBarLogo___actioninfoblock___uniqueId",
+  OptionsBottomBarLogoActioninfoblockUpdatedAt = "options___bottomBarLogo___actioninfoblock___updatedAt",
+  OptionsBottomBarLogoAuthoravatarblock = "options___bottomBarLogo___authoravatarblock",
+  OptionsBottomBarLogoAuthoravatarblockChildren = "options___bottomBarLogo___authoravatarblock___children",
+  OptionsBottomBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "options___bottomBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  OptionsBottomBarLogoAuthoravatarblockContentblock = "options___bottomBarLogo___authoravatarblock___contentblock",
+  OptionsBottomBarLogoAuthoravatarblockContentfulId = "options___bottomBarLogo___authoravatarblock___contentful_id",
+  OptionsBottomBarLogoAuthoravatarblockCreatedAt = "options___bottomBarLogo___authoravatarblock___createdAt",
+  OptionsBottomBarLogoAuthoravatarblockFullName = "options___bottomBarLogo___authoravatarblock___fullName",
+  OptionsBottomBarLogoAuthoravatarblockId = "options___bottomBarLogo___authoravatarblock___id",
+  OptionsBottomBarLogoAuthoravatarblockNodeLocale = "options___bottomBarLogo___authoravatarblock___node_locale",
+  OptionsBottomBarLogoAuthoravatarblockSocialSiteLinks = "options___bottomBarLogo___authoravatarblock___socialSiteLinks",
+  OptionsBottomBarLogoAuthoravatarblockSpaceId = "options___bottomBarLogo___authoravatarblock___spaceId",
+  OptionsBottomBarLogoAuthoravatarblockUniqueId = "options___bottomBarLogo___authoravatarblock___uniqueId",
+  OptionsBottomBarLogoAuthoravatarblockUpdatedAt = "options___bottomBarLogo___authoravatarblock___updatedAt",
   OptionsBottomBarLogoChildContentfulLinkUrlTextNodeChildren = "options___bottomBarLogo___childContentfulLinkUrlTextNode___children",
   OptionsBottomBarLogoChildContentfulLinkUrlTextNodeChildrenMdx = "options___bottomBarLogo___childContentfulLinkUrlTextNode___childrenMdx",
   OptionsBottomBarLogoChildContentfulLinkUrlTextNodeId = "options___bottomBarLogo___childContentfulLinkUrlTextNode___id",
@@ -1354,6 +4544,30 @@ export enum ContentfulLinkFieldsEnum {
   OptionsBottomBarLogoUrlId = "options___bottomBarLogo___url___id",
   OptionsBottomBarLogoUrlUrl = "options___bottomBarLogo___url___url",
   OptionsBottomBarSocialLinks = "options___bottomBarSocialLinks",
+  OptionsBottomBarSocialLinksActioninfoblock = "options___bottomBarSocialLinks___actioninfoblock",
+  OptionsBottomBarSocialLinksActioninfoblockChildren = "options___bottomBarSocialLinks___actioninfoblock___children",
+  OptionsBottomBarSocialLinksActioninfoblockContentblock = "options___bottomBarSocialLinks___actioninfoblock___contentblock",
+  OptionsBottomBarSocialLinksActioninfoblockContentfulId = "options___bottomBarSocialLinks___actioninfoblock___contentful_id",
+  OptionsBottomBarSocialLinksActioninfoblockCreatedAt = "options___bottomBarSocialLinks___actioninfoblock___createdAt",
+  OptionsBottomBarSocialLinksActioninfoblockId = "options___bottomBarSocialLinks___actioninfoblock___id",
+  OptionsBottomBarSocialLinksActioninfoblockNodeLocale = "options___bottomBarSocialLinks___actioninfoblock___node_locale",
+  OptionsBottomBarSocialLinksActioninfoblockSpaceId = "options___bottomBarSocialLinks___actioninfoblock___spaceId",
+  OptionsBottomBarSocialLinksActioninfoblockTextPosition = "options___bottomBarSocialLinks___actioninfoblock___textPosition",
+  OptionsBottomBarSocialLinksActioninfoblockUniqueId = "options___bottomBarSocialLinks___actioninfoblock___uniqueId",
+  OptionsBottomBarSocialLinksActioninfoblockUpdatedAt = "options___bottomBarSocialLinks___actioninfoblock___updatedAt",
+  OptionsBottomBarSocialLinksAuthoravatarblock = "options___bottomBarSocialLinks___authoravatarblock",
+  OptionsBottomBarSocialLinksAuthoravatarblockChildren = "options___bottomBarSocialLinks___authoravatarblock___children",
+  OptionsBottomBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "options___bottomBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  OptionsBottomBarSocialLinksAuthoravatarblockContentblock = "options___bottomBarSocialLinks___authoravatarblock___contentblock",
+  OptionsBottomBarSocialLinksAuthoravatarblockContentfulId = "options___bottomBarSocialLinks___authoravatarblock___contentful_id",
+  OptionsBottomBarSocialLinksAuthoravatarblockCreatedAt = "options___bottomBarSocialLinks___authoravatarblock___createdAt",
+  OptionsBottomBarSocialLinksAuthoravatarblockFullName = "options___bottomBarSocialLinks___authoravatarblock___fullName",
+  OptionsBottomBarSocialLinksAuthoravatarblockId = "options___bottomBarSocialLinks___authoravatarblock___id",
+  OptionsBottomBarSocialLinksAuthoravatarblockNodeLocale = "options___bottomBarSocialLinks___authoravatarblock___node_locale",
+  OptionsBottomBarSocialLinksAuthoravatarblockSocialSiteLinks = "options___bottomBarSocialLinks___authoravatarblock___socialSiteLinks",
+  OptionsBottomBarSocialLinksAuthoravatarblockSpaceId = "options___bottomBarSocialLinks___authoravatarblock___spaceId",
+  OptionsBottomBarSocialLinksAuthoravatarblockUniqueId = "options___bottomBarSocialLinks___authoravatarblock___uniqueId",
+  OptionsBottomBarSocialLinksAuthoravatarblockUpdatedAt = "options___bottomBarSocialLinks___authoravatarblock___updatedAt",
   OptionsBottomBarSocialLinksChildContentfulLinkUrlTextNodeChildren = "options___bottomBarSocialLinks___childContentfulLinkUrlTextNode___children",
   OptionsBottomBarSocialLinksChildContentfulLinkUrlTextNodeChildrenMdx = "options___bottomBarSocialLinks___childContentfulLinkUrlTextNode___childrenMdx",
   OptionsBottomBarSocialLinksChildContentfulLinkUrlTextNodeId = "options___bottomBarSocialLinks___childContentfulLinkUrlTextNode___id",
@@ -1425,6 +4639,30 @@ export enum ContentfulLinkFieldsEnum {
   OptionsBottomBarSocialLinksUrlId = "options___bottomBarSocialLinks___url___id",
   OptionsBottomBarSocialLinksUrlUrl = "options___bottomBarSocialLinks___url___url",
   OptionsBottomBarTabs = "options___bottomBarTabs",
+  OptionsBottomBarTabsActioninfoblock = "options___bottomBarTabs___actioninfoblock",
+  OptionsBottomBarTabsActioninfoblockChildren = "options___bottomBarTabs___actioninfoblock___children",
+  OptionsBottomBarTabsActioninfoblockContentblock = "options___bottomBarTabs___actioninfoblock___contentblock",
+  OptionsBottomBarTabsActioninfoblockContentfulId = "options___bottomBarTabs___actioninfoblock___contentful_id",
+  OptionsBottomBarTabsActioninfoblockCreatedAt = "options___bottomBarTabs___actioninfoblock___createdAt",
+  OptionsBottomBarTabsActioninfoblockId = "options___bottomBarTabs___actioninfoblock___id",
+  OptionsBottomBarTabsActioninfoblockNodeLocale = "options___bottomBarTabs___actioninfoblock___node_locale",
+  OptionsBottomBarTabsActioninfoblockSpaceId = "options___bottomBarTabs___actioninfoblock___spaceId",
+  OptionsBottomBarTabsActioninfoblockTextPosition = "options___bottomBarTabs___actioninfoblock___textPosition",
+  OptionsBottomBarTabsActioninfoblockUniqueId = "options___bottomBarTabs___actioninfoblock___uniqueId",
+  OptionsBottomBarTabsActioninfoblockUpdatedAt = "options___bottomBarTabs___actioninfoblock___updatedAt",
+  OptionsBottomBarTabsAuthoravatarblock = "options___bottomBarTabs___authoravatarblock",
+  OptionsBottomBarTabsAuthoravatarblockChildren = "options___bottomBarTabs___authoravatarblock___children",
+  OptionsBottomBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "options___bottomBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  OptionsBottomBarTabsAuthoravatarblockContentblock = "options___bottomBarTabs___authoravatarblock___contentblock",
+  OptionsBottomBarTabsAuthoravatarblockContentfulId = "options___bottomBarTabs___authoravatarblock___contentful_id",
+  OptionsBottomBarTabsAuthoravatarblockCreatedAt = "options___bottomBarTabs___authoravatarblock___createdAt",
+  OptionsBottomBarTabsAuthoravatarblockFullName = "options___bottomBarTabs___authoravatarblock___fullName",
+  OptionsBottomBarTabsAuthoravatarblockId = "options___bottomBarTabs___authoravatarblock___id",
+  OptionsBottomBarTabsAuthoravatarblockNodeLocale = "options___bottomBarTabs___authoravatarblock___node_locale",
+  OptionsBottomBarTabsAuthoravatarblockSocialSiteLinks = "options___bottomBarTabs___authoravatarblock___socialSiteLinks",
+  OptionsBottomBarTabsAuthoravatarblockSpaceId = "options___bottomBarTabs___authoravatarblock___spaceId",
+  OptionsBottomBarTabsAuthoravatarblockUniqueId = "options___bottomBarTabs___authoravatarblock___uniqueId",
+  OptionsBottomBarTabsAuthoravatarblockUpdatedAt = "options___bottomBarTabs___authoravatarblock___updatedAt",
   OptionsBottomBarTabsChildContentfulLinkUrlTextNodeChildren = "options___bottomBarTabs___childContentfulLinkUrlTextNode___children",
   OptionsBottomBarTabsChildContentfulLinkUrlTextNodeChildrenMdx = "options___bottomBarTabs___childContentfulLinkUrlTextNode___childrenMdx",
   OptionsBottomBarTabsChildContentfulLinkUrlTextNodeId = "options___bottomBarTabs___childContentfulLinkUrlTextNode___id",
@@ -1540,6 +4778,30 @@ export enum ContentfulLinkFieldsEnum {
   OptionsSpaceId = "options___spaceId",
   OptionsSysRevision = "options___sys___revision",
   OptionsSysType = "options___sys___type",
+  OptionsTopBarLogoActioninfoblock = "options___topBarLogo___actioninfoblock",
+  OptionsTopBarLogoActioninfoblockChildren = "options___topBarLogo___actioninfoblock___children",
+  OptionsTopBarLogoActioninfoblockContentblock = "options___topBarLogo___actioninfoblock___contentblock",
+  OptionsTopBarLogoActioninfoblockContentfulId = "options___topBarLogo___actioninfoblock___contentful_id",
+  OptionsTopBarLogoActioninfoblockCreatedAt = "options___topBarLogo___actioninfoblock___createdAt",
+  OptionsTopBarLogoActioninfoblockId = "options___topBarLogo___actioninfoblock___id",
+  OptionsTopBarLogoActioninfoblockNodeLocale = "options___topBarLogo___actioninfoblock___node_locale",
+  OptionsTopBarLogoActioninfoblockSpaceId = "options___topBarLogo___actioninfoblock___spaceId",
+  OptionsTopBarLogoActioninfoblockTextPosition = "options___topBarLogo___actioninfoblock___textPosition",
+  OptionsTopBarLogoActioninfoblockUniqueId = "options___topBarLogo___actioninfoblock___uniqueId",
+  OptionsTopBarLogoActioninfoblockUpdatedAt = "options___topBarLogo___actioninfoblock___updatedAt",
+  OptionsTopBarLogoAuthoravatarblock = "options___topBarLogo___authoravatarblock",
+  OptionsTopBarLogoAuthoravatarblockChildren = "options___topBarLogo___authoravatarblock___children",
+  OptionsTopBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "options___topBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  OptionsTopBarLogoAuthoravatarblockContentblock = "options___topBarLogo___authoravatarblock___contentblock",
+  OptionsTopBarLogoAuthoravatarblockContentfulId = "options___topBarLogo___authoravatarblock___contentful_id",
+  OptionsTopBarLogoAuthoravatarblockCreatedAt = "options___topBarLogo___authoravatarblock___createdAt",
+  OptionsTopBarLogoAuthoravatarblockFullName = "options___topBarLogo___authoravatarblock___fullName",
+  OptionsTopBarLogoAuthoravatarblockId = "options___topBarLogo___authoravatarblock___id",
+  OptionsTopBarLogoAuthoravatarblockNodeLocale = "options___topBarLogo___authoravatarblock___node_locale",
+  OptionsTopBarLogoAuthoravatarblockSocialSiteLinks = "options___topBarLogo___authoravatarblock___socialSiteLinks",
+  OptionsTopBarLogoAuthoravatarblockSpaceId = "options___topBarLogo___authoravatarblock___spaceId",
+  OptionsTopBarLogoAuthoravatarblockUniqueId = "options___topBarLogo___authoravatarblock___uniqueId",
+  OptionsTopBarLogoAuthoravatarblockUpdatedAt = "options___topBarLogo___authoravatarblock___updatedAt",
   OptionsTopBarLogoChildContentfulLinkUrlTextNodeChildren = "options___topBarLogo___childContentfulLinkUrlTextNode___children",
   OptionsTopBarLogoChildContentfulLinkUrlTextNodeChildrenMdx = "options___topBarLogo___childContentfulLinkUrlTextNode___childrenMdx",
   OptionsTopBarLogoChildContentfulLinkUrlTextNodeId = "options___topBarLogo___childContentfulLinkUrlTextNode___id",
@@ -1611,6 +4873,30 @@ export enum ContentfulLinkFieldsEnum {
   OptionsTopBarLogoUrlId = "options___topBarLogo___url___id",
   OptionsTopBarLogoUrlUrl = "options___topBarLogo___url___url",
   OptionsTopBarSocialLinks = "options___topBarSocialLinks",
+  OptionsTopBarSocialLinksActioninfoblock = "options___topBarSocialLinks___actioninfoblock",
+  OptionsTopBarSocialLinksActioninfoblockChildren = "options___topBarSocialLinks___actioninfoblock___children",
+  OptionsTopBarSocialLinksActioninfoblockContentblock = "options___topBarSocialLinks___actioninfoblock___contentblock",
+  OptionsTopBarSocialLinksActioninfoblockContentfulId = "options___topBarSocialLinks___actioninfoblock___contentful_id",
+  OptionsTopBarSocialLinksActioninfoblockCreatedAt = "options___topBarSocialLinks___actioninfoblock___createdAt",
+  OptionsTopBarSocialLinksActioninfoblockId = "options___topBarSocialLinks___actioninfoblock___id",
+  OptionsTopBarSocialLinksActioninfoblockNodeLocale = "options___topBarSocialLinks___actioninfoblock___node_locale",
+  OptionsTopBarSocialLinksActioninfoblockSpaceId = "options___topBarSocialLinks___actioninfoblock___spaceId",
+  OptionsTopBarSocialLinksActioninfoblockTextPosition = "options___topBarSocialLinks___actioninfoblock___textPosition",
+  OptionsTopBarSocialLinksActioninfoblockUniqueId = "options___topBarSocialLinks___actioninfoblock___uniqueId",
+  OptionsTopBarSocialLinksActioninfoblockUpdatedAt = "options___topBarSocialLinks___actioninfoblock___updatedAt",
+  OptionsTopBarSocialLinksAuthoravatarblock = "options___topBarSocialLinks___authoravatarblock",
+  OptionsTopBarSocialLinksAuthoravatarblockChildren = "options___topBarSocialLinks___authoravatarblock___children",
+  OptionsTopBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "options___topBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  OptionsTopBarSocialLinksAuthoravatarblockContentblock = "options___topBarSocialLinks___authoravatarblock___contentblock",
+  OptionsTopBarSocialLinksAuthoravatarblockContentfulId = "options___topBarSocialLinks___authoravatarblock___contentful_id",
+  OptionsTopBarSocialLinksAuthoravatarblockCreatedAt = "options___topBarSocialLinks___authoravatarblock___createdAt",
+  OptionsTopBarSocialLinksAuthoravatarblockFullName = "options___topBarSocialLinks___authoravatarblock___fullName",
+  OptionsTopBarSocialLinksAuthoravatarblockId = "options___topBarSocialLinks___authoravatarblock___id",
+  OptionsTopBarSocialLinksAuthoravatarblockNodeLocale = "options___topBarSocialLinks___authoravatarblock___node_locale",
+  OptionsTopBarSocialLinksAuthoravatarblockSocialSiteLinks = "options___topBarSocialLinks___authoravatarblock___socialSiteLinks",
+  OptionsTopBarSocialLinksAuthoravatarblockSpaceId = "options___topBarSocialLinks___authoravatarblock___spaceId",
+  OptionsTopBarSocialLinksAuthoravatarblockUniqueId = "options___topBarSocialLinks___authoravatarblock___uniqueId",
+  OptionsTopBarSocialLinksAuthoravatarblockUpdatedAt = "options___topBarSocialLinks___authoravatarblock___updatedAt",
   OptionsTopBarSocialLinksChildContentfulLinkUrlTextNodeChildren = "options___topBarSocialLinks___childContentfulLinkUrlTextNode___children",
   OptionsTopBarSocialLinksChildContentfulLinkUrlTextNodeChildrenMdx = "options___topBarSocialLinks___childContentfulLinkUrlTextNode___childrenMdx",
   OptionsTopBarSocialLinksChildContentfulLinkUrlTextNodeId = "options___topBarSocialLinks___childContentfulLinkUrlTextNode___id",
@@ -1682,6 +4968,30 @@ export enum ContentfulLinkFieldsEnum {
   OptionsTopBarSocialLinksUrlId = "options___topBarSocialLinks___url___id",
   OptionsTopBarSocialLinksUrlUrl = "options___topBarSocialLinks___url___url",
   OptionsTopBarTabs = "options___topBarTabs",
+  OptionsTopBarTabsActioninfoblock = "options___topBarTabs___actioninfoblock",
+  OptionsTopBarTabsActioninfoblockChildren = "options___topBarTabs___actioninfoblock___children",
+  OptionsTopBarTabsActioninfoblockContentblock = "options___topBarTabs___actioninfoblock___contentblock",
+  OptionsTopBarTabsActioninfoblockContentfulId = "options___topBarTabs___actioninfoblock___contentful_id",
+  OptionsTopBarTabsActioninfoblockCreatedAt = "options___topBarTabs___actioninfoblock___createdAt",
+  OptionsTopBarTabsActioninfoblockId = "options___topBarTabs___actioninfoblock___id",
+  OptionsTopBarTabsActioninfoblockNodeLocale = "options___topBarTabs___actioninfoblock___node_locale",
+  OptionsTopBarTabsActioninfoblockSpaceId = "options___topBarTabs___actioninfoblock___spaceId",
+  OptionsTopBarTabsActioninfoblockTextPosition = "options___topBarTabs___actioninfoblock___textPosition",
+  OptionsTopBarTabsActioninfoblockUniqueId = "options___topBarTabs___actioninfoblock___uniqueId",
+  OptionsTopBarTabsActioninfoblockUpdatedAt = "options___topBarTabs___actioninfoblock___updatedAt",
+  OptionsTopBarTabsAuthoravatarblock = "options___topBarTabs___authoravatarblock",
+  OptionsTopBarTabsAuthoravatarblockChildren = "options___topBarTabs___authoravatarblock___children",
+  OptionsTopBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "options___topBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  OptionsTopBarTabsAuthoravatarblockContentblock = "options___topBarTabs___authoravatarblock___contentblock",
+  OptionsTopBarTabsAuthoravatarblockContentfulId = "options___topBarTabs___authoravatarblock___contentful_id",
+  OptionsTopBarTabsAuthoravatarblockCreatedAt = "options___topBarTabs___authoravatarblock___createdAt",
+  OptionsTopBarTabsAuthoravatarblockFullName = "options___topBarTabs___authoravatarblock___fullName",
+  OptionsTopBarTabsAuthoravatarblockId = "options___topBarTabs___authoravatarblock___id",
+  OptionsTopBarTabsAuthoravatarblockNodeLocale = "options___topBarTabs___authoravatarblock___node_locale",
+  OptionsTopBarTabsAuthoravatarblockSocialSiteLinks = "options___topBarTabs___authoravatarblock___socialSiteLinks",
+  OptionsTopBarTabsAuthoravatarblockSpaceId = "options___topBarTabs___authoravatarblock___spaceId",
+  OptionsTopBarTabsAuthoravatarblockUniqueId = "options___topBarTabs___authoravatarblock___uniqueId",
+  OptionsTopBarTabsAuthoravatarblockUpdatedAt = "options___topBarTabs___authoravatarblock___updatedAt",
   OptionsTopBarTabsChildContentfulLinkUrlTextNodeChildren = "options___topBarTabs___childContentfulLinkUrlTextNode___children",
   OptionsTopBarTabsChildContentfulLinkUrlTextNodeChildrenMdx = "options___topBarTabs___childContentfulLinkUrlTextNode___childrenMdx",
   OptionsTopBarTabsChildContentfulLinkUrlTextNodeId = "options___topBarTabs___childContentfulLinkUrlTextNode___id",
@@ -1913,6 +5223,8 @@ export enum ContentfulLinkFieldsEnum {
 }
 
 export type ContentfulLinkFilterInput = {
+  actioninfoblock?: InputMaybe<ContentfulActionInfoBlockFilterListInput>;
+  authoravatarblock?: InputMaybe<ContentfulAuthorAvatarBlockFilterListInput>;
   childContentfulLinkUrlTextNode?: InputMaybe<ContentfulLinkUrlTextNodeFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
   childrenContentfulLinkUrlTextNode?: InputMaybe<ContentfulLinkUrlTextNodeFilterListInput>;
@@ -2311,6 +5623,138 @@ export type ContentfulOptionsEdge = {
 };
 
 export enum ContentfulOptionsFieldsEnum {
+  BottomBarLogoActioninfoblock = "bottomBarLogo___actioninfoblock",
+  BottomBarLogoActioninfoblockArticleRaw = "bottomBarLogo___actioninfoblock___article___raw",
+  BottomBarLogoActioninfoblockButtonActioninfoblock = "bottomBarLogo___actioninfoblock___button___actioninfoblock",
+  BottomBarLogoActioninfoblockButtonAuthoravatarblock = "bottomBarLogo___actioninfoblock___button___authoravatarblock",
+  BottomBarLogoActioninfoblockButtonChildren = "bottomBarLogo___actioninfoblock___button___children",
+  BottomBarLogoActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "bottomBarLogo___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  BottomBarLogoActioninfoblockButtonContentfulId = "bottomBarLogo___actioninfoblock___button___contentful_id",
+  BottomBarLogoActioninfoblockButtonContentfulid = "bottomBarLogo___actioninfoblock___button___contentfulid",
+  BottomBarLogoActioninfoblockButtonCreatedAt = "bottomBarLogo___actioninfoblock___button___createdAt",
+  BottomBarLogoActioninfoblockButtonId = "bottomBarLogo___actioninfoblock___button___id",
+  BottomBarLogoActioninfoblockButtonNodeLocale = "bottomBarLogo___actioninfoblock___button___node_locale",
+  BottomBarLogoActioninfoblockButtonOptions = "bottomBarLogo___actioninfoblock___button___options",
+  BottomBarLogoActioninfoblockButtonSpaceId = "bottomBarLogo___actioninfoblock___button___spaceId",
+  BottomBarLogoActioninfoblockButtonTitle = "bottomBarLogo___actioninfoblock___button___title",
+  BottomBarLogoActioninfoblockButtonUpdatedAt = "bottomBarLogo___actioninfoblock___button___updatedAt",
+  BottomBarLogoActioninfoblockChildren = "bottomBarLogo___actioninfoblock___children",
+  BottomBarLogoActioninfoblockChildrenChildren = "bottomBarLogo___actioninfoblock___children___children",
+  BottomBarLogoActioninfoblockChildrenId = "bottomBarLogo___actioninfoblock___children___id",
+  BottomBarLogoActioninfoblockContentblock = "bottomBarLogo___actioninfoblock___contentblock",
+  BottomBarLogoActioninfoblockContentblockChildren = "bottomBarLogo___actioninfoblock___contentblock___children",
+  BottomBarLogoActioninfoblockContentblockContentfulId = "bottomBarLogo___actioninfoblock___contentblock___contentful_id",
+  BottomBarLogoActioninfoblockContentblockCreatedAt = "bottomBarLogo___actioninfoblock___contentblock___createdAt",
+  BottomBarLogoActioninfoblockContentblockId = "bottomBarLogo___actioninfoblock___contentblock___id",
+  BottomBarLogoActioninfoblockContentblockMargin = "bottomBarLogo___actioninfoblock___contentblock___margin",
+  BottomBarLogoActioninfoblockContentblockNodeLocale = "bottomBarLogo___actioninfoblock___contentblock___node_locale",
+  BottomBarLogoActioninfoblockContentblockPage = "bottomBarLogo___actioninfoblock___contentblock___page",
+  BottomBarLogoActioninfoblockContentblockSpaceId = "bottomBarLogo___actioninfoblock___contentblock___spaceId",
+  BottomBarLogoActioninfoblockContentblockUniqueId = "bottomBarLogo___actioninfoblock___contentblock___uniqueId",
+  BottomBarLogoActioninfoblockContentblockUpdatedAt = "bottomBarLogo___actioninfoblock___contentblock___updatedAt",
+  BottomBarLogoActioninfoblockContentfulId = "bottomBarLogo___actioninfoblock___contentful_id",
+  BottomBarLogoActioninfoblockCreatedAt = "bottomBarLogo___actioninfoblock___createdAt",
+  BottomBarLogoActioninfoblockId = "bottomBarLogo___actioninfoblock___id",
+  BottomBarLogoActioninfoblockInternalContent = "bottomBarLogo___actioninfoblock___internal___content",
+  BottomBarLogoActioninfoblockInternalContentDigest = "bottomBarLogo___actioninfoblock___internal___contentDigest",
+  BottomBarLogoActioninfoblockInternalDescription = "bottomBarLogo___actioninfoblock___internal___description",
+  BottomBarLogoActioninfoblockInternalFieldOwners = "bottomBarLogo___actioninfoblock___internal___fieldOwners",
+  BottomBarLogoActioninfoblockInternalIgnoreType = "bottomBarLogo___actioninfoblock___internal___ignoreType",
+  BottomBarLogoActioninfoblockInternalMediaType = "bottomBarLogo___actioninfoblock___internal___mediaType",
+  BottomBarLogoActioninfoblockInternalOwner = "bottomBarLogo___actioninfoblock___internal___owner",
+  BottomBarLogoActioninfoblockInternalType = "bottomBarLogo___actioninfoblock___internal___type",
+  BottomBarLogoActioninfoblockNodeLocale = "bottomBarLogo___actioninfoblock___node_locale",
+  BottomBarLogoActioninfoblockParentChildren = "bottomBarLogo___actioninfoblock___parent___children",
+  BottomBarLogoActioninfoblockParentId = "bottomBarLogo___actioninfoblock___parent___id",
+  BottomBarLogoActioninfoblockSpaceId = "bottomBarLogo___actioninfoblock___spaceId",
+  BottomBarLogoActioninfoblockSysRevision = "bottomBarLogo___actioninfoblock___sys___revision",
+  BottomBarLogoActioninfoblockSysType = "bottomBarLogo___actioninfoblock___sys___type",
+  BottomBarLogoActioninfoblockTextPosition = "bottomBarLogo___actioninfoblock___textPosition",
+  BottomBarLogoActioninfoblockUniqueId = "bottomBarLogo___actioninfoblock___uniqueId",
+  BottomBarLogoActioninfoblockUpdatedAt = "bottomBarLogo___actioninfoblock___updatedAt",
+  BottomBarLogoAuthoravatarblock = "bottomBarLogo___authoravatarblock",
+  BottomBarLogoAuthoravatarblockAvatarChildren = "bottomBarLogo___authoravatarblock___avatar___children",
+  BottomBarLogoAuthoravatarblockAvatarContentfulId = "bottomBarLogo___authoravatarblock___avatar___contentful_id",
+  BottomBarLogoAuthoravatarblockAvatarCreatedAt = "bottomBarLogo___authoravatarblock___avatar___createdAt",
+  BottomBarLogoAuthoravatarblockAvatarDescription = "bottomBarLogo___authoravatarblock___avatar___description",
+  BottomBarLogoAuthoravatarblockAvatarFilename = "bottomBarLogo___authoravatarblock___avatar___filename",
+  BottomBarLogoAuthoravatarblockAvatarFilesize = "bottomBarLogo___authoravatarblock___avatar___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  BottomBarLogoAuthoravatarblockAvatarGatsbyImage = "bottomBarLogo___authoravatarblock___avatar___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  BottomBarLogoAuthoravatarblockAvatarGatsbyImageData = "bottomBarLogo___authoravatarblock___avatar___gatsbyImageData",
+  BottomBarLogoAuthoravatarblockAvatarHeight = "bottomBarLogo___authoravatarblock___avatar___height",
+  BottomBarLogoAuthoravatarblockAvatarId = "bottomBarLogo___authoravatarblock___avatar___id",
+  BottomBarLogoAuthoravatarblockAvatarMimeType = "bottomBarLogo___authoravatarblock___avatar___mimeType",
+  BottomBarLogoAuthoravatarblockAvatarNodeLocale = "bottomBarLogo___authoravatarblock___avatar___node_locale",
+  BottomBarLogoAuthoravatarblockAvatarPlaceholderUrl = "bottomBarLogo___authoravatarblock___avatar___placeholderUrl",
+  BottomBarLogoAuthoravatarblockAvatarPublicUrl = "bottomBarLogo___authoravatarblock___avatar___publicUrl",
+  BottomBarLogoAuthoravatarblockAvatarSpaceId = "bottomBarLogo___authoravatarblock___avatar___spaceId",
+  BottomBarLogoAuthoravatarblockAvatarTitle = "bottomBarLogo___authoravatarblock___avatar___title",
+  BottomBarLogoAuthoravatarblockAvatarUpdatedAt = "bottomBarLogo___authoravatarblock___avatar___updatedAt",
+  BottomBarLogoAuthoravatarblockAvatarUrl = "bottomBarLogo___authoravatarblock___avatar___url",
+  BottomBarLogoAuthoravatarblockAvatarWidth = "bottomBarLogo___authoravatarblock___avatar___width",
+  BottomBarLogoAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "bottomBarLogo___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  BottomBarLogoAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "bottomBarLogo___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  BottomBarLogoAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "bottomBarLogo___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  BottomBarLogoAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeId = "bottomBarLogo___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  BottomBarLogoAuthoravatarblockChildren = "bottomBarLogo___authoravatarblock___children",
+  BottomBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "bottomBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  BottomBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "bottomBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  BottomBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "bottomBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  BottomBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "bottomBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  BottomBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeId = "bottomBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  BottomBarLogoAuthoravatarblockChildrenChildren = "bottomBarLogo___authoravatarblock___children___children",
+  BottomBarLogoAuthoravatarblockChildrenId = "bottomBarLogo___authoravatarblock___children___id",
+  BottomBarLogoAuthoravatarblockContentblock = "bottomBarLogo___authoravatarblock___contentblock",
+  BottomBarLogoAuthoravatarblockContentblockChildren = "bottomBarLogo___authoravatarblock___contentblock___children",
+  BottomBarLogoAuthoravatarblockContentblockContentfulId = "bottomBarLogo___authoravatarblock___contentblock___contentful_id",
+  BottomBarLogoAuthoravatarblockContentblockCreatedAt = "bottomBarLogo___authoravatarblock___contentblock___createdAt",
+  BottomBarLogoAuthoravatarblockContentblockId = "bottomBarLogo___authoravatarblock___contentblock___id",
+  BottomBarLogoAuthoravatarblockContentblockMargin = "bottomBarLogo___authoravatarblock___contentblock___margin",
+  BottomBarLogoAuthoravatarblockContentblockNodeLocale = "bottomBarLogo___authoravatarblock___contentblock___node_locale",
+  BottomBarLogoAuthoravatarblockContentblockPage = "bottomBarLogo___authoravatarblock___contentblock___page",
+  BottomBarLogoAuthoravatarblockContentblockSpaceId = "bottomBarLogo___authoravatarblock___contentblock___spaceId",
+  BottomBarLogoAuthoravatarblockContentblockUniqueId = "bottomBarLogo___authoravatarblock___contentblock___uniqueId",
+  BottomBarLogoAuthoravatarblockContentblockUpdatedAt = "bottomBarLogo___authoravatarblock___contentblock___updatedAt",
+  BottomBarLogoAuthoravatarblockContentfulId = "bottomBarLogo___authoravatarblock___contentful_id",
+  BottomBarLogoAuthoravatarblockCreatedAt = "bottomBarLogo___authoravatarblock___createdAt",
+  BottomBarLogoAuthoravatarblockDescriptionChildren = "bottomBarLogo___authoravatarblock___description___children",
+  BottomBarLogoAuthoravatarblockDescriptionChildrenMdx = "bottomBarLogo___authoravatarblock___description___childrenMdx",
+  BottomBarLogoAuthoravatarblockDescriptionDescription = "bottomBarLogo___authoravatarblock___description___description",
+  BottomBarLogoAuthoravatarblockDescriptionId = "bottomBarLogo___authoravatarblock___description___id",
+  BottomBarLogoAuthoravatarblockFullName = "bottomBarLogo___authoravatarblock___fullName",
+  BottomBarLogoAuthoravatarblockId = "bottomBarLogo___authoravatarblock___id",
+  BottomBarLogoAuthoravatarblockInternalContent = "bottomBarLogo___authoravatarblock___internal___content",
+  BottomBarLogoAuthoravatarblockInternalContentDigest = "bottomBarLogo___authoravatarblock___internal___contentDigest",
+  BottomBarLogoAuthoravatarblockInternalDescription = "bottomBarLogo___authoravatarblock___internal___description",
+  BottomBarLogoAuthoravatarblockInternalFieldOwners = "bottomBarLogo___authoravatarblock___internal___fieldOwners",
+  BottomBarLogoAuthoravatarblockInternalIgnoreType = "bottomBarLogo___authoravatarblock___internal___ignoreType",
+  BottomBarLogoAuthoravatarblockInternalMediaType = "bottomBarLogo___authoravatarblock___internal___mediaType",
+  BottomBarLogoAuthoravatarblockInternalOwner = "bottomBarLogo___authoravatarblock___internal___owner",
+  BottomBarLogoAuthoravatarblockInternalType = "bottomBarLogo___authoravatarblock___internal___type",
+  BottomBarLogoAuthoravatarblockNodeLocale = "bottomBarLogo___authoravatarblock___node_locale",
+  BottomBarLogoAuthoravatarblockParentChildren = "bottomBarLogo___authoravatarblock___parent___children",
+  BottomBarLogoAuthoravatarblockParentId = "bottomBarLogo___authoravatarblock___parent___id",
+  BottomBarLogoAuthoravatarblockSocialSiteLinks = "bottomBarLogo___authoravatarblock___socialSiteLinks",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksActioninfoblock = "bottomBarLogo___authoravatarblock___socialSiteLinks___actioninfoblock",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksAuthoravatarblock = "bottomBarLogo___authoravatarblock___socialSiteLinks___authoravatarblock",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksChildren = "bottomBarLogo___authoravatarblock___socialSiteLinks___children",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "bottomBarLogo___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksContentfulId = "bottomBarLogo___authoravatarblock___socialSiteLinks___contentful_id",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksContentfulid = "bottomBarLogo___authoravatarblock___socialSiteLinks___contentfulid",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksCreatedAt = "bottomBarLogo___authoravatarblock___socialSiteLinks___createdAt",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksId = "bottomBarLogo___authoravatarblock___socialSiteLinks___id",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksNodeLocale = "bottomBarLogo___authoravatarblock___socialSiteLinks___node_locale",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksOptions = "bottomBarLogo___authoravatarblock___socialSiteLinks___options",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksSpaceId = "bottomBarLogo___authoravatarblock___socialSiteLinks___spaceId",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksTitle = "bottomBarLogo___authoravatarblock___socialSiteLinks___title",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksUpdatedAt = "bottomBarLogo___authoravatarblock___socialSiteLinks___updatedAt",
+  BottomBarLogoAuthoravatarblockSpaceId = "bottomBarLogo___authoravatarblock___spaceId",
+  BottomBarLogoAuthoravatarblockSysRevision = "bottomBarLogo___authoravatarblock___sys___revision",
+  BottomBarLogoAuthoravatarblockSysType = "bottomBarLogo___authoravatarblock___sys___type",
+  BottomBarLogoAuthoravatarblockUniqueId = "bottomBarLogo___authoravatarblock___uniqueId",
+  BottomBarLogoAuthoravatarblockUpdatedAt = "bottomBarLogo___authoravatarblock___updatedAt",
   BottomBarLogoChildContentfulLinkUrlTextNodeChildMdxBody = "bottomBarLogo___childContentfulLinkUrlTextNode___childMdx___body",
   BottomBarLogoChildContentfulLinkUrlTextNodeChildMdxChildren = "bottomBarLogo___childContentfulLinkUrlTextNode___childMdx___children",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
@@ -2479,6 +5923,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoInternalType = "bottomBarLogo___internal___type",
   BottomBarLogoNodeLocale = "bottomBarLogo___node_locale",
   BottomBarLogoOptions = "bottomBarLogo___options",
+  BottomBarLogoOptionsBottomBarLogoActioninfoblock = "bottomBarLogo___options___bottomBarLogo___actioninfoblock",
+  BottomBarLogoOptionsBottomBarLogoAuthoravatarblock = "bottomBarLogo___options___bottomBarLogo___authoravatarblock",
   BottomBarLogoOptionsBottomBarLogoChildren = "bottomBarLogo___options___bottomBarLogo___children",
   BottomBarLogoOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "bottomBarLogo___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
   BottomBarLogoOptionsBottomBarLogoContentfulId = "bottomBarLogo___options___bottomBarLogo___contentful_id",
@@ -2491,6 +5937,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoOptionsBottomBarLogoTitle = "bottomBarLogo___options___bottomBarLogo___title",
   BottomBarLogoOptionsBottomBarLogoUpdatedAt = "bottomBarLogo___options___bottomBarLogo___updatedAt",
   BottomBarLogoOptionsBottomBarSocialLinks = "bottomBarLogo___options___bottomBarSocialLinks",
+  BottomBarLogoOptionsBottomBarSocialLinksActioninfoblock = "bottomBarLogo___options___bottomBarSocialLinks___actioninfoblock",
+  BottomBarLogoOptionsBottomBarSocialLinksAuthoravatarblock = "bottomBarLogo___options___bottomBarSocialLinks___authoravatarblock",
   BottomBarLogoOptionsBottomBarSocialLinksChildren = "bottomBarLogo___options___bottomBarSocialLinks___children",
   BottomBarLogoOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "bottomBarLogo___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
   BottomBarLogoOptionsBottomBarSocialLinksContentfulId = "bottomBarLogo___options___bottomBarSocialLinks___contentful_id",
@@ -2503,6 +5951,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoOptionsBottomBarSocialLinksTitle = "bottomBarLogo___options___bottomBarSocialLinks___title",
   BottomBarLogoOptionsBottomBarSocialLinksUpdatedAt = "bottomBarLogo___options___bottomBarSocialLinks___updatedAt",
   BottomBarLogoOptionsBottomBarTabs = "bottomBarLogo___options___bottomBarTabs",
+  BottomBarLogoOptionsBottomBarTabsActioninfoblock = "bottomBarLogo___options___bottomBarTabs___actioninfoblock",
+  BottomBarLogoOptionsBottomBarTabsAuthoravatarblock = "bottomBarLogo___options___bottomBarTabs___authoravatarblock",
   BottomBarLogoOptionsBottomBarTabsChildren = "bottomBarLogo___options___bottomBarTabs___children",
   BottomBarLogoOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "bottomBarLogo___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
   BottomBarLogoOptionsBottomBarTabsContentfulId = "bottomBarLogo___options___bottomBarTabs___contentful_id",
@@ -2535,6 +5985,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoOptionsSpaceId = "bottomBarLogo___options___spaceId",
   BottomBarLogoOptionsSysRevision = "bottomBarLogo___options___sys___revision",
   BottomBarLogoOptionsSysType = "bottomBarLogo___options___sys___type",
+  BottomBarLogoOptionsTopBarLogoActioninfoblock = "bottomBarLogo___options___topBarLogo___actioninfoblock",
+  BottomBarLogoOptionsTopBarLogoAuthoravatarblock = "bottomBarLogo___options___topBarLogo___authoravatarblock",
   BottomBarLogoOptionsTopBarLogoChildren = "bottomBarLogo___options___topBarLogo___children",
   BottomBarLogoOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "bottomBarLogo___options___topBarLogo___childrenContentfulLinkUrlTextNode",
   BottomBarLogoOptionsTopBarLogoContentfulId = "bottomBarLogo___options___topBarLogo___contentful_id",
@@ -2547,6 +5999,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoOptionsTopBarLogoTitle = "bottomBarLogo___options___topBarLogo___title",
   BottomBarLogoOptionsTopBarLogoUpdatedAt = "bottomBarLogo___options___topBarLogo___updatedAt",
   BottomBarLogoOptionsTopBarSocialLinks = "bottomBarLogo___options___topBarSocialLinks",
+  BottomBarLogoOptionsTopBarSocialLinksActioninfoblock = "bottomBarLogo___options___topBarSocialLinks___actioninfoblock",
+  BottomBarLogoOptionsTopBarSocialLinksAuthoravatarblock = "bottomBarLogo___options___topBarSocialLinks___authoravatarblock",
   BottomBarLogoOptionsTopBarSocialLinksChildren = "bottomBarLogo___options___topBarSocialLinks___children",
   BottomBarLogoOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "bottomBarLogo___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
   BottomBarLogoOptionsTopBarSocialLinksContentfulId = "bottomBarLogo___options___topBarSocialLinks___contentful_id",
@@ -2559,6 +6013,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoOptionsTopBarSocialLinksTitle = "bottomBarLogo___options___topBarSocialLinks___title",
   BottomBarLogoOptionsTopBarSocialLinksUpdatedAt = "bottomBarLogo___options___topBarSocialLinks___updatedAt",
   BottomBarLogoOptionsTopBarTabs = "bottomBarLogo___options___topBarTabs",
+  BottomBarLogoOptionsTopBarTabsActioninfoblock = "bottomBarLogo___options___topBarTabs___actioninfoblock",
+  BottomBarLogoOptionsTopBarTabsAuthoravatarblock = "bottomBarLogo___options___topBarTabs___authoravatarblock",
   BottomBarLogoOptionsTopBarTabsChildren = "bottomBarLogo___options___topBarTabs___children",
   BottomBarLogoOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "bottomBarLogo___options___topBarTabs___childrenContentfulLinkUrlTextNode",
   BottomBarLogoOptionsTopBarTabsContentfulId = "bottomBarLogo___options___topBarTabs___contentful_id",
@@ -2638,6 +6094,138 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoUrlSysType = "bottomBarLogo___url___sys___type",
   BottomBarLogoUrlUrl = "bottomBarLogo___url___url",
   BottomBarSocialLinks = "bottomBarSocialLinks",
+  BottomBarSocialLinksActioninfoblock = "bottomBarSocialLinks___actioninfoblock",
+  BottomBarSocialLinksActioninfoblockArticleRaw = "bottomBarSocialLinks___actioninfoblock___article___raw",
+  BottomBarSocialLinksActioninfoblockButtonActioninfoblock = "bottomBarSocialLinks___actioninfoblock___button___actioninfoblock",
+  BottomBarSocialLinksActioninfoblockButtonAuthoravatarblock = "bottomBarSocialLinks___actioninfoblock___button___authoravatarblock",
+  BottomBarSocialLinksActioninfoblockButtonChildren = "bottomBarSocialLinks___actioninfoblock___button___children",
+  BottomBarSocialLinksActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  BottomBarSocialLinksActioninfoblockButtonContentfulId = "bottomBarSocialLinks___actioninfoblock___button___contentful_id",
+  BottomBarSocialLinksActioninfoblockButtonContentfulid = "bottomBarSocialLinks___actioninfoblock___button___contentfulid",
+  BottomBarSocialLinksActioninfoblockButtonCreatedAt = "bottomBarSocialLinks___actioninfoblock___button___createdAt",
+  BottomBarSocialLinksActioninfoblockButtonId = "bottomBarSocialLinks___actioninfoblock___button___id",
+  BottomBarSocialLinksActioninfoblockButtonNodeLocale = "bottomBarSocialLinks___actioninfoblock___button___node_locale",
+  BottomBarSocialLinksActioninfoblockButtonOptions = "bottomBarSocialLinks___actioninfoblock___button___options",
+  BottomBarSocialLinksActioninfoblockButtonSpaceId = "bottomBarSocialLinks___actioninfoblock___button___spaceId",
+  BottomBarSocialLinksActioninfoblockButtonTitle = "bottomBarSocialLinks___actioninfoblock___button___title",
+  BottomBarSocialLinksActioninfoblockButtonUpdatedAt = "bottomBarSocialLinks___actioninfoblock___button___updatedAt",
+  BottomBarSocialLinksActioninfoblockChildren = "bottomBarSocialLinks___actioninfoblock___children",
+  BottomBarSocialLinksActioninfoblockChildrenChildren = "bottomBarSocialLinks___actioninfoblock___children___children",
+  BottomBarSocialLinksActioninfoblockChildrenId = "bottomBarSocialLinks___actioninfoblock___children___id",
+  BottomBarSocialLinksActioninfoblockContentblock = "bottomBarSocialLinks___actioninfoblock___contentblock",
+  BottomBarSocialLinksActioninfoblockContentblockChildren = "bottomBarSocialLinks___actioninfoblock___contentblock___children",
+  BottomBarSocialLinksActioninfoblockContentblockContentfulId = "bottomBarSocialLinks___actioninfoblock___contentblock___contentful_id",
+  BottomBarSocialLinksActioninfoblockContentblockCreatedAt = "bottomBarSocialLinks___actioninfoblock___contentblock___createdAt",
+  BottomBarSocialLinksActioninfoblockContentblockId = "bottomBarSocialLinks___actioninfoblock___contentblock___id",
+  BottomBarSocialLinksActioninfoblockContentblockMargin = "bottomBarSocialLinks___actioninfoblock___contentblock___margin",
+  BottomBarSocialLinksActioninfoblockContentblockNodeLocale = "bottomBarSocialLinks___actioninfoblock___contentblock___node_locale",
+  BottomBarSocialLinksActioninfoblockContentblockPage = "bottomBarSocialLinks___actioninfoblock___contentblock___page",
+  BottomBarSocialLinksActioninfoblockContentblockSpaceId = "bottomBarSocialLinks___actioninfoblock___contentblock___spaceId",
+  BottomBarSocialLinksActioninfoblockContentblockUniqueId = "bottomBarSocialLinks___actioninfoblock___contentblock___uniqueId",
+  BottomBarSocialLinksActioninfoblockContentblockUpdatedAt = "bottomBarSocialLinks___actioninfoblock___contentblock___updatedAt",
+  BottomBarSocialLinksActioninfoblockContentfulId = "bottomBarSocialLinks___actioninfoblock___contentful_id",
+  BottomBarSocialLinksActioninfoblockCreatedAt = "bottomBarSocialLinks___actioninfoblock___createdAt",
+  BottomBarSocialLinksActioninfoblockId = "bottomBarSocialLinks___actioninfoblock___id",
+  BottomBarSocialLinksActioninfoblockInternalContent = "bottomBarSocialLinks___actioninfoblock___internal___content",
+  BottomBarSocialLinksActioninfoblockInternalContentDigest = "bottomBarSocialLinks___actioninfoblock___internal___contentDigest",
+  BottomBarSocialLinksActioninfoblockInternalDescription = "bottomBarSocialLinks___actioninfoblock___internal___description",
+  BottomBarSocialLinksActioninfoblockInternalFieldOwners = "bottomBarSocialLinks___actioninfoblock___internal___fieldOwners",
+  BottomBarSocialLinksActioninfoblockInternalIgnoreType = "bottomBarSocialLinks___actioninfoblock___internal___ignoreType",
+  BottomBarSocialLinksActioninfoblockInternalMediaType = "bottomBarSocialLinks___actioninfoblock___internal___mediaType",
+  BottomBarSocialLinksActioninfoblockInternalOwner = "bottomBarSocialLinks___actioninfoblock___internal___owner",
+  BottomBarSocialLinksActioninfoblockInternalType = "bottomBarSocialLinks___actioninfoblock___internal___type",
+  BottomBarSocialLinksActioninfoblockNodeLocale = "bottomBarSocialLinks___actioninfoblock___node_locale",
+  BottomBarSocialLinksActioninfoblockParentChildren = "bottomBarSocialLinks___actioninfoblock___parent___children",
+  BottomBarSocialLinksActioninfoblockParentId = "bottomBarSocialLinks___actioninfoblock___parent___id",
+  BottomBarSocialLinksActioninfoblockSpaceId = "bottomBarSocialLinks___actioninfoblock___spaceId",
+  BottomBarSocialLinksActioninfoblockSysRevision = "bottomBarSocialLinks___actioninfoblock___sys___revision",
+  BottomBarSocialLinksActioninfoblockSysType = "bottomBarSocialLinks___actioninfoblock___sys___type",
+  BottomBarSocialLinksActioninfoblockTextPosition = "bottomBarSocialLinks___actioninfoblock___textPosition",
+  BottomBarSocialLinksActioninfoblockUniqueId = "bottomBarSocialLinks___actioninfoblock___uniqueId",
+  BottomBarSocialLinksActioninfoblockUpdatedAt = "bottomBarSocialLinks___actioninfoblock___updatedAt",
+  BottomBarSocialLinksAuthoravatarblock = "bottomBarSocialLinks___authoravatarblock",
+  BottomBarSocialLinksAuthoravatarblockAvatarChildren = "bottomBarSocialLinks___authoravatarblock___avatar___children",
+  BottomBarSocialLinksAuthoravatarblockAvatarContentfulId = "bottomBarSocialLinks___authoravatarblock___avatar___contentful_id",
+  BottomBarSocialLinksAuthoravatarblockAvatarCreatedAt = "bottomBarSocialLinks___authoravatarblock___avatar___createdAt",
+  BottomBarSocialLinksAuthoravatarblockAvatarDescription = "bottomBarSocialLinks___authoravatarblock___avatar___description",
+  BottomBarSocialLinksAuthoravatarblockAvatarFilename = "bottomBarSocialLinks___authoravatarblock___avatar___filename",
+  BottomBarSocialLinksAuthoravatarblockAvatarFilesize = "bottomBarSocialLinks___authoravatarblock___avatar___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  BottomBarSocialLinksAuthoravatarblockAvatarGatsbyImage = "bottomBarSocialLinks___authoravatarblock___avatar___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  BottomBarSocialLinksAuthoravatarblockAvatarGatsbyImageData = "bottomBarSocialLinks___authoravatarblock___avatar___gatsbyImageData",
+  BottomBarSocialLinksAuthoravatarblockAvatarHeight = "bottomBarSocialLinks___authoravatarblock___avatar___height",
+  BottomBarSocialLinksAuthoravatarblockAvatarId = "bottomBarSocialLinks___authoravatarblock___avatar___id",
+  BottomBarSocialLinksAuthoravatarblockAvatarMimeType = "bottomBarSocialLinks___authoravatarblock___avatar___mimeType",
+  BottomBarSocialLinksAuthoravatarblockAvatarNodeLocale = "bottomBarSocialLinks___authoravatarblock___avatar___node_locale",
+  BottomBarSocialLinksAuthoravatarblockAvatarPlaceholderUrl = "bottomBarSocialLinks___authoravatarblock___avatar___placeholderUrl",
+  BottomBarSocialLinksAuthoravatarblockAvatarPublicUrl = "bottomBarSocialLinks___authoravatarblock___avatar___publicUrl",
+  BottomBarSocialLinksAuthoravatarblockAvatarSpaceId = "bottomBarSocialLinks___authoravatarblock___avatar___spaceId",
+  BottomBarSocialLinksAuthoravatarblockAvatarTitle = "bottomBarSocialLinks___authoravatarblock___avatar___title",
+  BottomBarSocialLinksAuthoravatarblockAvatarUpdatedAt = "bottomBarSocialLinks___authoravatarblock___avatar___updatedAt",
+  BottomBarSocialLinksAuthoravatarblockAvatarUrl = "bottomBarSocialLinks___authoravatarblock___avatar___url",
+  BottomBarSocialLinksAuthoravatarblockAvatarWidth = "bottomBarSocialLinks___authoravatarblock___avatar___width",
+  BottomBarSocialLinksAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "bottomBarSocialLinks___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  BottomBarSocialLinksAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "bottomBarSocialLinks___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  BottomBarSocialLinksAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "bottomBarSocialLinks___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  BottomBarSocialLinksAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeId = "bottomBarSocialLinks___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  BottomBarSocialLinksAuthoravatarblockChildren = "bottomBarSocialLinks___authoravatarblock___children",
+  BottomBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "bottomBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  BottomBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "bottomBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  BottomBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "bottomBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  BottomBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "bottomBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  BottomBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeId = "bottomBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  BottomBarSocialLinksAuthoravatarblockChildrenChildren = "bottomBarSocialLinks___authoravatarblock___children___children",
+  BottomBarSocialLinksAuthoravatarblockChildrenId = "bottomBarSocialLinks___authoravatarblock___children___id",
+  BottomBarSocialLinksAuthoravatarblockContentblock = "bottomBarSocialLinks___authoravatarblock___contentblock",
+  BottomBarSocialLinksAuthoravatarblockContentblockChildren = "bottomBarSocialLinks___authoravatarblock___contentblock___children",
+  BottomBarSocialLinksAuthoravatarblockContentblockContentfulId = "bottomBarSocialLinks___authoravatarblock___contentblock___contentful_id",
+  BottomBarSocialLinksAuthoravatarblockContentblockCreatedAt = "bottomBarSocialLinks___authoravatarblock___contentblock___createdAt",
+  BottomBarSocialLinksAuthoravatarblockContentblockId = "bottomBarSocialLinks___authoravatarblock___contentblock___id",
+  BottomBarSocialLinksAuthoravatarblockContentblockMargin = "bottomBarSocialLinks___authoravatarblock___contentblock___margin",
+  BottomBarSocialLinksAuthoravatarblockContentblockNodeLocale = "bottomBarSocialLinks___authoravatarblock___contentblock___node_locale",
+  BottomBarSocialLinksAuthoravatarblockContentblockPage = "bottomBarSocialLinks___authoravatarblock___contentblock___page",
+  BottomBarSocialLinksAuthoravatarblockContentblockSpaceId = "bottomBarSocialLinks___authoravatarblock___contentblock___spaceId",
+  BottomBarSocialLinksAuthoravatarblockContentblockUniqueId = "bottomBarSocialLinks___authoravatarblock___contentblock___uniqueId",
+  BottomBarSocialLinksAuthoravatarblockContentblockUpdatedAt = "bottomBarSocialLinks___authoravatarblock___contentblock___updatedAt",
+  BottomBarSocialLinksAuthoravatarblockContentfulId = "bottomBarSocialLinks___authoravatarblock___contentful_id",
+  BottomBarSocialLinksAuthoravatarblockCreatedAt = "bottomBarSocialLinks___authoravatarblock___createdAt",
+  BottomBarSocialLinksAuthoravatarblockDescriptionChildren = "bottomBarSocialLinks___authoravatarblock___description___children",
+  BottomBarSocialLinksAuthoravatarblockDescriptionChildrenMdx = "bottomBarSocialLinks___authoravatarblock___description___childrenMdx",
+  BottomBarSocialLinksAuthoravatarblockDescriptionDescription = "bottomBarSocialLinks___authoravatarblock___description___description",
+  BottomBarSocialLinksAuthoravatarblockDescriptionId = "bottomBarSocialLinks___authoravatarblock___description___id",
+  BottomBarSocialLinksAuthoravatarblockFullName = "bottomBarSocialLinks___authoravatarblock___fullName",
+  BottomBarSocialLinksAuthoravatarblockId = "bottomBarSocialLinks___authoravatarblock___id",
+  BottomBarSocialLinksAuthoravatarblockInternalContent = "bottomBarSocialLinks___authoravatarblock___internal___content",
+  BottomBarSocialLinksAuthoravatarblockInternalContentDigest = "bottomBarSocialLinks___authoravatarblock___internal___contentDigest",
+  BottomBarSocialLinksAuthoravatarblockInternalDescription = "bottomBarSocialLinks___authoravatarblock___internal___description",
+  BottomBarSocialLinksAuthoravatarblockInternalFieldOwners = "bottomBarSocialLinks___authoravatarblock___internal___fieldOwners",
+  BottomBarSocialLinksAuthoravatarblockInternalIgnoreType = "bottomBarSocialLinks___authoravatarblock___internal___ignoreType",
+  BottomBarSocialLinksAuthoravatarblockInternalMediaType = "bottomBarSocialLinks___authoravatarblock___internal___mediaType",
+  BottomBarSocialLinksAuthoravatarblockInternalOwner = "bottomBarSocialLinks___authoravatarblock___internal___owner",
+  BottomBarSocialLinksAuthoravatarblockInternalType = "bottomBarSocialLinks___authoravatarblock___internal___type",
+  BottomBarSocialLinksAuthoravatarblockNodeLocale = "bottomBarSocialLinks___authoravatarblock___node_locale",
+  BottomBarSocialLinksAuthoravatarblockParentChildren = "bottomBarSocialLinks___authoravatarblock___parent___children",
+  BottomBarSocialLinksAuthoravatarblockParentId = "bottomBarSocialLinks___authoravatarblock___parent___id",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinks = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksActioninfoblock = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___actioninfoblock",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksAuthoravatarblock = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___authoravatarblock",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksChildren = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___children",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksContentfulId = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___contentful_id",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksContentfulid = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___contentfulid",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksCreatedAt = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___createdAt",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksId = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___id",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksNodeLocale = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___node_locale",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksOptions = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___options",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksSpaceId = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___spaceId",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksTitle = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___title",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksUpdatedAt = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___updatedAt",
+  BottomBarSocialLinksAuthoravatarblockSpaceId = "bottomBarSocialLinks___authoravatarblock___spaceId",
+  BottomBarSocialLinksAuthoravatarblockSysRevision = "bottomBarSocialLinks___authoravatarblock___sys___revision",
+  BottomBarSocialLinksAuthoravatarblockSysType = "bottomBarSocialLinks___authoravatarblock___sys___type",
+  BottomBarSocialLinksAuthoravatarblockUniqueId = "bottomBarSocialLinks___authoravatarblock___uniqueId",
+  BottomBarSocialLinksAuthoravatarblockUpdatedAt = "bottomBarSocialLinks___authoravatarblock___updatedAt",
   BottomBarSocialLinksChildContentfulLinkUrlTextNodeChildMdxBody = "bottomBarSocialLinks___childContentfulLinkUrlTextNode___childMdx___body",
   BottomBarSocialLinksChildContentfulLinkUrlTextNodeChildMdxChildren = "bottomBarSocialLinks___childContentfulLinkUrlTextNode___childMdx___children",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
@@ -2806,6 +6394,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksInternalType = "bottomBarSocialLinks___internal___type",
   BottomBarSocialLinksNodeLocale = "bottomBarSocialLinks___node_locale",
   BottomBarSocialLinksOptions = "bottomBarSocialLinks___options",
+  BottomBarSocialLinksOptionsBottomBarLogoActioninfoblock = "bottomBarSocialLinks___options___bottomBarLogo___actioninfoblock",
+  BottomBarSocialLinksOptionsBottomBarLogoAuthoravatarblock = "bottomBarSocialLinks___options___bottomBarLogo___authoravatarblock",
   BottomBarSocialLinksOptionsBottomBarLogoChildren = "bottomBarSocialLinks___options___bottomBarLogo___children",
   BottomBarSocialLinksOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
   BottomBarSocialLinksOptionsBottomBarLogoContentfulId = "bottomBarSocialLinks___options___bottomBarLogo___contentful_id",
@@ -2818,6 +6408,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksOptionsBottomBarLogoTitle = "bottomBarSocialLinks___options___bottomBarLogo___title",
   BottomBarSocialLinksOptionsBottomBarLogoUpdatedAt = "bottomBarSocialLinks___options___bottomBarLogo___updatedAt",
   BottomBarSocialLinksOptionsBottomBarSocialLinks = "bottomBarSocialLinks___options___bottomBarSocialLinks",
+  BottomBarSocialLinksOptionsBottomBarSocialLinksActioninfoblock = "bottomBarSocialLinks___options___bottomBarSocialLinks___actioninfoblock",
+  BottomBarSocialLinksOptionsBottomBarSocialLinksAuthoravatarblock = "bottomBarSocialLinks___options___bottomBarSocialLinks___authoravatarblock",
   BottomBarSocialLinksOptionsBottomBarSocialLinksChildren = "bottomBarSocialLinks___options___bottomBarSocialLinks___children",
   BottomBarSocialLinksOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
   BottomBarSocialLinksOptionsBottomBarSocialLinksContentfulId = "bottomBarSocialLinks___options___bottomBarSocialLinks___contentful_id",
@@ -2830,6 +6422,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksOptionsBottomBarSocialLinksTitle = "bottomBarSocialLinks___options___bottomBarSocialLinks___title",
   BottomBarSocialLinksOptionsBottomBarSocialLinksUpdatedAt = "bottomBarSocialLinks___options___bottomBarSocialLinks___updatedAt",
   BottomBarSocialLinksOptionsBottomBarTabs = "bottomBarSocialLinks___options___bottomBarTabs",
+  BottomBarSocialLinksOptionsBottomBarTabsActioninfoblock = "bottomBarSocialLinks___options___bottomBarTabs___actioninfoblock",
+  BottomBarSocialLinksOptionsBottomBarTabsAuthoravatarblock = "bottomBarSocialLinks___options___bottomBarTabs___authoravatarblock",
   BottomBarSocialLinksOptionsBottomBarTabsChildren = "bottomBarSocialLinks___options___bottomBarTabs___children",
   BottomBarSocialLinksOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
   BottomBarSocialLinksOptionsBottomBarTabsContentfulId = "bottomBarSocialLinks___options___bottomBarTabs___contentful_id",
@@ -2862,6 +6456,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksOptionsSpaceId = "bottomBarSocialLinks___options___spaceId",
   BottomBarSocialLinksOptionsSysRevision = "bottomBarSocialLinks___options___sys___revision",
   BottomBarSocialLinksOptionsSysType = "bottomBarSocialLinks___options___sys___type",
+  BottomBarSocialLinksOptionsTopBarLogoActioninfoblock = "bottomBarSocialLinks___options___topBarLogo___actioninfoblock",
+  BottomBarSocialLinksOptionsTopBarLogoAuthoravatarblock = "bottomBarSocialLinks___options___topBarLogo___authoravatarblock",
   BottomBarSocialLinksOptionsTopBarLogoChildren = "bottomBarSocialLinks___options___topBarLogo___children",
   BottomBarSocialLinksOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___options___topBarLogo___childrenContentfulLinkUrlTextNode",
   BottomBarSocialLinksOptionsTopBarLogoContentfulId = "bottomBarSocialLinks___options___topBarLogo___contentful_id",
@@ -2874,6 +6470,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksOptionsTopBarLogoTitle = "bottomBarSocialLinks___options___topBarLogo___title",
   BottomBarSocialLinksOptionsTopBarLogoUpdatedAt = "bottomBarSocialLinks___options___topBarLogo___updatedAt",
   BottomBarSocialLinksOptionsTopBarSocialLinks = "bottomBarSocialLinks___options___topBarSocialLinks",
+  BottomBarSocialLinksOptionsTopBarSocialLinksActioninfoblock = "bottomBarSocialLinks___options___topBarSocialLinks___actioninfoblock",
+  BottomBarSocialLinksOptionsTopBarSocialLinksAuthoravatarblock = "bottomBarSocialLinks___options___topBarSocialLinks___authoravatarblock",
   BottomBarSocialLinksOptionsTopBarSocialLinksChildren = "bottomBarSocialLinks___options___topBarSocialLinks___children",
   BottomBarSocialLinksOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
   BottomBarSocialLinksOptionsTopBarSocialLinksContentfulId = "bottomBarSocialLinks___options___topBarSocialLinks___contentful_id",
@@ -2886,6 +6484,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksOptionsTopBarSocialLinksTitle = "bottomBarSocialLinks___options___topBarSocialLinks___title",
   BottomBarSocialLinksOptionsTopBarSocialLinksUpdatedAt = "bottomBarSocialLinks___options___topBarSocialLinks___updatedAt",
   BottomBarSocialLinksOptionsTopBarTabs = "bottomBarSocialLinks___options___topBarTabs",
+  BottomBarSocialLinksOptionsTopBarTabsActioninfoblock = "bottomBarSocialLinks___options___topBarTabs___actioninfoblock",
+  BottomBarSocialLinksOptionsTopBarTabsAuthoravatarblock = "bottomBarSocialLinks___options___topBarTabs___authoravatarblock",
   BottomBarSocialLinksOptionsTopBarTabsChildren = "bottomBarSocialLinks___options___topBarTabs___children",
   BottomBarSocialLinksOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___options___topBarTabs___childrenContentfulLinkUrlTextNode",
   BottomBarSocialLinksOptionsTopBarTabsContentfulId = "bottomBarSocialLinks___options___topBarTabs___contentful_id",
@@ -2965,6 +6565,138 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksUrlSysType = "bottomBarSocialLinks___url___sys___type",
   BottomBarSocialLinksUrlUrl = "bottomBarSocialLinks___url___url",
   BottomBarTabs = "bottomBarTabs",
+  BottomBarTabsActioninfoblock = "bottomBarTabs___actioninfoblock",
+  BottomBarTabsActioninfoblockArticleRaw = "bottomBarTabs___actioninfoblock___article___raw",
+  BottomBarTabsActioninfoblockButtonActioninfoblock = "bottomBarTabs___actioninfoblock___button___actioninfoblock",
+  BottomBarTabsActioninfoblockButtonAuthoravatarblock = "bottomBarTabs___actioninfoblock___button___authoravatarblock",
+  BottomBarTabsActioninfoblockButtonChildren = "bottomBarTabs___actioninfoblock___button___children",
+  BottomBarTabsActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "bottomBarTabs___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  BottomBarTabsActioninfoblockButtonContentfulId = "bottomBarTabs___actioninfoblock___button___contentful_id",
+  BottomBarTabsActioninfoblockButtonContentfulid = "bottomBarTabs___actioninfoblock___button___contentfulid",
+  BottomBarTabsActioninfoblockButtonCreatedAt = "bottomBarTabs___actioninfoblock___button___createdAt",
+  BottomBarTabsActioninfoblockButtonId = "bottomBarTabs___actioninfoblock___button___id",
+  BottomBarTabsActioninfoblockButtonNodeLocale = "bottomBarTabs___actioninfoblock___button___node_locale",
+  BottomBarTabsActioninfoblockButtonOptions = "bottomBarTabs___actioninfoblock___button___options",
+  BottomBarTabsActioninfoblockButtonSpaceId = "bottomBarTabs___actioninfoblock___button___spaceId",
+  BottomBarTabsActioninfoblockButtonTitle = "bottomBarTabs___actioninfoblock___button___title",
+  BottomBarTabsActioninfoblockButtonUpdatedAt = "bottomBarTabs___actioninfoblock___button___updatedAt",
+  BottomBarTabsActioninfoblockChildren = "bottomBarTabs___actioninfoblock___children",
+  BottomBarTabsActioninfoblockChildrenChildren = "bottomBarTabs___actioninfoblock___children___children",
+  BottomBarTabsActioninfoblockChildrenId = "bottomBarTabs___actioninfoblock___children___id",
+  BottomBarTabsActioninfoblockContentblock = "bottomBarTabs___actioninfoblock___contentblock",
+  BottomBarTabsActioninfoblockContentblockChildren = "bottomBarTabs___actioninfoblock___contentblock___children",
+  BottomBarTabsActioninfoblockContentblockContentfulId = "bottomBarTabs___actioninfoblock___contentblock___contentful_id",
+  BottomBarTabsActioninfoblockContentblockCreatedAt = "bottomBarTabs___actioninfoblock___contentblock___createdAt",
+  BottomBarTabsActioninfoblockContentblockId = "bottomBarTabs___actioninfoblock___contentblock___id",
+  BottomBarTabsActioninfoblockContentblockMargin = "bottomBarTabs___actioninfoblock___contentblock___margin",
+  BottomBarTabsActioninfoblockContentblockNodeLocale = "bottomBarTabs___actioninfoblock___contentblock___node_locale",
+  BottomBarTabsActioninfoblockContentblockPage = "bottomBarTabs___actioninfoblock___contentblock___page",
+  BottomBarTabsActioninfoblockContentblockSpaceId = "bottomBarTabs___actioninfoblock___contentblock___spaceId",
+  BottomBarTabsActioninfoblockContentblockUniqueId = "bottomBarTabs___actioninfoblock___contentblock___uniqueId",
+  BottomBarTabsActioninfoblockContentblockUpdatedAt = "bottomBarTabs___actioninfoblock___contentblock___updatedAt",
+  BottomBarTabsActioninfoblockContentfulId = "bottomBarTabs___actioninfoblock___contentful_id",
+  BottomBarTabsActioninfoblockCreatedAt = "bottomBarTabs___actioninfoblock___createdAt",
+  BottomBarTabsActioninfoblockId = "bottomBarTabs___actioninfoblock___id",
+  BottomBarTabsActioninfoblockInternalContent = "bottomBarTabs___actioninfoblock___internal___content",
+  BottomBarTabsActioninfoblockInternalContentDigest = "bottomBarTabs___actioninfoblock___internal___contentDigest",
+  BottomBarTabsActioninfoblockInternalDescription = "bottomBarTabs___actioninfoblock___internal___description",
+  BottomBarTabsActioninfoblockInternalFieldOwners = "bottomBarTabs___actioninfoblock___internal___fieldOwners",
+  BottomBarTabsActioninfoblockInternalIgnoreType = "bottomBarTabs___actioninfoblock___internal___ignoreType",
+  BottomBarTabsActioninfoblockInternalMediaType = "bottomBarTabs___actioninfoblock___internal___mediaType",
+  BottomBarTabsActioninfoblockInternalOwner = "bottomBarTabs___actioninfoblock___internal___owner",
+  BottomBarTabsActioninfoblockInternalType = "bottomBarTabs___actioninfoblock___internal___type",
+  BottomBarTabsActioninfoblockNodeLocale = "bottomBarTabs___actioninfoblock___node_locale",
+  BottomBarTabsActioninfoblockParentChildren = "bottomBarTabs___actioninfoblock___parent___children",
+  BottomBarTabsActioninfoblockParentId = "bottomBarTabs___actioninfoblock___parent___id",
+  BottomBarTabsActioninfoblockSpaceId = "bottomBarTabs___actioninfoblock___spaceId",
+  BottomBarTabsActioninfoblockSysRevision = "bottomBarTabs___actioninfoblock___sys___revision",
+  BottomBarTabsActioninfoblockSysType = "bottomBarTabs___actioninfoblock___sys___type",
+  BottomBarTabsActioninfoblockTextPosition = "bottomBarTabs___actioninfoblock___textPosition",
+  BottomBarTabsActioninfoblockUniqueId = "bottomBarTabs___actioninfoblock___uniqueId",
+  BottomBarTabsActioninfoblockUpdatedAt = "bottomBarTabs___actioninfoblock___updatedAt",
+  BottomBarTabsAuthoravatarblock = "bottomBarTabs___authoravatarblock",
+  BottomBarTabsAuthoravatarblockAvatarChildren = "bottomBarTabs___authoravatarblock___avatar___children",
+  BottomBarTabsAuthoravatarblockAvatarContentfulId = "bottomBarTabs___authoravatarblock___avatar___contentful_id",
+  BottomBarTabsAuthoravatarblockAvatarCreatedAt = "bottomBarTabs___authoravatarblock___avatar___createdAt",
+  BottomBarTabsAuthoravatarblockAvatarDescription = "bottomBarTabs___authoravatarblock___avatar___description",
+  BottomBarTabsAuthoravatarblockAvatarFilename = "bottomBarTabs___authoravatarblock___avatar___filename",
+  BottomBarTabsAuthoravatarblockAvatarFilesize = "bottomBarTabs___authoravatarblock___avatar___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  BottomBarTabsAuthoravatarblockAvatarGatsbyImage = "bottomBarTabs___authoravatarblock___avatar___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  BottomBarTabsAuthoravatarblockAvatarGatsbyImageData = "bottomBarTabs___authoravatarblock___avatar___gatsbyImageData",
+  BottomBarTabsAuthoravatarblockAvatarHeight = "bottomBarTabs___authoravatarblock___avatar___height",
+  BottomBarTabsAuthoravatarblockAvatarId = "bottomBarTabs___authoravatarblock___avatar___id",
+  BottomBarTabsAuthoravatarblockAvatarMimeType = "bottomBarTabs___authoravatarblock___avatar___mimeType",
+  BottomBarTabsAuthoravatarblockAvatarNodeLocale = "bottomBarTabs___authoravatarblock___avatar___node_locale",
+  BottomBarTabsAuthoravatarblockAvatarPlaceholderUrl = "bottomBarTabs___authoravatarblock___avatar___placeholderUrl",
+  BottomBarTabsAuthoravatarblockAvatarPublicUrl = "bottomBarTabs___authoravatarblock___avatar___publicUrl",
+  BottomBarTabsAuthoravatarblockAvatarSpaceId = "bottomBarTabs___authoravatarblock___avatar___spaceId",
+  BottomBarTabsAuthoravatarblockAvatarTitle = "bottomBarTabs___authoravatarblock___avatar___title",
+  BottomBarTabsAuthoravatarblockAvatarUpdatedAt = "bottomBarTabs___authoravatarblock___avatar___updatedAt",
+  BottomBarTabsAuthoravatarblockAvatarUrl = "bottomBarTabs___authoravatarblock___avatar___url",
+  BottomBarTabsAuthoravatarblockAvatarWidth = "bottomBarTabs___authoravatarblock___avatar___width",
+  BottomBarTabsAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "bottomBarTabs___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  BottomBarTabsAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "bottomBarTabs___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  BottomBarTabsAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "bottomBarTabs___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  BottomBarTabsAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeId = "bottomBarTabs___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  BottomBarTabsAuthoravatarblockChildren = "bottomBarTabs___authoravatarblock___children",
+  BottomBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "bottomBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  BottomBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "bottomBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  BottomBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "bottomBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  BottomBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "bottomBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  BottomBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeId = "bottomBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  BottomBarTabsAuthoravatarblockChildrenChildren = "bottomBarTabs___authoravatarblock___children___children",
+  BottomBarTabsAuthoravatarblockChildrenId = "bottomBarTabs___authoravatarblock___children___id",
+  BottomBarTabsAuthoravatarblockContentblock = "bottomBarTabs___authoravatarblock___contentblock",
+  BottomBarTabsAuthoravatarblockContentblockChildren = "bottomBarTabs___authoravatarblock___contentblock___children",
+  BottomBarTabsAuthoravatarblockContentblockContentfulId = "bottomBarTabs___authoravatarblock___contentblock___contentful_id",
+  BottomBarTabsAuthoravatarblockContentblockCreatedAt = "bottomBarTabs___authoravatarblock___contentblock___createdAt",
+  BottomBarTabsAuthoravatarblockContentblockId = "bottomBarTabs___authoravatarblock___contentblock___id",
+  BottomBarTabsAuthoravatarblockContentblockMargin = "bottomBarTabs___authoravatarblock___contentblock___margin",
+  BottomBarTabsAuthoravatarblockContentblockNodeLocale = "bottomBarTabs___authoravatarblock___contentblock___node_locale",
+  BottomBarTabsAuthoravatarblockContentblockPage = "bottomBarTabs___authoravatarblock___contentblock___page",
+  BottomBarTabsAuthoravatarblockContentblockSpaceId = "bottomBarTabs___authoravatarblock___contentblock___spaceId",
+  BottomBarTabsAuthoravatarblockContentblockUniqueId = "bottomBarTabs___authoravatarblock___contentblock___uniqueId",
+  BottomBarTabsAuthoravatarblockContentblockUpdatedAt = "bottomBarTabs___authoravatarblock___contentblock___updatedAt",
+  BottomBarTabsAuthoravatarblockContentfulId = "bottomBarTabs___authoravatarblock___contentful_id",
+  BottomBarTabsAuthoravatarblockCreatedAt = "bottomBarTabs___authoravatarblock___createdAt",
+  BottomBarTabsAuthoravatarblockDescriptionChildren = "bottomBarTabs___authoravatarblock___description___children",
+  BottomBarTabsAuthoravatarblockDescriptionChildrenMdx = "bottomBarTabs___authoravatarblock___description___childrenMdx",
+  BottomBarTabsAuthoravatarblockDescriptionDescription = "bottomBarTabs___authoravatarblock___description___description",
+  BottomBarTabsAuthoravatarblockDescriptionId = "bottomBarTabs___authoravatarblock___description___id",
+  BottomBarTabsAuthoravatarblockFullName = "bottomBarTabs___authoravatarblock___fullName",
+  BottomBarTabsAuthoravatarblockId = "bottomBarTabs___authoravatarblock___id",
+  BottomBarTabsAuthoravatarblockInternalContent = "bottomBarTabs___authoravatarblock___internal___content",
+  BottomBarTabsAuthoravatarblockInternalContentDigest = "bottomBarTabs___authoravatarblock___internal___contentDigest",
+  BottomBarTabsAuthoravatarblockInternalDescription = "bottomBarTabs___authoravatarblock___internal___description",
+  BottomBarTabsAuthoravatarblockInternalFieldOwners = "bottomBarTabs___authoravatarblock___internal___fieldOwners",
+  BottomBarTabsAuthoravatarblockInternalIgnoreType = "bottomBarTabs___authoravatarblock___internal___ignoreType",
+  BottomBarTabsAuthoravatarblockInternalMediaType = "bottomBarTabs___authoravatarblock___internal___mediaType",
+  BottomBarTabsAuthoravatarblockInternalOwner = "bottomBarTabs___authoravatarblock___internal___owner",
+  BottomBarTabsAuthoravatarblockInternalType = "bottomBarTabs___authoravatarblock___internal___type",
+  BottomBarTabsAuthoravatarblockNodeLocale = "bottomBarTabs___authoravatarblock___node_locale",
+  BottomBarTabsAuthoravatarblockParentChildren = "bottomBarTabs___authoravatarblock___parent___children",
+  BottomBarTabsAuthoravatarblockParentId = "bottomBarTabs___authoravatarblock___parent___id",
+  BottomBarTabsAuthoravatarblockSocialSiteLinks = "bottomBarTabs___authoravatarblock___socialSiteLinks",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksActioninfoblock = "bottomBarTabs___authoravatarblock___socialSiteLinks___actioninfoblock",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksAuthoravatarblock = "bottomBarTabs___authoravatarblock___socialSiteLinks___authoravatarblock",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksChildren = "bottomBarTabs___authoravatarblock___socialSiteLinks___children",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "bottomBarTabs___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksContentfulId = "bottomBarTabs___authoravatarblock___socialSiteLinks___contentful_id",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksContentfulid = "bottomBarTabs___authoravatarblock___socialSiteLinks___contentfulid",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksCreatedAt = "bottomBarTabs___authoravatarblock___socialSiteLinks___createdAt",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksId = "bottomBarTabs___authoravatarblock___socialSiteLinks___id",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksNodeLocale = "bottomBarTabs___authoravatarblock___socialSiteLinks___node_locale",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksOptions = "bottomBarTabs___authoravatarblock___socialSiteLinks___options",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksSpaceId = "bottomBarTabs___authoravatarblock___socialSiteLinks___spaceId",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksTitle = "bottomBarTabs___authoravatarblock___socialSiteLinks___title",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksUpdatedAt = "bottomBarTabs___authoravatarblock___socialSiteLinks___updatedAt",
+  BottomBarTabsAuthoravatarblockSpaceId = "bottomBarTabs___authoravatarblock___spaceId",
+  BottomBarTabsAuthoravatarblockSysRevision = "bottomBarTabs___authoravatarblock___sys___revision",
+  BottomBarTabsAuthoravatarblockSysType = "bottomBarTabs___authoravatarblock___sys___type",
+  BottomBarTabsAuthoravatarblockUniqueId = "bottomBarTabs___authoravatarblock___uniqueId",
+  BottomBarTabsAuthoravatarblockUpdatedAt = "bottomBarTabs___authoravatarblock___updatedAt",
   BottomBarTabsChildContentfulLinkUrlTextNodeChildMdxBody = "bottomBarTabs___childContentfulLinkUrlTextNode___childMdx___body",
   BottomBarTabsChildContentfulLinkUrlTextNodeChildMdxChildren = "bottomBarTabs___childContentfulLinkUrlTextNode___childMdx___children",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
@@ -3133,6 +6865,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsInternalType = "bottomBarTabs___internal___type",
   BottomBarTabsNodeLocale = "bottomBarTabs___node_locale",
   BottomBarTabsOptions = "bottomBarTabs___options",
+  BottomBarTabsOptionsBottomBarLogoActioninfoblock = "bottomBarTabs___options___bottomBarLogo___actioninfoblock",
+  BottomBarTabsOptionsBottomBarLogoAuthoravatarblock = "bottomBarTabs___options___bottomBarLogo___authoravatarblock",
   BottomBarTabsOptionsBottomBarLogoChildren = "bottomBarTabs___options___bottomBarLogo___children",
   BottomBarTabsOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "bottomBarTabs___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
   BottomBarTabsOptionsBottomBarLogoContentfulId = "bottomBarTabs___options___bottomBarLogo___contentful_id",
@@ -3145,6 +6879,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsOptionsBottomBarLogoTitle = "bottomBarTabs___options___bottomBarLogo___title",
   BottomBarTabsOptionsBottomBarLogoUpdatedAt = "bottomBarTabs___options___bottomBarLogo___updatedAt",
   BottomBarTabsOptionsBottomBarSocialLinks = "bottomBarTabs___options___bottomBarSocialLinks",
+  BottomBarTabsOptionsBottomBarSocialLinksActioninfoblock = "bottomBarTabs___options___bottomBarSocialLinks___actioninfoblock",
+  BottomBarTabsOptionsBottomBarSocialLinksAuthoravatarblock = "bottomBarTabs___options___bottomBarSocialLinks___authoravatarblock",
   BottomBarTabsOptionsBottomBarSocialLinksChildren = "bottomBarTabs___options___bottomBarSocialLinks___children",
   BottomBarTabsOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "bottomBarTabs___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
   BottomBarTabsOptionsBottomBarSocialLinksContentfulId = "bottomBarTabs___options___bottomBarSocialLinks___contentful_id",
@@ -3157,6 +6893,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsOptionsBottomBarSocialLinksTitle = "bottomBarTabs___options___bottomBarSocialLinks___title",
   BottomBarTabsOptionsBottomBarSocialLinksUpdatedAt = "bottomBarTabs___options___bottomBarSocialLinks___updatedAt",
   BottomBarTabsOptionsBottomBarTabs = "bottomBarTabs___options___bottomBarTabs",
+  BottomBarTabsOptionsBottomBarTabsActioninfoblock = "bottomBarTabs___options___bottomBarTabs___actioninfoblock",
+  BottomBarTabsOptionsBottomBarTabsAuthoravatarblock = "bottomBarTabs___options___bottomBarTabs___authoravatarblock",
   BottomBarTabsOptionsBottomBarTabsChildren = "bottomBarTabs___options___bottomBarTabs___children",
   BottomBarTabsOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "bottomBarTabs___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
   BottomBarTabsOptionsBottomBarTabsContentfulId = "bottomBarTabs___options___bottomBarTabs___contentful_id",
@@ -3189,6 +6927,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsOptionsSpaceId = "bottomBarTabs___options___spaceId",
   BottomBarTabsOptionsSysRevision = "bottomBarTabs___options___sys___revision",
   BottomBarTabsOptionsSysType = "bottomBarTabs___options___sys___type",
+  BottomBarTabsOptionsTopBarLogoActioninfoblock = "bottomBarTabs___options___topBarLogo___actioninfoblock",
+  BottomBarTabsOptionsTopBarLogoAuthoravatarblock = "bottomBarTabs___options___topBarLogo___authoravatarblock",
   BottomBarTabsOptionsTopBarLogoChildren = "bottomBarTabs___options___topBarLogo___children",
   BottomBarTabsOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "bottomBarTabs___options___topBarLogo___childrenContentfulLinkUrlTextNode",
   BottomBarTabsOptionsTopBarLogoContentfulId = "bottomBarTabs___options___topBarLogo___contentful_id",
@@ -3201,6 +6941,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsOptionsTopBarLogoTitle = "bottomBarTabs___options___topBarLogo___title",
   BottomBarTabsOptionsTopBarLogoUpdatedAt = "bottomBarTabs___options___topBarLogo___updatedAt",
   BottomBarTabsOptionsTopBarSocialLinks = "bottomBarTabs___options___topBarSocialLinks",
+  BottomBarTabsOptionsTopBarSocialLinksActioninfoblock = "bottomBarTabs___options___topBarSocialLinks___actioninfoblock",
+  BottomBarTabsOptionsTopBarSocialLinksAuthoravatarblock = "bottomBarTabs___options___topBarSocialLinks___authoravatarblock",
   BottomBarTabsOptionsTopBarSocialLinksChildren = "bottomBarTabs___options___topBarSocialLinks___children",
   BottomBarTabsOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "bottomBarTabs___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
   BottomBarTabsOptionsTopBarSocialLinksContentfulId = "bottomBarTabs___options___topBarSocialLinks___contentful_id",
@@ -3213,6 +6955,8 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsOptionsTopBarSocialLinksTitle = "bottomBarTabs___options___topBarSocialLinks___title",
   BottomBarTabsOptionsTopBarSocialLinksUpdatedAt = "bottomBarTabs___options___topBarSocialLinks___updatedAt",
   BottomBarTabsOptionsTopBarTabs = "bottomBarTabs___options___topBarTabs",
+  BottomBarTabsOptionsTopBarTabsActioninfoblock = "bottomBarTabs___options___topBarTabs___actioninfoblock",
+  BottomBarTabsOptionsTopBarTabsAuthoravatarblock = "bottomBarTabs___options___topBarTabs___authoravatarblock",
   BottomBarTabsOptionsTopBarTabsChildren = "bottomBarTabs___options___topBarTabs___children",
   BottomBarTabsOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "bottomBarTabs___options___topBarTabs___childrenContentfulLinkUrlTextNode",
   BottomBarTabsOptionsTopBarTabsContentfulId = "bottomBarTabs___options___topBarTabs___contentful_id",
@@ -3387,6 +7131,138 @@ export enum ContentfulOptionsFieldsEnum {
   SysContentTypeSysType = "sys___contentType___sys___type",
   SysRevision = "sys___revision",
   SysType = "sys___type",
+  TopBarLogoActioninfoblock = "topBarLogo___actioninfoblock",
+  TopBarLogoActioninfoblockArticleRaw = "topBarLogo___actioninfoblock___article___raw",
+  TopBarLogoActioninfoblockButtonActioninfoblock = "topBarLogo___actioninfoblock___button___actioninfoblock",
+  TopBarLogoActioninfoblockButtonAuthoravatarblock = "topBarLogo___actioninfoblock___button___authoravatarblock",
+  TopBarLogoActioninfoblockButtonChildren = "topBarLogo___actioninfoblock___button___children",
+  TopBarLogoActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "topBarLogo___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  TopBarLogoActioninfoblockButtonContentfulId = "topBarLogo___actioninfoblock___button___contentful_id",
+  TopBarLogoActioninfoblockButtonContentfulid = "topBarLogo___actioninfoblock___button___contentfulid",
+  TopBarLogoActioninfoblockButtonCreatedAt = "topBarLogo___actioninfoblock___button___createdAt",
+  TopBarLogoActioninfoblockButtonId = "topBarLogo___actioninfoblock___button___id",
+  TopBarLogoActioninfoblockButtonNodeLocale = "topBarLogo___actioninfoblock___button___node_locale",
+  TopBarLogoActioninfoblockButtonOptions = "topBarLogo___actioninfoblock___button___options",
+  TopBarLogoActioninfoblockButtonSpaceId = "topBarLogo___actioninfoblock___button___spaceId",
+  TopBarLogoActioninfoblockButtonTitle = "topBarLogo___actioninfoblock___button___title",
+  TopBarLogoActioninfoblockButtonUpdatedAt = "topBarLogo___actioninfoblock___button___updatedAt",
+  TopBarLogoActioninfoblockChildren = "topBarLogo___actioninfoblock___children",
+  TopBarLogoActioninfoblockChildrenChildren = "topBarLogo___actioninfoblock___children___children",
+  TopBarLogoActioninfoblockChildrenId = "topBarLogo___actioninfoblock___children___id",
+  TopBarLogoActioninfoblockContentblock = "topBarLogo___actioninfoblock___contentblock",
+  TopBarLogoActioninfoblockContentblockChildren = "topBarLogo___actioninfoblock___contentblock___children",
+  TopBarLogoActioninfoblockContentblockContentfulId = "topBarLogo___actioninfoblock___contentblock___contentful_id",
+  TopBarLogoActioninfoblockContentblockCreatedAt = "topBarLogo___actioninfoblock___contentblock___createdAt",
+  TopBarLogoActioninfoblockContentblockId = "topBarLogo___actioninfoblock___contentblock___id",
+  TopBarLogoActioninfoblockContentblockMargin = "topBarLogo___actioninfoblock___contentblock___margin",
+  TopBarLogoActioninfoblockContentblockNodeLocale = "topBarLogo___actioninfoblock___contentblock___node_locale",
+  TopBarLogoActioninfoblockContentblockPage = "topBarLogo___actioninfoblock___contentblock___page",
+  TopBarLogoActioninfoblockContentblockSpaceId = "topBarLogo___actioninfoblock___contentblock___spaceId",
+  TopBarLogoActioninfoblockContentblockUniqueId = "topBarLogo___actioninfoblock___contentblock___uniqueId",
+  TopBarLogoActioninfoblockContentblockUpdatedAt = "topBarLogo___actioninfoblock___contentblock___updatedAt",
+  TopBarLogoActioninfoblockContentfulId = "topBarLogo___actioninfoblock___contentful_id",
+  TopBarLogoActioninfoblockCreatedAt = "topBarLogo___actioninfoblock___createdAt",
+  TopBarLogoActioninfoblockId = "topBarLogo___actioninfoblock___id",
+  TopBarLogoActioninfoblockInternalContent = "topBarLogo___actioninfoblock___internal___content",
+  TopBarLogoActioninfoblockInternalContentDigest = "topBarLogo___actioninfoblock___internal___contentDigest",
+  TopBarLogoActioninfoblockInternalDescription = "topBarLogo___actioninfoblock___internal___description",
+  TopBarLogoActioninfoblockInternalFieldOwners = "topBarLogo___actioninfoblock___internal___fieldOwners",
+  TopBarLogoActioninfoblockInternalIgnoreType = "topBarLogo___actioninfoblock___internal___ignoreType",
+  TopBarLogoActioninfoblockInternalMediaType = "topBarLogo___actioninfoblock___internal___mediaType",
+  TopBarLogoActioninfoblockInternalOwner = "topBarLogo___actioninfoblock___internal___owner",
+  TopBarLogoActioninfoblockInternalType = "topBarLogo___actioninfoblock___internal___type",
+  TopBarLogoActioninfoblockNodeLocale = "topBarLogo___actioninfoblock___node_locale",
+  TopBarLogoActioninfoblockParentChildren = "topBarLogo___actioninfoblock___parent___children",
+  TopBarLogoActioninfoblockParentId = "topBarLogo___actioninfoblock___parent___id",
+  TopBarLogoActioninfoblockSpaceId = "topBarLogo___actioninfoblock___spaceId",
+  TopBarLogoActioninfoblockSysRevision = "topBarLogo___actioninfoblock___sys___revision",
+  TopBarLogoActioninfoblockSysType = "topBarLogo___actioninfoblock___sys___type",
+  TopBarLogoActioninfoblockTextPosition = "topBarLogo___actioninfoblock___textPosition",
+  TopBarLogoActioninfoblockUniqueId = "topBarLogo___actioninfoblock___uniqueId",
+  TopBarLogoActioninfoblockUpdatedAt = "topBarLogo___actioninfoblock___updatedAt",
+  TopBarLogoAuthoravatarblock = "topBarLogo___authoravatarblock",
+  TopBarLogoAuthoravatarblockAvatarChildren = "topBarLogo___authoravatarblock___avatar___children",
+  TopBarLogoAuthoravatarblockAvatarContentfulId = "topBarLogo___authoravatarblock___avatar___contentful_id",
+  TopBarLogoAuthoravatarblockAvatarCreatedAt = "topBarLogo___authoravatarblock___avatar___createdAt",
+  TopBarLogoAuthoravatarblockAvatarDescription = "topBarLogo___authoravatarblock___avatar___description",
+  TopBarLogoAuthoravatarblockAvatarFilename = "topBarLogo___authoravatarblock___avatar___filename",
+  TopBarLogoAuthoravatarblockAvatarFilesize = "topBarLogo___authoravatarblock___avatar___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  TopBarLogoAuthoravatarblockAvatarGatsbyImage = "topBarLogo___authoravatarblock___avatar___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  TopBarLogoAuthoravatarblockAvatarGatsbyImageData = "topBarLogo___authoravatarblock___avatar___gatsbyImageData",
+  TopBarLogoAuthoravatarblockAvatarHeight = "topBarLogo___authoravatarblock___avatar___height",
+  TopBarLogoAuthoravatarblockAvatarId = "topBarLogo___authoravatarblock___avatar___id",
+  TopBarLogoAuthoravatarblockAvatarMimeType = "topBarLogo___authoravatarblock___avatar___mimeType",
+  TopBarLogoAuthoravatarblockAvatarNodeLocale = "topBarLogo___authoravatarblock___avatar___node_locale",
+  TopBarLogoAuthoravatarblockAvatarPlaceholderUrl = "topBarLogo___authoravatarblock___avatar___placeholderUrl",
+  TopBarLogoAuthoravatarblockAvatarPublicUrl = "topBarLogo___authoravatarblock___avatar___publicUrl",
+  TopBarLogoAuthoravatarblockAvatarSpaceId = "topBarLogo___authoravatarblock___avatar___spaceId",
+  TopBarLogoAuthoravatarblockAvatarTitle = "topBarLogo___authoravatarblock___avatar___title",
+  TopBarLogoAuthoravatarblockAvatarUpdatedAt = "topBarLogo___authoravatarblock___avatar___updatedAt",
+  TopBarLogoAuthoravatarblockAvatarUrl = "topBarLogo___authoravatarblock___avatar___url",
+  TopBarLogoAuthoravatarblockAvatarWidth = "topBarLogo___authoravatarblock___avatar___width",
+  TopBarLogoAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "topBarLogo___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  TopBarLogoAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "topBarLogo___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  TopBarLogoAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "topBarLogo___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  TopBarLogoAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeId = "topBarLogo___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  TopBarLogoAuthoravatarblockChildren = "topBarLogo___authoravatarblock___children",
+  TopBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "topBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  TopBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "topBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  TopBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "topBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  TopBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "topBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  TopBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeId = "topBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  TopBarLogoAuthoravatarblockChildrenChildren = "topBarLogo___authoravatarblock___children___children",
+  TopBarLogoAuthoravatarblockChildrenId = "topBarLogo___authoravatarblock___children___id",
+  TopBarLogoAuthoravatarblockContentblock = "topBarLogo___authoravatarblock___contentblock",
+  TopBarLogoAuthoravatarblockContentblockChildren = "topBarLogo___authoravatarblock___contentblock___children",
+  TopBarLogoAuthoravatarblockContentblockContentfulId = "topBarLogo___authoravatarblock___contentblock___contentful_id",
+  TopBarLogoAuthoravatarblockContentblockCreatedAt = "topBarLogo___authoravatarblock___contentblock___createdAt",
+  TopBarLogoAuthoravatarblockContentblockId = "topBarLogo___authoravatarblock___contentblock___id",
+  TopBarLogoAuthoravatarblockContentblockMargin = "topBarLogo___authoravatarblock___contentblock___margin",
+  TopBarLogoAuthoravatarblockContentblockNodeLocale = "topBarLogo___authoravatarblock___contentblock___node_locale",
+  TopBarLogoAuthoravatarblockContentblockPage = "topBarLogo___authoravatarblock___contentblock___page",
+  TopBarLogoAuthoravatarblockContentblockSpaceId = "topBarLogo___authoravatarblock___contentblock___spaceId",
+  TopBarLogoAuthoravatarblockContentblockUniqueId = "topBarLogo___authoravatarblock___contentblock___uniqueId",
+  TopBarLogoAuthoravatarblockContentblockUpdatedAt = "topBarLogo___authoravatarblock___contentblock___updatedAt",
+  TopBarLogoAuthoravatarblockContentfulId = "topBarLogo___authoravatarblock___contentful_id",
+  TopBarLogoAuthoravatarblockCreatedAt = "topBarLogo___authoravatarblock___createdAt",
+  TopBarLogoAuthoravatarblockDescriptionChildren = "topBarLogo___authoravatarblock___description___children",
+  TopBarLogoAuthoravatarblockDescriptionChildrenMdx = "topBarLogo___authoravatarblock___description___childrenMdx",
+  TopBarLogoAuthoravatarblockDescriptionDescription = "topBarLogo___authoravatarblock___description___description",
+  TopBarLogoAuthoravatarblockDescriptionId = "topBarLogo___authoravatarblock___description___id",
+  TopBarLogoAuthoravatarblockFullName = "topBarLogo___authoravatarblock___fullName",
+  TopBarLogoAuthoravatarblockId = "topBarLogo___authoravatarblock___id",
+  TopBarLogoAuthoravatarblockInternalContent = "topBarLogo___authoravatarblock___internal___content",
+  TopBarLogoAuthoravatarblockInternalContentDigest = "topBarLogo___authoravatarblock___internal___contentDigest",
+  TopBarLogoAuthoravatarblockInternalDescription = "topBarLogo___authoravatarblock___internal___description",
+  TopBarLogoAuthoravatarblockInternalFieldOwners = "topBarLogo___authoravatarblock___internal___fieldOwners",
+  TopBarLogoAuthoravatarblockInternalIgnoreType = "topBarLogo___authoravatarblock___internal___ignoreType",
+  TopBarLogoAuthoravatarblockInternalMediaType = "topBarLogo___authoravatarblock___internal___mediaType",
+  TopBarLogoAuthoravatarblockInternalOwner = "topBarLogo___authoravatarblock___internal___owner",
+  TopBarLogoAuthoravatarblockInternalType = "topBarLogo___authoravatarblock___internal___type",
+  TopBarLogoAuthoravatarblockNodeLocale = "topBarLogo___authoravatarblock___node_locale",
+  TopBarLogoAuthoravatarblockParentChildren = "topBarLogo___authoravatarblock___parent___children",
+  TopBarLogoAuthoravatarblockParentId = "topBarLogo___authoravatarblock___parent___id",
+  TopBarLogoAuthoravatarblockSocialSiteLinks = "topBarLogo___authoravatarblock___socialSiteLinks",
+  TopBarLogoAuthoravatarblockSocialSiteLinksActioninfoblock = "topBarLogo___authoravatarblock___socialSiteLinks___actioninfoblock",
+  TopBarLogoAuthoravatarblockSocialSiteLinksAuthoravatarblock = "topBarLogo___authoravatarblock___socialSiteLinks___authoravatarblock",
+  TopBarLogoAuthoravatarblockSocialSiteLinksChildren = "topBarLogo___authoravatarblock___socialSiteLinks___children",
+  TopBarLogoAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "topBarLogo___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  TopBarLogoAuthoravatarblockSocialSiteLinksContentfulId = "topBarLogo___authoravatarblock___socialSiteLinks___contentful_id",
+  TopBarLogoAuthoravatarblockSocialSiteLinksContentfulid = "topBarLogo___authoravatarblock___socialSiteLinks___contentfulid",
+  TopBarLogoAuthoravatarblockSocialSiteLinksCreatedAt = "topBarLogo___authoravatarblock___socialSiteLinks___createdAt",
+  TopBarLogoAuthoravatarblockSocialSiteLinksId = "topBarLogo___authoravatarblock___socialSiteLinks___id",
+  TopBarLogoAuthoravatarblockSocialSiteLinksNodeLocale = "topBarLogo___authoravatarblock___socialSiteLinks___node_locale",
+  TopBarLogoAuthoravatarblockSocialSiteLinksOptions = "topBarLogo___authoravatarblock___socialSiteLinks___options",
+  TopBarLogoAuthoravatarblockSocialSiteLinksSpaceId = "topBarLogo___authoravatarblock___socialSiteLinks___spaceId",
+  TopBarLogoAuthoravatarblockSocialSiteLinksTitle = "topBarLogo___authoravatarblock___socialSiteLinks___title",
+  TopBarLogoAuthoravatarblockSocialSiteLinksUpdatedAt = "topBarLogo___authoravatarblock___socialSiteLinks___updatedAt",
+  TopBarLogoAuthoravatarblockSpaceId = "topBarLogo___authoravatarblock___spaceId",
+  TopBarLogoAuthoravatarblockSysRevision = "topBarLogo___authoravatarblock___sys___revision",
+  TopBarLogoAuthoravatarblockSysType = "topBarLogo___authoravatarblock___sys___type",
+  TopBarLogoAuthoravatarblockUniqueId = "topBarLogo___authoravatarblock___uniqueId",
+  TopBarLogoAuthoravatarblockUpdatedAt = "topBarLogo___authoravatarblock___updatedAt",
   TopBarLogoChildContentfulLinkUrlTextNodeChildMdxBody = "topBarLogo___childContentfulLinkUrlTextNode___childMdx___body",
   TopBarLogoChildContentfulLinkUrlTextNodeChildMdxChildren = "topBarLogo___childContentfulLinkUrlTextNode___childMdx___children",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
@@ -3555,6 +7431,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoInternalType = "topBarLogo___internal___type",
   TopBarLogoNodeLocale = "topBarLogo___node_locale",
   TopBarLogoOptions = "topBarLogo___options",
+  TopBarLogoOptionsBottomBarLogoActioninfoblock = "topBarLogo___options___bottomBarLogo___actioninfoblock",
+  TopBarLogoOptionsBottomBarLogoAuthoravatarblock = "topBarLogo___options___bottomBarLogo___authoravatarblock",
   TopBarLogoOptionsBottomBarLogoChildren = "topBarLogo___options___bottomBarLogo___children",
   TopBarLogoOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "topBarLogo___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
   TopBarLogoOptionsBottomBarLogoContentfulId = "topBarLogo___options___bottomBarLogo___contentful_id",
@@ -3567,6 +7445,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoOptionsBottomBarLogoTitle = "topBarLogo___options___bottomBarLogo___title",
   TopBarLogoOptionsBottomBarLogoUpdatedAt = "topBarLogo___options___bottomBarLogo___updatedAt",
   TopBarLogoOptionsBottomBarSocialLinks = "topBarLogo___options___bottomBarSocialLinks",
+  TopBarLogoOptionsBottomBarSocialLinksActioninfoblock = "topBarLogo___options___bottomBarSocialLinks___actioninfoblock",
+  TopBarLogoOptionsBottomBarSocialLinksAuthoravatarblock = "topBarLogo___options___bottomBarSocialLinks___authoravatarblock",
   TopBarLogoOptionsBottomBarSocialLinksChildren = "topBarLogo___options___bottomBarSocialLinks___children",
   TopBarLogoOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "topBarLogo___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
   TopBarLogoOptionsBottomBarSocialLinksContentfulId = "topBarLogo___options___bottomBarSocialLinks___contentful_id",
@@ -3579,6 +7459,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoOptionsBottomBarSocialLinksTitle = "topBarLogo___options___bottomBarSocialLinks___title",
   TopBarLogoOptionsBottomBarSocialLinksUpdatedAt = "topBarLogo___options___bottomBarSocialLinks___updatedAt",
   TopBarLogoOptionsBottomBarTabs = "topBarLogo___options___bottomBarTabs",
+  TopBarLogoOptionsBottomBarTabsActioninfoblock = "topBarLogo___options___bottomBarTabs___actioninfoblock",
+  TopBarLogoOptionsBottomBarTabsAuthoravatarblock = "topBarLogo___options___bottomBarTabs___authoravatarblock",
   TopBarLogoOptionsBottomBarTabsChildren = "topBarLogo___options___bottomBarTabs___children",
   TopBarLogoOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "topBarLogo___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
   TopBarLogoOptionsBottomBarTabsContentfulId = "topBarLogo___options___bottomBarTabs___contentful_id",
@@ -3611,6 +7493,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoOptionsSpaceId = "topBarLogo___options___spaceId",
   TopBarLogoOptionsSysRevision = "topBarLogo___options___sys___revision",
   TopBarLogoOptionsSysType = "topBarLogo___options___sys___type",
+  TopBarLogoOptionsTopBarLogoActioninfoblock = "topBarLogo___options___topBarLogo___actioninfoblock",
+  TopBarLogoOptionsTopBarLogoAuthoravatarblock = "topBarLogo___options___topBarLogo___authoravatarblock",
   TopBarLogoOptionsTopBarLogoChildren = "topBarLogo___options___topBarLogo___children",
   TopBarLogoOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "topBarLogo___options___topBarLogo___childrenContentfulLinkUrlTextNode",
   TopBarLogoOptionsTopBarLogoContentfulId = "topBarLogo___options___topBarLogo___contentful_id",
@@ -3623,6 +7507,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoOptionsTopBarLogoTitle = "topBarLogo___options___topBarLogo___title",
   TopBarLogoOptionsTopBarLogoUpdatedAt = "topBarLogo___options___topBarLogo___updatedAt",
   TopBarLogoOptionsTopBarSocialLinks = "topBarLogo___options___topBarSocialLinks",
+  TopBarLogoOptionsTopBarSocialLinksActioninfoblock = "topBarLogo___options___topBarSocialLinks___actioninfoblock",
+  TopBarLogoOptionsTopBarSocialLinksAuthoravatarblock = "topBarLogo___options___topBarSocialLinks___authoravatarblock",
   TopBarLogoOptionsTopBarSocialLinksChildren = "topBarLogo___options___topBarSocialLinks___children",
   TopBarLogoOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "topBarLogo___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
   TopBarLogoOptionsTopBarSocialLinksContentfulId = "topBarLogo___options___topBarSocialLinks___contentful_id",
@@ -3635,6 +7521,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoOptionsTopBarSocialLinksTitle = "topBarLogo___options___topBarSocialLinks___title",
   TopBarLogoOptionsTopBarSocialLinksUpdatedAt = "topBarLogo___options___topBarSocialLinks___updatedAt",
   TopBarLogoOptionsTopBarTabs = "topBarLogo___options___topBarTabs",
+  TopBarLogoOptionsTopBarTabsActioninfoblock = "topBarLogo___options___topBarTabs___actioninfoblock",
+  TopBarLogoOptionsTopBarTabsAuthoravatarblock = "topBarLogo___options___topBarTabs___authoravatarblock",
   TopBarLogoOptionsTopBarTabsChildren = "topBarLogo___options___topBarTabs___children",
   TopBarLogoOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "topBarLogo___options___topBarTabs___childrenContentfulLinkUrlTextNode",
   TopBarLogoOptionsTopBarTabsContentfulId = "topBarLogo___options___topBarTabs___contentful_id",
@@ -3714,6 +7602,138 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoUrlSysType = "topBarLogo___url___sys___type",
   TopBarLogoUrlUrl = "topBarLogo___url___url",
   TopBarSocialLinks = "topBarSocialLinks",
+  TopBarSocialLinksActioninfoblock = "topBarSocialLinks___actioninfoblock",
+  TopBarSocialLinksActioninfoblockArticleRaw = "topBarSocialLinks___actioninfoblock___article___raw",
+  TopBarSocialLinksActioninfoblockButtonActioninfoblock = "topBarSocialLinks___actioninfoblock___button___actioninfoblock",
+  TopBarSocialLinksActioninfoblockButtonAuthoravatarblock = "topBarSocialLinks___actioninfoblock___button___authoravatarblock",
+  TopBarSocialLinksActioninfoblockButtonChildren = "topBarSocialLinks___actioninfoblock___button___children",
+  TopBarSocialLinksActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  TopBarSocialLinksActioninfoblockButtonContentfulId = "topBarSocialLinks___actioninfoblock___button___contentful_id",
+  TopBarSocialLinksActioninfoblockButtonContentfulid = "topBarSocialLinks___actioninfoblock___button___contentfulid",
+  TopBarSocialLinksActioninfoblockButtonCreatedAt = "topBarSocialLinks___actioninfoblock___button___createdAt",
+  TopBarSocialLinksActioninfoblockButtonId = "topBarSocialLinks___actioninfoblock___button___id",
+  TopBarSocialLinksActioninfoblockButtonNodeLocale = "topBarSocialLinks___actioninfoblock___button___node_locale",
+  TopBarSocialLinksActioninfoblockButtonOptions = "topBarSocialLinks___actioninfoblock___button___options",
+  TopBarSocialLinksActioninfoblockButtonSpaceId = "topBarSocialLinks___actioninfoblock___button___spaceId",
+  TopBarSocialLinksActioninfoblockButtonTitle = "topBarSocialLinks___actioninfoblock___button___title",
+  TopBarSocialLinksActioninfoblockButtonUpdatedAt = "topBarSocialLinks___actioninfoblock___button___updatedAt",
+  TopBarSocialLinksActioninfoblockChildren = "topBarSocialLinks___actioninfoblock___children",
+  TopBarSocialLinksActioninfoblockChildrenChildren = "topBarSocialLinks___actioninfoblock___children___children",
+  TopBarSocialLinksActioninfoblockChildrenId = "topBarSocialLinks___actioninfoblock___children___id",
+  TopBarSocialLinksActioninfoblockContentblock = "topBarSocialLinks___actioninfoblock___contentblock",
+  TopBarSocialLinksActioninfoblockContentblockChildren = "topBarSocialLinks___actioninfoblock___contentblock___children",
+  TopBarSocialLinksActioninfoblockContentblockContentfulId = "topBarSocialLinks___actioninfoblock___contentblock___contentful_id",
+  TopBarSocialLinksActioninfoblockContentblockCreatedAt = "topBarSocialLinks___actioninfoblock___contentblock___createdAt",
+  TopBarSocialLinksActioninfoblockContentblockId = "topBarSocialLinks___actioninfoblock___contentblock___id",
+  TopBarSocialLinksActioninfoblockContentblockMargin = "topBarSocialLinks___actioninfoblock___contentblock___margin",
+  TopBarSocialLinksActioninfoblockContentblockNodeLocale = "topBarSocialLinks___actioninfoblock___contentblock___node_locale",
+  TopBarSocialLinksActioninfoblockContentblockPage = "topBarSocialLinks___actioninfoblock___contentblock___page",
+  TopBarSocialLinksActioninfoblockContentblockSpaceId = "topBarSocialLinks___actioninfoblock___contentblock___spaceId",
+  TopBarSocialLinksActioninfoblockContentblockUniqueId = "topBarSocialLinks___actioninfoblock___contentblock___uniqueId",
+  TopBarSocialLinksActioninfoblockContentblockUpdatedAt = "topBarSocialLinks___actioninfoblock___contentblock___updatedAt",
+  TopBarSocialLinksActioninfoblockContentfulId = "topBarSocialLinks___actioninfoblock___contentful_id",
+  TopBarSocialLinksActioninfoblockCreatedAt = "topBarSocialLinks___actioninfoblock___createdAt",
+  TopBarSocialLinksActioninfoblockId = "topBarSocialLinks___actioninfoblock___id",
+  TopBarSocialLinksActioninfoblockInternalContent = "topBarSocialLinks___actioninfoblock___internal___content",
+  TopBarSocialLinksActioninfoblockInternalContentDigest = "topBarSocialLinks___actioninfoblock___internal___contentDigest",
+  TopBarSocialLinksActioninfoblockInternalDescription = "topBarSocialLinks___actioninfoblock___internal___description",
+  TopBarSocialLinksActioninfoblockInternalFieldOwners = "topBarSocialLinks___actioninfoblock___internal___fieldOwners",
+  TopBarSocialLinksActioninfoblockInternalIgnoreType = "topBarSocialLinks___actioninfoblock___internal___ignoreType",
+  TopBarSocialLinksActioninfoblockInternalMediaType = "topBarSocialLinks___actioninfoblock___internal___mediaType",
+  TopBarSocialLinksActioninfoblockInternalOwner = "topBarSocialLinks___actioninfoblock___internal___owner",
+  TopBarSocialLinksActioninfoblockInternalType = "topBarSocialLinks___actioninfoblock___internal___type",
+  TopBarSocialLinksActioninfoblockNodeLocale = "topBarSocialLinks___actioninfoblock___node_locale",
+  TopBarSocialLinksActioninfoblockParentChildren = "topBarSocialLinks___actioninfoblock___parent___children",
+  TopBarSocialLinksActioninfoblockParentId = "topBarSocialLinks___actioninfoblock___parent___id",
+  TopBarSocialLinksActioninfoblockSpaceId = "topBarSocialLinks___actioninfoblock___spaceId",
+  TopBarSocialLinksActioninfoblockSysRevision = "topBarSocialLinks___actioninfoblock___sys___revision",
+  TopBarSocialLinksActioninfoblockSysType = "topBarSocialLinks___actioninfoblock___sys___type",
+  TopBarSocialLinksActioninfoblockTextPosition = "topBarSocialLinks___actioninfoblock___textPosition",
+  TopBarSocialLinksActioninfoblockUniqueId = "topBarSocialLinks___actioninfoblock___uniqueId",
+  TopBarSocialLinksActioninfoblockUpdatedAt = "topBarSocialLinks___actioninfoblock___updatedAt",
+  TopBarSocialLinksAuthoravatarblock = "topBarSocialLinks___authoravatarblock",
+  TopBarSocialLinksAuthoravatarblockAvatarChildren = "topBarSocialLinks___authoravatarblock___avatar___children",
+  TopBarSocialLinksAuthoravatarblockAvatarContentfulId = "topBarSocialLinks___authoravatarblock___avatar___contentful_id",
+  TopBarSocialLinksAuthoravatarblockAvatarCreatedAt = "topBarSocialLinks___authoravatarblock___avatar___createdAt",
+  TopBarSocialLinksAuthoravatarblockAvatarDescription = "topBarSocialLinks___authoravatarblock___avatar___description",
+  TopBarSocialLinksAuthoravatarblockAvatarFilename = "topBarSocialLinks___authoravatarblock___avatar___filename",
+  TopBarSocialLinksAuthoravatarblockAvatarFilesize = "topBarSocialLinks___authoravatarblock___avatar___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  TopBarSocialLinksAuthoravatarblockAvatarGatsbyImage = "topBarSocialLinks___authoravatarblock___avatar___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  TopBarSocialLinksAuthoravatarblockAvatarGatsbyImageData = "topBarSocialLinks___authoravatarblock___avatar___gatsbyImageData",
+  TopBarSocialLinksAuthoravatarblockAvatarHeight = "topBarSocialLinks___authoravatarblock___avatar___height",
+  TopBarSocialLinksAuthoravatarblockAvatarId = "topBarSocialLinks___authoravatarblock___avatar___id",
+  TopBarSocialLinksAuthoravatarblockAvatarMimeType = "topBarSocialLinks___authoravatarblock___avatar___mimeType",
+  TopBarSocialLinksAuthoravatarblockAvatarNodeLocale = "topBarSocialLinks___authoravatarblock___avatar___node_locale",
+  TopBarSocialLinksAuthoravatarblockAvatarPlaceholderUrl = "topBarSocialLinks___authoravatarblock___avatar___placeholderUrl",
+  TopBarSocialLinksAuthoravatarblockAvatarPublicUrl = "topBarSocialLinks___authoravatarblock___avatar___publicUrl",
+  TopBarSocialLinksAuthoravatarblockAvatarSpaceId = "topBarSocialLinks___authoravatarblock___avatar___spaceId",
+  TopBarSocialLinksAuthoravatarblockAvatarTitle = "topBarSocialLinks___authoravatarblock___avatar___title",
+  TopBarSocialLinksAuthoravatarblockAvatarUpdatedAt = "topBarSocialLinks___authoravatarblock___avatar___updatedAt",
+  TopBarSocialLinksAuthoravatarblockAvatarUrl = "topBarSocialLinks___authoravatarblock___avatar___url",
+  TopBarSocialLinksAuthoravatarblockAvatarWidth = "topBarSocialLinks___authoravatarblock___avatar___width",
+  TopBarSocialLinksAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "topBarSocialLinks___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  TopBarSocialLinksAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "topBarSocialLinks___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  TopBarSocialLinksAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "topBarSocialLinks___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  TopBarSocialLinksAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeId = "topBarSocialLinks___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  TopBarSocialLinksAuthoravatarblockChildren = "topBarSocialLinks___authoravatarblock___children",
+  TopBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "topBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  TopBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "topBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  TopBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "topBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  TopBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "topBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  TopBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeId = "topBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  TopBarSocialLinksAuthoravatarblockChildrenChildren = "topBarSocialLinks___authoravatarblock___children___children",
+  TopBarSocialLinksAuthoravatarblockChildrenId = "topBarSocialLinks___authoravatarblock___children___id",
+  TopBarSocialLinksAuthoravatarblockContentblock = "topBarSocialLinks___authoravatarblock___contentblock",
+  TopBarSocialLinksAuthoravatarblockContentblockChildren = "topBarSocialLinks___authoravatarblock___contentblock___children",
+  TopBarSocialLinksAuthoravatarblockContentblockContentfulId = "topBarSocialLinks___authoravatarblock___contentblock___contentful_id",
+  TopBarSocialLinksAuthoravatarblockContentblockCreatedAt = "topBarSocialLinks___authoravatarblock___contentblock___createdAt",
+  TopBarSocialLinksAuthoravatarblockContentblockId = "topBarSocialLinks___authoravatarblock___contentblock___id",
+  TopBarSocialLinksAuthoravatarblockContentblockMargin = "topBarSocialLinks___authoravatarblock___contentblock___margin",
+  TopBarSocialLinksAuthoravatarblockContentblockNodeLocale = "topBarSocialLinks___authoravatarblock___contentblock___node_locale",
+  TopBarSocialLinksAuthoravatarblockContentblockPage = "topBarSocialLinks___authoravatarblock___contentblock___page",
+  TopBarSocialLinksAuthoravatarblockContentblockSpaceId = "topBarSocialLinks___authoravatarblock___contentblock___spaceId",
+  TopBarSocialLinksAuthoravatarblockContentblockUniqueId = "topBarSocialLinks___authoravatarblock___contentblock___uniqueId",
+  TopBarSocialLinksAuthoravatarblockContentblockUpdatedAt = "topBarSocialLinks___authoravatarblock___contentblock___updatedAt",
+  TopBarSocialLinksAuthoravatarblockContentfulId = "topBarSocialLinks___authoravatarblock___contentful_id",
+  TopBarSocialLinksAuthoravatarblockCreatedAt = "topBarSocialLinks___authoravatarblock___createdAt",
+  TopBarSocialLinksAuthoravatarblockDescriptionChildren = "topBarSocialLinks___authoravatarblock___description___children",
+  TopBarSocialLinksAuthoravatarblockDescriptionChildrenMdx = "topBarSocialLinks___authoravatarblock___description___childrenMdx",
+  TopBarSocialLinksAuthoravatarblockDescriptionDescription = "topBarSocialLinks___authoravatarblock___description___description",
+  TopBarSocialLinksAuthoravatarblockDescriptionId = "topBarSocialLinks___authoravatarblock___description___id",
+  TopBarSocialLinksAuthoravatarblockFullName = "topBarSocialLinks___authoravatarblock___fullName",
+  TopBarSocialLinksAuthoravatarblockId = "topBarSocialLinks___authoravatarblock___id",
+  TopBarSocialLinksAuthoravatarblockInternalContent = "topBarSocialLinks___authoravatarblock___internal___content",
+  TopBarSocialLinksAuthoravatarblockInternalContentDigest = "topBarSocialLinks___authoravatarblock___internal___contentDigest",
+  TopBarSocialLinksAuthoravatarblockInternalDescription = "topBarSocialLinks___authoravatarblock___internal___description",
+  TopBarSocialLinksAuthoravatarblockInternalFieldOwners = "topBarSocialLinks___authoravatarblock___internal___fieldOwners",
+  TopBarSocialLinksAuthoravatarblockInternalIgnoreType = "topBarSocialLinks___authoravatarblock___internal___ignoreType",
+  TopBarSocialLinksAuthoravatarblockInternalMediaType = "topBarSocialLinks___authoravatarblock___internal___mediaType",
+  TopBarSocialLinksAuthoravatarblockInternalOwner = "topBarSocialLinks___authoravatarblock___internal___owner",
+  TopBarSocialLinksAuthoravatarblockInternalType = "topBarSocialLinks___authoravatarblock___internal___type",
+  TopBarSocialLinksAuthoravatarblockNodeLocale = "topBarSocialLinks___authoravatarblock___node_locale",
+  TopBarSocialLinksAuthoravatarblockParentChildren = "topBarSocialLinks___authoravatarblock___parent___children",
+  TopBarSocialLinksAuthoravatarblockParentId = "topBarSocialLinks___authoravatarblock___parent___id",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinks = "topBarSocialLinks___authoravatarblock___socialSiteLinks",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksActioninfoblock = "topBarSocialLinks___authoravatarblock___socialSiteLinks___actioninfoblock",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksAuthoravatarblock = "topBarSocialLinks___authoravatarblock___socialSiteLinks___authoravatarblock",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksChildren = "topBarSocialLinks___authoravatarblock___socialSiteLinks___children",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksContentfulId = "topBarSocialLinks___authoravatarblock___socialSiteLinks___contentful_id",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksContentfulid = "topBarSocialLinks___authoravatarblock___socialSiteLinks___contentfulid",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksCreatedAt = "topBarSocialLinks___authoravatarblock___socialSiteLinks___createdAt",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksId = "topBarSocialLinks___authoravatarblock___socialSiteLinks___id",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksNodeLocale = "topBarSocialLinks___authoravatarblock___socialSiteLinks___node_locale",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksOptions = "topBarSocialLinks___authoravatarblock___socialSiteLinks___options",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksSpaceId = "topBarSocialLinks___authoravatarblock___socialSiteLinks___spaceId",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksTitle = "topBarSocialLinks___authoravatarblock___socialSiteLinks___title",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksUpdatedAt = "topBarSocialLinks___authoravatarblock___socialSiteLinks___updatedAt",
+  TopBarSocialLinksAuthoravatarblockSpaceId = "topBarSocialLinks___authoravatarblock___spaceId",
+  TopBarSocialLinksAuthoravatarblockSysRevision = "topBarSocialLinks___authoravatarblock___sys___revision",
+  TopBarSocialLinksAuthoravatarblockSysType = "topBarSocialLinks___authoravatarblock___sys___type",
+  TopBarSocialLinksAuthoravatarblockUniqueId = "topBarSocialLinks___authoravatarblock___uniqueId",
+  TopBarSocialLinksAuthoravatarblockUpdatedAt = "topBarSocialLinks___authoravatarblock___updatedAt",
   TopBarSocialLinksChildContentfulLinkUrlTextNodeChildMdxBody = "topBarSocialLinks___childContentfulLinkUrlTextNode___childMdx___body",
   TopBarSocialLinksChildContentfulLinkUrlTextNodeChildMdxChildren = "topBarSocialLinks___childContentfulLinkUrlTextNode___childMdx___children",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
@@ -3882,6 +7902,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksInternalType = "topBarSocialLinks___internal___type",
   TopBarSocialLinksNodeLocale = "topBarSocialLinks___node_locale",
   TopBarSocialLinksOptions = "topBarSocialLinks___options",
+  TopBarSocialLinksOptionsBottomBarLogoActioninfoblock = "topBarSocialLinks___options___bottomBarLogo___actioninfoblock",
+  TopBarSocialLinksOptionsBottomBarLogoAuthoravatarblock = "topBarSocialLinks___options___bottomBarLogo___authoravatarblock",
   TopBarSocialLinksOptionsBottomBarLogoChildren = "topBarSocialLinks___options___bottomBarLogo___children",
   TopBarSocialLinksOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
   TopBarSocialLinksOptionsBottomBarLogoContentfulId = "topBarSocialLinks___options___bottomBarLogo___contentful_id",
@@ -3894,6 +7916,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksOptionsBottomBarLogoTitle = "topBarSocialLinks___options___bottomBarLogo___title",
   TopBarSocialLinksOptionsBottomBarLogoUpdatedAt = "topBarSocialLinks___options___bottomBarLogo___updatedAt",
   TopBarSocialLinksOptionsBottomBarSocialLinks = "topBarSocialLinks___options___bottomBarSocialLinks",
+  TopBarSocialLinksOptionsBottomBarSocialLinksActioninfoblock = "topBarSocialLinks___options___bottomBarSocialLinks___actioninfoblock",
+  TopBarSocialLinksOptionsBottomBarSocialLinksAuthoravatarblock = "topBarSocialLinks___options___bottomBarSocialLinks___authoravatarblock",
   TopBarSocialLinksOptionsBottomBarSocialLinksChildren = "topBarSocialLinks___options___bottomBarSocialLinks___children",
   TopBarSocialLinksOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
   TopBarSocialLinksOptionsBottomBarSocialLinksContentfulId = "topBarSocialLinks___options___bottomBarSocialLinks___contentful_id",
@@ -3906,6 +7930,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksOptionsBottomBarSocialLinksTitle = "topBarSocialLinks___options___bottomBarSocialLinks___title",
   TopBarSocialLinksOptionsBottomBarSocialLinksUpdatedAt = "topBarSocialLinks___options___bottomBarSocialLinks___updatedAt",
   TopBarSocialLinksOptionsBottomBarTabs = "topBarSocialLinks___options___bottomBarTabs",
+  TopBarSocialLinksOptionsBottomBarTabsActioninfoblock = "topBarSocialLinks___options___bottomBarTabs___actioninfoblock",
+  TopBarSocialLinksOptionsBottomBarTabsAuthoravatarblock = "topBarSocialLinks___options___bottomBarTabs___authoravatarblock",
   TopBarSocialLinksOptionsBottomBarTabsChildren = "topBarSocialLinks___options___bottomBarTabs___children",
   TopBarSocialLinksOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
   TopBarSocialLinksOptionsBottomBarTabsContentfulId = "topBarSocialLinks___options___bottomBarTabs___contentful_id",
@@ -3938,6 +7964,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksOptionsSpaceId = "topBarSocialLinks___options___spaceId",
   TopBarSocialLinksOptionsSysRevision = "topBarSocialLinks___options___sys___revision",
   TopBarSocialLinksOptionsSysType = "topBarSocialLinks___options___sys___type",
+  TopBarSocialLinksOptionsTopBarLogoActioninfoblock = "topBarSocialLinks___options___topBarLogo___actioninfoblock",
+  TopBarSocialLinksOptionsTopBarLogoAuthoravatarblock = "topBarSocialLinks___options___topBarLogo___authoravatarblock",
   TopBarSocialLinksOptionsTopBarLogoChildren = "topBarSocialLinks___options___topBarLogo___children",
   TopBarSocialLinksOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___options___topBarLogo___childrenContentfulLinkUrlTextNode",
   TopBarSocialLinksOptionsTopBarLogoContentfulId = "topBarSocialLinks___options___topBarLogo___contentful_id",
@@ -3950,6 +7978,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksOptionsTopBarLogoTitle = "topBarSocialLinks___options___topBarLogo___title",
   TopBarSocialLinksOptionsTopBarLogoUpdatedAt = "topBarSocialLinks___options___topBarLogo___updatedAt",
   TopBarSocialLinksOptionsTopBarSocialLinks = "topBarSocialLinks___options___topBarSocialLinks",
+  TopBarSocialLinksOptionsTopBarSocialLinksActioninfoblock = "topBarSocialLinks___options___topBarSocialLinks___actioninfoblock",
+  TopBarSocialLinksOptionsTopBarSocialLinksAuthoravatarblock = "topBarSocialLinks___options___topBarSocialLinks___authoravatarblock",
   TopBarSocialLinksOptionsTopBarSocialLinksChildren = "topBarSocialLinks___options___topBarSocialLinks___children",
   TopBarSocialLinksOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
   TopBarSocialLinksOptionsTopBarSocialLinksContentfulId = "topBarSocialLinks___options___topBarSocialLinks___contentful_id",
@@ -3962,6 +7992,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksOptionsTopBarSocialLinksTitle = "topBarSocialLinks___options___topBarSocialLinks___title",
   TopBarSocialLinksOptionsTopBarSocialLinksUpdatedAt = "topBarSocialLinks___options___topBarSocialLinks___updatedAt",
   TopBarSocialLinksOptionsTopBarTabs = "topBarSocialLinks___options___topBarTabs",
+  TopBarSocialLinksOptionsTopBarTabsActioninfoblock = "topBarSocialLinks___options___topBarTabs___actioninfoblock",
+  TopBarSocialLinksOptionsTopBarTabsAuthoravatarblock = "topBarSocialLinks___options___topBarTabs___authoravatarblock",
   TopBarSocialLinksOptionsTopBarTabsChildren = "topBarSocialLinks___options___topBarTabs___children",
   TopBarSocialLinksOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___options___topBarTabs___childrenContentfulLinkUrlTextNode",
   TopBarSocialLinksOptionsTopBarTabsContentfulId = "topBarSocialLinks___options___topBarTabs___contentful_id",
@@ -4041,6 +8073,138 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksUrlSysType = "topBarSocialLinks___url___sys___type",
   TopBarSocialLinksUrlUrl = "topBarSocialLinks___url___url",
   TopBarTabs = "topBarTabs",
+  TopBarTabsActioninfoblock = "topBarTabs___actioninfoblock",
+  TopBarTabsActioninfoblockArticleRaw = "topBarTabs___actioninfoblock___article___raw",
+  TopBarTabsActioninfoblockButtonActioninfoblock = "topBarTabs___actioninfoblock___button___actioninfoblock",
+  TopBarTabsActioninfoblockButtonAuthoravatarblock = "topBarTabs___actioninfoblock___button___authoravatarblock",
+  TopBarTabsActioninfoblockButtonChildren = "topBarTabs___actioninfoblock___button___children",
+  TopBarTabsActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "topBarTabs___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  TopBarTabsActioninfoblockButtonContentfulId = "topBarTabs___actioninfoblock___button___contentful_id",
+  TopBarTabsActioninfoblockButtonContentfulid = "topBarTabs___actioninfoblock___button___contentfulid",
+  TopBarTabsActioninfoblockButtonCreatedAt = "topBarTabs___actioninfoblock___button___createdAt",
+  TopBarTabsActioninfoblockButtonId = "topBarTabs___actioninfoblock___button___id",
+  TopBarTabsActioninfoblockButtonNodeLocale = "topBarTabs___actioninfoblock___button___node_locale",
+  TopBarTabsActioninfoblockButtonOptions = "topBarTabs___actioninfoblock___button___options",
+  TopBarTabsActioninfoblockButtonSpaceId = "topBarTabs___actioninfoblock___button___spaceId",
+  TopBarTabsActioninfoblockButtonTitle = "topBarTabs___actioninfoblock___button___title",
+  TopBarTabsActioninfoblockButtonUpdatedAt = "topBarTabs___actioninfoblock___button___updatedAt",
+  TopBarTabsActioninfoblockChildren = "topBarTabs___actioninfoblock___children",
+  TopBarTabsActioninfoblockChildrenChildren = "topBarTabs___actioninfoblock___children___children",
+  TopBarTabsActioninfoblockChildrenId = "topBarTabs___actioninfoblock___children___id",
+  TopBarTabsActioninfoblockContentblock = "topBarTabs___actioninfoblock___contentblock",
+  TopBarTabsActioninfoblockContentblockChildren = "topBarTabs___actioninfoblock___contentblock___children",
+  TopBarTabsActioninfoblockContentblockContentfulId = "topBarTabs___actioninfoblock___contentblock___contentful_id",
+  TopBarTabsActioninfoblockContentblockCreatedAt = "topBarTabs___actioninfoblock___contentblock___createdAt",
+  TopBarTabsActioninfoblockContentblockId = "topBarTabs___actioninfoblock___contentblock___id",
+  TopBarTabsActioninfoblockContentblockMargin = "topBarTabs___actioninfoblock___contentblock___margin",
+  TopBarTabsActioninfoblockContentblockNodeLocale = "topBarTabs___actioninfoblock___contentblock___node_locale",
+  TopBarTabsActioninfoblockContentblockPage = "topBarTabs___actioninfoblock___contentblock___page",
+  TopBarTabsActioninfoblockContentblockSpaceId = "topBarTabs___actioninfoblock___contentblock___spaceId",
+  TopBarTabsActioninfoblockContentblockUniqueId = "topBarTabs___actioninfoblock___contentblock___uniqueId",
+  TopBarTabsActioninfoblockContentblockUpdatedAt = "topBarTabs___actioninfoblock___contentblock___updatedAt",
+  TopBarTabsActioninfoblockContentfulId = "topBarTabs___actioninfoblock___contentful_id",
+  TopBarTabsActioninfoblockCreatedAt = "topBarTabs___actioninfoblock___createdAt",
+  TopBarTabsActioninfoblockId = "topBarTabs___actioninfoblock___id",
+  TopBarTabsActioninfoblockInternalContent = "topBarTabs___actioninfoblock___internal___content",
+  TopBarTabsActioninfoblockInternalContentDigest = "topBarTabs___actioninfoblock___internal___contentDigest",
+  TopBarTabsActioninfoblockInternalDescription = "topBarTabs___actioninfoblock___internal___description",
+  TopBarTabsActioninfoblockInternalFieldOwners = "topBarTabs___actioninfoblock___internal___fieldOwners",
+  TopBarTabsActioninfoblockInternalIgnoreType = "topBarTabs___actioninfoblock___internal___ignoreType",
+  TopBarTabsActioninfoblockInternalMediaType = "topBarTabs___actioninfoblock___internal___mediaType",
+  TopBarTabsActioninfoblockInternalOwner = "topBarTabs___actioninfoblock___internal___owner",
+  TopBarTabsActioninfoblockInternalType = "topBarTabs___actioninfoblock___internal___type",
+  TopBarTabsActioninfoblockNodeLocale = "topBarTabs___actioninfoblock___node_locale",
+  TopBarTabsActioninfoblockParentChildren = "topBarTabs___actioninfoblock___parent___children",
+  TopBarTabsActioninfoblockParentId = "topBarTabs___actioninfoblock___parent___id",
+  TopBarTabsActioninfoblockSpaceId = "topBarTabs___actioninfoblock___spaceId",
+  TopBarTabsActioninfoblockSysRevision = "topBarTabs___actioninfoblock___sys___revision",
+  TopBarTabsActioninfoblockSysType = "topBarTabs___actioninfoblock___sys___type",
+  TopBarTabsActioninfoblockTextPosition = "topBarTabs___actioninfoblock___textPosition",
+  TopBarTabsActioninfoblockUniqueId = "topBarTabs___actioninfoblock___uniqueId",
+  TopBarTabsActioninfoblockUpdatedAt = "topBarTabs___actioninfoblock___updatedAt",
+  TopBarTabsAuthoravatarblock = "topBarTabs___authoravatarblock",
+  TopBarTabsAuthoravatarblockAvatarChildren = "topBarTabs___authoravatarblock___avatar___children",
+  TopBarTabsAuthoravatarblockAvatarContentfulId = "topBarTabs___authoravatarblock___avatar___contentful_id",
+  TopBarTabsAuthoravatarblockAvatarCreatedAt = "topBarTabs___authoravatarblock___avatar___createdAt",
+  TopBarTabsAuthoravatarblockAvatarDescription = "topBarTabs___authoravatarblock___avatar___description",
+  TopBarTabsAuthoravatarblockAvatarFilename = "topBarTabs___authoravatarblock___avatar___filename",
+  TopBarTabsAuthoravatarblockAvatarFilesize = "topBarTabs___authoravatarblock___avatar___filesize",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  TopBarTabsAuthoravatarblockAvatarGatsbyImage = "topBarTabs___authoravatarblock___avatar___gatsbyImage",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  TopBarTabsAuthoravatarblockAvatarGatsbyImageData = "topBarTabs___authoravatarblock___avatar___gatsbyImageData",
+  TopBarTabsAuthoravatarblockAvatarHeight = "topBarTabs___authoravatarblock___avatar___height",
+  TopBarTabsAuthoravatarblockAvatarId = "topBarTabs___authoravatarblock___avatar___id",
+  TopBarTabsAuthoravatarblockAvatarMimeType = "topBarTabs___authoravatarblock___avatar___mimeType",
+  TopBarTabsAuthoravatarblockAvatarNodeLocale = "topBarTabs___authoravatarblock___avatar___node_locale",
+  TopBarTabsAuthoravatarblockAvatarPlaceholderUrl = "topBarTabs___authoravatarblock___avatar___placeholderUrl",
+  TopBarTabsAuthoravatarblockAvatarPublicUrl = "topBarTabs___authoravatarblock___avatar___publicUrl",
+  TopBarTabsAuthoravatarblockAvatarSpaceId = "topBarTabs___authoravatarblock___avatar___spaceId",
+  TopBarTabsAuthoravatarblockAvatarTitle = "topBarTabs___authoravatarblock___avatar___title",
+  TopBarTabsAuthoravatarblockAvatarUpdatedAt = "topBarTabs___authoravatarblock___avatar___updatedAt",
+  TopBarTabsAuthoravatarblockAvatarUrl = "topBarTabs___authoravatarblock___avatar___url",
+  TopBarTabsAuthoravatarblockAvatarWidth = "topBarTabs___authoravatarblock___avatar___width",
+  TopBarTabsAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "topBarTabs___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  TopBarTabsAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "topBarTabs___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  TopBarTabsAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "topBarTabs___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  TopBarTabsAuthoravatarblockChildContentfulAuthorAvatarBlockDescriptionTextNodeId = "topBarTabs___authoravatarblock___childContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  TopBarTabsAuthoravatarblockChildren = "topBarTabs___authoravatarblock___children",
+  TopBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "topBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
+  TopBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildren = "topBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___children",
+  TopBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeChildrenMdx = "topBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___childrenMdx",
+  TopBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeDescription = "topBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___description",
+  TopBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNodeId = "topBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode___id",
+  TopBarTabsAuthoravatarblockChildrenChildren = "topBarTabs___authoravatarblock___children___children",
+  TopBarTabsAuthoravatarblockChildrenId = "topBarTabs___authoravatarblock___children___id",
+  TopBarTabsAuthoravatarblockContentblock = "topBarTabs___authoravatarblock___contentblock",
+  TopBarTabsAuthoravatarblockContentblockChildren = "topBarTabs___authoravatarblock___contentblock___children",
+  TopBarTabsAuthoravatarblockContentblockContentfulId = "topBarTabs___authoravatarblock___contentblock___contentful_id",
+  TopBarTabsAuthoravatarblockContentblockCreatedAt = "topBarTabs___authoravatarblock___contentblock___createdAt",
+  TopBarTabsAuthoravatarblockContentblockId = "topBarTabs___authoravatarblock___contentblock___id",
+  TopBarTabsAuthoravatarblockContentblockMargin = "topBarTabs___authoravatarblock___contentblock___margin",
+  TopBarTabsAuthoravatarblockContentblockNodeLocale = "topBarTabs___authoravatarblock___contentblock___node_locale",
+  TopBarTabsAuthoravatarblockContentblockPage = "topBarTabs___authoravatarblock___contentblock___page",
+  TopBarTabsAuthoravatarblockContentblockSpaceId = "topBarTabs___authoravatarblock___contentblock___spaceId",
+  TopBarTabsAuthoravatarblockContentblockUniqueId = "topBarTabs___authoravatarblock___contentblock___uniqueId",
+  TopBarTabsAuthoravatarblockContentblockUpdatedAt = "topBarTabs___authoravatarblock___contentblock___updatedAt",
+  TopBarTabsAuthoravatarblockContentfulId = "topBarTabs___authoravatarblock___contentful_id",
+  TopBarTabsAuthoravatarblockCreatedAt = "topBarTabs___authoravatarblock___createdAt",
+  TopBarTabsAuthoravatarblockDescriptionChildren = "topBarTabs___authoravatarblock___description___children",
+  TopBarTabsAuthoravatarblockDescriptionChildrenMdx = "topBarTabs___authoravatarblock___description___childrenMdx",
+  TopBarTabsAuthoravatarblockDescriptionDescription = "topBarTabs___authoravatarblock___description___description",
+  TopBarTabsAuthoravatarblockDescriptionId = "topBarTabs___authoravatarblock___description___id",
+  TopBarTabsAuthoravatarblockFullName = "topBarTabs___authoravatarblock___fullName",
+  TopBarTabsAuthoravatarblockId = "topBarTabs___authoravatarblock___id",
+  TopBarTabsAuthoravatarblockInternalContent = "topBarTabs___authoravatarblock___internal___content",
+  TopBarTabsAuthoravatarblockInternalContentDigest = "topBarTabs___authoravatarblock___internal___contentDigest",
+  TopBarTabsAuthoravatarblockInternalDescription = "topBarTabs___authoravatarblock___internal___description",
+  TopBarTabsAuthoravatarblockInternalFieldOwners = "topBarTabs___authoravatarblock___internal___fieldOwners",
+  TopBarTabsAuthoravatarblockInternalIgnoreType = "topBarTabs___authoravatarblock___internal___ignoreType",
+  TopBarTabsAuthoravatarblockInternalMediaType = "topBarTabs___authoravatarblock___internal___mediaType",
+  TopBarTabsAuthoravatarblockInternalOwner = "topBarTabs___authoravatarblock___internal___owner",
+  TopBarTabsAuthoravatarblockInternalType = "topBarTabs___authoravatarblock___internal___type",
+  TopBarTabsAuthoravatarblockNodeLocale = "topBarTabs___authoravatarblock___node_locale",
+  TopBarTabsAuthoravatarblockParentChildren = "topBarTabs___authoravatarblock___parent___children",
+  TopBarTabsAuthoravatarblockParentId = "topBarTabs___authoravatarblock___parent___id",
+  TopBarTabsAuthoravatarblockSocialSiteLinks = "topBarTabs___authoravatarblock___socialSiteLinks",
+  TopBarTabsAuthoravatarblockSocialSiteLinksActioninfoblock = "topBarTabs___authoravatarblock___socialSiteLinks___actioninfoblock",
+  TopBarTabsAuthoravatarblockSocialSiteLinksAuthoravatarblock = "topBarTabs___authoravatarblock___socialSiteLinks___authoravatarblock",
+  TopBarTabsAuthoravatarblockSocialSiteLinksChildren = "topBarTabs___authoravatarblock___socialSiteLinks___children",
+  TopBarTabsAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "topBarTabs___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  TopBarTabsAuthoravatarblockSocialSiteLinksContentfulId = "topBarTabs___authoravatarblock___socialSiteLinks___contentful_id",
+  TopBarTabsAuthoravatarblockSocialSiteLinksContentfulid = "topBarTabs___authoravatarblock___socialSiteLinks___contentfulid",
+  TopBarTabsAuthoravatarblockSocialSiteLinksCreatedAt = "topBarTabs___authoravatarblock___socialSiteLinks___createdAt",
+  TopBarTabsAuthoravatarblockSocialSiteLinksId = "topBarTabs___authoravatarblock___socialSiteLinks___id",
+  TopBarTabsAuthoravatarblockSocialSiteLinksNodeLocale = "topBarTabs___authoravatarblock___socialSiteLinks___node_locale",
+  TopBarTabsAuthoravatarblockSocialSiteLinksOptions = "topBarTabs___authoravatarblock___socialSiteLinks___options",
+  TopBarTabsAuthoravatarblockSocialSiteLinksSpaceId = "topBarTabs___authoravatarblock___socialSiteLinks___spaceId",
+  TopBarTabsAuthoravatarblockSocialSiteLinksTitle = "topBarTabs___authoravatarblock___socialSiteLinks___title",
+  TopBarTabsAuthoravatarblockSocialSiteLinksUpdatedAt = "topBarTabs___authoravatarblock___socialSiteLinks___updatedAt",
+  TopBarTabsAuthoravatarblockSpaceId = "topBarTabs___authoravatarblock___spaceId",
+  TopBarTabsAuthoravatarblockSysRevision = "topBarTabs___authoravatarblock___sys___revision",
+  TopBarTabsAuthoravatarblockSysType = "topBarTabs___authoravatarblock___sys___type",
+  TopBarTabsAuthoravatarblockUniqueId = "topBarTabs___authoravatarblock___uniqueId",
+  TopBarTabsAuthoravatarblockUpdatedAt = "topBarTabs___authoravatarblock___updatedAt",
   TopBarTabsChildContentfulLinkUrlTextNodeChildMdxBody = "topBarTabs___childContentfulLinkUrlTextNode___childMdx___body",
   TopBarTabsChildContentfulLinkUrlTextNodeChildMdxChildren = "topBarTabs___childContentfulLinkUrlTextNode___childMdx___children",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
@@ -4209,6 +8373,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsInternalType = "topBarTabs___internal___type",
   TopBarTabsNodeLocale = "topBarTabs___node_locale",
   TopBarTabsOptions = "topBarTabs___options",
+  TopBarTabsOptionsBottomBarLogoActioninfoblock = "topBarTabs___options___bottomBarLogo___actioninfoblock",
+  TopBarTabsOptionsBottomBarLogoAuthoravatarblock = "topBarTabs___options___bottomBarLogo___authoravatarblock",
   TopBarTabsOptionsBottomBarLogoChildren = "topBarTabs___options___bottomBarLogo___children",
   TopBarTabsOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "topBarTabs___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
   TopBarTabsOptionsBottomBarLogoContentfulId = "topBarTabs___options___bottomBarLogo___contentful_id",
@@ -4221,6 +8387,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsOptionsBottomBarLogoTitle = "topBarTabs___options___bottomBarLogo___title",
   TopBarTabsOptionsBottomBarLogoUpdatedAt = "topBarTabs___options___bottomBarLogo___updatedAt",
   TopBarTabsOptionsBottomBarSocialLinks = "topBarTabs___options___bottomBarSocialLinks",
+  TopBarTabsOptionsBottomBarSocialLinksActioninfoblock = "topBarTabs___options___bottomBarSocialLinks___actioninfoblock",
+  TopBarTabsOptionsBottomBarSocialLinksAuthoravatarblock = "topBarTabs___options___bottomBarSocialLinks___authoravatarblock",
   TopBarTabsOptionsBottomBarSocialLinksChildren = "topBarTabs___options___bottomBarSocialLinks___children",
   TopBarTabsOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "topBarTabs___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
   TopBarTabsOptionsBottomBarSocialLinksContentfulId = "topBarTabs___options___bottomBarSocialLinks___contentful_id",
@@ -4233,6 +8401,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsOptionsBottomBarSocialLinksTitle = "topBarTabs___options___bottomBarSocialLinks___title",
   TopBarTabsOptionsBottomBarSocialLinksUpdatedAt = "topBarTabs___options___bottomBarSocialLinks___updatedAt",
   TopBarTabsOptionsBottomBarTabs = "topBarTabs___options___bottomBarTabs",
+  TopBarTabsOptionsBottomBarTabsActioninfoblock = "topBarTabs___options___bottomBarTabs___actioninfoblock",
+  TopBarTabsOptionsBottomBarTabsAuthoravatarblock = "topBarTabs___options___bottomBarTabs___authoravatarblock",
   TopBarTabsOptionsBottomBarTabsChildren = "topBarTabs___options___bottomBarTabs___children",
   TopBarTabsOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "topBarTabs___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
   TopBarTabsOptionsBottomBarTabsContentfulId = "topBarTabs___options___bottomBarTabs___contentful_id",
@@ -4265,6 +8435,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsOptionsSpaceId = "topBarTabs___options___spaceId",
   TopBarTabsOptionsSysRevision = "topBarTabs___options___sys___revision",
   TopBarTabsOptionsSysType = "topBarTabs___options___sys___type",
+  TopBarTabsOptionsTopBarLogoActioninfoblock = "topBarTabs___options___topBarLogo___actioninfoblock",
+  TopBarTabsOptionsTopBarLogoAuthoravatarblock = "topBarTabs___options___topBarLogo___authoravatarblock",
   TopBarTabsOptionsTopBarLogoChildren = "topBarTabs___options___topBarLogo___children",
   TopBarTabsOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "topBarTabs___options___topBarLogo___childrenContentfulLinkUrlTextNode",
   TopBarTabsOptionsTopBarLogoContentfulId = "topBarTabs___options___topBarLogo___contentful_id",
@@ -4277,6 +8449,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsOptionsTopBarLogoTitle = "topBarTabs___options___topBarLogo___title",
   TopBarTabsOptionsTopBarLogoUpdatedAt = "topBarTabs___options___topBarLogo___updatedAt",
   TopBarTabsOptionsTopBarSocialLinks = "topBarTabs___options___topBarSocialLinks",
+  TopBarTabsOptionsTopBarSocialLinksActioninfoblock = "topBarTabs___options___topBarSocialLinks___actioninfoblock",
+  TopBarTabsOptionsTopBarSocialLinksAuthoravatarblock = "topBarTabs___options___topBarSocialLinks___authoravatarblock",
   TopBarTabsOptionsTopBarSocialLinksChildren = "topBarTabs___options___topBarSocialLinks___children",
   TopBarTabsOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "topBarTabs___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
   TopBarTabsOptionsTopBarSocialLinksContentfulId = "topBarTabs___options___topBarSocialLinks___contentful_id",
@@ -4289,6 +8463,8 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsOptionsTopBarSocialLinksTitle = "topBarTabs___options___topBarSocialLinks___title",
   TopBarTabsOptionsTopBarSocialLinksUpdatedAt = "topBarTabs___options___topBarSocialLinks___updatedAt",
   TopBarTabsOptionsTopBarTabs = "topBarTabs___options___topBarTabs",
+  TopBarTabsOptionsTopBarTabsActioninfoblock = "topBarTabs___options___topBarTabs___actioninfoblock",
+  TopBarTabsOptionsTopBarTabsAuthoravatarblock = "topBarTabs___options___topBarTabs___authoravatarblock",
   TopBarTabsOptionsTopBarTabsChildren = "topBarTabs___options___topBarTabs___children",
   TopBarTabsOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "topBarTabs___options___topBarTabs___childrenContentfulLinkUrlTextNode",
   TopBarTabsOptionsTopBarTabsContentfulId = "topBarTabs___options___topBarTabs___contentful_id",
@@ -4482,6 +8658,7 @@ export type ContentfulPage = ContentfulEntry &
     childrenContentfulPageDescriptionTextNode?: Maybe<
       Array<Maybe<ContentfulPageDescriptionTextNode>>
     >;
+    content?: Maybe<Array<Maybe<ContentfulContentBlock>>>;
     contentful_id: Scalars["String"];
     createdAt?: Maybe<Scalars["Date"]>;
     description?: Maybe<ContentfulPageDescriptionTextNode>;
@@ -4815,6 +8992,102 @@ export enum ContentfulPageFieldsEnum {
   ChildrenParentInternalType = "children___parent___internal___type",
   ChildrenParentParentChildren = "children___parent___parent___children",
   ChildrenParentParentId = "children___parent___parent___id",
+  Content = "content",
+  ContentChildren = "content___children",
+  ContentChildrenChildren = "content___children___children",
+  ContentChildrenChildrenChildren = "content___children___children___children",
+  ContentChildrenChildrenId = "content___children___children___id",
+  ContentChildrenId = "content___children___id",
+  ContentChildrenInternalContent = "content___children___internal___content",
+  ContentChildrenInternalContentDigest = "content___children___internal___contentDigest",
+  ContentChildrenInternalDescription = "content___children___internal___description",
+  ContentChildrenInternalFieldOwners = "content___children___internal___fieldOwners",
+  ContentChildrenInternalIgnoreType = "content___children___internal___ignoreType",
+  ContentChildrenInternalMediaType = "content___children___internal___mediaType",
+  ContentChildrenInternalOwner = "content___children___internal___owner",
+  ContentChildrenInternalType = "content___children___internal___type",
+  ContentChildrenParentChildren = "content___children___parent___children",
+  ContentChildrenParentId = "content___children___parent___id",
+  ContentContentfulId = "content___contentful_id",
+  ContentCreatedAt = "content___createdAt",
+  ContentId = "content___id",
+  ContentInternalContent = "content___internal___content",
+  ContentInternalContentDigest = "content___internal___contentDigest",
+  ContentInternalDescription = "content___internal___description",
+  ContentInternalFieldOwners = "content___internal___fieldOwners",
+  ContentInternalIgnoreType = "content___internal___ignoreType",
+  ContentInternalMediaType = "content___internal___mediaType",
+  ContentInternalOwner = "content___internal___owner",
+  ContentInternalType = "content___internal___type",
+  ContentMargin = "content___margin",
+  ContentNodeLocale = "content___node_locale",
+  ContentPage = "content___page",
+  ContentPageChildContentfulPageDescriptionTextNodeChildren = "content___page___childContentfulPageDescriptionTextNode___children",
+  ContentPageChildContentfulPageDescriptionTextNodeChildrenMdx = "content___page___childContentfulPageDescriptionTextNode___childrenMdx",
+  ContentPageChildContentfulPageDescriptionTextNodeDescription = "content___page___childContentfulPageDescriptionTextNode___description",
+  ContentPageChildContentfulPageDescriptionTextNodeId = "content___page___childContentfulPageDescriptionTextNode___id",
+  ContentPageChildren = "content___page___children",
+  ContentPageChildrenContentfulPageDescriptionTextNode = "content___page___childrenContentfulPageDescriptionTextNode",
+  ContentPageChildrenContentfulPageDescriptionTextNodeChildren = "content___page___childrenContentfulPageDescriptionTextNode___children",
+  ContentPageChildrenContentfulPageDescriptionTextNodeChildrenMdx = "content___page___childrenContentfulPageDescriptionTextNode___childrenMdx",
+  ContentPageChildrenContentfulPageDescriptionTextNodeDescription = "content___page___childrenContentfulPageDescriptionTextNode___description",
+  ContentPageChildrenContentfulPageDescriptionTextNodeId = "content___page___childrenContentfulPageDescriptionTextNode___id",
+  ContentPageChildrenChildren = "content___page___children___children",
+  ContentPageChildrenId = "content___page___children___id",
+  ContentPageContent = "content___page___content",
+  ContentPageContentChildren = "content___page___content___children",
+  ContentPageContentContentfulId = "content___page___content___contentful_id",
+  ContentPageContentCreatedAt = "content___page___content___createdAt",
+  ContentPageContentId = "content___page___content___id",
+  ContentPageContentMargin = "content___page___content___margin",
+  ContentPageContentNodeLocale = "content___page___content___node_locale",
+  ContentPageContentPage = "content___page___content___page",
+  ContentPageContentSpaceId = "content___page___content___spaceId",
+  ContentPageContentUniqueId = "content___page___content___uniqueId",
+  ContentPageContentUpdatedAt = "content___page___content___updatedAt",
+  ContentPageContentfulId = "content___page___contentful_id",
+  ContentPageCreatedAt = "content___page___createdAt",
+  ContentPageDescriptionChildren = "content___page___description___children",
+  ContentPageDescriptionChildrenMdx = "content___page___description___childrenMdx",
+  ContentPageDescriptionDescription = "content___page___description___description",
+  ContentPageDescriptionId = "content___page___description___id",
+  ContentPageId = "content___page___id",
+  ContentPageInternalContent = "content___page___internal___content",
+  ContentPageInternalContentDigest = "content___page___internal___contentDigest",
+  ContentPageInternalDescription = "content___page___internal___description",
+  ContentPageInternalFieldOwners = "content___page___internal___fieldOwners",
+  ContentPageInternalIgnoreType = "content___page___internal___ignoreType",
+  ContentPageInternalMediaType = "content___page___internal___mediaType",
+  ContentPageInternalOwner = "content___page___internal___owner",
+  ContentPageInternalType = "content___page___internal___type",
+  ContentPageNodeLocale = "content___page___node_locale",
+  ContentPageParentChildren = "content___page___parent___children",
+  ContentPageParentId = "content___page___parent___id",
+  ContentPageSpaceId = "content___page___spaceId",
+  ContentPageSysRevision = "content___page___sys___revision",
+  ContentPageSysType = "content___page___sys___type",
+  ContentPageTitle = "content___page___title",
+  ContentPageUpdatedAt = "content___page___updatedAt",
+  ContentPageUrl = "content___page___url",
+  ContentParentChildren = "content___parent___children",
+  ContentParentChildrenChildren = "content___parent___children___children",
+  ContentParentChildrenId = "content___parent___children___id",
+  ContentParentId = "content___parent___id",
+  ContentParentInternalContent = "content___parent___internal___content",
+  ContentParentInternalContentDigest = "content___parent___internal___contentDigest",
+  ContentParentInternalDescription = "content___parent___internal___description",
+  ContentParentInternalFieldOwners = "content___parent___internal___fieldOwners",
+  ContentParentInternalIgnoreType = "content___parent___internal___ignoreType",
+  ContentParentInternalMediaType = "content___parent___internal___mediaType",
+  ContentParentInternalOwner = "content___parent___internal___owner",
+  ContentParentInternalType = "content___parent___internal___type",
+  ContentParentParentChildren = "content___parent___parent___children",
+  ContentParentParentId = "content___parent___parent___id",
+  ContentSpaceId = "content___spaceId",
+  ContentSysRevision = "content___sys___revision",
+  ContentSysType = "content___sys___type",
+  ContentUniqueId = "content___uniqueId",
+  ContentUpdatedAt = "content___updatedAt",
   ContentfulId = "contentful_id",
   CreatedAt = "createdAt",
   DescriptionChildMdxBody = "description___childMdx___body",
@@ -4991,6 +9264,7 @@ export type ContentfulPageFilterInput = {
   childContentfulPageDescriptionTextNode?: InputMaybe<ContentfulPageDescriptionTextNodeFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
   childrenContentfulPageDescriptionTextNode?: InputMaybe<ContentfulPageDescriptionTextNodeFilterListInput>;
+  content?: InputMaybe<ContentfulContentBlockFilterListInput>;
   contentful_id?: InputMaybe<StringQueryOperatorInput>;
   createdAt?: InputMaybe<DateQueryOperatorInput>;
   description?: InputMaybe<ContentfulPageDescriptionTextNodeFilterInput>;
@@ -5003,6 +9277,10 @@ export type ContentfulPageFilterInput = {
   title?: InputMaybe<StringQueryOperatorInput>;
   updatedAt?: InputMaybe<DateQueryOperatorInput>;
   url?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulPageFilterListInput = {
+  elemMatch?: InputMaybe<ContentfulPageFilterInput>;
 };
 
 export type ContentfulPageGroupConnection = {
@@ -5085,6 +9363,383 @@ export type ContentfulPageSysFilterInput = {
 export type ContentfulReference = {
   contentful_id: Scalars["String"];
   id: Scalars["ID"];
+};
+
+export type ContentfulRichTextBlock = ContentfulEntry &
+  ContentfulReference &
+  Node & {
+    __typename?: "ContentfulRichTextBlock";
+    alignTextTo?: Maybe<Scalars["String"]>;
+    children: Array<Node>;
+    contentblock?: Maybe<Array<Maybe<ContentfulContentBlock>>>;
+    contentful_id: Scalars["String"];
+    createdAt?: Maybe<Scalars["Date"]>;
+    id: Scalars["ID"];
+    internal: Internal;
+    node_locale: Scalars["String"];
+    parent?: Maybe<Node>;
+    spaceId?: Maybe<Scalars["String"]>;
+    sys?: Maybe<ContentfulRichTextBlockSys>;
+    text?: Maybe<ContentfulRichTextBlockText>;
+    uniqueId?: Maybe<Scalars["String"]>;
+    updatedAt?: Maybe<Scalars["Date"]>;
+  };
+
+export type ContentfulRichTextBlockCreatedAtArgs = {
+  difference?: InputMaybe<Scalars["String"]>;
+  formatString?: InputMaybe<Scalars["String"]>;
+  fromNow?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars["String"]>;
+};
+
+export type ContentfulRichTextBlockUpdatedAtArgs = {
+  difference?: InputMaybe<Scalars["String"]>;
+  formatString?: InputMaybe<Scalars["String"]>;
+  fromNow?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars["String"]>;
+};
+
+export type ContentfulRichTextBlockConnection = {
+  __typename?: "ContentfulRichTextBlockConnection";
+  distinct: Array<Scalars["String"]>;
+  edges: Array<ContentfulRichTextBlockEdge>;
+  group: Array<ContentfulRichTextBlockGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<ContentfulRichTextBlock>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type ContentfulRichTextBlockConnectionDistinctArgs = {
+  field: ContentfulRichTextBlockFieldsEnum;
+};
+
+export type ContentfulRichTextBlockConnectionGroupArgs = {
+  field: ContentfulRichTextBlockFieldsEnum;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+};
+
+export type ContentfulRichTextBlockConnectionMaxArgs = {
+  field: ContentfulRichTextBlockFieldsEnum;
+};
+
+export type ContentfulRichTextBlockConnectionMinArgs = {
+  field: ContentfulRichTextBlockFieldsEnum;
+};
+
+export type ContentfulRichTextBlockConnectionSumArgs = {
+  field: ContentfulRichTextBlockFieldsEnum;
+};
+
+export type ContentfulRichTextBlockEdge = {
+  __typename?: "ContentfulRichTextBlockEdge";
+  next?: Maybe<ContentfulRichTextBlock>;
+  node: ContentfulRichTextBlock;
+  previous?: Maybe<ContentfulRichTextBlock>;
+};
+
+export enum ContentfulRichTextBlockFieldsEnum {
+  AlignTextTo = "alignTextTo",
+  Children = "children",
+  ChildrenChildren = "children___children",
+  ChildrenChildrenChildren = "children___children___children",
+  ChildrenChildrenChildrenChildren = "children___children___children___children",
+  ChildrenChildrenChildrenId = "children___children___children___id",
+  ChildrenChildrenId = "children___children___id",
+  ChildrenChildrenInternalContent = "children___children___internal___content",
+  ChildrenChildrenInternalContentDigest = "children___children___internal___contentDigest",
+  ChildrenChildrenInternalDescription = "children___children___internal___description",
+  ChildrenChildrenInternalFieldOwners = "children___children___internal___fieldOwners",
+  ChildrenChildrenInternalIgnoreType = "children___children___internal___ignoreType",
+  ChildrenChildrenInternalMediaType = "children___children___internal___mediaType",
+  ChildrenChildrenInternalOwner = "children___children___internal___owner",
+  ChildrenChildrenInternalType = "children___children___internal___type",
+  ChildrenChildrenParentChildren = "children___children___parent___children",
+  ChildrenChildrenParentId = "children___children___parent___id",
+  ChildrenId = "children___id",
+  ChildrenInternalContent = "children___internal___content",
+  ChildrenInternalContentDigest = "children___internal___contentDigest",
+  ChildrenInternalDescription = "children___internal___description",
+  ChildrenInternalFieldOwners = "children___internal___fieldOwners",
+  ChildrenInternalIgnoreType = "children___internal___ignoreType",
+  ChildrenInternalMediaType = "children___internal___mediaType",
+  ChildrenInternalOwner = "children___internal___owner",
+  ChildrenInternalType = "children___internal___type",
+  ChildrenParentChildren = "children___parent___children",
+  ChildrenParentChildrenChildren = "children___parent___children___children",
+  ChildrenParentChildrenId = "children___parent___children___id",
+  ChildrenParentId = "children___parent___id",
+  ChildrenParentInternalContent = "children___parent___internal___content",
+  ChildrenParentInternalContentDigest = "children___parent___internal___contentDigest",
+  ChildrenParentInternalDescription = "children___parent___internal___description",
+  ChildrenParentInternalFieldOwners = "children___parent___internal___fieldOwners",
+  ChildrenParentInternalIgnoreType = "children___parent___internal___ignoreType",
+  ChildrenParentInternalMediaType = "children___parent___internal___mediaType",
+  ChildrenParentInternalOwner = "children___parent___internal___owner",
+  ChildrenParentInternalType = "children___parent___internal___type",
+  ChildrenParentParentChildren = "children___parent___parent___children",
+  ChildrenParentParentId = "children___parent___parent___id",
+  Contentblock = "contentblock",
+  ContentblockChildren = "contentblock___children",
+  ContentblockChildrenChildren = "contentblock___children___children",
+  ContentblockChildrenChildrenChildren = "contentblock___children___children___children",
+  ContentblockChildrenChildrenId = "contentblock___children___children___id",
+  ContentblockChildrenId = "contentblock___children___id",
+  ContentblockChildrenInternalContent = "contentblock___children___internal___content",
+  ContentblockChildrenInternalContentDigest = "contentblock___children___internal___contentDigest",
+  ContentblockChildrenInternalDescription = "contentblock___children___internal___description",
+  ContentblockChildrenInternalFieldOwners = "contentblock___children___internal___fieldOwners",
+  ContentblockChildrenInternalIgnoreType = "contentblock___children___internal___ignoreType",
+  ContentblockChildrenInternalMediaType = "contentblock___children___internal___mediaType",
+  ContentblockChildrenInternalOwner = "contentblock___children___internal___owner",
+  ContentblockChildrenInternalType = "contentblock___children___internal___type",
+  ContentblockChildrenParentChildren = "contentblock___children___parent___children",
+  ContentblockChildrenParentId = "contentblock___children___parent___id",
+  ContentblockContentfulId = "contentblock___contentful_id",
+  ContentblockCreatedAt = "contentblock___createdAt",
+  ContentblockId = "contentblock___id",
+  ContentblockInternalContent = "contentblock___internal___content",
+  ContentblockInternalContentDigest = "contentblock___internal___contentDigest",
+  ContentblockInternalDescription = "contentblock___internal___description",
+  ContentblockInternalFieldOwners = "contentblock___internal___fieldOwners",
+  ContentblockInternalIgnoreType = "contentblock___internal___ignoreType",
+  ContentblockInternalMediaType = "contentblock___internal___mediaType",
+  ContentblockInternalOwner = "contentblock___internal___owner",
+  ContentblockInternalType = "contentblock___internal___type",
+  ContentblockMargin = "contentblock___margin",
+  ContentblockNodeLocale = "contentblock___node_locale",
+  ContentblockPage = "contentblock___page",
+  ContentblockPageChildContentfulPageDescriptionTextNodeChildren = "contentblock___page___childContentfulPageDescriptionTextNode___children",
+  ContentblockPageChildContentfulPageDescriptionTextNodeChildrenMdx = "contentblock___page___childContentfulPageDescriptionTextNode___childrenMdx",
+  ContentblockPageChildContentfulPageDescriptionTextNodeDescription = "contentblock___page___childContentfulPageDescriptionTextNode___description",
+  ContentblockPageChildContentfulPageDescriptionTextNodeId = "contentblock___page___childContentfulPageDescriptionTextNode___id",
+  ContentblockPageChildren = "contentblock___page___children",
+  ContentblockPageChildrenContentfulPageDescriptionTextNode = "contentblock___page___childrenContentfulPageDescriptionTextNode",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeChildren = "contentblock___page___childrenContentfulPageDescriptionTextNode___children",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeChildrenMdx = "contentblock___page___childrenContentfulPageDescriptionTextNode___childrenMdx",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeDescription = "contentblock___page___childrenContentfulPageDescriptionTextNode___description",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeId = "contentblock___page___childrenContentfulPageDescriptionTextNode___id",
+  ContentblockPageChildrenChildren = "contentblock___page___children___children",
+  ContentblockPageChildrenId = "contentblock___page___children___id",
+  ContentblockPageContent = "contentblock___page___content",
+  ContentblockPageContentChildren = "contentblock___page___content___children",
+  ContentblockPageContentContentfulId = "contentblock___page___content___contentful_id",
+  ContentblockPageContentCreatedAt = "contentblock___page___content___createdAt",
+  ContentblockPageContentId = "contentblock___page___content___id",
+  ContentblockPageContentMargin = "contentblock___page___content___margin",
+  ContentblockPageContentNodeLocale = "contentblock___page___content___node_locale",
+  ContentblockPageContentPage = "contentblock___page___content___page",
+  ContentblockPageContentSpaceId = "contentblock___page___content___spaceId",
+  ContentblockPageContentUniqueId = "contentblock___page___content___uniqueId",
+  ContentblockPageContentUpdatedAt = "contentblock___page___content___updatedAt",
+  ContentblockPageContentfulId = "contentblock___page___contentful_id",
+  ContentblockPageCreatedAt = "contentblock___page___createdAt",
+  ContentblockPageDescriptionChildren = "contentblock___page___description___children",
+  ContentblockPageDescriptionChildrenMdx = "contentblock___page___description___childrenMdx",
+  ContentblockPageDescriptionDescription = "contentblock___page___description___description",
+  ContentblockPageDescriptionId = "contentblock___page___description___id",
+  ContentblockPageId = "contentblock___page___id",
+  ContentblockPageInternalContent = "contentblock___page___internal___content",
+  ContentblockPageInternalContentDigest = "contentblock___page___internal___contentDigest",
+  ContentblockPageInternalDescription = "contentblock___page___internal___description",
+  ContentblockPageInternalFieldOwners = "contentblock___page___internal___fieldOwners",
+  ContentblockPageInternalIgnoreType = "contentblock___page___internal___ignoreType",
+  ContentblockPageInternalMediaType = "contentblock___page___internal___mediaType",
+  ContentblockPageInternalOwner = "contentblock___page___internal___owner",
+  ContentblockPageInternalType = "contentblock___page___internal___type",
+  ContentblockPageNodeLocale = "contentblock___page___node_locale",
+  ContentblockPageParentChildren = "contentblock___page___parent___children",
+  ContentblockPageParentId = "contentblock___page___parent___id",
+  ContentblockPageSpaceId = "contentblock___page___spaceId",
+  ContentblockPageSysRevision = "contentblock___page___sys___revision",
+  ContentblockPageSysType = "contentblock___page___sys___type",
+  ContentblockPageTitle = "contentblock___page___title",
+  ContentblockPageUpdatedAt = "contentblock___page___updatedAt",
+  ContentblockPageUrl = "contentblock___page___url",
+  ContentblockParentChildren = "contentblock___parent___children",
+  ContentblockParentChildrenChildren = "contentblock___parent___children___children",
+  ContentblockParentChildrenId = "contentblock___parent___children___id",
+  ContentblockParentId = "contentblock___parent___id",
+  ContentblockParentInternalContent = "contentblock___parent___internal___content",
+  ContentblockParentInternalContentDigest = "contentblock___parent___internal___contentDigest",
+  ContentblockParentInternalDescription = "contentblock___parent___internal___description",
+  ContentblockParentInternalFieldOwners = "contentblock___parent___internal___fieldOwners",
+  ContentblockParentInternalIgnoreType = "contentblock___parent___internal___ignoreType",
+  ContentblockParentInternalMediaType = "contentblock___parent___internal___mediaType",
+  ContentblockParentInternalOwner = "contentblock___parent___internal___owner",
+  ContentblockParentInternalType = "contentblock___parent___internal___type",
+  ContentblockParentParentChildren = "contentblock___parent___parent___children",
+  ContentblockParentParentId = "contentblock___parent___parent___id",
+  ContentblockSpaceId = "contentblock___spaceId",
+  ContentblockSysRevision = "contentblock___sys___revision",
+  ContentblockSysType = "contentblock___sys___type",
+  ContentblockUniqueId = "contentblock___uniqueId",
+  ContentblockUpdatedAt = "contentblock___updatedAt",
+  ContentfulId = "contentful_id",
+  CreatedAt = "createdAt",
+  Id = "id",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalDescription = "internal___description",
+  InternalFieldOwners = "internal___fieldOwners",
+  InternalIgnoreType = "internal___ignoreType",
+  InternalMediaType = "internal___mediaType",
+  InternalOwner = "internal___owner",
+  InternalType = "internal___type",
+  NodeLocale = "node_locale",
+  ParentChildren = "parent___children",
+  ParentChildrenChildren = "parent___children___children",
+  ParentChildrenChildrenChildren = "parent___children___children___children",
+  ParentChildrenChildrenId = "parent___children___children___id",
+  ParentChildrenId = "parent___children___id",
+  ParentChildrenInternalContent = "parent___children___internal___content",
+  ParentChildrenInternalContentDigest = "parent___children___internal___contentDigest",
+  ParentChildrenInternalDescription = "parent___children___internal___description",
+  ParentChildrenInternalFieldOwners = "parent___children___internal___fieldOwners",
+  ParentChildrenInternalIgnoreType = "parent___children___internal___ignoreType",
+  ParentChildrenInternalMediaType = "parent___children___internal___mediaType",
+  ParentChildrenInternalOwner = "parent___children___internal___owner",
+  ParentChildrenInternalType = "parent___children___internal___type",
+  ParentChildrenParentChildren = "parent___children___parent___children",
+  ParentChildrenParentId = "parent___children___parent___id",
+  ParentId = "parent___id",
+  ParentInternalContent = "parent___internal___content",
+  ParentInternalContentDigest = "parent___internal___contentDigest",
+  ParentInternalDescription = "parent___internal___description",
+  ParentInternalFieldOwners = "parent___internal___fieldOwners",
+  ParentInternalIgnoreType = "parent___internal___ignoreType",
+  ParentInternalMediaType = "parent___internal___mediaType",
+  ParentInternalOwner = "parent___internal___owner",
+  ParentInternalType = "parent___internal___type",
+  ParentParentChildren = "parent___parent___children",
+  ParentParentChildrenChildren = "parent___parent___children___children",
+  ParentParentChildrenId = "parent___parent___children___id",
+  ParentParentId = "parent___parent___id",
+  ParentParentInternalContent = "parent___parent___internal___content",
+  ParentParentInternalContentDigest = "parent___parent___internal___contentDigest",
+  ParentParentInternalDescription = "parent___parent___internal___description",
+  ParentParentInternalFieldOwners = "parent___parent___internal___fieldOwners",
+  ParentParentInternalIgnoreType = "parent___parent___internal___ignoreType",
+  ParentParentInternalMediaType = "parent___parent___internal___mediaType",
+  ParentParentInternalOwner = "parent___parent___internal___owner",
+  ParentParentInternalType = "parent___parent___internal___type",
+  ParentParentParentChildren = "parent___parent___parent___children",
+  ParentParentParentId = "parent___parent___parent___id",
+  SpaceId = "spaceId",
+  SysContentTypeSysId = "sys___contentType___sys___id",
+  SysContentTypeSysLinkType = "sys___contentType___sys___linkType",
+  SysContentTypeSysType = "sys___contentType___sys___type",
+  SysRevision = "sys___revision",
+  SysType = "sys___type",
+  TextRaw = "text___raw",
+  UniqueId = "uniqueId",
+  UpdatedAt = "updatedAt",
+}
+
+export type ContentfulRichTextBlockFilterInput = {
+  alignTextTo?: InputMaybe<StringQueryOperatorInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentful_id?: InputMaybe<StringQueryOperatorInput>;
+  createdAt?: InputMaybe<DateQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  node_locale?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  spaceId?: InputMaybe<StringQueryOperatorInput>;
+  sys?: InputMaybe<ContentfulRichTextBlockSysFilterInput>;
+  text?: InputMaybe<ContentfulRichTextBlockTextFilterInput>;
+  uniqueId?: InputMaybe<StringQueryOperatorInput>;
+  updatedAt?: InputMaybe<DateQueryOperatorInput>;
+};
+
+export type ContentfulRichTextBlockGroupConnection = {
+  __typename?: "ContentfulRichTextBlockGroupConnection";
+  distinct: Array<Scalars["String"]>;
+  edges: Array<ContentfulRichTextBlockEdge>;
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+  group: Array<ContentfulRichTextBlockGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<ContentfulRichTextBlock>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type ContentfulRichTextBlockGroupConnectionDistinctArgs = {
+  field: ContentfulRichTextBlockFieldsEnum;
+};
+
+export type ContentfulRichTextBlockGroupConnectionGroupArgs = {
+  field: ContentfulRichTextBlockFieldsEnum;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+};
+
+export type ContentfulRichTextBlockGroupConnectionMaxArgs = {
+  field: ContentfulRichTextBlockFieldsEnum;
+};
+
+export type ContentfulRichTextBlockGroupConnectionMinArgs = {
+  field: ContentfulRichTextBlockFieldsEnum;
+};
+
+export type ContentfulRichTextBlockGroupConnectionSumArgs = {
+  field: ContentfulRichTextBlockFieldsEnum;
+};
+
+export type ContentfulRichTextBlockSortInput = {
+  fields?: InputMaybe<Array<InputMaybe<ContentfulRichTextBlockFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
+
+export type ContentfulRichTextBlockSys = {
+  __typename?: "ContentfulRichTextBlockSys";
+  contentType?: Maybe<ContentfulRichTextBlockSysContentType>;
+  revision?: Maybe<Scalars["Int"]>;
+  type?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulRichTextBlockSysContentType = {
+  __typename?: "ContentfulRichTextBlockSysContentType";
+  sys?: Maybe<ContentfulRichTextBlockSysContentTypeSys>;
+};
+
+export type ContentfulRichTextBlockSysContentTypeFilterInput = {
+  sys?: InputMaybe<ContentfulRichTextBlockSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulRichTextBlockSysContentTypeSys = {
+  __typename?: "ContentfulRichTextBlockSysContentTypeSys";
+  id?: Maybe<Scalars["String"]>;
+  linkType?: Maybe<Scalars["String"]>;
+  type?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulRichTextBlockSysContentTypeSysFilterInput = {
+  id?: InputMaybe<StringQueryOperatorInput>;
+  linkType?: InputMaybe<StringQueryOperatorInput>;
+  type?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulRichTextBlockSysFilterInput = {
+  contentType?: InputMaybe<ContentfulRichTextBlockSysContentTypeFilterInput>;
+  revision?: InputMaybe<IntQueryOperatorInput>;
+  type?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulRichTextBlockText = {
+  __typename?: "ContentfulRichTextBlockText";
+  raw?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulRichTextBlockTextFilterInput = {
+  raw?: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type DateQueryOperatorInput = {
@@ -6918,7 +11573,11 @@ export enum PotraceTurnPolicy {
 
 export type Query = {
   __typename?: "Query";
+  allContentfulActionInfoBlock: ContentfulActionInfoBlockConnection;
   allContentfulAsset: ContentfulAssetConnection;
+  allContentfulAuthorAvatarBlock: ContentfulAuthorAvatarBlockConnection;
+  allContentfulAuthorAvatarBlockDescriptionTextNode: ContentfulAuthorAvatarBlockDescriptionTextNodeConnection;
+  allContentfulContentBlock: ContentfulContentBlockConnection;
   allContentfulContentType: ContentfulContentTypeConnection;
   allContentfulEntry: ContentfulEntryConnection;
   allContentfulLink: ContentfulLinkConnection;
@@ -6927,6 +11586,7 @@ export type Query = {
   allContentfulOptions: ContentfulOptionsConnection;
   allContentfulPage: ContentfulPageConnection;
   allContentfulPageDescriptionTextNode: ContentfulPageDescriptionTextNodeConnection;
+  allContentfulRichTextBlock: ContentfulRichTextBlockConnection;
   allDirectory: DirectoryConnection;
   allFile: FileConnection;
   allImageSharp: ImageSharpConnection;
@@ -6936,7 +11596,11 @@ export type Query = {
   allSiteFunction: SiteFunctionConnection;
   allSitePage: SitePageConnection;
   allSitePlugin: SitePluginConnection;
+  contentfulActionInfoBlock?: Maybe<ContentfulActionInfoBlock>;
   contentfulAsset?: Maybe<ContentfulAsset>;
+  contentfulAuthorAvatarBlock?: Maybe<ContentfulAuthorAvatarBlock>;
+  contentfulAuthorAvatarBlockDescriptionTextNode?: Maybe<ContentfulAuthorAvatarBlockDescriptionTextNode>;
+  contentfulContentBlock?: Maybe<ContentfulContentBlock>;
   contentfulContentType?: Maybe<ContentfulContentType>;
   contentfulEntry?: Maybe<ContentfulEntry>;
   contentfulLink?: Maybe<ContentfulLink>;
@@ -6945,6 +11609,7 @@ export type Query = {
   contentfulOptions?: Maybe<ContentfulOptions>;
   contentfulPage?: Maybe<ContentfulPage>;
   contentfulPageDescriptionTextNode?: Maybe<ContentfulPageDescriptionTextNode>;
+  contentfulRichTextBlock?: Maybe<ContentfulRichTextBlock>;
   directory?: Maybe<Directory>;
   file?: Maybe<File>;
   imageSharp?: Maybe<ImageSharp>;
@@ -6956,11 +11621,39 @@ export type Query = {
   sitePlugin?: Maybe<SitePlugin>;
 };
 
+export type QueryAllContentfulActionInfoBlockArgs = {
+  filter?: InputMaybe<ContentfulActionInfoBlockFilterInput>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+  sort?: InputMaybe<ContentfulActionInfoBlockSortInput>;
+};
+
 export type QueryAllContentfulAssetArgs = {
   filter?: InputMaybe<ContentfulAssetFilterInput>;
   limit?: InputMaybe<Scalars["Int"]>;
   skip?: InputMaybe<Scalars["Int"]>;
   sort?: InputMaybe<ContentfulAssetSortInput>;
+};
+
+export type QueryAllContentfulAuthorAvatarBlockArgs = {
+  filter?: InputMaybe<ContentfulAuthorAvatarBlockFilterInput>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+  sort?: InputMaybe<ContentfulAuthorAvatarBlockSortInput>;
+};
+
+export type QueryAllContentfulAuthorAvatarBlockDescriptionTextNodeArgs = {
+  filter?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFilterInput>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+  sort?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeSortInput>;
+};
+
+export type QueryAllContentfulContentBlockArgs = {
+  filter?: InputMaybe<ContentfulContentBlockFilterInput>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+  sort?: InputMaybe<ContentfulContentBlockSortInput>;
 };
 
 export type QueryAllContentfulContentTypeArgs = {
@@ -7017,6 +11710,13 @@ export type QueryAllContentfulPageDescriptionTextNodeArgs = {
   limit?: InputMaybe<Scalars["Int"]>;
   skip?: InputMaybe<Scalars["Int"]>;
   sort?: InputMaybe<ContentfulPageDescriptionTextNodeSortInput>;
+};
+
+export type QueryAllContentfulRichTextBlockArgs = {
+  filter?: InputMaybe<ContentfulRichTextBlockFilterInput>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+  sort?: InputMaybe<ContentfulRichTextBlockSortInput>;
 };
 
 export type QueryAllDirectoryArgs = {
@@ -7082,6 +11782,24 @@ export type QueryAllSitePluginArgs = {
   sort?: InputMaybe<SitePluginSortInput>;
 };
 
+export type QueryContentfulActionInfoBlockArgs = {
+  article?: InputMaybe<ContentfulActionInfoBlockArticleFilterInput>;
+  button?: InputMaybe<ContentfulLinkFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentful_id?: InputMaybe<StringQueryOperatorInput>;
+  createdAt?: InputMaybe<DateQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  node_locale?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  spaceId?: InputMaybe<StringQueryOperatorInput>;
+  sys?: InputMaybe<ContentfulActionInfoBlockSysFilterInput>;
+  textPosition?: InputMaybe<StringQueryOperatorInput>;
+  uniqueId?: InputMaybe<StringQueryOperatorInput>;
+  updatedAt?: InputMaybe<DateQueryOperatorInput>;
+};
+
 export type QueryContentfulAssetArgs = {
   children?: InputMaybe<NodeFilterListInput>;
   contentful_id?: InputMaybe<StringQueryOperatorInput>;
@@ -7109,6 +11827,54 @@ export type QueryContentfulAssetArgs = {
   width?: InputMaybe<IntQueryOperatorInput>;
 };
 
+export type QueryContentfulAuthorAvatarBlockArgs = {
+  avatar?: InputMaybe<ContentfulAssetFilterInput>;
+  childContentfulAuthorAvatarBlockDescriptionTextNode?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  childrenContentfulAuthorAvatarBlockDescriptionTextNode?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFilterListInput>;
+  contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentful_id?: InputMaybe<StringQueryOperatorInput>;
+  createdAt?: InputMaybe<DateQueryOperatorInput>;
+  description?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFilterInput>;
+  fullName?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  node_locale?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  socialSiteLinks?: InputMaybe<ContentfulLinkFilterListInput>;
+  spaceId?: InputMaybe<StringQueryOperatorInput>;
+  sys?: InputMaybe<ContentfulAuthorAvatarBlockSysFilterInput>;
+  uniqueId?: InputMaybe<StringQueryOperatorInput>;
+  updatedAt?: InputMaybe<DateQueryOperatorInput>;
+};
+
+export type QueryContentfulAuthorAvatarBlockDescriptionTextNodeArgs = {
+  childMdx?: InputMaybe<MdxFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  childrenMdx?: InputMaybe<MdxFilterListInput>;
+  description?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  sys?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeSysFilterInput>;
+};
+
+export type QueryContentfulContentBlockArgs = {
+  children?: InputMaybe<NodeFilterListInput>;
+  contentful_id?: InputMaybe<StringQueryOperatorInput>;
+  createdAt?: InputMaybe<DateQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  margin?: InputMaybe<StringQueryOperatorInput>;
+  node_locale?: InputMaybe<StringQueryOperatorInput>;
+  page?: InputMaybe<ContentfulPageFilterListInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  spaceId?: InputMaybe<StringQueryOperatorInput>;
+  sys?: InputMaybe<ContentfulContentBlockSysFilterInput>;
+  uniqueId?: InputMaybe<StringQueryOperatorInput>;
+  updatedAt?: InputMaybe<DateQueryOperatorInput>;
+};
+
 export type QueryContentfulContentTypeArgs = {
   children?: InputMaybe<NodeFilterListInput>;
   description?: InputMaybe<StringQueryOperatorInput>;
@@ -7130,6 +11896,8 @@ export type QueryContentfulEntryArgs = {
 };
 
 export type QueryContentfulLinkArgs = {
+  actioninfoblock?: InputMaybe<ContentfulActionInfoBlockFilterListInput>;
+  authoravatarblock?: InputMaybe<ContentfulAuthorAvatarBlockFilterListInput>;
   childContentfulLinkUrlTextNode?: InputMaybe<ContentfulLinkUrlTextNodeFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
   childrenContentfulLinkUrlTextNode?: InputMaybe<ContentfulLinkUrlTextNodeFilterListInput>;
@@ -7196,6 +11964,7 @@ export type QueryContentfulPageArgs = {
   childContentfulPageDescriptionTextNode?: InputMaybe<ContentfulPageDescriptionTextNodeFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
   childrenContentfulPageDescriptionTextNode?: InputMaybe<ContentfulPageDescriptionTextNodeFilterListInput>;
+  content?: InputMaybe<ContentfulContentBlockFilterListInput>;
   contentful_id?: InputMaybe<StringQueryOperatorInput>;
   createdAt?: InputMaybe<DateQueryOperatorInput>;
   description?: InputMaybe<ContentfulPageDescriptionTextNodeFilterInput>;
@@ -7219,6 +11988,23 @@ export type QueryContentfulPageDescriptionTextNodeArgs = {
   internal?: InputMaybe<InternalFilterInput>;
   parent?: InputMaybe<NodeFilterInput>;
   sys?: InputMaybe<ContentfulPageDescriptionTextNodeSysFilterInput>;
+};
+
+export type QueryContentfulRichTextBlockArgs = {
+  alignTextTo?: InputMaybe<StringQueryOperatorInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentful_id?: InputMaybe<StringQueryOperatorInput>;
+  createdAt?: InputMaybe<DateQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  node_locale?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  spaceId?: InputMaybe<StringQueryOperatorInput>;
+  sys?: InputMaybe<ContentfulRichTextBlockSysFilterInput>;
+  text?: InputMaybe<ContentfulRichTextBlockTextFilterInput>;
+  uniqueId?: InputMaybe<StringQueryOperatorInput>;
+  updatedAt?: InputMaybe<DateQueryOperatorInput>;
 };
 
 export type QueryDirectoryArgs = {
@@ -8631,6 +13417,347 @@ export type WebPOptions = {
   quality?: InputMaybe<Scalars["Int"]>;
 };
 
+export type ContentfulAuthorAvatarBlockDescriptionTextNode = Node & {
+  __typename?: "contentfulAuthorAvatarBlockDescriptionTextNode";
+  /** Returns the first child node of type Mdx or null if there are no children of given type on this node */
+  childMdx?: Maybe<Mdx>;
+  children: Array<Node>;
+  /** Returns all children nodes filtered by type Mdx */
+  childrenMdx?: Maybe<Array<Maybe<Mdx>>>;
+  description?: Maybe<Scalars["String"]>;
+  id: Scalars["ID"];
+  internal: Internal;
+  parent?: Maybe<Node>;
+  sys?: Maybe<ContentfulAuthorAvatarBlockDescriptionTextNodeSys>;
+};
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeConnection = {
+  __typename?: "contentfulAuthorAvatarBlockDescriptionTextNodeConnection";
+  distinct: Array<Scalars["String"]>;
+  edges: Array<ContentfulAuthorAvatarBlockDescriptionTextNodeEdge>;
+  group: Array<ContentfulAuthorAvatarBlockDescriptionTextNodeGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<ContentfulAuthorAvatarBlockDescriptionTextNode>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeConnectionDistinctArgs =
+  {
+    field: ContentfulAuthorAvatarBlockDescriptionTextNodeFieldsEnum;
+  };
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeConnectionGroupArgs =
+  {
+    field: ContentfulAuthorAvatarBlockDescriptionTextNodeFieldsEnum;
+    limit?: InputMaybe<Scalars["Int"]>;
+    skip?: InputMaybe<Scalars["Int"]>;
+  };
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeConnectionMaxArgs = {
+  field: ContentfulAuthorAvatarBlockDescriptionTextNodeFieldsEnum;
+};
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeConnectionMinArgs = {
+  field: ContentfulAuthorAvatarBlockDescriptionTextNodeFieldsEnum;
+};
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeConnectionSumArgs = {
+  field: ContentfulAuthorAvatarBlockDescriptionTextNodeFieldsEnum;
+};
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeEdge = {
+  __typename?: "contentfulAuthorAvatarBlockDescriptionTextNodeEdge";
+  next?: Maybe<ContentfulAuthorAvatarBlockDescriptionTextNode>;
+  node: ContentfulAuthorAvatarBlockDescriptionTextNode;
+  previous?: Maybe<ContentfulAuthorAvatarBlockDescriptionTextNode>;
+};
+
+export enum ContentfulAuthorAvatarBlockDescriptionTextNodeFieldsEnum {
+  ChildMdxBody = "childMdx___body",
+  ChildMdxChildren = "childMdx___children",
+  ChildMdxChildrenChildren = "childMdx___children___children",
+  ChildMdxChildrenChildrenChildren = "childMdx___children___children___children",
+  ChildMdxChildrenChildrenId = "childMdx___children___children___id",
+  ChildMdxChildrenId = "childMdx___children___id",
+  ChildMdxChildrenInternalContent = "childMdx___children___internal___content",
+  ChildMdxChildrenInternalContentDigest = "childMdx___children___internal___contentDigest",
+  ChildMdxChildrenInternalDescription = "childMdx___children___internal___description",
+  ChildMdxChildrenInternalFieldOwners = "childMdx___children___internal___fieldOwners",
+  ChildMdxChildrenInternalIgnoreType = "childMdx___children___internal___ignoreType",
+  ChildMdxChildrenInternalMediaType = "childMdx___children___internal___mediaType",
+  ChildMdxChildrenInternalOwner = "childMdx___children___internal___owner",
+  ChildMdxChildrenInternalType = "childMdx___children___internal___type",
+  ChildMdxChildrenParentChildren = "childMdx___children___parent___children",
+  ChildMdxChildrenParentId = "childMdx___children___parent___id",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildMdxExcerpt = "childMdx___excerpt",
+  ChildMdxFileAbsolutePath = "childMdx___fileAbsolutePath",
+  ChildMdxFrontmatterTitle = "childMdx___frontmatter___title",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildMdxHeadings = "childMdx___headings",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildMdxHeadingsDepth = "childMdx___headings___depth",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildMdxHeadingsValue = "childMdx___headings___value",
+  ChildMdxHtml = "childMdx___html",
+  ChildMdxId = "childMdx___id",
+  ChildMdxInternalContent = "childMdx___internal___content",
+  ChildMdxInternalContentDigest = "childMdx___internal___contentDigest",
+  ChildMdxInternalDescription = "childMdx___internal___description",
+  ChildMdxInternalFieldOwners = "childMdx___internal___fieldOwners",
+  ChildMdxInternalIgnoreType = "childMdx___internal___ignoreType",
+  ChildMdxInternalMediaType = "childMdx___internal___mediaType",
+  ChildMdxInternalOwner = "childMdx___internal___owner",
+  ChildMdxInternalType = "childMdx___internal___type",
+  ChildMdxMdxAst = "childMdx___mdxAST",
+  ChildMdxParentChildren = "childMdx___parent___children",
+  ChildMdxParentChildrenChildren = "childMdx___parent___children___children",
+  ChildMdxParentChildrenId = "childMdx___parent___children___id",
+  ChildMdxParentId = "childMdx___parent___id",
+  ChildMdxParentInternalContent = "childMdx___parent___internal___content",
+  ChildMdxParentInternalContentDigest = "childMdx___parent___internal___contentDigest",
+  ChildMdxParentInternalDescription = "childMdx___parent___internal___description",
+  ChildMdxParentInternalFieldOwners = "childMdx___parent___internal___fieldOwners",
+  ChildMdxParentInternalIgnoreType = "childMdx___parent___internal___ignoreType",
+  ChildMdxParentInternalMediaType = "childMdx___parent___internal___mediaType",
+  ChildMdxParentInternalOwner = "childMdx___parent___internal___owner",
+  ChildMdxParentInternalType = "childMdx___parent___internal___type",
+  ChildMdxParentParentChildren = "childMdx___parent___parent___children",
+  ChildMdxParentParentId = "childMdx___parent___parent___id",
+  ChildMdxRawBody = "childMdx___rawBody",
+  ChildMdxSlug = "childMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildMdxTableOfContents = "childMdx___tableOfContents",
+  ChildMdxTimeToRead = "childMdx___timeToRead",
+  ChildMdxWordCountParagraphs = "childMdx___wordCount___paragraphs",
+  ChildMdxWordCountSentences = "childMdx___wordCount___sentences",
+  ChildMdxWordCountWords = "childMdx___wordCount___words",
+  Children = "children",
+  ChildrenMdx = "childrenMdx",
+  ChildrenMdxBody = "childrenMdx___body",
+  ChildrenMdxChildren = "childrenMdx___children",
+  ChildrenMdxChildrenChildren = "childrenMdx___children___children",
+  ChildrenMdxChildrenChildrenChildren = "childrenMdx___children___children___children",
+  ChildrenMdxChildrenChildrenId = "childrenMdx___children___children___id",
+  ChildrenMdxChildrenId = "childrenMdx___children___id",
+  ChildrenMdxChildrenInternalContent = "childrenMdx___children___internal___content",
+  ChildrenMdxChildrenInternalContentDigest = "childrenMdx___children___internal___contentDigest",
+  ChildrenMdxChildrenInternalDescription = "childrenMdx___children___internal___description",
+  ChildrenMdxChildrenInternalFieldOwners = "childrenMdx___children___internal___fieldOwners",
+  ChildrenMdxChildrenInternalIgnoreType = "childrenMdx___children___internal___ignoreType",
+  ChildrenMdxChildrenInternalMediaType = "childrenMdx___children___internal___mediaType",
+  ChildrenMdxChildrenInternalOwner = "childrenMdx___children___internal___owner",
+  ChildrenMdxChildrenInternalType = "childrenMdx___children___internal___type",
+  ChildrenMdxChildrenParentChildren = "childrenMdx___children___parent___children",
+  ChildrenMdxChildrenParentId = "childrenMdx___children___parent___id",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenMdxExcerpt = "childrenMdx___excerpt",
+  ChildrenMdxFileAbsolutePath = "childrenMdx___fileAbsolutePath",
+  ChildrenMdxFrontmatterTitle = "childrenMdx___frontmatter___title",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenMdxHeadings = "childrenMdx___headings",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenMdxHeadingsDepth = "childrenMdx___headings___depth",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenMdxHeadingsValue = "childrenMdx___headings___value",
+  ChildrenMdxHtml = "childrenMdx___html",
+  ChildrenMdxId = "childrenMdx___id",
+  ChildrenMdxInternalContent = "childrenMdx___internal___content",
+  ChildrenMdxInternalContentDigest = "childrenMdx___internal___contentDigest",
+  ChildrenMdxInternalDescription = "childrenMdx___internal___description",
+  ChildrenMdxInternalFieldOwners = "childrenMdx___internal___fieldOwners",
+  ChildrenMdxInternalIgnoreType = "childrenMdx___internal___ignoreType",
+  ChildrenMdxInternalMediaType = "childrenMdx___internal___mediaType",
+  ChildrenMdxInternalOwner = "childrenMdx___internal___owner",
+  ChildrenMdxInternalType = "childrenMdx___internal___type",
+  ChildrenMdxMdxAst = "childrenMdx___mdxAST",
+  ChildrenMdxParentChildren = "childrenMdx___parent___children",
+  ChildrenMdxParentChildrenChildren = "childrenMdx___parent___children___children",
+  ChildrenMdxParentChildrenId = "childrenMdx___parent___children___id",
+  ChildrenMdxParentId = "childrenMdx___parent___id",
+  ChildrenMdxParentInternalContent = "childrenMdx___parent___internal___content",
+  ChildrenMdxParentInternalContentDigest = "childrenMdx___parent___internal___contentDigest",
+  ChildrenMdxParentInternalDescription = "childrenMdx___parent___internal___description",
+  ChildrenMdxParentInternalFieldOwners = "childrenMdx___parent___internal___fieldOwners",
+  ChildrenMdxParentInternalIgnoreType = "childrenMdx___parent___internal___ignoreType",
+  ChildrenMdxParentInternalMediaType = "childrenMdx___parent___internal___mediaType",
+  ChildrenMdxParentInternalOwner = "childrenMdx___parent___internal___owner",
+  ChildrenMdxParentInternalType = "childrenMdx___parent___internal___type",
+  ChildrenMdxParentParentChildren = "childrenMdx___parent___parent___children",
+  ChildrenMdxParentParentId = "childrenMdx___parent___parent___id",
+  ChildrenMdxRawBody = "childrenMdx___rawBody",
+  ChildrenMdxSlug = "childrenMdx___slug",
+  /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
+  ChildrenMdxTableOfContents = "childrenMdx___tableOfContents",
+  ChildrenMdxTimeToRead = "childrenMdx___timeToRead",
+  ChildrenMdxWordCountParagraphs = "childrenMdx___wordCount___paragraphs",
+  ChildrenMdxWordCountSentences = "childrenMdx___wordCount___sentences",
+  ChildrenMdxWordCountWords = "childrenMdx___wordCount___words",
+  ChildrenChildren = "children___children",
+  ChildrenChildrenChildren = "children___children___children",
+  ChildrenChildrenChildrenChildren = "children___children___children___children",
+  ChildrenChildrenChildrenId = "children___children___children___id",
+  ChildrenChildrenId = "children___children___id",
+  ChildrenChildrenInternalContent = "children___children___internal___content",
+  ChildrenChildrenInternalContentDigest = "children___children___internal___contentDigest",
+  ChildrenChildrenInternalDescription = "children___children___internal___description",
+  ChildrenChildrenInternalFieldOwners = "children___children___internal___fieldOwners",
+  ChildrenChildrenInternalIgnoreType = "children___children___internal___ignoreType",
+  ChildrenChildrenInternalMediaType = "children___children___internal___mediaType",
+  ChildrenChildrenInternalOwner = "children___children___internal___owner",
+  ChildrenChildrenInternalType = "children___children___internal___type",
+  ChildrenChildrenParentChildren = "children___children___parent___children",
+  ChildrenChildrenParentId = "children___children___parent___id",
+  ChildrenId = "children___id",
+  ChildrenInternalContent = "children___internal___content",
+  ChildrenInternalContentDigest = "children___internal___contentDigest",
+  ChildrenInternalDescription = "children___internal___description",
+  ChildrenInternalFieldOwners = "children___internal___fieldOwners",
+  ChildrenInternalIgnoreType = "children___internal___ignoreType",
+  ChildrenInternalMediaType = "children___internal___mediaType",
+  ChildrenInternalOwner = "children___internal___owner",
+  ChildrenInternalType = "children___internal___type",
+  ChildrenParentChildren = "children___parent___children",
+  ChildrenParentChildrenChildren = "children___parent___children___children",
+  ChildrenParentChildrenId = "children___parent___children___id",
+  ChildrenParentId = "children___parent___id",
+  ChildrenParentInternalContent = "children___parent___internal___content",
+  ChildrenParentInternalContentDigest = "children___parent___internal___contentDigest",
+  ChildrenParentInternalDescription = "children___parent___internal___description",
+  ChildrenParentInternalFieldOwners = "children___parent___internal___fieldOwners",
+  ChildrenParentInternalIgnoreType = "children___parent___internal___ignoreType",
+  ChildrenParentInternalMediaType = "children___parent___internal___mediaType",
+  ChildrenParentInternalOwner = "children___parent___internal___owner",
+  ChildrenParentInternalType = "children___parent___internal___type",
+  ChildrenParentParentChildren = "children___parent___parent___children",
+  ChildrenParentParentId = "children___parent___parent___id",
+  Description = "description",
+  Id = "id",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalDescription = "internal___description",
+  InternalFieldOwners = "internal___fieldOwners",
+  InternalIgnoreType = "internal___ignoreType",
+  InternalMediaType = "internal___mediaType",
+  InternalOwner = "internal___owner",
+  InternalType = "internal___type",
+  ParentChildren = "parent___children",
+  ParentChildrenChildren = "parent___children___children",
+  ParentChildrenChildrenChildren = "parent___children___children___children",
+  ParentChildrenChildrenId = "parent___children___children___id",
+  ParentChildrenId = "parent___children___id",
+  ParentChildrenInternalContent = "parent___children___internal___content",
+  ParentChildrenInternalContentDigest = "parent___children___internal___contentDigest",
+  ParentChildrenInternalDescription = "parent___children___internal___description",
+  ParentChildrenInternalFieldOwners = "parent___children___internal___fieldOwners",
+  ParentChildrenInternalIgnoreType = "parent___children___internal___ignoreType",
+  ParentChildrenInternalMediaType = "parent___children___internal___mediaType",
+  ParentChildrenInternalOwner = "parent___children___internal___owner",
+  ParentChildrenInternalType = "parent___children___internal___type",
+  ParentChildrenParentChildren = "parent___children___parent___children",
+  ParentChildrenParentId = "parent___children___parent___id",
+  ParentId = "parent___id",
+  ParentInternalContent = "parent___internal___content",
+  ParentInternalContentDigest = "parent___internal___contentDigest",
+  ParentInternalDescription = "parent___internal___description",
+  ParentInternalFieldOwners = "parent___internal___fieldOwners",
+  ParentInternalIgnoreType = "parent___internal___ignoreType",
+  ParentInternalMediaType = "parent___internal___mediaType",
+  ParentInternalOwner = "parent___internal___owner",
+  ParentInternalType = "parent___internal___type",
+  ParentParentChildren = "parent___parent___children",
+  ParentParentChildrenChildren = "parent___parent___children___children",
+  ParentParentChildrenId = "parent___parent___children___id",
+  ParentParentId = "parent___parent___id",
+  ParentParentInternalContent = "parent___parent___internal___content",
+  ParentParentInternalContentDigest = "parent___parent___internal___contentDigest",
+  ParentParentInternalDescription = "parent___parent___internal___description",
+  ParentParentInternalFieldOwners = "parent___parent___internal___fieldOwners",
+  ParentParentInternalIgnoreType = "parent___parent___internal___ignoreType",
+  ParentParentInternalMediaType = "parent___parent___internal___mediaType",
+  ParentParentInternalOwner = "parent___parent___internal___owner",
+  ParentParentInternalType = "parent___parent___internal___type",
+  ParentParentParentChildren = "parent___parent___parent___children",
+  ParentParentParentId = "parent___parent___parent___id",
+  SysType = "sys___type",
+}
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeFilterInput = {
+  childMdx?: InputMaybe<MdxFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  childrenMdx?: InputMaybe<MdxFilterListInput>;
+  description?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  sys?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeSysFilterInput>;
+};
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeFilterListInput = {
+  elemMatch?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFilterInput>;
+};
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeGroupConnection = {
+  __typename?: "contentfulAuthorAvatarBlockDescriptionTextNodeGroupConnection";
+  distinct: Array<Scalars["String"]>;
+  edges: Array<ContentfulAuthorAvatarBlockDescriptionTextNodeEdge>;
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+  group: Array<ContentfulAuthorAvatarBlockDescriptionTextNodeGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<ContentfulAuthorAvatarBlockDescriptionTextNode>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeGroupConnectionDistinctArgs =
+  {
+    field: ContentfulAuthorAvatarBlockDescriptionTextNodeFieldsEnum;
+  };
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeGroupConnectionGroupArgs =
+  {
+    field: ContentfulAuthorAvatarBlockDescriptionTextNodeFieldsEnum;
+    limit?: InputMaybe<Scalars["Int"]>;
+    skip?: InputMaybe<Scalars["Int"]>;
+  };
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeGroupConnectionMaxArgs =
+  {
+    field: ContentfulAuthorAvatarBlockDescriptionTextNodeFieldsEnum;
+  };
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeGroupConnectionMinArgs =
+  {
+    field: ContentfulAuthorAvatarBlockDescriptionTextNodeFieldsEnum;
+  };
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeGroupConnectionSumArgs =
+  {
+    field: ContentfulAuthorAvatarBlockDescriptionTextNodeFieldsEnum;
+  };
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeSortInput = {
+  fields?: InputMaybe<
+    Array<InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFieldsEnum>>
+  >;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeSys = {
+  __typename?: "contentfulAuthorAvatarBlockDescriptionTextNodeSys";
+  type?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulAuthorAvatarBlockDescriptionTextNodeSysFilterInput = {
+  type?: InputMaybe<StringQueryOperatorInput>;
+};
+
 export type ContentfulLinkUrlTextNode = Node & {
   __typename?: "contentfulLinkUrlTextNode";
   /** Returns the first child node of type Mdx or null if there are no children of given type on this node */
@@ -9569,19 +14696,152 @@ export type GetAllSiteContentQuery = {
   __typename?: "Query";
   allContentfulPage: {
     __typename?: "ContentfulPageConnection";
-    edges: Array<{
-      __typename?: "ContentfulPageEdge";
-      node: {
-        __typename?: "ContentfulPage";
-        id: string;
-        node_locale: string;
-        url?: string | null;
-        title?: string | null;
-        description?: {
-          __typename?: "contentfulPageDescriptionTextNode";
-          description?: string | null;
+    nodes: Array<{
+      __typename?: "ContentfulPage";
+      id: string;
+      url?: string | null;
+      title?: string | null;
+      node_locale: string;
+      description?: {
+        __typename?: "contentfulPageDescriptionTextNode";
+        description?: string | null;
+        sys?: {
+          __typename?: "contentfulPageDescriptionTextNodeSys";
+          type?: string | null;
         } | null;
-      };
+      } | null;
+      sys?: { __typename?: "ContentfulPageSys"; type?: string | null } | null;
+      content?: Array<{
+        __typename?: "ContentfulContentBlock";
+        id: string;
+        uniqueId?: string | null;
+        margin?: string | null;
+        sys?: {
+          __typename?: "ContentfulContentBlockSys";
+          type?: string | null;
+          revision?: number | null;
+        } | null;
+        blocks?: Array<
+          | {
+              __typename?: "ContentfulActionInfoBlock";
+              id: string;
+              textPosition?: string | null;
+              sys?: {
+                __typename?: "ContentfulActionInfoBlockSys";
+                type?: string | null;
+                contentType?: {
+                  __typename?: "ContentfulActionInfoBlockSysContentType";
+                  sys?: {
+                    __typename?: "ContentfulActionInfoBlockSysContentTypeSys";
+                    id?: string | null;
+                  } | null;
+                } | null;
+              } | null;
+              article?: {
+                __typename?: "ContentfulActionInfoBlockArticle";
+                raw?: string | null;
+              } | null;
+              button?: {
+                __typename?: "ContentfulLink";
+                id: string;
+                title?: string | null;
+                url?: {
+                  __typename?: "contentfulLinkUrlTextNode";
+                  url?: string | null;
+                  sys?: {
+                    __typename?: "contentfulLinkUrlTextNodeSys";
+                    type?: string | null;
+                  } | null;
+                } | null;
+                sys?: {
+                  __typename?: "ContentfulLinkSys";
+                  type?: string | null;
+                } | null;
+                image?: {
+                  __typename?: "ContentfulAsset";
+                  id: string;
+                  gatsbyImageData?: any | null;
+                } | null;
+              } | null;
+            }
+          | {
+              __typename?: "ContentfulAuthorAvatarBlock";
+              id: string;
+              fullName?: string | null;
+              description?: {
+                __typename?: "contentfulAuthorAvatarBlockDescriptionTextNode";
+                description?: string | null;
+                sys?: {
+                  __typename?: "contentfulAuthorAvatarBlockDescriptionTextNodeSys";
+                  type?: string | null;
+                } | null;
+              } | null;
+              sys?: {
+                __typename?: "ContentfulAuthorAvatarBlockSys";
+                type?: string | null;
+                contentType?: {
+                  __typename?: "ContentfulAuthorAvatarBlockSysContentType";
+                  sys?: {
+                    __typename?: "ContentfulAuthorAvatarBlockSysContentTypeSys";
+                    id?: string | null;
+                  } | null;
+                } | null;
+              } | null;
+              avatar?: {
+                __typename?: "ContentfulAsset";
+                gatsbyImageData?: any | null;
+                title?: string | null;
+                description?: string | null;
+                id: string;
+                sys?: {
+                  __typename?: "ContentfulAssetSys";
+                  type?: string | null;
+                } | null;
+              } | null;
+              socialSiteLinks?: Array<{
+                __typename?: "ContentfulLink";
+                id: string;
+                title?: string | null;
+                url?: {
+                  __typename?: "contentfulLinkUrlTextNode";
+                  url?: string | null;
+                  sys?: {
+                    __typename?: "contentfulLinkUrlTextNodeSys";
+                    type?: string | null;
+                  } | null;
+                } | null;
+                image?: {
+                  __typename?: "ContentfulAsset";
+                  id: string;
+                  gatsbyImageData?: any | null;
+                  title?: string | null;
+                  description?: string | null;
+                } | null;
+              } | null> | null;
+            }
+          | {
+              __typename?: "ContentfulRichTextBlock";
+              id: string;
+              alignTextTo?: string | null;
+              text?: {
+                __typename?: "ContentfulRichTextBlockText";
+                raw?: string | null;
+              } | null;
+              sys?: {
+                __typename?: "ContentfulRichTextBlockSys";
+                type?: string | null;
+                contentType?: {
+                  __typename?: "ContentfulRichTextBlockSysContentType";
+                  sys?: {
+                    __typename?: "ContentfulRichTextBlockSysContentTypeSys";
+                    id?: string | null;
+                  } | null;
+                } | null;
+              } | null;
+            }
+          | null
+        > | null;
+      } | null> | null;
     }>;
   };
   allContentfulLocale: {
@@ -9916,15 +15176,120 @@ export const useFindSiteMainOptionsBottomTabQuery = <
   );
 export const GetAllSiteContentDocument = `
     query GetAllSiteContent {
-  allContentfulPage {
-    edges {
-      node {
+  allContentfulPage(filter: {url: {regex: "///"}}, limit: 500) {
+    nodes {
+      id
+      url
+      title
+      node_locale
+      description {
+        description
+        sys {
+          type
+        }
+      }
+      sys {
+        type
+      }
+      content {
+        sys {
+          type
+          revision
+        }
         id
-        node_locale
-        url
-        title
-        description {
-          description
+        uniqueId
+        margin
+        blocks {
+          ... on ContentfulActionInfoBlock {
+            id
+            textPosition
+            sys {
+              type
+              contentType {
+                sys {
+                  id
+                }
+              }
+            }
+            article {
+              raw
+            }
+            button {
+              id
+              title
+              url {
+                url
+                sys {
+                  type
+                }
+              }
+              sys {
+                type
+              }
+              image {
+                id
+                gatsbyImageData
+              }
+            }
+          }
+          ... on ContentfulAuthorAvatarBlock {
+            id
+            fullName
+            description {
+              description
+              sys {
+                type
+              }
+            }
+            sys {
+              type
+              contentType {
+                sys {
+                  id
+                }
+              }
+            }
+            avatar {
+              gatsbyImageData(quality: 80, width: 100, height: 100)
+              title
+              description
+              sys {
+                type
+              }
+              id
+            }
+            socialSiteLinks {
+              id
+              title
+              url {
+                url
+                sys {
+                  type
+                }
+              }
+              image {
+                id
+                gatsbyImageData(width: 32, height: 32, quality: 80)
+                title
+                description
+              }
+            }
+          }
+          ... on ContentfulRichTextBlock {
+            id
+            text {
+              raw
+            }
+            alignTextTo
+            sys {
+              type
+              contentType {
+                sys {
+                  id
+                }
+              }
+            }
+          }
         }
       }
     }

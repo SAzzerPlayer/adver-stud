@@ -1,10 +1,10 @@
 import * as React from "react";
-import { Layout } from "../../components/Layout";
-import { SEO } from "../../components/SEO";
-import { ColumnContent, H2 } from "../../components/shared";
-import { TitleBlock } from "../../components/blocks";
+import { Layout } from "src/_components/Layout";
+import { SEO } from "src/_components/SEO";
+import { ColumnContent, H2 } from "src/_components/shared";
+import { TitleBlock } from "src/_components/blocks";
 import styled from "styled-components";
-import { BadgeCollectionBlock } from "../../components/blocks";
+import { BadgeCollectionBlock } from "src/_components/blocks";
 import {
   semestrBadgeCollectionItems,
   sessionBadgeCollectionItems,
