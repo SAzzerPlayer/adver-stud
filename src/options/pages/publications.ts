@@ -1,4 +1,4 @@
-import { TBadgeItem } from "../../components/blocks";
+import { TBadgeItem } from "src/_components/blocks";
 
 export const bachelorBadgeCollectionItems: TBadgeItem[] = [
   {

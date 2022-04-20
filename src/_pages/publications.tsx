@@ -1,13 +1,13 @@
 import * as React from "react";
-import { Layout } from "../components/Layout";
-import { SEO } from "../components/SEO";
-import { ColumnContent, ButtonInternalLink } from "../components/shared";
-import { BadgeCollectionBlock, TitleBlock } from "../components/blocks";
+import { Layout } from "src/_components/Layout";
+import { SEO } from "src/_components/SEO";
+import { ColumnContent, ButtonInternalLink } from "src/_components/shared";
+import { BadgeCollectionBlock, TitleBlock } from "src/_components/blocks";
 import {
   bachelorBadgeCollectionItems,
   masterBadgeCollectionItems,
-} from "../options/pages/publications";
-import { getGapStyle } from "../styles/common";
+} from "src/options/pages/publications";
+import { getGapStyle } from "src/styles/common";
 import styled from "styled-components";
 
 const TabView = styled.div`

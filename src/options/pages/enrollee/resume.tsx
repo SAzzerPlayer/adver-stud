@@ -2,8 +2,8 @@ import React from "react";
 import {
   IAttentionInfoBlockProps,
   TBadgeItem,
-} from "../../../components/blocks";
-import { Paragraph } from "../../../components/shared";
+} from "src/_components/blocks";
+import { Paragraph } from "src/_components/shared";
 
 export const attentionBlocks: IAttentionInfoBlockProps[] = [
   {

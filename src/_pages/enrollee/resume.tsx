@@ -1,16 +1,16 @@
-import { SEO } from "../../components/SEO";
-import { Layout } from "../../components/Layout";
+import { SEO } from "src/_components/SEO";
+import { Layout } from "src/_components/Layout";
 import {
   attentionBlocks,
   methodBadgeCollectionItems,
-} from "../../options/pages/enrollee/resume";
+} from "src/options/pages/enrollee/resume";
 import {
   AttentionInfoBlock,
   BadgeCollectionBlock,
   TitleBlock,
-} from "../../components/blocks";
+} from "src/_components/blocks";
 import * as React from "react";
-import { ColumnContent, H2, Paragraph } from "../../components/shared";
+import { ColumnContent, H2, Paragraph } from "src/_components/shared";
 
 const ResumePage = () => {
   return (

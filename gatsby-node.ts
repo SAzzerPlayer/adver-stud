@@ -1,7 +1,3 @@
-// @ts-check
-/**
- * @type {import('gatsby').GatsbyNode['createPages']}
- */
 import { GatsbyNode } from "gatsby";
 import {
   GetAllSiteContentDocument,
@@ -12,12 +8,12 @@ const path = require("path");
 const createPages: GatsbyNode["createPages"] = async ({ actions, graphql }) => {
   const result = await graphql(GetAllSiteContentDocument);
   const data = result?.data as GetAllSiteContentQuery;
-  for (const edge of (data?.allContentfulPage?.edges || [])) {
+  for (const node of (data?.allContentfulPage?.nodes || [])) {
     actions.createPage({
-      path: edge.node.url!,
+      path: node.url!.trim(),
       component: path.resolve("src/template/page.tsx"),
       context: {
-        ...edge.node,
+        ...node,
       },
     });
   }

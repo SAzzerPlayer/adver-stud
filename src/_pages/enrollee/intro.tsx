@@ -1,9 +1,9 @@
-import { SEO } from "../../components/SEO";
-import { Layout } from "../../components/Layout";
-import { attentionBlocks } from "../../options/pages/enrollee/intro";
-import { AttentionInfoBlock } from "../../components/blocks";
+import { SEO } from "src/_components/SEO";
+import { Layout } from "src/_components/Layout";
+import { attentionBlocks } from "src/options/pages/enrollee/intro";
+import { AttentionInfoBlock } from "src/_components/blocks";
 import * as React from "react";
-import { ColumnContent } from "../../components/shared";
+import { ColumnContent } from "src/_components/shared";
 
 const IntroPage = () => {
   return (

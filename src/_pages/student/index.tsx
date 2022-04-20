@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Layout } from "../../components/Layout";
-import { SEO } from "../../components/SEO";
-import { ColumnContent } from "../../components/shared/ColumnContent";
-import { attentionBlocks } from "../../options/pages/student";
-import { AttentionInfoBlock } from "../../components/blocks/AttentionInfoBlock";
+import { Layout } from "src/_components/Layout";
+import { SEO } from "src/_components/SEO";
+import { ColumnContent } from "src/_components/shared/ColumnContent";
+import { attentionBlocks } from "src/options/pages/student";
+import { AttentionInfoBlock } from "src/_components/blocks/AttentionInfoBlock";
 
 const StudentPage = () => {
   return (

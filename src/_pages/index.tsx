@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Layout } from "../components/Layout";
-import { SEO } from "../components/SEO";
-import { attentionBlocks } from "../options/pages/start";
-import { AttentionInfoBlock } from "../components/blocks/AttentionInfoBlock";
-import { ColumnContent } from "../components/shared/ColumnContent";
+import { Layout } from "src/_components/Layout";
+import { SEO } from "src/_components/SEO";
+import { attentionBlocks } from "src/options/pages/start";
+import { AttentionInfoBlock } from "src/_components/blocks/AttentionInfoBlock";
+import { ColumnContent } from "src/_components/shared/ColumnContent";
 
 const IndexPage: React.FC = () => {
   return (
