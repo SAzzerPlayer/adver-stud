@@ -2,7 +2,7 @@ import { GatsbyNode } from "gatsby";
 import {
   GetAllSiteContentDocument,
   GetAllSiteContentQuery,
-} from "./graphql/generated";
+} from "./src/graphql/generated";
 const path = require("path");
 
 const createPages: GatsbyNode["createPages"] = async ({ actions, graphql }) => {

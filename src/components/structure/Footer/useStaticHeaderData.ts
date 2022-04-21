@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { FindSiteMainOptionsBottomTabQuery } from "graphql/generated";
+import { FindSiteMainOptionsBottomTabQuery } from "src/graphql/generated";
 
 export const useStaticFooterData = (): FindSiteMainOptionsBottomTabQuery =>
   useStaticQuery(graphql`

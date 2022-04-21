@@ -5,7 +5,7 @@ const Container = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   background-color: ${colors.accentBlack};
   box-shadow: ${shadows.soft};
 `;
@@ -16,7 +16,6 @@ const Content = styled.div`
   align-items: center;
   justify-content: flex-start;
   max-width: ${breakpoints.monitor};
-  width: 100%;
   flex: 1;
   padding: 2em;
   h1,

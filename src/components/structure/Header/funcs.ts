@@ -1,4 +1,4 @@
-import { FindSiteMainOptionsTopTabQuery } from "../../../../graphql/generated";
+import { FindSiteMainOptionsTopTabQuery } from "src/graphql/generated";
 
 export const getTopBarTabs = (
   result: FindSiteMainOptionsTopTabQuery
