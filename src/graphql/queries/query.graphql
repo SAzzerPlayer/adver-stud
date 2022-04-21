@@ -54,6 +54,11 @@ query GetAllSiteContent {
                 gatsbyImageData
               }
             }
+            illustration {
+              title
+              description
+              gatsbyImageData(width: 416, height: 416, quality: 80)
+            }
           }
           ... on ContentfulAuthorAvatarBlock {
             id

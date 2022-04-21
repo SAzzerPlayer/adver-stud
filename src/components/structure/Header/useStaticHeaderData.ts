@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { FindSiteMainOptionsTopTabQuery } from "graphql/generated";
+import { FindSiteMainOptionsTopTabQuery } from "src/graphql/generated";
 
 export const useStaticHeaderData = (): FindSiteMainOptionsTopTabQuery =>
   useStaticQuery(graphql`
