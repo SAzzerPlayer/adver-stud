@@ -75,6 +75,8 @@ export type ContentfulActionInfoBlock = ContentfulEntry &
     article?: Maybe<ContentfulActionInfoBlockArticle>;
     button?: Maybe<ContentfulLink>;
     children: Array<Node>;
+    contentblock?: Maybe<Array<Maybe<ContentfulContentBlock>>>;
+    contentcolumngrid?: Maybe<Array<Maybe<ContentfulContentColumnGrid>>>;
     contentful_id: Scalars["String"];
     createdAt?: Maybe<Scalars["Date"]>;
     id: Scalars["ID"];
@@ -147,10 +149,18 @@ export type ContentfulActionInfoBlockConnectionSumArgs = {
   field: ContentfulActionInfoBlockFieldsEnum;
 };
 
-export type ContentfulActionInfoBlockContentfulAuthorAvatarBlockContentfulRichTextBlockUnion =
+export type ContentfulActionInfoBlockContentfulAuthorAvatarBlockContentfulContentColumnGridContentfulRichTextBlockUnion =
 
     | ContentfulActionInfoBlock
     | ContentfulAuthorAvatarBlock
+    | ContentfulContentColumnGrid
+    | ContentfulRichTextBlock;
+
+export type ContentfulActionInfoBlockContentfulAuthorAvatarBlockContentfulLinkContentfulRichTextBlockUnion =
+
+    | ContentfulActionInfoBlock
+    | ContentfulAuthorAvatarBlock
+    | ContentfulLink
     | ContentfulRichTextBlock;
 
 export type ContentfulActionInfoBlockEdge = {
@@ -168,6 +178,7 @@ export enum ContentfulActionInfoBlockFieldsEnum {
   ButtonActioninfoblockButtonAuthoravatarblock = "button___actioninfoblock___button___authoravatarblock",
   ButtonActioninfoblockButtonChildren = "button___actioninfoblock___button___children",
   ButtonActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "button___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  ButtonActioninfoblockButtonContentcolumngrid = "button___actioninfoblock___button___contentcolumngrid",
   ButtonActioninfoblockButtonContentfulId = "button___actioninfoblock___button___contentful_id",
   ButtonActioninfoblockButtonContentfulid = "button___actioninfoblock___button___contentfulid",
   ButtonActioninfoblockButtonCreatedAt = "button___actioninfoblock___button___createdAt",
@@ -180,6 +191,29 @@ export enum ContentfulActionInfoBlockFieldsEnum {
   ButtonActioninfoblockChildren = "button___actioninfoblock___children",
   ButtonActioninfoblockChildrenChildren = "button___actioninfoblock___children___children",
   ButtonActioninfoblockChildrenId = "button___actioninfoblock___children___id",
+  ButtonActioninfoblockContentblock = "button___actioninfoblock___contentblock",
+  ButtonActioninfoblockContentblockChildren = "button___actioninfoblock___contentblock___children",
+  ButtonActioninfoblockContentblockContentfulId = "button___actioninfoblock___contentblock___contentful_id",
+  ButtonActioninfoblockContentblockCreatedAt = "button___actioninfoblock___contentblock___createdAt",
+  ButtonActioninfoblockContentblockId = "button___actioninfoblock___contentblock___id",
+  ButtonActioninfoblockContentblockMargin = "button___actioninfoblock___contentblock___margin",
+  ButtonActioninfoblockContentblockNodeLocale = "button___actioninfoblock___contentblock___node_locale",
+  ButtonActioninfoblockContentblockPage = "button___actioninfoblock___contentblock___page",
+  ButtonActioninfoblockContentblockSpaceId = "button___actioninfoblock___contentblock___spaceId",
+  ButtonActioninfoblockContentblockUniqueId = "button___actioninfoblock___contentblock___uniqueId",
+  ButtonActioninfoblockContentblockUpdatedAt = "button___actioninfoblock___contentblock___updatedAt",
+  ButtonActioninfoblockContentcolumngrid = "button___actioninfoblock___contentcolumngrid",
+  ButtonActioninfoblockContentcolumngridAlignColumnsOnMobile = "button___actioninfoblock___contentcolumngrid___alignColumnsOnMobile",
+  ButtonActioninfoblockContentcolumngridChildren = "button___actioninfoblock___contentcolumngrid___children",
+  ButtonActioninfoblockContentcolumngridContentblock = "button___actioninfoblock___contentcolumngrid___contentblock",
+  ButtonActioninfoblockContentcolumngridContentfulId = "button___actioninfoblock___contentcolumngrid___contentful_id",
+  ButtonActioninfoblockContentcolumngridCreatedAt = "button___actioninfoblock___contentcolumngrid___createdAt",
+  ButtonActioninfoblockContentcolumngridId = "button___actioninfoblock___contentcolumngrid___id",
+  ButtonActioninfoblockContentcolumngridNodeLocale = "button___actioninfoblock___contentcolumngrid___node_locale",
+  ButtonActioninfoblockContentcolumngridRatio = "button___actioninfoblock___contentcolumngrid___ratio",
+  ButtonActioninfoblockContentcolumngridSpaceId = "button___actioninfoblock___contentcolumngrid___spaceId",
+  ButtonActioninfoblockContentcolumngridUniqueId = "button___actioninfoblock___contentcolumngrid___uniqueId",
+  ButtonActioninfoblockContentcolumngridUpdatedAt = "button___actioninfoblock___contentcolumngrid___updatedAt",
   ButtonActioninfoblockContentfulId = "button___actioninfoblock___contentful_id",
   ButtonActioninfoblockCreatedAt = "button___actioninfoblock___createdAt",
   ButtonActioninfoblockId = "button___actioninfoblock___id",
@@ -266,6 +300,18 @@ export enum ContentfulActionInfoBlockFieldsEnum {
   ButtonAuthoravatarblockContentblockSpaceId = "button___authoravatarblock___contentblock___spaceId",
   ButtonAuthoravatarblockContentblockUniqueId = "button___authoravatarblock___contentblock___uniqueId",
   ButtonAuthoravatarblockContentblockUpdatedAt = "button___authoravatarblock___contentblock___updatedAt",
+  ButtonAuthoravatarblockContentcolumngrid = "button___authoravatarblock___contentcolumngrid",
+  ButtonAuthoravatarblockContentcolumngridAlignColumnsOnMobile = "button___authoravatarblock___contentcolumngrid___alignColumnsOnMobile",
+  ButtonAuthoravatarblockContentcolumngridChildren = "button___authoravatarblock___contentcolumngrid___children",
+  ButtonAuthoravatarblockContentcolumngridContentblock = "button___authoravatarblock___contentcolumngrid___contentblock",
+  ButtonAuthoravatarblockContentcolumngridContentfulId = "button___authoravatarblock___contentcolumngrid___contentful_id",
+  ButtonAuthoravatarblockContentcolumngridCreatedAt = "button___authoravatarblock___contentcolumngrid___createdAt",
+  ButtonAuthoravatarblockContentcolumngridId = "button___authoravatarblock___contentcolumngrid___id",
+  ButtonAuthoravatarblockContentcolumngridNodeLocale = "button___authoravatarblock___contentcolumngrid___node_locale",
+  ButtonAuthoravatarblockContentcolumngridRatio = "button___authoravatarblock___contentcolumngrid___ratio",
+  ButtonAuthoravatarblockContentcolumngridSpaceId = "button___authoravatarblock___contentcolumngrid___spaceId",
+  ButtonAuthoravatarblockContentcolumngridUniqueId = "button___authoravatarblock___contentcolumngrid___uniqueId",
+  ButtonAuthoravatarblockContentcolumngridUpdatedAt = "button___authoravatarblock___contentcolumngrid___updatedAt",
   ButtonAuthoravatarblockContentfulId = "button___authoravatarblock___contentful_id",
   ButtonAuthoravatarblockCreatedAt = "button___authoravatarblock___createdAt",
   ButtonAuthoravatarblockDescriptionChildren = "button___authoravatarblock___description___children",
@@ -290,6 +336,7 @@ export enum ContentfulActionInfoBlockFieldsEnum {
   ButtonAuthoravatarblockSocialSiteLinksAuthoravatarblock = "button___authoravatarblock___socialSiteLinks___authoravatarblock",
   ButtonAuthoravatarblockSocialSiteLinksChildren = "button___authoravatarblock___socialSiteLinks___children",
   ButtonAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "button___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  ButtonAuthoravatarblockSocialSiteLinksContentcolumngrid = "button___authoravatarblock___socialSiteLinks___contentcolumngrid",
   ButtonAuthoravatarblockSocialSiteLinksContentfulId = "button___authoravatarblock___socialSiteLinks___contentful_id",
   ButtonAuthoravatarblockSocialSiteLinksContentfulid = "button___authoravatarblock___socialSiteLinks___contentfulid",
   ButtonAuthoravatarblockSocialSiteLinksCreatedAt = "button___authoravatarblock___socialSiteLinks___createdAt",
@@ -414,6 +461,42 @@ export enum ContentfulActionInfoBlockFieldsEnum {
   ButtonChildrenInternalType = "button___children___internal___type",
   ButtonChildrenParentChildren = "button___children___parent___children",
   ButtonChildrenParentId = "button___children___parent___id",
+  ButtonContentcolumngrid = "button___contentcolumngrid",
+  ButtonContentcolumngridAlignColumnsOnMobile = "button___contentcolumngrid___alignColumnsOnMobile",
+  ButtonContentcolumngridChildren = "button___contentcolumngrid___children",
+  ButtonContentcolumngridChildrenChildren = "button___contentcolumngrid___children___children",
+  ButtonContentcolumngridChildrenId = "button___contentcolumngrid___children___id",
+  ButtonContentcolumngridContentblock = "button___contentcolumngrid___contentblock",
+  ButtonContentcolumngridContentblockChildren = "button___contentcolumngrid___contentblock___children",
+  ButtonContentcolumngridContentblockContentfulId = "button___contentcolumngrid___contentblock___contentful_id",
+  ButtonContentcolumngridContentblockCreatedAt = "button___contentcolumngrid___contentblock___createdAt",
+  ButtonContentcolumngridContentblockId = "button___contentcolumngrid___contentblock___id",
+  ButtonContentcolumngridContentblockMargin = "button___contentcolumngrid___contentblock___margin",
+  ButtonContentcolumngridContentblockNodeLocale = "button___contentcolumngrid___contentblock___node_locale",
+  ButtonContentcolumngridContentblockPage = "button___contentcolumngrid___contentblock___page",
+  ButtonContentcolumngridContentblockSpaceId = "button___contentcolumngrid___contentblock___spaceId",
+  ButtonContentcolumngridContentblockUniqueId = "button___contentcolumngrid___contentblock___uniqueId",
+  ButtonContentcolumngridContentblockUpdatedAt = "button___contentcolumngrid___contentblock___updatedAt",
+  ButtonContentcolumngridContentfulId = "button___contentcolumngrid___contentful_id",
+  ButtonContentcolumngridCreatedAt = "button___contentcolumngrid___createdAt",
+  ButtonContentcolumngridId = "button___contentcolumngrid___id",
+  ButtonContentcolumngridInternalContent = "button___contentcolumngrid___internal___content",
+  ButtonContentcolumngridInternalContentDigest = "button___contentcolumngrid___internal___contentDigest",
+  ButtonContentcolumngridInternalDescription = "button___contentcolumngrid___internal___description",
+  ButtonContentcolumngridInternalFieldOwners = "button___contentcolumngrid___internal___fieldOwners",
+  ButtonContentcolumngridInternalIgnoreType = "button___contentcolumngrid___internal___ignoreType",
+  ButtonContentcolumngridInternalMediaType = "button___contentcolumngrid___internal___mediaType",
+  ButtonContentcolumngridInternalOwner = "button___contentcolumngrid___internal___owner",
+  ButtonContentcolumngridInternalType = "button___contentcolumngrid___internal___type",
+  ButtonContentcolumngridNodeLocale = "button___contentcolumngrid___node_locale",
+  ButtonContentcolumngridParentChildren = "button___contentcolumngrid___parent___children",
+  ButtonContentcolumngridParentId = "button___contentcolumngrid___parent___id",
+  ButtonContentcolumngridRatio = "button___contentcolumngrid___ratio",
+  ButtonContentcolumngridSpaceId = "button___contentcolumngrid___spaceId",
+  ButtonContentcolumngridSysRevision = "button___contentcolumngrid___sys___revision",
+  ButtonContentcolumngridSysType = "button___contentcolumngrid___sys___type",
+  ButtonContentcolumngridUniqueId = "button___contentcolumngrid___uniqueId",
+  ButtonContentcolumngridUpdatedAt = "button___contentcolumngrid___updatedAt",
   ButtonContentfulId = "button___contentful_id",
   ButtonContentfulid = "button___contentfulid",
   ButtonCreatedAt = "button___createdAt",
@@ -476,6 +559,7 @@ export enum ContentfulActionInfoBlockFieldsEnum {
   ButtonOptionsBottomBarLogoAuthoravatarblock = "button___options___bottomBarLogo___authoravatarblock",
   ButtonOptionsBottomBarLogoChildren = "button___options___bottomBarLogo___children",
   ButtonOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "button___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
+  ButtonOptionsBottomBarLogoContentcolumngrid = "button___options___bottomBarLogo___contentcolumngrid",
   ButtonOptionsBottomBarLogoContentfulId = "button___options___bottomBarLogo___contentful_id",
   ButtonOptionsBottomBarLogoContentfulid = "button___options___bottomBarLogo___contentfulid",
   ButtonOptionsBottomBarLogoCreatedAt = "button___options___bottomBarLogo___createdAt",
@@ -490,6 +574,7 @@ export enum ContentfulActionInfoBlockFieldsEnum {
   ButtonOptionsBottomBarSocialLinksAuthoravatarblock = "button___options___bottomBarSocialLinks___authoravatarblock",
   ButtonOptionsBottomBarSocialLinksChildren = "button___options___bottomBarSocialLinks___children",
   ButtonOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "button___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  ButtonOptionsBottomBarSocialLinksContentcolumngrid = "button___options___bottomBarSocialLinks___contentcolumngrid",
   ButtonOptionsBottomBarSocialLinksContentfulId = "button___options___bottomBarSocialLinks___contentful_id",
   ButtonOptionsBottomBarSocialLinksContentfulid = "button___options___bottomBarSocialLinks___contentfulid",
   ButtonOptionsBottomBarSocialLinksCreatedAt = "button___options___bottomBarSocialLinks___createdAt",
@@ -504,6 +589,7 @@ export enum ContentfulActionInfoBlockFieldsEnum {
   ButtonOptionsBottomBarTabsAuthoravatarblock = "button___options___bottomBarTabs___authoravatarblock",
   ButtonOptionsBottomBarTabsChildren = "button___options___bottomBarTabs___children",
   ButtonOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "button___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
+  ButtonOptionsBottomBarTabsContentcolumngrid = "button___options___bottomBarTabs___contentcolumngrid",
   ButtonOptionsBottomBarTabsContentfulId = "button___options___bottomBarTabs___contentful_id",
   ButtonOptionsBottomBarTabsContentfulid = "button___options___bottomBarTabs___contentfulid",
   ButtonOptionsBottomBarTabsCreatedAt = "button___options___bottomBarTabs___createdAt",
@@ -538,6 +624,7 @@ export enum ContentfulActionInfoBlockFieldsEnum {
   ButtonOptionsTopBarLogoAuthoravatarblock = "button___options___topBarLogo___authoravatarblock",
   ButtonOptionsTopBarLogoChildren = "button___options___topBarLogo___children",
   ButtonOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "button___options___topBarLogo___childrenContentfulLinkUrlTextNode",
+  ButtonOptionsTopBarLogoContentcolumngrid = "button___options___topBarLogo___contentcolumngrid",
   ButtonOptionsTopBarLogoContentfulId = "button___options___topBarLogo___contentful_id",
   ButtonOptionsTopBarLogoContentfulid = "button___options___topBarLogo___contentfulid",
   ButtonOptionsTopBarLogoCreatedAt = "button___options___topBarLogo___createdAt",
@@ -552,6 +639,7 @@ export enum ContentfulActionInfoBlockFieldsEnum {
   ButtonOptionsTopBarSocialLinksAuthoravatarblock = "button___options___topBarSocialLinks___authoravatarblock",
   ButtonOptionsTopBarSocialLinksChildren = "button___options___topBarSocialLinks___children",
   ButtonOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "button___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  ButtonOptionsTopBarSocialLinksContentcolumngrid = "button___options___topBarSocialLinks___contentcolumngrid",
   ButtonOptionsTopBarSocialLinksContentfulId = "button___options___topBarSocialLinks___contentful_id",
   ButtonOptionsTopBarSocialLinksContentfulid = "button___options___topBarSocialLinks___contentfulid",
   ButtonOptionsTopBarSocialLinksCreatedAt = "button___options___topBarSocialLinks___createdAt",
@@ -566,6 +654,7 @@ export enum ContentfulActionInfoBlockFieldsEnum {
   ButtonOptionsTopBarTabsAuthoravatarblock = "button___options___topBarTabs___authoravatarblock",
   ButtonOptionsTopBarTabsChildren = "button___options___topBarTabs___children",
   ButtonOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "button___options___topBarTabs___childrenContentfulLinkUrlTextNode",
+  ButtonOptionsTopBarTabsContentcolumngrid = "button___options___topBarTabs___contentcolumngrid",
   ButtonOptionsTopBarTabsContentfulId = "button___options___topBarTabs___contentful_id",
   ButtonOptionsTopBarTabsContentfulid = "button___options___topBarTabs___contentfulid",
   ButtonOptionsTopBarTabsCreatedAt = "button___options___topBarTabs___createdAt",
@@ -681,6 +770,187 @@ export enum ContentfulActionInfoBlockFieldsEnum {
   ChildrenParentInternalType = "children___parent___internal___type",
   ChildrenParentParentChildren = "children___parent___parent___children",
   ChildrenParentParentId = "children___parent___parent___id",
+  Contentblock = "contentblock",
+  ContentblockChildren = "contentblock___children",
+  ContentblockChildrenChildren = "contentblock___children___children",
+  ContentblockChildrenChildrenChildren = "contentblock___children___children___children",
+  ContentblockChildrenChildrenId = "contentblock___children___children___id",
+  ContentblockChildrenId = "contentblock___children___id",
+  ContentblockChildrenInternalContent = "contentblock___children___internal___content",
+  ContentblockChildrenInternalContentDigest = "contentblock___children___internal___contentDigest",
+  ContentblockChildrenInternalDescription = "contentblock___children___internal___description",
+  ContentblockChildrenInternalFieldOwners = "contentblock___children___internal___fieldOwners",
+  ContentblockChildrenInternalIgnoreType = "contentblock___children___internal___ignoreType",
+  ContentblockChildrenInternalMediaType = "contentblock___children___internal___mediaType",
+  ContentblockChildrenInternalOwner = "contentblock___children___internal___owner",
+  ContentblockChildrenInternalType = "contentblock___children___internal___type",
+  ContentblockChildrenParentChildren = "contentblock___children___parent___children",
+  ContentblockChildrenParentId = "contentblock___children___parent___id",
+  ContentblockContentfulId = "contentblock___contentful_id",
+  ContentblockCreatedAt = "contentblock___createdAt",
+  ContentblockId = "contentblock___id",
+  ContentblockInternalContent = "contentblock___internal___content",
+  ContentblockInternalContentDigest = "contentblock___internal___contentDigest",
+  ContentblockInternalDescription = "contentblock___internal___description",
+  ContentblockInternalFieldOwners = "contentblock___internal___fieldOwners",
+  ContentblockInternalIgnoreType = "contentblock___internal___ignoreType",
+  ContentblockInternalMediaType = "contentblock___internal___mediaType",
+  ContentblockInternalOwner = "contentblock___internal___owner",
+  ContentblockInternalType = "contentblock___internal___type",
+  ContentblockMargin = "contentblock___margin",
+  ContentblockNodeLocale = "contentblock___node_locale",
+  ContentblockPage = "contentblock___page",
+  ContentblockPageChildContentfulPageDescriptionTextNodeChildren = "contentblock___page___childContentfulPageDescriptionTextNode___children",
+  ContentblockPageChildContentfulPageDescriptionTextNodeChildrenMdx = "contentblock___page___childContentfulPageDescriptionTextNode___childrenMdx",
+  ContentblockPageChildContentfulPageDescriptionTextNodeDescription = "contentblock___page___childContentfulPageDescriptionTextNode___description",
+  ContentblockPageChildContentfulPageDescriptionTextNodeId = "contentblock___page___childContentfulPageDescriptionTextNode___id",
+  ContentblockPageChildren = "contentblock___page___children",
+  ContentblockPageChildrenContentfulPageDescriptionTextNode = "contentblock___page___childrenContentfulPageDescriptionTextNode",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeChildren = "contentblock___page___childrenContentfulPageDescriptionTextNode___children",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeChildrenMdx = "contentblock___page___childrenContentfulPageDescriptionTextNode___childrenMdx",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeDescription = "contentblock___page___childrenContentfulPageDescriptionTextNode___description",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeId = "contentblock___page___childrenContentfulPageDescriptionTextNode___id",
+  ContentblockPageChildrenChildren = "contentblock___page___children___children",
+  ContentblockPageChildrenId = "contentblock___page___children___id",
+  ContentblockPageContent = "contentblock___page___content",
+  ContentblockPageContentChildren = "contentblock___page___content___children",
+  ContentblockPageContentContentfulId = "contentblock___page___content___contentful_id",
+  ContentblockPageContentCreatedAt = "contentblock___page___content___createdAt",
+  ContentblockPageContentId = "contentblock___page___content___id",
+  ContentblockPageContentMargin = "contentblock___page___content___margin",
+  ContentblockPageContentNodeLocale = "contentblock___page___content___node_locale",
+  ContentblockPageContentPage = "contentblock___page___content___page",
+  ContentblockPageContentSpaceId = "contentblock___page___content___spaceId",
+  ContentblockPageContentUniqueId = "contentblock___page___content___uniqueId",
+  ContentblockPageContentUpdatedAt = "contentblock___page___content___updatedAt",
+  ContentblockPageContentfulId = "contentblock___page___contentful_id",
+  ContentblockPageCreatedAt = "contentblock___page___createdAt",
+  ContentblockPageDescriptionChildren = "contentblock___page___description___children",
+  ContentblockPageDescriptionChildrenMdx = "contentblock___page___description___childrenMdx",
+  ContentblockPageDescriptionDescription = "contentblock___page___description___description",
+  ContentblockPageDescriptionId = "contentblock___page___description___id",
+  ContentblockPageId = "contentblock___page___id",
+  ContentblockPageInternalContent = "contentblock___page___internal___content",
+  ContentblockPageInternalContentDigest = "contentblock___page___internal___contentDigest",
+  ContentblockPageInternalDescription = "contentblock___page___internal___description",
+  ContentblockPageInternalFieldOwners = "contentblock___page___internal___fieldOwners",
+  ContentblockPageInternalIgnoreType = "contentblock___page___internal___ignoreType",
+  ContentblockPageInternalMediaType = "contentblock___page___internal___mediaType",
+  ContentblockPageInternalOwner = "contentblock___page___internal___owner",
+  ContentblockPageInternalType = "contentblock___page___internal___type",
+  ContentblockPageNodeLocale = "contentblock___page___node_locale",
+  ContentblockPageParentChildren = "contentblock___page___parent___children",
+  ContentblockPageParentId = "contentblock___page___parent___id",
+  ContentblockPageSpaceId = "contentblock___page___spaceId",
+  ContentblockPageSysRevision = "contentblock___page___sys___revision",
+  ContentblockPageSysType = "contentblock___page___sys___type",
+  ContentblockPageTitle = "contentblock___page___title",
+  ContentblockPageUpdatedAt = "contentblock___page___updatedAt",
+  ContentblockPageUrl = "contentblock___page___url",
+  ContentblockParentChildren = "contentblock___parent___children",
+  ContentblockParentChildrenChildren = "contentblock___parent___children___children",
+  ContentblockParentChildrenId = "contentblock___parent___children___id",
+  ContentblockParentId = "contentblock___parent___id",
+  ContentblockParentInternalContent = "contentblock___parent___internal___content",
+  ContentblockParentInternalContentDigest = "contentblock___parent___internal___contentDigest",
+  ContentblockParentInternalDescription = "contentblock___parent___internal___description",
+  ContentblockParentInternalFieldOwners = "contentblock___parent___internal___fieldOwners",
+  ContentblockParentInternalIgnoreType = "contentblock___parent___internal___ignoreType",
+  ContentblockParentInternalMediaType = "contentblock___parent___internal___mediaType",
+  ContentblockParentInternalOwner = "contentblock___parent___internal___owner",
+  ContentblockParentInternalType = "contentblock___parent___internal___type",
+  ContentblockParentParentChildren = "contentblock___parent___parent___children",
+  ContentblockParentParentId = "contentblock___parent___parent___id",
+  ContentblockSpaceId = "contentblock___spaceId",
+  ContentblockSysRevision = "contentblock___sys___revision",
+  ContentblockSysType = "contentblock___sys___type",
+  ContentblockUniqueId = "contentblock___uniqueId",
+  ContentblockUpdatedAt = "contentblock___updatedAt",
+  Contentcolumngrid = "contentcolumngrid",
+  ContentcolumngridAlignColumnsOnMobile = "contentcolumngrid___alignColumnsOnMobile",
+  ContentcolumngridChildren = "contentcolumngrid___children",
+  ContentcolumngridChildrenChildren = "contentcolumngrid___children___children",
+  ContentcolumngridChildrenChildrenChildren = "contentcolumngrid___children___children___children",
+  ContentcolumngridChildrenChildrenId = "contentcolumngrid___children___children___id",
+  ContentcolumngridChildrenId = "contentcolumngrid___children___id",
+  ContentcolumngridChildrenInternalContent = "contentcolumngrid___children___internal___content",
+  ContentcolumngridChildrenInternalContentDigest = "contentcolumngrid___children___internal___contentDigest",
+  ContentcolumngridChildrenInternalDescription = "contentcolumngrid___children___internal___description",
+  ContentcolumngridChildrenInternalFieldOwners = "contentcolumngrid___children___internal___fieldOwners",
+  ContentcolumngridChildrenInternalIgnoreType = "contentcolumngrid___children___internal___ignoreType",
+  ContentcolumngridChildrenInternalMediaType = "contentcolumngrid___children___internal___mediaType",
+  ContentcolumngridChildrenInternalOwner = "contentcolumngrid___children___internal___owner",
+  ContentcolumngridChildrenInternalType = "contentcolumngrid___children___internal___type",
+  ContentcolumngridChildrenParentChildren = "contentcolumngrid___children___parent___children",
+  ContentcolumngridChildrenParentId = "contentcolumngrid___children___parent___id",
+  ContentcolumngridContentblock = "contentcolumngrid___contentblock",
+  ContentcolumngridContentblockChildren = "contentcolumngrid___contentblock___children",
+  ContentcolumngridContentblockChildrenChildren = "contentcolumngrid___contentblock___children___children",
+  ContentcolumngridContentblockChildrenId = "contentcolumngrid___contentblock___children___id",
+  ContentcolumngridContentblockContentfulId = "contentcolumngrid___contentblock___contentful_id",
+  ContentcolumngridContentblockCreatedAt = "contentcolumngrid___contentblock___createdAt",
+  ContentcolumngridContentblockId = "contentcolumngrid___contentblock___id",
+  ContentcolumngridContentblockInternalContent = "contentcolumngrid___contentblock___internal___content",
+  ContentcolumngridContentblockInternalContentDigest = "contentcolumngrid___contentblock___internal___contentDigest",
+  ContentcolumngridContentblockInternalDescription = "contentcolumngrid___contentblock___internal___description",
+  ContentcolumngridContentblockInternalFieldOwners = "contentcolumngrid___contentblock___internal___fieldOwners",
+  ContentcolumngridContentblockInternalIgnoreType = "contentcolumngrid___contentblock___internal___ignoreType",
+  ContentcolumngridContentblockInternalMediaType = "contentcolumngrid___contentblock___internal___mediaType",
+  ContentcolumngridContentblockInternalOwner = "contentcolumngrid___contentblock___internal___owner",
+  ContentcolumngridContentblockInternalType = "contentcolumngrid___contentblock___internal___type",
+  ContentcolumngridContentblockMargin = "contentcolumngrid___contentblock___margin",
+  ContentcolumngridContentblockNodeLocale = "contentcolumngrid___contentblock___node_locale",
+  ContentcolumngridContentblockPage = "contentcolumngrid___contentblock___page",
+  ContentcolumngridContentblockPageChildren = "contentcolumngrid___contentblock___page___children",
+  ContentcolumngridContentblockPageChildrenContentfulPageDescriptionTextNode = "contentcolumngrid___contentblock___page___childrenContentfulPageDescriptionTextNode",
+  ContentcolumngridContentblockPageContent = "contentcolumngrid___contentblock___page___content",
+  ContentcolumngridContentblockPageContentfulId = "contentcolumngrid___contentblock___page___contentful_id",
+  ContentcolumngridContentblockPageCreatedAt = "contentcolumngrid___contentblock___page___createdAt",
+  ContentcolumngridContentblockPageId = "contentcolumngrid___contentblock___page___id",
+  ContentcolumngridContentblockPageNodeLocale = "contentcolumngrid___contentblock___page___node_locale",
+  ContentcolumngridContentblockPageSpaceId = "contentcolumngrid___contentblock___page___spaceId",
+  ContentcolumngridContentblockPageTitle = "contentcolumngrid___contentblock___page___title",
+  ContentcolumngridContentblockPageUpdatedAt = "contentcolumngrid___contentblock___page___updatedAt",
+  ContentcolumngridContentblockPageUrl = "contentcolumngrid___contentblock___page___url",
+  ContentcolumngridContentblockParentChildren = "contentcolumngrid___contentblock___parent___children",
+  ContentcolumngridContentblockParentId = "contentcolumngrid___contentblock___parent___id",
+  ContentcolumngridContentblockSpaceId = "contentcolumngrid___contentblock___spaceId",
+  ContentcolumngridContentblockSysRevision = "contentcolumngrid___contentblock___sys___revision",
+  ContentcolumngridContentblockSysType = "contentcolumngrid___contentblock___sys___type",
+  ContentcolumngridContentblockUniqueId = "contentcolumngrid___contentblock___uniqueId",
+  ContentcolumngridContentblockUpdatedAt = "contentcolumngrid___contentblock___updatedAt",
+  ContentcolumngridContentfulId = "contentcolumngrid___contentful_id",
+  ContentcolumngridCreatedAt = "contentcolumngrid___createdAt",
+  ContentcolumngridId = "contentcolumngrid___id",
+  ContentcolumngridInternalContent = "contentcolumngrid___internal___content",
+  ContentcolumngridInternalContentDigest = "contentcolumngrid___internal___contentDigest",
+  ContentcolumngridInternalDescription = "contentcolumngrid___internal___description",
+  ContentcolumngridInternalFieldOwners = "contentcolumngrid___internal___fieldOwners",
+  ContentcolumngridInternalIgnoreType = "contentcolumngrid___internal___ignoreType",
+  ContentcolumngridInternalMediaType = "contentcolumngrid___internal___mediaType",
+  ContentcolumngridInternalOwner = "contentcolumngrid___internal___owner",
+  ContentcolumngridInternalType = "contentcolumngrid___internal___type",
+  ContentcolumngridNodeLocale = "contentcolumngrid___node_locale",
+  ContentcolumngridParentChildren = "contentcolumngrid___parent___children",
+  ContentcolumngridParentChildrenChildren = "contentcolumngrid___parent___children___children",
+  ContentcolumngridParentChildrenId = "contentcolumngrid___parent___children___id",
+  ContentcolumngridParentId = "contentcolumngrid___parent___id",
+  ContentcolumngridParentInternalContent = "contentcolumngrid___parent___internal___content",
+  ContentcolumngridParentInternalContentDigest = "contentcolumngrid___parent___internal___contentDigest",
+  ContentcolumngridParentInternalDescription = "contentcolumngrid___parent___internal___description",
+  ContentcolumngridParentInternalFieldOwners = "contentcolumngrid___parent___internal___fieldOwners",
+  ContentcolumngridParentInternalIgnoreType = "contentcolumngrid___parent___internal___ignoreType",
+  ContentcolumngridParentInternalMediaType = "contentcolumngrid___parent___internal___mediaType",
+  ContentcolumngridParentInternalOwner = "contentcolumngrid___parent___internal___owner",
+  ContentcolumngridParentInternalType = "contentcolumngrid___parent___internal___type",
+  ContentcolumngridParentParentChildren = "contentcolumngrid___parent___parent___children",
+  ContentcolumngridParentParentId = "contentcolumngrid___parent___parent___id",
+  ContentcolumngridRatio = "contentcolumngrid___ratio",
+  ContentcolumngridSpaceId = "contentcolumngrid___spaceId",
+  ContentcolumngridSysRevision = "contentcolumngrid___sys___revision",
+  ContentcolumngridSysType = "contentcolumngrid___sys___type",
+  ContentcolumngridUniqueId = "contentcolumngrid___uniqueId",
+  ContentcolumngridUpdatedAt = "contentcolumngrid___updatedAt",
   ContentfulId = "contentful_id",
   CreatedAt = "createdAt",
   Id = "id",
@@ -815,6 +1085,8 @@ export type ContentfulActionInfoBlockFilterInput = {
   article?: InputMaybe<ContentfulActionInfoBlockArticleFilterInput>;
   button?: InputMaybe<ContentfulLinkFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
+  contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentcolumngrid?: InputMaybe<ContentfulContentColumnGridFilterListInput>;
   contentful_id?: InputMaybe<StringQueryOperatorInput>;
   createdAt?: InputMaybe<DateQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
@@ -1293,6 +1565,7 @@ export type ContentfulAuthorAvatarBlock = ContentfulEntry &
       Array<Maybe<ContentfulAuthorAvatarBlockDescriptionTextNode>>
     >;
     contentblock?: Maybe<Array<Maybe<ContentfulContentBlock>>>;
+    contentcolumngrid?: Maybe<Array<Maybe<ContentfulContentColumnGrid>>>;
     contentful_id: Scalars["String"];
     createdAt?: Maybe<Scalars["Date"]>;
     description?: Maybe<ContentfulAuthorAvatarBlockDescriptionTextNode>;
@@ -1792,6 +2065,91 @@ export enum ContentfulAuthorAvatarBlockFieldsEnum {
   ContentblockSysType = "contentblock___sys___type",
   ContentblockUniqueId = "contentblock___uniqueId",
   ContentblockUpdatedAt = "contentblock___updatedAt",
+  Contentcolumngrid = "contentcolumngrid",
+  ContentcolumngridAlignColumnsOnMobile = "contentcolumngrid___alignColumnsOnMobile",
+  ContentcolumngridChildren = "contentcolumngrid___children",
+  ContentcolumngridChildrenChildren = "contentcolumngrid___children___children",
+  ContentcolumngridChildrenChildrenChildren = "contentcolumngrid___children___children___children",
+  ContentcolumngridChildrenChildrenId = "contentcolumngrid___children___children___id",
+  ContentcolumngridChildrenId = "contentcolumngrid___children___id",
+  ContentcolumngridChildrenInternalContent = "contentcolumngrid___children___internal___content",
+  ContentcolumngridChildrenInternalContentDigest = "contentcolumngrid___children___internal___contentDigest",
+  ContentcolumngridChildrenInternalDescription = "contentcolumngrid___children___internal___description",
+  ContentcolumngridChildrenInternalFieldOwners = "contentcolumngrid___children___internal___fieldOwners",
+  ContentcolumngridChildrenInternalIgnoreType = "contentcolumngrid___children___internal___ignoreType",
+  ContentcolumngridChildrenInternalMediaType = "contentcolumngrid___children___internal___mediaType",
+  ContentcolumngridChildrenInternalOwner = "contentcolumngrid___children___internal___owner",
+  ContentcolumngridChildrenInternalType = "contentcolumngrid___children___internal___type",
+  ContentcolumngridChildrenParentChildren = "contentcolumngrid___children___parent___children",
+  ContentcolumngridChildrenParentId = "contentcolumngrid___children___parent___id",
+  ContentcolumngridContentblock = "contentcolumngrid___contentblock",
+  ContentcolumngridContentblockChildren = "contentcolumngrid___contentblock___children",
+  ContentcolumngridContentblockChildrenChildren = "contentcolumngrid___contentblock___children___children",
+  ContentcolumngridContentblockChildrenId = "contentcolumngrid___contentblock___children___id",
+  ContentcolumngridContentblockContentfulId = "contentcolumngrid___contentblock___contentful_id",
+  ContentcolumngridContentblockCreatedAt = "contentcolumngrid___contentblock___createdAt",
+  ContentcolumngridContentblockId = "contentcolumngrid___contentblock___id",
+  ContentcolumngridContentblockInternalContent = "contentcolumngrid___contentblock___internal___content",
+  ContentcolumngridContentblockInternalContentDigest = "contentcolumngrid___contentblock___internal___contentDigest",
+  ContentcolumngridContentblockInternalDescription = "contentcolumngrid___contentblock___internal___description",
+  ContentcolumngridContentblockInternalFieldOwners = "contentcolumngrid___contentblock___internal___fieldOwners",
+  ContentcolumngridContentblockInternalIgnoreType = "contentcolumngrid___contentblock___internal___ignoreType",
+  ContentcolumngridContentblockInternalMediaType = "contentcolumngrid___contentblock___internal___mediaType",
+  ContentcolumngridContentblockInternalOwner = "contentcolumngrid___contentblock___internal___owner",
+  ContentcolumngridContentblockInternalType = "contentcolumngrid___contentblock___internal___type",
+  ContentcolumngridContentblockMargin = "contentcolumngrid___contentblock___margin",
+  ContentcolumngridContentblockNodeLocale = "contentcolumngrid___contentblock___node_locale",
+  ContentcolumngridContentblockPage = "contentcolumngrid___contentblock___page",
+  ContentcolumngridContentblockPageChildren = "contentcolumngrid___contentblock___page___children",
+  ContentcolumngridContentblockPageChildrenContentfulPageDescriptionTextNode = "contentcolumngrid___contentblock___page___childrenContentfulPageDescriptionTextNode",
+  ContentcolumngridContentblockPageContent = "contentcolumngrid___contentblock___page___content",
+  ContentcolumngridContentblockPageContentfulId = "contentcolumngrid___contentblock___page___contentful_id",
+  ContentcolumngridContentblockPageCreatedAt = "contentcolumngrid___contentblock___page___createdAt",
+  ContentcolumngridContentblockPageId = "contentcolumngrid___contentblock___page___id",
+  ContentcolumngridContentblockPageNodeLocale = "contentcolumngrid___contentblock___page___node_locale",
+  ContentcolumngridContentblockPageSpaceId = "contentcolumngrid___contentblock___page___spaceId",
+  ContentcolumngridContentblockPageTitle = "contentcolumngrid___contentblock___page___title",
+  ContentcolumngridContentblockPageUpdatedAt = "contentcolumngrid___contentblock___page___updatedAt",
+  ContentcolumngridContentblockPageUrl = "contentcolumngrid___contentblock___page___url",
+  ContentcolumngridContentblockParentChildren = "contentcolumngrid___contentblock___parent___children",
+  ContentcolumngridContentblockParentId = "contentcolumngrid___contentblock___parent___id",
+  ContentcolumngridContentblockSpaceId = "contentcolumngrid___contentblock___spaceId",
+  ContentcolumngridContentblockSysRevision = "contentcolumngrid___contentblock___sys___revision",
+  ContentcolumngridContentblockSysType = "contentcolumngrid___contentblock___sys___type",
+  ContentcolumngridContentblockUniqueId = "contentcolumngrid___contentblock___uniqueId",
+  ContentcolumngridContentblockUpdatedAt = "contentcolumngrid___contentblock___updatedAt",
+  ContentcolumngridContentfulId = "contentcolumngrid___contentful_id",
+  ContentcolumngridCreatedAt = "contentcolumngrid___createdAt",
+  ContentcolumngridId = "contentcolumngrid___id",
+  ContentcolumngridInternalContent = "contentcolumngrid___internal___content",
+  ContentcolumngridInternalContentDigest = "contentcolumngrid___internal___contentDigest",
+  ContentcolumngridInternalDescription = "contentcolumngrid___internal___description",
+  ContentcolumngridInternalFieldOwners = "contentcolumngrid___internal___fieldOwners",
+  ContentcolumngridInternalIgnoreType = "contentcolumngrid___internal___ignoreType",
+  ContentcolumngridInternalMediaType = "contentcolumngrid___internal___mediaType",
+  ContentcolumngridInternalOwner = "contentcolumngrid___internal___owner",
+  ContentcolumngridInternalType = "contentcolumngrid___internal___type",
+  ContentcolumngridNodeLocale = "contentcolumngrid___node_locale",
+  ContentcolumngridParentChildren = "contentcolumngrid___parent___children",
+  ContentcolumngridParentChildrenChildren = "contentcolumngrid___parent___children___children",
+  ContentcolumngridParentChildrenId = "contentcolumngrid___parent___children___id",
+  ContentcolumngridParentId = "contentcolumngrid___parent___id",
+  ContentcolumngridParentInternalContent = "contentcolumngrid___parent___internal___content",
+  ContentcolumngridParentInternalContentDigest = "contentcolumngrid___parent___internal___contentDigest",
+  ContentcolumngridParentInternalDescription = "contentcolumngrid___parent___internal___description",
+  ContentcolumngridParentInternalFieldOwners = "contentcolumngrid___parent___internal___fieldOwners",
+  ContentcolumngridParentInternalIgnoreType = "contentcolumngrid___parent___internal___ignoreType",
+  ContentcolumngridParentInternalMediaType = "contentcolumngrid___parent___internal___mediaType",
+  ContentcolumngridParentInternalOwner = "contentcolumngrid___parent___internal___owner",
+  ContentcolumngridParentInternalType = "contentcolumngrid___parent___internal___type",
+  ContentcolumngridParentParentChildren = "contentcolumngrid___parent___parent___children",
+  ContentcolumngridParentParentId = "contentcolumngrid___parent___parent___id",
+  ContentcolumngridRatio = "contentcolumngrid___ratio",
+  ContentcolumngridSpaceId = "contentcolumngrid___spaceId",
+  ContentcolumngridSysRevision = "contentcolumngrid___sys___revision",
+  ContentcolumngridSysType = "contentcolumngrid___sys___type",
+  ContentcolumngridUniqueId = "contentcolumngrid___uniqueId",
+  ContentcolumngridUpdatedAt = "contentcolumngrid___updatedAt",
   ContentfulId = "contentful_id",
   CreatedAt = "createdAt",
   DescriptionChildMdxBody = "description___childMdx___body",
@@ -1961,6 +2319,7 @@ export enum ContentfulAuthorAvatarBlockFieldsEnum {
   SocialSiteLinksActioninfoblockButtonAuthoravatarblock = "socialSiteLinks___actioninfoblock___button___authoravatarblock",
   SocialSiteLinksActioninfoblockButtonChildren = "socialSiteLinks___actioninfoblock___button___children",
   SocialSiteLinksActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "socialSiteLinks___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksActioninfoblockButtonContentcolumngrid = "socialSiteLinks___actioninfoblock___button___contentcolumngrid",
   SocialSiteLinksActioninfoblockButtonContentfulId = "socialSiteLinks___actioninfoblock___button___contentful_id",
   SocialSiteLinksActioninfoblockButtonContentfulid = "socialSiteLinks___actioninfoblock___button___contentfulid",
   SocialSiteLinksActioninfoblockButtonCreatedAt = "socialSiteLinks___actioninfoblock___button___createdAt",
@@ -1973,6 +2332,29 @@ export enum ContentfulAuthorAvatarBlockFieldsEnum {
   SocialSiteLinksActioninfoblockChildren = "socialSiteLinks___actioninfoblock___children",
   SocialSiteLinksActioninfoblockChildrenChildren = "socialSiteLinks___actioninfoblock___children___children",
   SocialSiteLinksActioninfoblockChildrenId = "socialSiteLinks___actioninfoblock___children___id",
+  SocialSiteLinksActioninfoblockContentblock = "socialSiteLinks___actioninfoblock___contentblock",
+  SocialSiteLinksActioninfoblockContentblockChildren = "socialSiteLinks___actioninfoblock___contentblock___children",
+  SocialSiteLinksActioninfoblockContentblockContentfulId = "socialSiteLinks___actioninfoblock___contentblock___contentful_id",
+  SocialSiteLinksActioninfoblockContentblockCreatedAt = "socialSiteLinks___actioninfoblock___contentblock___createdAt",
+  SocialSiteLinksActioninfoblockContentblockId = "socialSiteLinks___actioninfoblock___contentblock___id",
+  SocialSiteLinksActioninfoblockContentblockMargin = "socialSiteLinks___actioninfoblock___contentblock___margin",
+  SocialSiteLinksActioninfoblockContentblockNodeLocale = "socialSiteLinks___actioninfoblock___contentblock___node_locale",
+  SocialSiteLinksActioninfoblockContentblockPage = "socialSiteLinks___actioninfoblock___contentblock___page",
+  SocialSiteLinksActioninfoblockContentblockSpaceId = "socialSiteLinks___actioninfoblock___contentblock___spaceId",
+  SocialSiteLinksActioninfoblockContentblockUniqueId = "socialSiteLinks___actioninfoblock___contentblock___uniqueId",
+  SocialSiteLinksActioninfoblockContentblockUpdatedAt = "socialSiteLinks___actioninfoblock___contentblock___updatedAt",
+  SocialSiteLinksActioninfoblockContentcolumngrid = "socialSiteLinks___actioninfoblock___contentcolumngrid",
+  SocialSiteLinksActioninfoblockContentcolumngridAlignColumnsOnMobile = "socialSiteLinks___actioninfoblock___contentcolumngrid___alignColumnsOnMobile",
+  SocialSiteLinksActioninfoblockContentcolumngridChildren = "socialSiteLinks___actioninfoblock___contentcolumngrid___children",
+  SocialSiteLinksActioninfoblockContentcolumngridContentblock = "socialSiteLinks___actioninfoblock___contentcolumngrid___contentblock",
+  SocialSiteLinksActioninfoblockContentcolumngridContentfulId = "socialSiteLinks___actioninfoblock___contentcolumngrid___contentful_id",
+  SocialSiteLinksActioninfoblockContentcolumngridCreatedAt = "socialSiteLinks___actioninfoblock___contentcolumngrid___createdAt",
+  SocialSiteLinksActioninfoblockContentcolumngridId = "socialSiteLinks___actioninfoblock___contentcolumngrid___id",
+  SocialSiteLinksActioninfoblockContentcolumngridNodeLocale = "socialSiteLinks___actioninfoblock___contentcolumngrid___node_locale",
+  SocialSiteLinksActioninfoblockContentcolumngridRatio = "socialSiteLinks___actioninfoblock___contentcolumngrid___ratio",
+  SocialSiteLinksActioninfoblockContentcolumngridSpaceId = "socialSiteLinks___actioninfoblock___contentcolumngrid___spaceId",
+  SocialSiteLinksActioninfoblockContentcolumngridUniqueId = "socialSiteLinks___actioninfoblock___contentcolumngrid___uniqueId",
+  SocialSiteLinksActioninfoblockContentcolumngridUpdatedAt = "socialSiteLinks___actioninfoblock___contentcolumngrid___updatedAt",
   SocialSiteLinksActioninfoblockContentfulId = "socialSiteLinks___actioninfoblock___contentful_id",
   SocialSiteLinksActioninfoblockCreatedAt = "socialSiteLinks___actioninfoblock___createdAt",
   SocialSiteLinksActioninfoblockId = "socialSiteLinks___actioninfoblock___id",
@@ -2059,6 +2441,18 @@ export enum ContentfulAuthorAvatarBlockFieldsEnum {
   SocialSiteLinksAuthoravatarblockContentblockSpaceId = "socialSiteLinks___authoravatarblock___contentblock___spaceId",
   SocialSiteLinksAuthoravatarblockContentblockUniqueId = "socialSiteLinks___authoravatarblock___contentblock___uniqueId",
   SocialSiteLinksAuthoravatarblockContentblockUpdatedAt = "socialSiteLinks___authoravatarblock___contentblock___updatedAt",
+  SocialSiteLinksAuthoravatarblockContentcolumngrid = "socialSiteLinks___authoravatarblock___contentcolumngrid",
+  SocialSiteLinksAuthoravatarblockContentcolumngridAlignColumnsOnMobile = "socialSiteLinks___authoravatarblock___contentcolumngrid___alignColumnsOnMobile",
+  SocialSiteLinksAuthoravatarblockContentcolumngridChildren = "socialSiteLinks___authoravatarblock___contentcolumngrid___children",
+  SocialSiteLinksAuthoravatarblockContentcolumngridContentblock = "socialSiteLinks___authoravatarblock___contentcolumngrid___contentblock",
+  SocialSiteLinksAuthoravatarblockContentcolumngridContentfulId = "socialSiteLinks___authoravatarblock___contentcolumngrid___contentful_id",
+  SocialSiteLinksAuthoravatarblockContentcolumngridCreatedAt = "socialSiteLinks___authoravatarblock___contentcolumngrid___createdAt",
+  SocialSiteLinksAuthoravatarblockContentcolumngridId = "socialSiteLinks___authoravatarblock___contentcolumngrid___id",
+  SocialSiteLinksAuthoravatarblockContentcolumngridNodeLocale = "socialSiteLinks___authoravatarblock___contentcolumngrid___node_locale",
+  SocialSiteLinksAuthoravatarblockContentcolumngridRatio = "socialSiteLinks___authoravatarblock___contentcolumngrid___ratio",
+  SocialSiteLinksAuthoravatarblockContentcolumngridSpaceId = "socialSiteLinks___authoravatarblock___contentcolumngrid___spaceId",
+  SocialSiteLinksAuthoravatarblockContentcolumngridUniqueId = "socialSiteLinks___authoravatarblock___contentcolumngrid___uniqueId",
+  SocialSiteLinksAuthoravatarblockContentcolumngridUpdatedAt = "socialSiteLinks___authoravatarblock___contentcolumngrid___updatedAt",
   SocialSiteLinksAuthoravatarblockContentfulId = "socialSiteLinks___authoravatarblock___contentful_id",
   SocialSiteLinksAuthoravatarblockCreatedAt = "socialSiteLinks___authoravatarblock___createdAt",
   SocialSiteLinksAuthoravatarblockDescriptionChildren = "socialSiteLinks___authoravatarblock___description___children",
@@ -2083,6 +2477,7 @@ export enum ContentfulAuthorAvatarBlockFieldsEnum {
   SocialSiteLinksAuthoravatarblockSocialSiteLinksAuthoravatarblock = "socialSiteLinks___authoravatarblock___socialSiteLinks___authoravatarblock",
   SocialSiteLinksAuthoravatarblockSocialSiteLinksChildren = "socialSiteLinks___authoravatarblock___socialSiteLinks___children",
   SocialSiteLinksAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "socialSiteLinks___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksAuthoravatarblockSocialSiteLinksContentcolumngrid = "socialSiteLinks___authoravatarblock___socialSiteLinks___contentcolumngrid",
   SocialSiteLinksAuthoravatarblockSocialSiteLinksContentfulId = "socialSiteLinks___authoravatarblock___socialSiteLinks___contentful_id",
   SocialSiteLinksAuthoravatarblockSocialSiteLinksContentfulid = "socialSiteLinks___authoravatarblock___socialSiteLinks___contentfulid",
   SocialSiteLinksAuthoravatarblockSocialSiteLinksCreatedAt = "socialSiteLinks___authoravatarblock___socialSiteLinks___createdAt",
@@ -2207,6 +2602,42 @@ export enum ContentfulAuthorAvatarBlockFieldsEnum {
   SocialSiteLinksChildrenInternalType = "socialSiteLinks___children___internal___type",
   SocialSiteLinksChildrenParentChildren = "socialSiteLinks___children___parent___children",
   SocialSiteLinksChildrenParentId = "socialSiteLinks___children___parent___id",
+  SocialSiteLinksContentcolumngrid = "socialSiteLinks___contentcolumngrid",
+  SocialSiteLinksContentcolumngridAlignColumnsOnMobile = "socialSiteLinks___contentcolumngrid___alignColumnsOnMobile",
+  SocialSiteLinksContentcolumngridChildren = "socialSiteLinks___contentcolumngrid___children",
+  SocialSiteLinksContentcolumngridChildrenChildren = "socialSiteLinks___contentcolumngrid___children___children",
+  SocialSiteLinksContentcolumngridChildrenId = "socialSiteLinks___contentcolumngrid___children___id",
+  SocialSiteLinksContentcolumngridContentblock = "socialSiteLinks___contentcolumngrid___contentblock",
+  SocialSiteLinksContentcolumngridContentblockChildren = "socialSiteLinks___contentcolumngrid___contentblock___children",
+  SocialSiteLinksContentcolumngridContentblockContentfulId = "socialSiteLinks___contentcolumngrid___contentblock___contentful_id",
+  SocialSiteLinksContentcolumngridContentblockCreatedAt = "socialSiteLinks___contentcolumngrid___contentblock___createdAt",
+  SocialSiteLinksContentcolumngridContentblockId = "socialSiteLinks___contentcolumngrid___contentblock___id",
+  SocialSiteLinksContentcolumngridContentblockMargin = "socialSiteLinks___contentcolumngrid___contentblock___margin",
+  SocialSiteLinksContentcolumngridContentblockNodeLocale = "socialSiteLinks___contentcolumngrid___contentblock___node_locale",
+  SocialSiteLinksContentcolumngridContentblockPage = "socialSiteLinks___contentcolumngrid___contentblock___page",
+  SocialSiteLinksContentcolumngridContentblockSpaceId = "socialSiteLinks___contentcolumngrid___contentblock___spaceId",
+  SocialSiteLinksContentcolumngridContentblockUniqueId = "socialSiteLinks___contentcolumngrid___contentblock___uniqueId",
+  SocialSiteLinksContentcolumngridContentblockUpdatedAt = "socialSiteLinks___contentcolumngrid___contentblock___updatedAt",
+  SocialSiteLinksContentcolumngridContentfulId = "socialSiteLinks___contentcolumngrid___contentful_id",
+  SocialSiteLinksContentcolumngridCreatedAt = "socialSiteLinks___contentcolumngrid___createdAt",
+  SocialSiteLinksContentcolumngridId = "socialSiteLinks___contentcolumngrid___id",
+  SocialSiteLinksContentcolumngridInternalContent = "socialSiteLinks___contentcolumngrid___internal___content",
+  SocialSiteLinksContentcolumngridInternalContentDigest = "socialSiteLinks___contentcolumngrid___internal___contentDigest",
+  SocialSiteLinksContentcolumngridInternalDescription = "socialSiteLinks___contentcolumngrid___internal___description",
+  SocialSiteLinksContentcolumngridInternalFieldOwners = "socialSiteLinks___contentcolumngrid___internal___fieldOwners",
+  SocialSiteLinksContentcolumngridInternalIgnoreType = "socialSiteLinks___contentcolumngrid___internal___ignoreType",
+  SocialSiteLinksContentcolumngridInternalMediaType = "socialSiteLinks___contentcolumngrid___internal___mediaType",
+  SocialSiteLinksContentcolumngridInternalOwner = "socialSiteLinks___contentcolumngrid___internal___owner",
+  SocialSiteLinksContentcolumngridInternalType = "socialSiteLinks___contentcolumngrid___internal___type",
+  SocialSiteLinksContentcolumngridNodeLocale = "socialSiteLinks___contentcolumngrid___node_locale",
+  SocialSiteLinksContentcolumngridParentChildren = "socialSiteLinks___contentcolumngrid___parent___children",
+  SocialSiteLinksContentcolumngridParentId = "socialSiteLinks___contentcolumngrid___parent___id",
+  SocialSiteLinksContentcolumngridRatio = "socialSiteLinks___contentcolumngrid___ratio",
+  SocialSiteLinksContentcolumngridSpaceId = "socialSiteLinks___contentcolumngrid___spaceId",
+  SocialSiteLinksContentcolumngridSysRevision = "socialSiteLinks___contentcolumngrid___sys___revision",
+  SocialSiteLinksContentcolumngridSysType = "socialSiteLinks___contentcolumngrid___sys___type",
+  SocialSiteLinksContentcolumngridUniqueId = "socialSiteLinks___contentcolumngrid___uniqueId",
+  SocialSiteLinksContentcolumngridUpdatedAt = "socialSiteLinks___contentcolumngrid___updatedAt",
   SocialSiteLinksContentfulId = "socialSiteLinks___contentful_id",
   SocialSiteLinksContentfulid = "socialSiteLinks___contentfulid",
   SocialSiteLinksCreatedAt = "socialSiteLinks___createdAt",
@@ -2269,6 +2700,7 @@ export enum ContentfulAuthorAvatarBlockFieldsEnum {
   SocialSiteLinksOptionsBottomBarLogoAuthoravatarblock = "socialSiteLinks___options___bottomBarLogo___authoravatarblock",
   SocialSiteLinksOptionsBottomBarLogoChildren = "socialSiteLinks___options___bottomBarLogo___children",
   SocialSiteLinksOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "socialSiteLinks___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksOptionsBottomBarLogoContentcolumngrid = "socialSiteLinks___options___bottomBarLogo___contentcolumngrid",
   SocialSiteLinksOptionsBottomBarLogoContentfulId = "socialSiteLinks___options___bottomBarLogo___contentful_id",
   SocialSiteLinksOptionsBottomBarLogoContentfulid = "socialSiteLinks___options___bottomBarLogo___contentfulid",
   SocialSiteLinksOptionsBottomBarLogoCreatedAt = "socialSiteLinks___options___bottomBarLogo___createdAt",
@@ -2283,6 +2715,7 @@ export enum ContentfulAuthorAvatarBlockFieldsEnum {
   SocialSiteLinksOptionsBottomBarSocialLinksAuthoravatarblock = "socialSiteLinks___options___bottomBarSocialLinks___authoravatarblock",
   SocialSiteLinksOptionsBottomBarSocialLinksChildren = "socialSiteLinks___options___bottomBarSocialLinks___children",
   SocialSiteLinksOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "socialSiteLinks___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksOptionsBottomBarSocialLinksContentcolumngrid = "socialSiteLinks___options___bottomBarSocialLinks___contentcolumngrid",
   SocialSiteLinksOptionsBottomBarSocialLinksContentfulId = "socialSiteLinks___options___bottomBarSocialLinks___contentful_id",
   SocialSiteLinksOptionsBottomBarSocialLinksContentfulid = "socialSiteLinks___options___bottomBarSocialLinks___contentfulid",
   SocialSiteLinksOptionsBottomBarSocialLinksCreatedAt = "socialSiteLinks___options___bottomBarSocialLinks___createdAt",
@@ -2297,6 +2730,7 @@ export enum ContentfulAuthorAvatarBlockFieldsEnum {
   SocialSiteLinksOptionsBottomBarTabsAuthoravatarblock = "socialSiteLinks___options___bottomBarTabs___authoravatarblock",
   SocialSiteLinksOptionsBottomBarTabsChildren = "socialSiteLinks___options___bottomBarTabs___children",
   SocialSiteLinksOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "socialSiteLinks___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksOptionsBottomBarTabsContentcolumngrid = "socialSiteLinks___options___bottomBarTabs___contentcolumngrid",
   SocialSiteLinksOptionsBottomBarTabsContentfulId = "socialSiteLinks___options___bottomBarTabs___contentful_id",
   SocialSiteLinksOptionsBottomBarTabsContentfulid = "socialSiteLinks___options___bottomBarTabs___contentfulid",
   SocialSiteLinksOptionsBottomBarTabsCreatedAt = "socialSiteLinks___options___bottomBarTabs___createdAt",
@@ -2331,6 +2765,7 @@ export enum ContentfulAuthorAvatarBlockFieldsEnum {
   SocialSiteLinksOptionsTopBarLogoAuthoravatarblock = "socialSiteLinks___options___topBarLogo___authoravatarblock",
   SocialSiteLinksOptionsTopBarLogoChildren = "socialSiteLinks___options___topBarLogo___children",
   SocialSiteLinksOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "socialSiteLinks___options___topBarLogo___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksOptionsTopBarLogoContentcolumngrid = "socialSiteLinks___options___topBarLogo___contentcolumngrid",
   SocialSiteLinksOptionsTopBarLogoContentfulId = "socialSiteLinks___options___topBarLogo___contentful_id",
   SocialSiteLinksOptionsTopBarLogoContentfulid = "socialSiteLinks___options___topBarLogo___contentfulid",
   SocialSiteLinksOptionsTopBarLogoCreatedAt = "socialSiteLinks___options___topBarLogo___createdAt",
@@ -2345,6 +2780,7 @@ export enum ContentfulAuthorAvatarBlockFieldsEnum {
   SocialSiteLinksOptionsTopBarSocialLinksAuthoravatarblock = "socialSiteLinks___options___topBarSocialLinks___authoravatarblock",
   SocialSiteLinksOptionsTopBarSocialLinksChildren = "socialSiteLinks___options___topBarSocialLinks___children",
   SocialSiteLinksOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "socialSiteLinks___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksOptionsTopBarSocialLinksContentcolumngrid = "socialSiteLinks___options___topBarSocialLinks___contentcolumngrid",
   SocialSiteLinksOptionsTopBarSocialLinksContentfulId = "socialSiteLinks___options___topBarSocialLinks___contentful_id",
   SocialSiteLinksOptionsTopBarSocialLinksContentfulid = "socialSiteLinks___options___topBarSocialLinks___contentfulid",
   SocialSiteLinksOptionsTopBarSocialLinksCreatedAt = "socialSiteLinks___options___topBarSocialLinks___createdAt",
@@ -2359,6 +2795,7 @@ export enum ContentfulAuthorAvatarBlockFieldsEnum {
   SocialSiteLinksOptionsTopBarTabsAuthoravatarblock = "socialSiteLinks___options___topBarTabs___authoravatarblock",
   SocialSiteLinksOptionsTopBarTabsChildren = "socialSiteLinks___options___topBarTabs___children",
   SocialSiteLinksOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "socialSiteLinks___options___topBarTabs___childrenContentfulLinkUrlTextNode",
+  SocialSiteLinksOptionsTopBarTabsContentcolumngrid = "socialSiteLinks___options___topBarTabs___contentcolumngrid",
   SocialSiteLinksOptionsTopBarTabsContentfulId = "socialSiteLinks___options___topBarTabs___contentful_id",
   SocialSiteLinksOptionsTopBarTabsContentfulid = "socialSiteLinks___options___topBarTabs___contentfulid",
   SocialSiteLinksOptionsTopBarTabsCreatedAt = "socialSiteLinks___options___topBarTabs___createdAt",
@@ -2451,6 +2888,7 @@ export type ContentfulAuthorAvatarBlockFilterInput = {
   children?: InputMaybe<NodeFilterListInput>;
   childrenContentfulAuthorAvatarBlockDescriptionTextNode?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFilterListInput>;
   contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentcolumngrid?: InputMaybe<ContentfulContentColumnGridFilterListInput>;
   contentful_id?: InputMaybe<StringQueryOperatorInput>;
   createdAt?: InputMaybe<DateQueryOperatorInput>;
   description?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFilterInput>;
@@ -2553,7 +2991,7 @@ export type ContentfulContentBlock = ContentfulEntry &
     __typename?: "ContentfulContentBlock";
     blocks?: Maybe<
       Array<
-        Maybe<ContentfulActionInfoBlockContentfulAuthorAvatarBlockContentfulRichTextBlockUnion>
+        Maybe<ContentfulActionInfoBlockContentfulAuthorAvatarBlockContentfulContentColumnGridContentfulRichTextBlockUnion>
       >
     >;
     children: Array<Node>;
@@ -3051,6 +3489,383 @@ export type ContentfulContentBlockSysFilterInput = {
   type?: InputMaybe<StringQueryOperatorInput>;
 };
 
+export type ContentfulContentColumnGrid = ContentfulEntry &
+  ContentfulReference &
+  Node & {
+    __typename?: "ContentfulContentColumnGrid";
+    alignColumnsOnMobile?: Maybe<Scalars["String"]>;
+    children: Array<Node>;
+    columns?: Maybe<
+      Array<
+        Maybe<ContentfulActionInfoBlockContentfulAuthorAvatarBlockContentfulLinkContentfulRichTextBlockUnion>
+      >
+    >;
+    contentblock?: Maybe<Array<Maybe<ContentfulContentBlock>>>;
+    contentful_id: Scalars["String"];
+    createdAt?: Maybe<Scalars["Date"]>;
+    id: Scalars["ID"];
+    internal: Internal;
+    node_locale: Scalars["String"];
+    parent?: Maybe<Node>;
+    ratio?: Maybe<Array<Maybe<Scalars["String"]>>>;
+    spaceId?: Maybe<Scalars["String"]>;
+    sys?: Maybe<ContentfulContentColumnGridSys>;
+    uniqueId?: Maybe<Scalars["String"]>;
+    updatedAt?: Maybe<Scalars["Date"]>;
+  };
+
+export type ContentfulContentColumnGridCreatedAtArgs = {
+  difference?: InputMaybe<Scalars["String"]>;
+  formatString?: InputMaybe<Scalars["String"]>;
+  fromNow?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars["String"]>;
+};
+
+export type ContentfulContentColumnGridUpdatedAtArgs = {
+  difference?: InputMaybe<Scalars["String"]>;
+  formatString?: InputMaybe<Scalars["String"]>;
+  fromNow?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars["String"]>;
+};
+
+export type ContentfulContentColumnGridConnection = {
+  __typename?: "ContentfulContentColumnGridConnection";
+  distinct: Array<Scalars["String"]>;
+  edges: Array<ContentfulContentColumnGridEdge>;
+  group: Array<ContentfulContentColumnGridGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<ContentfulContentColumnGrid>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type ContentfulContentColumnGridConnectionDistinctArgs = {
+  field: ContentfulContentColumnGridFieldsEnum;
+};
+
+export type ContentfulContentColumnGridConnectionGroupArgs = {
+  field: ContentfulContentColumnGridFieldsEnum;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+};
+
+export type ContentfulContentColumnGridConnectionMaxArgs = {
+  field: ContentfulContentColumnGridFieldsEnum;
+};
+
+export type ContentfulContentColumnGridConnectionMinArgs = {
+  field: ContentfulContentColumnGridFieldsEnum;
+};
+
+export type ContentfulContentColumnGridConnectionSumArgs = {
+  field: ContentfulContentColumnGridFieldsEnum;
+};
+
+export type ContentfulContentColumnGridEdge = {
+  __typename?: "ContentfulContentColumnGridEdge";
+  next?: Maybe<ContentfulContentColumnGrid>;
+  node: ContentfulContentColumnGrid;
+  previous?: Maybe<ContentfulContentColumnGrid>;
+};
+
+export enum ContentfulContentColumnGridFieldsEnum {
+  AlignColumnsOnMobile = "alignColumnsOnMobile",
+  Children = "children",
+  ChildrenChildren = "children___children",
+  ChildrenChildrenChildren = "children___children___children",
+  ChildrenChildrenChildrenChildren = "children___children___children___children",
+  ChildrenChildrenChildrenId = "children___children___children___id",
+  ChildrenChildrenId = "children___children___id",
+  ChildrenChildrenInternalContent = "children___children___internal___content",
+  ChildrenChildrenInternalContentDigest = "children___children___internal___contentDigest",
+  ChildrenChildrenInternalDescription = "children___children___internal___description",
+  ChildrenChildrenInternalFieldOwners = "children___children___internal___fieldOwners",
+  ChildrenChildrenInternalIgnoreType = "children___children___internal___ignoreType",
+  ChildrenChildrenInternalMediaType = "children___children___internal___mediaType",
+  ChildrenChildrenInternalOwner = "children___children___internal___owner",
+  ChildrenChildrenInternalType = "children___children___internal___type",
+  ChildrenChildrenParentChildren = "children___children___parent___children",
+  ChildrenChildrenParentId = "children___children___parent___id",
+  ChildrenId = "children___id",
+  ChildrenInternalContent = "children___internal___content",
+  ChildrenInternalContentDigest = "children___internal___contentDigest",
+  ChildrenInternalDescription = "children___internal___description",
+  ChildrenInternalFieldOwners = "children___internal___fieldOwners",
+  ChildrenInternalIgnoreType = "children___internal___ignoreType",
+  ChildrenInternalMediaType = "children___internal___mediaType",
+  ChildrenInternalOwner = "children___internal___owner",
+  ChildrenInternalType = "children___internal___type",
+  ChildrenParentChildren = "children___parent___children",
+  ChildrenParentChildrenChildren = "children___parent___children___children",
+  ChildrenParentChildrenId = "children___parent___children___id",
+  ChildrenParentId = "children___parent___id",
+  ChildrenParentInternalContent = "children___parent___internal___content",
+  ChildrenParentInternalContentDigest = "children___parent___internal___contentDigest",
+  ChildrenParentInternalDescription = "children___parent___internal___description",
+  ChildrenParentInternalFieldOwners = "children___parent___internal___fieldOwners",
+  ChildrenParentInternalIgnoreType = "children___parent___internal___ignoreType",
+  ChildrenParentInternalMediaType = "children___parent___internal___mediaType",
+  ChildrenParentInternalOwner = "children___parent___internal___owner",
+  ChildrenParentInternalType = "children___parent___internal___type",
+  ChildrenParentParentChildren = "children___parent___parent___children",
+  ChildrenParentParentId = "children___parent___parent___id",
+  Contentblock = "contentblock",
+  ContentblockChildren = "contentblock___children",
+  ContentblockChildrenChildren = "contentblock___children___children",
+  ContentblockChildrenChildrenChildren = "contentblock___children___children___children",
+  ContentblockChildrenChildrenId = "contentblock___children___children___id",
+  ContentblockChildrenId = "contentblock___children___id",
+  ContentblockChildrenInternalContent = "contentblock___children___internal___content",
+  ContentblockChildrenInternalContentDigest = "contentblock___children___internal___contentDigest",
+  ContentblockChildrenInternalDescription = "contentblock___children___internal___description",
+  ContentblockChildrenInternalFieldOwners = "contentblock___children___internal___fieldOwners",
+  ContentblockChildrenInternalIgnoreType = "contentblock___children___internal___ignoreType",
+  ContentblockChildrenInternalMediaType = "contentblock___children___internal___mediaType",
+  ContentblockChildrenInternalOwner = "contentblock___children___internal___owner",
+  ContentblockChildrenInternalType = "contentblock___children___internal___type",
+  ContentblockChildrenParentChildren = "contentblock___children___parent___children",
+  ContentblockChildrenParentId = "contentblock___children___parent___id",
+  ContentblockContentfulId = "contentblock___contentful_id",
+  ContentblockCreatedAt = "contentblock___createdAt",
+  ContentblockId = "contentblock___id",
+  ContentblockInternalContent = "contentblock___internal___content",
+  ContentblockInternalContentDigest = "contentblock___internal___contentDigest",
+  ContentblockInternalDescription = "contentblock___internal___description",
+  ContentblockInternalFieldOwners = "contentblock___internal___fieldOwners",
+  ContentblockInternalIgnoreType = "contentblock___internal___ignoreType",
+  ContentblockInternalMediaType = "contentblock___internal___mediaType",
+  ContentblockInternalOwner = "contentblock___internal___owner",
+  ContentblockInternalType = "contentblock___internal___type",
+  ContentblockMargin = "contentblock___margin",
+  ContentblockNodeLocale = "contentblock___node_locale",
+  ContentblockPage = "contentblock___page",
+  ContentblockPageChildContentfulPageDescriptionTextNodeChildren = "contentblock___page___childContentfulPageDescriptionTextNode___children",
+  ContentblockPageChildContentfulPageDescriptionTextNodeChildrenMdx = "contentblock___page___childContentfulPageDescriptionTextNode___childrenMdx",
+  ContentblockPageChildContentfulPageDescriptionTextNodeDescription = "contentblock___page___childContentfulPageDescriptionTextNode___description",
+  ContentblockPageChildContentfulPageDescriptionTextNodeId = "contentblock___page___childContentfulPageDescriptionTextNode___id",
+  ContentblockPageChildren = "contentblock___page___children",
+  ContentblockPageChildrenContentfulPageDescriptionTextNode = "contentblock___page___childrenContentfulPageDescriptionTextNode",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeChildren = "contentblock___page___childrenContentfulPageDescriptionTextNode___children",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeChildrenMdx = "contentblock___page___childrenContentfulPageDescriptionTextNode___childrenMdx",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeDescription = "contentblock___page___childrenContentfulPageDescriptionTextNode___description",
+  ContentblockPageChildrenContentfulPageDescriptionTextNodeId = "contentblock___page___childrenContentfulPageDescriptionTextNode___id",
+  ContentblockPageChildrenChildren = "contentblock___page___children___children",
+  ContentblockPageChildrenId = "contentblock___page___children___id",
+  ContentblockPageContent = "contentblock___page___content",
+  ContentblockPageContentChildren = "contentblock___page___content___children",
+  ContentblockPageContentContentfulId = "contentblock___page___content___contentful_id",
+  ContentblockPageContentCreatedAt = "contentblock___page___content___createdAt",
+  ContentblockPageContentId = "contentblock___page___content___id",
+  ContentblockPageContentMargin = "contentblock___page___content___margin",
+  ContentblockPageContentNodeLocale = "contentblock___page___content___node_locale",
+  ContentblockPageContentPage = "contentblock___page___content___page",
+  ContentblockPageContentSpaceId = "contentblock___page___content___spaceId",
+  ContentblockPageContentUniqueId = "contentblock___page___content___uniqueId",
+  ContentblockPageContentUpdatedAt = "contentblock___page___content___updatedAt",
+  ContentblockPageContentfulId = "contentblock___page___contentful_id",
+  ContentblockPageCreatedAt = "contentblock___page___createdAt",
+  ContentblockPageDescriptionChildren = "contentblock___page___description___children",
+  ContentblockPageDescriptionChildrenMdx = "contentblock___page___description___childrenMdx",
+  ContentblockPageDescriptionDescription = "contentblock___page___description___description",
+  ContentblockPageDescriptionId = "contentblock___page___description___id",
+  ContentblockPageId = "contentblock___page___id",
+  ContentblockPageInternalContent = "contentblock___page___internal___content",
+  ContentblockPageInternalContentDigest = "contentblock___page___internal___contentDigest",
+  ContentblockPageInternalDescription = "contentblock___page___internal___description",
+  ContentblockPageInternalFieldOwners = "contentblock___page___internal___fieldOwners",
+  ContentblockPageInternalIgnoreType = "contentblock___page___internal___ignoreType",
+  ContentblockPageInternalMediaType = "contentblock___page___internal___mediaType",
+  ContentblockPageInternalOwner = "contentblock___page___internal___owner",
+  ContentblockPageInternalType = "contentblock___page___internal___type",
+  ContentblockPageNodeLocale = "contentblock___page___node_locale",
+  ContentblockPageParentChildren = "contentblock___page___parent___children",
+  ContentblockPageParentId = "contentblock___page___parent___id",
+  ContentblockPageSpaceId = "contentblock___page___spaceId",
+  ContentblockPageSysRevision = "contentblock___page___sys___revision",
+  ContentblockPageSysType = "contentblock___page___sys___type",
+  ContentblockPageTitle = "contentblock___page___title",
+  ContentblockPageUpdatedAt = "contentblock___page___updatedAt",
+  ContentblockPageUrl = "contentblock___page___url",
+  ContentblockParentChildren = "contentblock___parent___children",
+  ContentblockParentChildrenChildren = "contentblock___parent___children___children",
+  ContentblockParentChildrenId = "contentblock___parent___children___id",
+  ContentblockParentId = "contentblock___parent___id",
+  ContentblockParentInternalContent = "contentblock___parent___internal___content",
+  ContentblockParentInternalContentDigest = "contentblock___parent___internal___contentDigest",
+  ContentblockParentInternalDescription = "contentblock___parent___internal___description",
+  ContentblockParentInternalFieldOwners = "contentblock___parent___internal___fieldOwners",
+  ContentblockParentInternalIgnoreType = "contentblock___parent___internal___ignoreType",
+  ContentblockParentInternalMediaType = "contentblock___parent___internal___mediaType",
+  ContentblockParentInternalOwner = "contentblock___parent___internal___owner",
+  ContentblockParentInternalType = "contentblock___parent___internal___type",
+  ContentblockParentParentChildren = "contentblock___parent___parent___children",
+  ContentblockParentParentId = "contentblock___parent___parent___id",
+  ContentblockSpaceId = "contentblock___spaceId",
+  ContentblockSysRevision = "contentblock___sys___revision",
+  ContentblockSysType = "contentblock___sys___type",
+  ContentblockUniqueId = "contentblock___uniqueId",
+  ContentblockUpdatedAt = "contentblock___updatedAt",
+  ContentfulId = "contentful_id",
+  CreatedAt = "createdAt",
+  Id = "id",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalDescription = "internal___description",
+  InternalFieldOwners = "internal___fieldOwners",
+  InternalIgnoreType = "internal___ignoreType",
+  InternalMediaType = "internal___mediaType",
+  InternalOwner = "internal___owner",
+  InternalType = "internal___type",
+  NodeLocale = "node_locale",
+  ParentChildren = "parent___children",
+  ParentChildrenChildren = "parent___children___children",
+  ParentChildrenChildrenChildren = "parent___children___children___children",
+  ParentChildrenChildrenId = "parent___children___children___id",
+  ParentChildrenId = "parent___children___id",
+  ParentChildrenInternalContent = "parent___children___internal___content",
+  ParentChildrenInternalContentDigest = "parent___children___internal___contentDigest",
+  ParentChildrenInternalDescription = "parent___children___internal___description",
+  ParentChildrenInternalFieldOwners = "parent___children___internal___fieldOwners",
+  ParentChildrenInternalIgnoreType = "parent___children___internal___ignoreType",
+  ParentChildrenInternalMediaType = "parent___children___internal___mediaType",
+  ParentChildrenInternalOwner = "parent___children___internal___owner",
+  ParentChildrenInternalType = "parent___children___internal___type",
+  ParentChildrenParentChildren = "parent___children___parent___children",
+  ParentChildrenParentId = "parent___children___parent___id",
+  ParentId = "parent___id",
+  ParentInternalContent = "parent___internal___content",
+  ParentInternalContentDigest = "parent___internal___contentDigest",
+  ParentInternalDescription = "parent___internal___description",
+  ParentInternalFieldOwners = "parent___internal___fieldOwners",
+  ParentInternalIgnoreType = "parent___internal___ignoreType",
+  ParentInternalMediaType = "parent___internal___mediaType",
+  ParentInternalOwner = "parent___internal___owner",
+  ParentInternalType = "parent___internal___type",
+  ParentParentChildren = "parent___parent___children",
+  ParentParentChildrenChildren = "parent___parent___children___children",
+  ParentParentChildrenId = "parent___parent___children___id",
+  ParentParentId = "parent___parent___id",
+  ParentParentInternalContent = "parent___parent___internal___content",
+  ParentParentInternalContentDigest = "parent___parent___internal___contentDigest",
+  ParentParentInternalDescription = "parent___parent___internal___description",
+  ParentParentInternalFieldOwners = "parent___parent___internal___fieldOwners",
+  ParentParentInternalIgnoreType = "parent___parent___internal___ignoreType",
+  ParentParentInternalMediaType = "parent___parent___internal___mediaType",
+  ParentParentInternalOwner = "parent___parent___internal___owner",
+  ParentParentInternalType = "parent___parent___internal___type",
+  ParentParentParentChildren = "parent___parent___parent___children",
+  ParentParentParentId = "parent___parent___parent___id",
+  Ratio = "ratio",
+  SpaceId = "spaceId",
+  SysContentTypeSysId = "sys___contentType___sys___id",
+  SysContentTypeSysLinkType = "sys___contentType___sys___linkType",
+  SysContentTypeSysType = "sys___contentType___sys___type",
+  SysRevision = "sys___revision",
+  SysType = "sys___type",
+  UniqueId = "uniqueId",
+  UpdatedAt = "updatedAt",
+}
+
+export type ContentfulContentColumnGridFilterInput = {
+  alignColumnsOnMobile?: InputMaybe<StringQueryOperatorInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentful_id?: InputMaybe<StringQueryOperatorInput>;
+  createdAt?: InputMaybe<DateQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  node_locale?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  ratio?: InputMaybe<StringQueryOperatorInput>;
+  spaceId?: InputMaybe<StringQueryOperatorInput>;
+  sys?: InputMaybe<ContentfulContentColumnGridSysFilterInput>;
+  uniqueId?: InputMaybe<StringQueryOperatorInput>;
+  updatedAt?: InputMaybe<DateQueryOperatorInput>;
+};
+
+export type ContentfulContentColumnGridFilterListInput = {
+  elemMatch?: InputMaybe<ContentfulContentColumnGridFilterInput>;
+};
+
+export type ContentfulContentColumnGridGroupConnection = {
+  __typename?: "ContentfulContentColumnGridGroupConnection";
+  distinct: Array<Scalars["String"]>;
+  edges: Array<ContentfulContentColumnGridEdge>;
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+  group: Array<ContentfulContentColumnGridGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<ContentfulContentColumnGrid>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type ContentfulContentColumnGridGroupConnectionDistinctArgs = {
+  field: ContentfulContentColumnGridFieldsEnum;
+};
+
+export type ContentfulContentColumnGridGroupConnectionGroupArgs = {
+  field: ContentfulContentColumnGridFieldsEnum;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+};
+
+export type ContentfulContentColumnGridGroupConnectionMaxArgs = {
+  field: ContentfulContentColumnGridFieldsEnum;
+};
+
+export type ContentfulContentColumnGridGroupConnectionMinArgs = {
+  field: ContentfulContentColumnGridFieldsEnum;
+};
+
+export type ContentfulContentColumnGridGroupConnectionSumArgs = {
+  field: ContentfulContentColumnGridFieldsEnum;
+};
+
+export type ContentfulContentColumnGridSortInput = {
+  fields?: InputMaybe<Array<InputMaybe<ContentfulContentColumnGridFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
+
+export type ContentfulContentColumnGridSys = {
+  __typename?: "ContentfulContentColumnGridSys";
+  contentType?: Maybe<ContentfulContentColumnGridSysContentType>;
+  revision?: Maybe<Scalars["Int"]>;
+  type?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulContentColumnGridSysContentType = {
+  __typename?: "ContentfulContentColumnGridSysContentType";
+  sys?: Maybe<ContentfulContentColumnGridSysContentTypeSys>;
+};
+
+export type ContentfulContentColumnGridSysContentTypeFilterInput = {
+  sys?: InputMaybe<ContentfulContentColumnGridSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulContentColumnGridSysContentTypeSys = {
+  __typename?: "ContentfulContentColumnGridSysContentTypeSys";
+  id?: Maybe<Scalars["String"]>;
+  linkType?: Maybe<Scalars["String"]>;
+  type?: Maybe<Scalars["String"]>;
+};
+
+export type ContentfulContentColumnGridSysContentTypeSysFilterInput = {
+  id?: InputMaybe<StringQueryOperatorInput>;
+  linkType?: InputMaybe<StringQueryOperatorInput>;
+  type?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulContentColumnGridSysFilterInput = {
+  contentType?: InputMaybe<ContentfulContentColumnGridSysContentTypeFilterInput>;
+  revision?: InputMaybe<IntQueryOperatorInput>;
+  type?: InputMaybe<StringQueryOperatorInput>;
+};
+
 export type ContentfulContentType = Node & {
   __typename?: "ContentfulContentType";
   children: Array<Node>;
@@ -3480,6 +4295,7 @@ export type ContentfulLink = ContentfulEntry &
     childrenContentfulLinkUrlTextNode?: Maybe<
       Array<Maybe<ContentfulLinkUrlTextNode>>
     >;
+    contentcolumngrid?: Maybe<Array<Maybe<ContentfulContentColumnGrid>>>;
     contentful_id: Scalars["String"];
     contentfulid?: Maybe<Scalars["String"]>;
     createdAt?: Maybe<Scalars["Date"]>;
@@ -3557,6 +4373,8 @@ export enum ContentfulLinkFieldsEnum {
   ActioninfoblockArticleRaw = "actioninfoblock___article___raw",
   ActioninfoblockButtonActioninfoblock = "actioninfoblock___button___actioninfoblock",
   ActioninfoblockButtonActioninfoblockChildren = "actioninfoblock___button___actioninfoblock___children",
+  ActioninfoblockButtonActioninfoblockContentblock = "actioninfoblock___button___actioninfoblock___contentblock",
+  ActioninfoblockButtonActioninfoblockContentcolumngrid = "actioninfoblock___button___actioninfoblock___contentcolumngrid",
   ActioninfoblockButtonActioninfoblockContentfulId = "actioninfoblock___button___actioninfoblock___contentful_id",
   ActioninfoblockButtonActioninfoblockCreatedAt = "actioninfoblock___button___actioninfoblock___createdAt",
   ActioninfoblockButtonActioninfoblockId = "actioninfoblock___button___actioninfoblock___id",
@@ -3569,6 +4387,7 @@ export enum ContentfulLinkFieldsEnum {
   ActioninfoblockButtonAuthoravatarblockChildren = "actioninfoblock___button___authoravatarblock___children",
   ActioninfoblockButtonAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "actioninfoblock___button___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
   ActioninfoblockButtonAuthoravatarblockContentblock = "actioninfoblock___button___authoravatarblock___contentblock",
+  ActioninfoblockButtonAuthoravatarblockContentcolumngrid = "actioninfoblock___button___authoravatarblock___contentcolumngrid",
   ActioninfoblockButtonAuthoravatarblockContentfulId = "actioninfoblock___button___authoravatarblock___contentful_id",
   ActioninfoblockButtonAuthoravatarblockCreatedAt = "actioninfoblock___button___authoravatarblock___createdAt",
   ActioninfoblockButtonAuthoravatarblockFullName = "actioninfoblock___button___authoravatarblock___fullName",
@@ -3590,6 +4409,18 @@ export enum ContentfulLinkFieldsEnum {
   ActioninfoblockButtonChildrenContentfulLinkUrlTextNodeUrl = "actioninfoblock___button___childrenContentfulLinkUrlTextNode___url",
   ActioninfoblockButtonChildrenChildren = "actioninfoblock___button___children___children",
   ActioninfoblockButtonChildrenId = "actioninfoblock___button___children___id",
+  ActioninfoblockButtonContentcolumngrid = "actioninfoblock___button___contentcolumngrid",
+  ActioninfoblockButtonContentcolumngridAlignColumnsOnMobile = "actioninfoblock___button___contentcolumngrid___alignColumnsOnMobile",
+  ActioninfoblockButtonContentcolumngridChildren = "actioninfoblock___button___contentcolumngrid___children",
+  ActioninfoblockButtonContentcolumngridContentblock = "actioninfoblock___button___contentcolumngrid___contentblock",
+  ActioninfoblockButtonContentcolumngridContentfulId = "actioninfoblock___button___contentcolumngrid___contentful_id",
+  ActioninfoblockButtonContentcolumngridCreatedAt = "actioninfoblock___button___contentcolumngrid___createdAt",
+  ActioninfoblockButtonContentcolumngridId = "actioninfoblock___button___contentcolumngrid___id",
+  ActioninfoblockButtonContentcolumngridNodeLocale = "actioninfoblock___button___contentcolumngrid___node_locale",
+  ActioninfoblockButtonContentcolumngridRatio = "actioninfoblock___button___contentcolumngrid___ratio",
+  ActioninfoblockButtonContentcolumngridSpaceId = "actioninfoblock___button___contentcolumngrid___spaceId",
+  ActioninfoblockButtonContentcolumngridUniqueId = "actioninfoblock___button___contentcolumngrid___uniqueId",
+  ActioninfoblockButtonContentcolumngridUpdatedAt = "actioninfoblock___button___contentcolumngrid___updatedAt",
   ActioninfoblockButtonContentfulId = "actioninfoblock___button___contentful_id",
   ActioninfoblockButtonContentfulid = "actioninfoblock___button___contentfulid",
   ActioninfoblockButtonCreatedAt = "actioninfoblock___button___createdAt",
@@ -3663,6 +4494,78 @@ export enum ContentfulLinkFieldsEnum {
   ActioninfoblockChildrenInternalType = "actioninfoblock___children___internal___type",
   ActioninfoblockChildrenParentChildren = "actioninfoblock___children___parent___children",
   ActioninfoblockChildrenParentId = "actioninfoblock___children___parent___id",
+  ActioninfoblockContentblock = "actioninfoblock___contentblock",
+  ActioninfoblockContentblockChildren = "actioninfoblock___contentblock___children",
+  ActioninfoblockContentblockChildrenChildren = "actioninfoblock___contentblock___children___children",
+  ActioninfoblockContentblockChildrenId = "actioninfoblock___contentblock___children___id",
+  ActioninfoblockContentblockContentfulId = "actioninfoblock___contentblock___contentful_id",
+  ActioninfoblockContentblockCreatedAt = "actioninfoblock___contentblock___createdAt",
+  ActioninfoblockContentblockId = "actioninfoblock___contentblock___id",
+  ActioninfoblockContentblockInternalContent = "actioninfoblock___contentblock___internal___content",
+  ActioninfoblockContentblockInternalContentDigest = "actioninfoblock___contentblock___internal___contentDigest",
+  ActioninfoblockContentblockInternalDescription = "actioninfoblock___contentblock___internal___description",
+  ActioninfoblockContentblockInternalFieldOwners = "actioninfoblock___contentblock___internal___fieldOwners",
+  ActioninfoblockContentblockInternalIgnoreType = "actioninfoblock___contentblock___internal___ignoreType",
+  ActioninfoblockContentblockInternalMediaType = "actioninfoblock___contentblock___internal___mediaType",
+  ActioninfoblockContentblockInternalOwner = "actioninfoblock___contentblock___internal___owner",
+  ActioninfoblockContentblockInternalType = "actioninfoblock___contentblock___internal___type",
+  ActioninfoblockContentblockMargin = "actioninfoblock___contentblock___margin",
+  ActioninfoblockContentblockNodeLocale = "actioninfoblock___contentblock___node_locale",
+  ActioninfoblockContentblockPage = "actioninfoblock___contentblock___page",
+  ActioninfoblockContentblockPageChildren = "actioninfoblock___contentblock___page___children",
+  ActioninfoblockContentblockPageChildrenContentfulPageDescriptionTextNode = "actioninfoblock___contentblock___page___childrenContentfulPageDescriptionTextNode",
+  ActioninfoblockContentblockPageContent = "actioninfoblock___contentblock___page___content",
+  ActioninfoblockContentblockPageContentfulId = "actioninfoblock___contentblock___page___contentful_id",
+  ActioninfoblockContentblockPageCreatedAt = "actioninfoblock___contentblock___page___createdAt",
+  ActioninfoblockContentblockPageId = "actioninfoblock___contentblock___page___id",
+  ActioninfoblockContentblockPageNodeLocale = "actioninfoblock___contentblock___page___node_locale",
+  ActioninfoblockContentblockPageSpaceId = "actioninfoblock___contentblock___page___spaceId",
+  ActioninfoblockContentblockPageTitle = "actioninfoblock___contentblock___page___title",
+  ActioninfoblockContentblockPageUpdatedAt = "actioninfoblock___contentblock___page___updatedAt",
+  ActioninfoblockContentblockPageUrl = "actioninfoblock___contentblock___page___url",
+  ActioninfoblockContentblockParentChildren = "actioninfoblock___contentblock___parent___children",
+  ActioninfoblockContentblockParentId = "actioninfoblock___contentblock___parent___id",
+  ActioninfoblockContentblockSpaceId = "actioninfoblock___contentblock___spaceId",
+  ActioninfoblockContentblockSysRevision = "actioninfoblock___contentblock___sys___revision",
+  ActioninfoblockContentblockSysType = "actioninfoblock___contentblock___sys___type",
+  ActioninfoblockContentblockUniqueId = "actioninfoblock___contentblock___uniqueId",
+  ActioninfoblockContentblockUpdatedAt = "actioninfoblock___contentblock___updatedAt",
+  ActioninfoblockContentcolumngrid = "actioninfoblock___contentcolumngrid",
+  ActioninfoblockContentcolumngridAlignColumnsOnMobile = "actioninfoblock___contentcolumngrid___alignColumnsOnMobile",
+  ActioninfoblockContentcolumngridChildren = "actioninfoblock___contentcolumngrid___children",
+  ActioninfoblockContentcolumngridChildrenChildren = "actioninfoblock___contentcolumngrid___children___children",
+  ActioninfoblockContentcolumngridChildrenId = "actioninfoblock___contentcolumngrid___children___id",
+  ActioninfoblockContentcolumngridContentblock = "actioninfoblock___contentcolumngrid___contentblock",
+  ActioninfoblockContentcolumngridContentblockChildren = "actioninfoblock___contentcolumngrid___contentblock___children",
+  ActioninfoblockContentcolumngridContentblockContentfulId = "actioninfoblock___contentcolumngrid___contentblock___contentful_id",
+  ActioninfoblockContentcolumngridContentblockCreatedAt = "actioninfoblock___contentcolumngrid___contentblock___createdAt",
+  ActioninfoblockContentcolumngridContentblockId = "actioninfoblock___contentcolumngrid___contentblock___id",
+  ActioninfoblockContentcolumngridContentblockMargin = "actioninfoblock___contentcolumngrid___contentblock___margin",
+  ActioninfoblockContentcolumngridContentblockNodeLocale = "actioninfoblock___contentcolumngrid___contentblock___node_locale",
+  ActioninfoblockContentcolumngridContentblockPage = "actioninfoblock___contentcolumngrid___contentblock___page",
+  ActioninfoblockContentcolumngridContentblockSpaceId = "actioninfoblock___contentcolumngrid___contentblock___spaceId",
+  ActioninfoblockContentcolumngridContentblockUniqueId = "actioninfoblock___contentcolumngrid___contentblock___uniqueId",
+  ActioninfoblockContentcolumngridContentblockUpdatedAt = "actioninfoblock___contentcolumngrid___contentblock___updatedAt",
+  ActioninfoblockContentcolumngridContentfulId = "actioninfoblock___contentcolumngrid___contentful_id",
+  ActioninfoblockContentcolumngridCreatedAt = "actioninfoblock___contentcolumngrid___createdAt",
+  ActioninfoblockContentcolumngridId = "actioninfoblock___contentcolumngrid___id",
+  ActioninfoblockContentcolumngridInternalContent = "actioninfoblock___contentcolumngrid___internal___content",
+  ActioninfoblockContentcolumngridInternalContentDigest = "actioninfoblock___contentcolumngrid___internal___contentDigest",
+  ActioninfoblockContentcolumngridInternalDescription = "actioninfoblock___contentcolumngrid___internal___description",
+  ActioninfoblockContentcolumngridInternalFieldOwners = "actioninfoblock___contentcolumngrid___internal___fieldOwners",
+  ActioninfoblockContentcolumngridInternalIgnoreType = "actioninfoblock___contentcolumngrid___internal___ignoreType",
+  ActioninfoblockContentcolumngridInternalMediaType = "actioninfoblock___contentcolumngrid___internal___mediaType",
+  ActioninfoblockContentcolumngridInternalOwner = "actioninfoblock___contentcolumngrid___internal___owner",
+  ActioninfoblockContentcolumngridInternalType = "actioninfoblock___contentcolumngrid___internal___type",
+  ActioninfoblockContentcolumngridNodeLocale = "actioninfoblock___contentcolumngrid___node_locale",
+  ActioninfoblockContentcolumngridParentChildren = "actioninfoblock___contentcolumngrid___parent___children",
+  ActioninfoblockContentcolumngridParentId = "actioninfoblock___contentcolumngrid___parent___id",
+  ActioninfoblockContentcolumngridRatio = "actioninfoblock___contentcolumngrid___ratio",
+  ActioninfoblockContentcolumngridSpaceId = "actioninfoblock___contentcolumngrid___spaceId",
+  ActioninfoblockContentcolumngridSysRevision = "actioninfoblock___contentcolumngrid___sys___revision",
+  ActioninfoblockContentcolumngridSysType = "actioninfoblock___contentcolumngrid___sys___type",
+  ActioninfoblockContentcolumngridUniqueId = "actioninfoblock___contentcolumngrid___uniqueId",
+  ActioninfoblockContentcolumngridUpdatedAt = "actioninfoblock___contentcolumngrid___updatedAt",
   ActioninfoblockContentfulId = "actioninfoblock___contentful_id",
   ActioninfoblockCreatedAt = "actioninfoblock___createdAt",
   ActioninfoblockId = "actioninfoblock___id",
@@ -3930,6 +4833,42 @@ export enum ContentfulLinkFieldsEnum {
   AuthoravatarblockContentblockSysType = "authoravatarblock___contentblock___sys___type",
   AuthoravatarblockContentblockUniqueId = "authoravatarblock___contentblock___uniqueId",
   AuthoravatarblockContentblockUpdatedAt = "authoravatarblock___contentblock___updatedAt",
+  AuthoravatarblockContentcolumngrid = "authoravatarblock___contentcolumngrid",
+  AuthoravatarblockContentcolumngridAlignColumnsOnMobile = "authoravatarblock___contentcolumngrid___alignColumnsOnMobile",
+  AuthoravatarblockContentcolumngridChildren = "authoravatarblock___contentcolumngrid___children",
+  AuthoravatarblockContentcolumngridChildrenChildren = "authoravatarblock___contentcolumngrid___children___children",
+  AuthoravatarblockContentcolumngridChildrenId = "authoravatarblock___contentcolumngrid___children___id",
+  AuthoravatarblockContentcolumngridContentblock = "authoravatarblock___contentcolumngrid___contentblock",
+  AuthoravatarblockContentcolumngridContentblockChildren = "authoravatarblock___contentcolumngrid___contentblock___children",
+  AuthoravatarblockContentcolumngridContentblockContentfulId = "authoravatarblock___contentcolumngrid___contentblock___contentful_id",
+  AuthoravatarblockContentcolumngridContentblockCreatedAt = "authoravatarblock___contentcolumngrid___contentblock___createdAt",
+  AuthoravatarblockContentcolumngridContentblockId = "authoravatarblock___contentcolumngrid___contentblock___id",
+  AuthoravatarblockContentcolumngridContentblockMargin = "authoravatarblock___contentcolumngrid___contentblock___margin",
+  AuthoravatarblockContentcolumngridContentblockNodeLocale = "authoravatarblock___contentcolumngrid___contentblock___node_locale",
+  AuthoravatarblockContentcolumngridContentblockPage = "authoravatarblock___contentcolumngrid___contentblock___page",
+  AuthoravatarblockContentcolumngridContentblockSpaceId = "authoravatarblock___contentcolumngrid___contentblock___spaceId",
+  AuthoravatarblockContentcolumngridContentblockUniqueId = "authoravatarblock___contentcolumngrid___contentblock___uniqueId",
+  AuthoravatarblockContentcolumngridContentblockUpdatedAt = "authoravatarblock___contentcolumngrid___contentblock___updatedAt",
+  AuthoravatarblockContentcolumngridContentfulId = "authoravatarblock___contentcolumngrid___contentful_id",
+  AuthoravatarblockContentcolumngridCreatedAt = "authoravatarblock___contentcolumngrid___createdAt",
+  AuthoravatarblockContentcolumngridId = "authoravatarblock___contentcolumngrid___id",
+  AuthoravatarblockContentcolumngridInternalContent = "authoravatarblock___contentcolumngrid___internal___content",
+  AuthoravatarblockContentcolumngridInternalContentDigest = "authoravatarblock___contentcolumngrid___internal___contentDigest",
+  AuthoravatarblockContentcolumngridInternalDescription = "authoravatarblock___contentcolumngrid___internal___description",
+  AuthoravatarblockContentcolumngridInternalFieldOwners = "authoravatarblock___contentcolumngrid___internal___fieldOwners",
+  AuthoravatarblockContentcolumngridInternalIgnoreType = "authoravatarblock___contentcolumngrid___internal___ignoreType",
+  AuthoravatarblockContentcolumngridInternalMediaType = "authoravatarblock___contentcolumngrid___internal___mediaType",
+  AuthoravatarblockContentcolumngridInternalOwner = "authoravatarblock___contentcolumngrid___internal___owner",
+  AuthoravatarblockContentcolumngridInternalType = "authoravatarblock___contentcolumngrid___internal___type",
+  AuthoravatarblockContentcolumngridNodeLocale = "authoravatarblock___contentcolumngrid___node_locale",
+  AuthoravatarblockContentcolumngridParentChildren = "authoravatarblock___contentcolumngrid___parent___children",
+  AuthoravatarblockContentcolumngridParentId = "authoravatarblock___contentcolumngrid___parent___id",
+  AuthoravatarblockContentcolumngridRatio = "authoravatarblock___contentcolumngrid___ratio",
+  AuthoravatarblockContentcolumngridSpaceId = "authoravatarblock___contentcolumngrid___spaceId",
+  AuthoravatarblockContentcolumngridSysRevision = "authoravatarblock___contentcolumngrid___sys___revision",
+  AuthoravatarblockContentcolumngridSysType = "authoravatarblock___contentcolumngrid___sys___type",
+  AuthoravatarblockContentcolumngridUniqueId = "authoravatarblock___contentcolumngrid___uniqueId",
+  AuthoravatarblockContentcolumngridUpdatedAt = "authoravatarblock___contentcolumngrid___updatedAt",
   AuthoravatarblockContentfulId = "authoravatarblock___contentful_id",
   AuthoravatarblockCreatedAt = "authoravatarblock___createdAt",
   AuthoravatarblockDescriptionChildMdxBody = "authoravatarblock___description___childMdx___body",
@@ -4007,6 +4946,8 @@ export enum ContentfulLinkFieldsEnum {
   AuthoravatarblockSocialSiteLinks = "authoravatarblock___socialSiteLinks",
   AuthoravatarblockSocialSiteLinksActioninfoblock = "authoravatarblock___socialSiteLinks___actioninfoblock",
   AuthoravatarblockSocialSiteLinksActioninfoblockChildren = "authoravatarblock___socialSiteLinks___actioninfoblock___children",
+  AuthoravatarblockSocialSiteLinksActioninfoblockContentblock = "authoravatarblock___socialSiteLinks___actioninfoblock___contentblock",
+  AuthoravatarblockSocialSiteLinksActioninfoblockContentcolumngrid = "authoravatarblock___socialSiteLinks___actioninfoblock___contentcolumngrid",
   AuthoravatarblockSocialSiteLinksActioninfoblockContentfulId = "authoravatarblock___socialSiteLinks___actioninfoblock___contentful_id",
   AuthoravatarblockSocialSiteLinksActioninfoblockCreatedAt = "authoravatarblock___socialSiteLinks___actioninfoblock___createdAt",
   AuthoravatarblockSocialSiteLinksActioninfoblockId = "authoravatarblock___socialSiteLinks___actioninfoblock___id",
@@ -4019,6 +4960,7 @@ export enum ContentfulLinkFieldsEnum {
   AuthoravatarblockSocialSiteLinksAuthoravatarblockChildren = "authoravatarblock___socialSiteLinks___authoravatarblock___children",
   AuthoravatarblockSocialSiteLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "authoravatarblock___socialSiteLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
   AuthoravatarblockSocialSiteLinksAuthoravatarblockContentblock = "authoravatarblock___socialSiteLinks___authoravatarblock___contentblock",
+  AuthoravatarblockSocialSiteLinksAuthoravatarblockContentcolumngrid = "authoravatarblock___socialSiteLinks___authoravatarblock___contentcolumngrid",
   AuthoravatarblockSocialSiteLinksAuthoravatarblockContentfulId = "authoravatarblock___socialSiteLinks___authoravatarblock___contentful_id",
   AuthoravatarblockSocialSiteLinksAuthoravatarblockCreatedAt = "authoravatarblock___socialSiteLinks___authoravatarblock___createdAt",
   AuthoravatarblockSocialSiteLinksAuthoravatarblockFullName = "authoravatarblock___socialSiteLinks___authoravatarblock___fullName",
@@ -4040,6 +4982,18 @@ export enum ContentfulLinkFieldsEnum {
   AuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNodeUrl = "authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode___url",
   AuthoravatarblockSocialSiteLinksChildrenChildren = "authoravatarblock___socialSiteLinks___children___children",
   AuthoravatarblockSocialSiteLinksChildrenId = "authoravatarblock___socialSiteLinks___children___id",
+  AuthoravatarblockSocialSiteLinksContentcolumngrid = "authoravatarblock___socialSiteLinks___contentcolumngrid",
+  AuthoravatarblockSocialSiteLinksContentcolumngridAlignColumnsOnMobile = "authoravatarblock___socialSiteLinks___contentcolumngrid___alignColumnsOnMobile",
+  AuthoravatarblockSocialSiteLinksContentcolumngridChildren = "authoravatarblock___socialSiteLinks___contentcolumngrid___children",
+  AuthoravatarblockSocialSiteLinksContentcolumngridContentblock = "authoravatarblock___socialSiteLinks___contentcolumngrid___contentblock",
+  AuthoravatarblockSocialSiteLinksContentcolumngridContentfulId = "authoravatarblock___socialSiteLinks___contentcolumngrid___contentful_id",
+  AuthoravatarblockSocialSiteLinksContentcolumngridCreatedAt = "authoravatarblock___socialSiteLinks___contentcolumngrid___createdAt",
+  AuthoravatarblockSocialSiteLinksContentcolumngridId = "authoravatarblock___socialSiteLinks___contentcolumngrid___id",
+  AuthoravatarblockSocialSiteLinksContentcolumngridNodeLocale = "authoravatarblock___socialSiteLinks___contentcolumngrid___node_locale",
+  AuthoravatarblockSocialSiteLinksContentcolumngridRatio = "authoravatarblock___socialSiteLinks___contentcolumngrid___ratio",
+  AuthoravatarblockSocialSiteLinksContentcolumngridSpaceId = "authoravatarblock___socialSiteLinks___contentcolumngrid___spaceId",
+  AuthoravatarblockSocialSiteLinksContentcolumngridUniqueId = "authoravatarblock___socialSiteLinks___contentcolumngrid___uniqueId",
+  AuthoravatarblockSocialSiteLinksContentcolumngridUpdatedAt = "authoravatarblock___socialSiteLinks___contentcolumngrid___updatedAt",
   AuthoravatarblockSocialSiteLinksContentfulId = "authoravatarblock___socialSiteLinks___contentful_id",
   AuthoravatarblockSocialSiteLinksContentfulid = "authoravatarblock___socialSiteLinks___contentfulid",
   AuthoravatarblockSocialSiteLinksCreatedAt = "authoravatarblock___socialSiteLinks___createdAt",
@@ -4365,6 +5319,91 @@ export enum ContentfulLinkFieldsEnum {
   ChildrenParentInternalType = "children___parent___internal___type",
   ChildrenParentParentChildren = "children___parent___parent___children",
   ChildrenParentParentId = "children___parent___parent___id",
+  Contentcolumngrid = "contentcolumngrid",
+  ContentcolumngridAlignColumnsOnMobile = "contentcolumngrid___alignColumnsOnMobile",
+  ContentcolumngridChildren = "contentcolumngrid___children",
+  ContentcolumngridChildrenChildren = "contentcolumngrid___children___children",
+  ContentcolumngridChildrenChildrenChildren = "contentcolumngrid___children___children___children",
+  ContentcolumngridChildrenChildrenId = "contentcolumngrid___children___children___id",
+  ContentcolumngridChildrenId = "contentcolumngrid___children___id",
+  ContentcolumngridChildrenInternalContent = "contentcolumngrid___children___internal___content",
+  ContentcolumngridChildrenInternalContentDigest = "contentcolumngrid___children___internal___contentDigest",
+  ContentcolumngridChildrenInternalDescription = "contentcolumngrid___children___internal___description",
+  ContentcolumngridChildrenInternalFieldOwners = "contentcolumngrid___children___internal___fieldOwners",
+  ContentcolumngridChildrenInternalIgnoreType = "contentcolumngrid___children___internal___ignoreType",
+  ContentcolumngridChildrenInternalMediaType = "contentcolumngrid___children___internal___mediaType",
+  ContentcolumngridChildrenInternalOwner = "contentcolumngrid___children___internal___owner",
+  ContentcolumngridChildrenInternalType = "contentcolumngrid___children___internal___type",
+  ContentcolumngridChildrenParentChildren = "contentcolumngrid___children___parent___children",
+  ContentcolumngridChildrenParentId = "contentcolumngrid___children___parent___id",
+  ContentcolumngridContentblock = "contentcolumngrid___contentblock",
+  ContentcolumngridContentblockChildren = "contentcolumngrid___contentblock___children",
+  ContentcolumngridContentblockChildrenChildren = "contentcolumngrid___contentblock___children___children",
+  ContentcolumngridContentblockChildrenId = "contentcolumngrid___contentblock___children___id",
+  ContentcolumngridContentblockContentfulId = "contentcolumngrid___contentblock___contentful_id",
+  ContentcolumngridContentblockCreatedAt = "contentcolumngrid___contentblock___createdAt",
+  ContentcolumngridContentblockId = "contentcolumngrid___contentblock___id",
+  ContentcolumngridContentblockInternalContent = "contentcolumngrid___contentblock___internal___content",
+  ContentcolumngridContentblockInternalContentDigest = "contentcolumngrid___contentblock___internal___contentDigest",
+  ContentcolumngridContentblockInternalDescription = "contentcolumngrid___contentblock___internal___description",
+  ContentcolumngridContentblockInternalFieldOwners = "contentcolumngrid___contentblock___internal___fieldOwners",
+  ContentcolumngridContentblockInternalIgnoreType = "contentcolumngrid___contentblock___internal___ignoreType",
+  ContentcolumngridContentblockInternalMediaType = "contentcolumngrid___contentblock___internal___mediaType",
+  ContentcolumngridContentblockInternalOwner = "contentcolumngrid___contentblock___internal___owner",
+  ContentcolumngridContentblockInternalType = "contentcolumngrid___contentblock___internal___type",
+  ContentcolumngridContentblockMargin = "contentcolumngrid___contentblock___margin",
+  ContentcolumngridContentblockNodeLocale = "contentcolumngrid___contentblock___node_locale",
+  ContentcolumngridContentblockPage = "contentcolumngrid___contentblock___page",
+  ContentcolumngridContentblockPageChildren = "contentcolumngrid___contentblock___page___children",
+  ContentcolumngridContentblockPageChildrenContentfulPageDescriptionTextNode = "contentcolumngrid___contentblock___page___childrenContentfulPageDescriptionTextNode",
+  ContentcolumngridContentblockPageContent = "contentcolumngrid___contentblock___page___content",
+  ContentcolumngridContentblockPageContentfulId = "contentcolumngrid___contentblock___page___contentful_id",
+  ContentcolumngridContentblockPageCreatedAt = "contentcolumngrid___contentblock___page___createdAt",
+  ContentcolumngridContentblockPageId = "contentcolumngrid___contentblock___page___id",
+  ContentcolumngridContentblockPageNodeLocale = "contentcolumngrid___contentblock___page___node_locale",
+  ContentcolumngridContentblockPageSpaceId = "contentcolumngrid___contentblock___page___spaceId",
+  ContentcolumngridContentblockPageTitle = "contentcolumngrid___contentblock___page___title",
+  ContentcolumngridContentblockPageUpdatedAt = "contentcolumngrid___contentblock___page___updatedAt",
+  ContentcolumngridContentblockPageUrl = "contentcolumngrid___contentblock___page___url",
+  ContentcolumngridContentblockParentChildren = "contentcolumngrid___contentblock___parent___children",
+  ContentcolumngridContentblockParentId = "contentcolumngrid___contentblock___parent___id",
+  ContentcolumngridContentblockSpaceId = "contentcolumngrid___contentblock___spaceId",
+  ContentcolumngridContentblockSysRevision = "contentcolumngrid___contentblock___sys___revision",
+  ContentcolumngridContentblockSysType = "contentcolumngrid___contentblock___sys___type",
+  ContentcolumngridContentblockUniqueId = "contentcolumngrid___contentblock___uniqueId",
+  ContentcolumngridContentblockUpdatedAt = "contentcolumngrid___contentblock___updatedAt",
+  ContentcolumngridContentfulId = "contentcolumngrid___contentful_id",
+  ContentcolumngridCreatedAt = "contentcolumngrid___createdAt",
+  ContentcolumngridId = "contentcolumngrid___id",
+  ContentcolumngridInternalContent = "contentcolumngrid___internal___content",
+  ContentcolumngridInternalContentDigest = "contentcolumngrid___internal___contentDigest",
+  ContentcolumngridInternalDescription = "contentcolumngrid___internal___description",
+  ContentcolumngridInternalFieldOwners = "contentcolumngrid___internal___fieldOwners",
+  ContentcolumngridInternalIgnoreType = "contentcolumngrid___internal___ignoreType",
+  ContentcolumngridInternalMediaType = "contentcolumngrid___internal___mediaType",
+  ContentcolumngridInternalOwner = "contentcolumngrid___internal___owner",
+  ContentcolumngridInternalType = "contentcolumngrid___internal___type",
+  ContentcolumngridNodeLocale = "contentcolumngrid___node_locale",
+  ContentcolumngridParentChildren = "contentcolumngrid___parent___children",
+  ContentcolumngridParentChildrenChildren = "contentcolumngrid___parent___children___children",
+  ContentcolumngridParentChildrenId = "contentcolumngrid___parent___children___id",
+  ContentcolumngridParentId = "contentcolumngrid___parent___id",
+  ContentcolumngridParentInternalContent = "contentcolumngrid___parent___internal___content",
+  ContentcolumngridParentInternalContentDigest = "contentcolumngrid___parent___internal___contentDigest",
+  ContentcolumngridParentInternalDescription = "contentcolumngrid___parent___internal___description",
+  ContentcolumngridParentInternalFieldOwners = "contentcolumngrid___parent___internal___fieldOwners",
+  ContentcolumngridParentInternalIgnoreType = "contentcolumngrid___parent___internal___ignoreType",
+  ContentcolumngridParentInternalMediaType = "contentcolumngrid___parent___internal___mediaType",
+  ContentcolumngridParentInternalOwner = "contentcolumngrid___parent___internal___owner",
+  ContentcolumngridParentInternalType = "contentcolumngrid___parent___internal___type",
+  ContentcolumngridParentParentChildren = "contentcolumngrid___parent___parent___children",
+  ContentcolumngridParentParentId = "contentcolumngrid___parent___parent___id",
+  ContentcolumngridRatio = "contentcolumngrid___ratio",
+  ContentcolumngridSpaceId = "contentcolumngrid___spaceId",
+  ContentcolumngridSysRevision = "contentcolumngrid___sys___revision",
+  ContentcolumngridSysType = "contentcolumngrid___sys___type",
+  ContentcolumngridUniqueId = "contentcolumngrid___uniqueId",
+  ContentcolumngridUpdatedAt = "contentcolumngrid___updatedAt",
   ContentfulId = "contentful_id",
   Contentfulid = "contentfulid",
   CreatedAt = "createdAt",
@@ -4450,6 +5489,8 @@ export enum ContentfulLinkFieldsEnum {
   Options = "options",
   OptionsBottomBarLogoActioninfoblock = "options___bottomBarLogo___actioninfoblock",
   OptionsBottomBarLogoActioninfoblockChildren = "options___bottomBarLogo___actioninfoblock___children",
+  OptionsBottomBarLogoActioninfoblockContentblock = "options___bottomBarLogo___actioninfoblock___contentblock",
+  OptionsBottomBarLogoActioninfoblockContentcolumngrid = "options___bottomBarLogo___actioninfoblock___contentcolumngrid",
   OptionsBottomBarLogoActioninfoblockContentfulId = "options___bottomBarLogo___actioninfoblock___contentful_id",
   OptionsBottomBarLogoActioninfoblockCreatedAt = "options___bottomBarLogo___actioninfoblock___createdAt",
   OptionsBottomBarLogoActioninfoblockId = "options___bottomBarLogo___actioninfoblock___id",
@@ -4462,6 +5503,7 @@ export enum ContentfulLinkFieldsEnum {
   OptionsBottomBarLogoAuthoravatarblockChildren = "options___bottomBarLogo___authoravatarblock___children",
   OptionsBottomBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "options___bottomBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
   OptionsBottomBarLogoAuthoravatarblockContentblock = "options___bottomBarLogo___authoravatarblock___contentblock",
+  OptionsBottomBarLogoAuthoravatarblockContentcolumngrid = "options___bottomBarLogo___authoravatarblock___contentcolumngrid",
   OptionsBottomBarLogoAuthoravatarblockContentfulId = "options___bottomBarLogo___authoravatarblock___contentful_id",
   OptionsBottomBarLogoAuthoravatarblockCreatedAt = "options___bottomBarLogo___authoravatarblock___createdAt",
   OptionsBottomBarLogoAuthoravatarblockFullName = "options___bottomBarLogo___authoravatarblock___fullName",
@@ -4483,6 +5525,18 @@ export enum ContentfulLinkFieldsEnum {
   OptionsBottomBarLogoChildrenContentfulLinkUrlTextNodeUrl = "options___bottomBarLogo___childrenContentfulLinkUrlTextNode___url",
   OptionsBottomBarLogoChildrenChildren = "options___bottomBarLogo___children___children",
   OptionsBottomBarLogoChildrenId = "options___bottomBarLogo___children___id",
+  OptionsBottomBarLogoContentcolumngrid = "options___bottomBarLogo___contentcolumngrid",
+  OptionsBottomBarLogoContentcolumngridAlignColumnsOnMobile = "options___bottomBarLogo___contentcolumngrid___alignColumnsOnMobile",
+  OptionsBottomBarLogoContentcolumngridChildren = "options___bottomBarLogo___contentcolumngrid___children",
+  OptionsBottomBarLogoContentcolumngridContentblock = "options___bottomBarLogo___contentcolumngrid___contentblock",
+  OptionsBottomBarLogoContentcolumngridContentfulId = "options___bottomBarLogo___contentcolumngrid___contentful_id",
+  OptionsBottomBarLogoContentcolumngridCreatedAt = "options___bottomBarLogo___contentcolumngrid___createdAt",
+  OptionsBottomBarLogoContentcolumngridId = "options___bottomBarLogo___contentcolumngrid___id",
+  OptionsBottomBarLogoContentcolumngridNodeLocale = "options___bottomBarLogo___contentcolumngrid___node_locale",
+  OptionsBottomBarLogoContentcolumngridRatio = "options___bottomBarLogo___contentcolumngrid___ratio",
+  OptionsBottomBarLogoContentcolumngridSpaceId = "options___bottomBarLogo___contentcolumngrid___spaceId",
+  OptionsBottomBarLogoContentcolumngridUniqueId = "options___bottomBarLogo___contentcolumngrid___uniqueId",
+  OptionsBottomBarLogoContentcolumngridUpdatedAt = "options___bottomBarLogo___contentcolumngrid___updatedAt",
   OptionsBottomBarLogoContentfulId = "options___bottomBarLogo___contentful_id",
   OptionsBottomBarLogoContentfulid = "options___bottomBarLogo___contentfulid",
   OptionsBottomBarLogoCreatedAt = "options___bottomBarLogo___createdAt",
@@ -4544,6 +5598,8 @@ export enum ContentfulLinkFieldsEnum {
   OptionsBottomBarSocialLinks = "options___bottomBarSocialLinks",
   OptionsBottomBarSocialLinksActioninfoblock = "options___bottomBarSocialLinks___actioninfoblock",
   OptionsBottomBarSocialLinksActioninfoblockChildren = "options___bottomBarSocialLinks___actioninfoblock___children",
+  OptionsBottomBarSocialLinksActioninfoblockContentblock = "options___bottomBarSocialLinks___actioninfoblock___contentblock",
+  OptionsBottomBarSocialLinksActioninfoblockContentcolumngrid = "options___bottomBarSocialLinks___actioninfoblock___contentcolumngrid",
   OptionsBottomBarSocialLinksActioninfoblockContentfulId = "options___bottomBarSocialLinks___actioninfoblock___contentful_id",
   OptionsBottomBarSocialLinksActioninfoblockCreatedAt = "options___bottomBarSocialLinks___actioninfoblock___createdAt",
   OptionsBottomBarSocialLinksActioninfoblockId = "options___bottomBarSocialLinks___actioninfoblock___id",
@@ -4556,6 +5612,7 @@ export enum ContentfulLinkFieldsEnum {
   OptionsBottomBarSocialLinksAuthoravatarblockChildren = "options___bottomBarSocialLinks___authoravatarblock___children",
   OptionsBottomBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "options___bottomBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
   OptionsBottomBarSocialLinksAuthoravatarblockContentblock = "options___bottomBarSocialLinks___authoravatarblock___contentblock",
+  OptionsBottomBarSocialLinksAuthoravatarblockContentcolumngrid = "options___bottomBarSocialLinks___authoravatarblock___contentcolumngrid",
   OptionsBottomBarSocialLinksAuthoravatarblockContentfulId = "options___bottomBarSocialLinks___authoravatarblock___contentful_id",
   OptionsBottomBarSocialLinksAuthoravatarblockCreatedAt = "options___bottomBarSocialLinks___authoravatarblock___createdAt",
   OptionsBottomBarSocialLinksAuthoravatarblockFullName = "options___bottomBarSocialLinks___authoravatarblock___fullName",
@@ -4577,6 +5634,18 @@ export enum ContentfulLinkFieldsEnum {
   OptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNodeUrl = "options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode___url",
   OptionsBottomBarSocialLinksChildrenChildren = "options___bottomBarSocialLinks___children___children",
   OptionsBottomBarSocialLinksChildrenId = "options___bottomBarSocialLinks___children___id",
+  OptionsBottomBarSocialLinksContentcolumngrid = "options___bottomBarSocialLinks___contentcolumngrid",
+  OptionsBottomBarSocialLinksContentcolumngridAlignColumnsOnMobile = "options___bottomBarSocialLinks___contentcolumngrid___alignColumnsOnMobile",
+  OptionsBottomBarSocialLinksContentcolumngridChildren = "options___bottomBarSocialLinks___contentcolumngrid___children",
+  OptionsBottomBarSocialLinksContentcolumngridContentblock = "options___bottomBarSocialLinks___contentcolumngrid___contentblock",
+  OptionsBottomBarSocialLinksContentcolumngridContentfulId = "options___bottomBarSocialLinks___contentcolumngrid___contentful_id",
+  OptionsBottomBarSocialLinksContentcolumngridCreatedAt = "options___bottomBarSocialLinks___contentcolumngrid___createdAt",
+  OptionsBottomBarSocialLinksContentcolumngridId = "options___bottomBarSocialLinks___contentcolumngrid___id",
+  OptionsBottomBarSocialLinksContentcolumngridNodeLocale = "options___bottomBarSocialLinks___contentcolumngrid___node_locale",
+  OptionsBottomBarSocialLinksContentcolumngridRatio = "options___bottomBarSocialLinks___contentcolumngrid___ratio",
+  OptionsBottomBarSocialLinksContentcolumngridSpaceId = "options___bottomBarSocialLinks___contentcolumngrid___spaceId",
+  OptionsBottomBarSocialLinksContentcolumngridUniqueId = "options___bottomBarSocialLinks___contentcolumngrid___uniqueId",
+  OptionsBottomBarSocialLinksContentcolumngridUpdatedAt = "options___bottomBarSocialLinks___contentcolumngrid___updatedAt",
   OptionsBottomBarSocialLinksContentfulId = "options___bottomBarSocialLinks___contentful_id",
   OptionsBottomBarSocialLinksContentfulid = "options___bottomBarSocialLinks___contentfulid",
   OptionsBottomBarSocialLinksCreatedAt = "options___bottomBarSocialLinks___createdAt",
@@ -4638,6 +5707,8 @@ export enum ContentfulLinkFieldsEnum {
   OptionsBottomBarTabs = "options___bottomBarTabs",
   OptionsBottomBarTabsActioninfoblock = "options___bottomBarTabs___actioninfoblock",
   OptionsBottomBarTabsActioninfoblockChildren = "options___bottomBarTabs___actioninfoblock___children",
+  OptionsBottomBarTabsActioninfoblockContentblock = "options___bottomBarTabs___actioninfoblock___contentblock",
+  OptionsBottomBarTabsActioninfoblockContentcolumngrid = "options___bottomBarTabs___actioninfoblock___contentcolumngrid",
   OptionsBottomBarTabsActioninfoblockContentfulId = "options___bottomBarTabs___actioninfoblock___contentful_id",
   OptionsBottomBarTabsActioninfoblockCreatedAt = "options___bottomBarTabs___actioninfoblock___createdAt",
   OptionsBottomBarTabsActioninfoblockId = "options___bottomBarTabs___actioninfoblock___id",
@@ -4650,6 +5721,7 @@ export enum ContentfulLinkFieldsEnum {
   OptionsBottomBarTabsAuthoravatarblockChildren = "options___bottomBarTabs___authoravatarblock___children",
   OptionsBottomBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "options___bottomBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
   OptionsBottomBarTabsAuthoravatarblockContentblock = "options___bottomBarTabs___authoravatarblock___contentblock",
+  OptionsBottomBarTabsAuthoravatarblockContentcolumngrid = "options___bottomBarTabs___authoravatarblock___contentcolumngrid",
   OptionsBottomBarTabsAuthoravatarblockContentfulId = "options___bottomBarTabs___authoravatarblock___contentful_id",
   OptionsBottomBarTabsAuthoravatarblockCreatedAt = "options___bottomBarTabs___authoravatarblock___createdAt",
   OptionsBottomBarTabsAuthoravatarblockFullName = "options___bottomBarTabs___authoravatarblock___fullName",
@@ -4671,6 +5743,18 @@ export enum ContentfulLinkFieldsEnum {
   OptionsBottomBarTabsChildrenContentfulLinkUrlTextNodeUrl = "options___bottomBarTabs___childrenContentfulLinkUrlTextNode___url",
   OptionsBottomBarTabsChildrenChildren = "options___bottomBarTabs___children___children",
   OptionsBottomBarTabsChildrenId = "options___bottomBarTabs___children___id",
+  OptionsBottomBarTabsContentcolumngrid = "options___bottomBarTabs___contentcolumngrid",
+  OptionsBottomBarTabsContentcolumngridAlignColumnsOnMobile = "options___bottomBarTabs___contentcolumngrid___alignColumnsOnMobile",
+  OptionsBottomBarTabsContentcolumngridChildren = "options___bottomBarTabs___contentcolumngrid___children",
+  OptionsBottomBarTabsContentcolumngridContentblock = "options___bottomBarTabs___contentcolumngrid___contentblock",
+  OptionsBottomBarTabsContentcolumngridContentfulId = "options___bottomBarTabs___contentcolumngrid___contentful_id",
+  OptionsBottomBarTabsContentcolumngridCreatedAt = "options___bottomBarTabs___contentcolumngrid___createdAt",
+  OptionsBottomBarTabsContentcolumngridId = "options___bottomBarTabs___contentcolumngrid___id",
+  OptionsBottomBarTabsContentcolumngridNodeLocale = "options___bottomBarTabs___contentcolumngrid___node_locale",
+  OptionsBottomBarTabsContentcolumngridRatio = "options___bottomBarTabs___contentcolumngrid___ratio",
+  OptionsBottomBarTabsContentcolumngridSpaceId = "options___bottomBarTabs___contentcolumngrid___spaceId",
+  OptionsBottomBarTabsContentcolumngridUniqueId = "options___bottomBarTabs___contentcolumngrid___uniqueId",
+  OptionsBottomBarTabsContentcolumngridUpdatedAt = "options___bottomBarTabs___contentcolumngrid___updatedAt",
   OptionsBottomBarTabsContentfulId = "options___bottomBarTabs___contentful_id",
   OptionsBottomBarTabsContentfulid = "options___bottomBarTabs___contentfulid",
   OptionsBottomBarTabsCreatedAt = "options___bottomBarTabs___createdAt",
@@ -4776,6 +5860,8 @@ export enum ContentfulLinkFieldsEnum {
   OptionsSysType = "options___sys___type",
   OptionsTopBarLogoActioninfoblock = "options___topBarLogo___actioninfoblock",
   OptionsTopBarLogoActioninfoblockChildren = "options___topBarLogo___actioninfoblock___children",
+  OptionsTopBarLogoActioninfoblockContentblock = "options___topBarLogo___actioninfoblock___contentblock",
+  OptionsTopBarLogoActioninfoblockContentcolumngrid = "options___topBarLogo___actioninfoblock___contentcolumngrid",
   OptionsTopBarLogoActioninfoblockContentfulId = "options___topBarLogo___actioninfoblock___contentful_id",
   OptionsTopBarLogoActioninfoblockCreatedAt = "options___topBarLogo___actioninfoblock___createdAt",
   OptionsTopBarLogoActioninfoblockId = "options___topBarLogo___actioninfoblock___id",
@@ -4788,6 +5874,7 @@ export enum ContentfulLinkFieldsEnum {
   OptionsTopBarLogoAuthoravatarblockChildren = "options___topBarLogo___authoravatarblock___children",
   OptionsTopBarLogoAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "options___topBarLogo___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
   OptionsTopBarLogoAuthoravatarblockContentblock = "options___topBarLogo___authoravatarblock___contentblock",
+  OptionsTopBarLogoAuthoravatarblockContentcolumngrid = "options___topBarLogo___authoravatarblock___contentcolumngrid",
   OptionsTopBarLogoAuthoravatarblockContentfulId = "options___topBarLogo___authoravatarblock___contentful_id",
   OptionsTopBarLogoAuthoravatarblockCreatedAt = "options___topBarLogo___authoravatarblock___createdAt",
   OptionsTopBarLogoAuthoravatarblockFullName = "options___topBarLogo___authoravatarblock___fullName",
@@ -4809,6 +5896,18 @@ export enum ContentfulLinkFieldsEnum {
   OptionsTopBarLogoChildrenContentfulLinkUrlTextNodeUrl = "options___topBarLogo___childrenContentfulLinkUrlTextNode___url",
   OptionsTopBarLogoChildrenChildren = "options___topBarLogo___children___children",
   OptionsTopBarLogoChildrenId = "options___topBarLogo___children___id",
+  OptionsTopBarLogoContentcolumngrid = "options___topBarLogo___contentcolumngrid",
+  OptionsTopBarLogoContentcolumngridAlignColumnsOnMobile = "options___topBarLogo___contentcolumngrid___alignColumnsOnMobile",
+  OptionsTopBarLogoContentcolumngridChildren = "options___topBarLogo___contentcolumngrid___children",
+  OptionsTopBarLogoContentcolumngridContentblock = "options___topBarLogo___contentcolumngrid___contentblock",
+  OptionsTopBarLogoContentcolumngridContentfulId = "options___topBarLogo___contentcolumngrid___contentful_id",
+  OptionsTopBarLogoContentcolumngridCreatedAt = "options___topBarLogo___contentcolumngrid___createdAt",
+  OptionsTopBarLogoContentcolumngridId = "options___topBarLogo___contentcolumngrid___id",
+  OptionsTopBarLogoContentcolumngridNodeLocale = "options___topBarLogo___contentcolumngrid___node_locale",
+  OptionsTopBarLogoContentcolumngridRatio = "options___topBarLogo___contentcolumngrid___ratio",
+  OptionsTopBarLogoContentcolumngridSpaceId = "options___topBarLogo___contentcolumngrid___spaceId",
+  OptionsTopBarLogoContentcolumngridUniqueId = "options___topBarLogo___contentcolumngrid___uniqueId",
+  OptionsTopBarLogoContentcolumngridUpdatedAt = "options___topBarLogo___contentcolumngrid___updatedAt",
   OptionsTopBarLogoContentfulId = "options___topBarLogo___contentful_id",
   OptionsTopBarLogoContentfulid = "options___topBarLogo___contentfulid",
   OptionsTopBarLogoCreatedAt = "options___topBarLogo___createdAt",
@@ -4870,6 +5969,8 @@ export enum ContentfulLinkFieldsEnum {
   OptionsTopBarSocialLinks = "options___topBarSocialLinks",
   OptionsTopBarSocialLinksActioninfoblock = "options___topBarSocialLinks___actioninfoblock",
   OptionsTopBarSocialLinksActioninfoblockChildren = "options___topBarSocialLinks___actioninfoblock___children",
+  OptionsTopBarSocialLinksActioninfoblockContentblock = "options___topBarSocialLinks___actioninfoblock___contentblock",
+  OptionsTopBarSocialLinksActioninfoblockContentcolumngrid = "options___topBarSocialLinks___actioninfoblock___contentcolumngrid",
   OptionsTopBarSocialLinksActioninfoblockContentfulId = "options___topBarSocialLinks___actioninfoblock___contentful_id",
   OptionsTopBarSocialLinksActioninfoblockCreatedAt = "options___topBarSocialLinks___actioninfoblock___createdAt",
   OptionsTopBarSocialLinksActioninfoblockId = "options___topBarSocialLinks___actioninfoblock___id",
@@ -4882,6 +5983,7 @@ export enum ContentfulLinkFieldsEnum {
   OptionsTopBarSocialLinksAuthoravatarblockChildren = "options___topBarSocialLinks___authoravatarblock___children",
   OptionsTopBarSocialLinksAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "options___topBarSocialLinks___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
   OptionsTopBarSocialLinksAuthoravatarblockContentblock = "options___topBarSocialLinks___authoravatarblock___contentblock",
+  OptionsTopBarSocialLinksAuthoravatarblockContentcolumngrid = "options___topBarSocialLinks___authoravatarblock___contentcolumngrid",
   OptionsTopBarSocialLinksAuthoravatarblockContentfulId = "options___topBarSocialLinks___authoravatarblock___contentful_id",
   OptionsTopBarSocialLinksAuthoravatarblockCreatedAt = "options___topBarSocialLinks___authoravatarblock___createdAt",
   OptionsTopBarSocialLinksAuthoravatarblockFullName = "options___topBarSocialLinks___authoravatarblock___fullName",
@@ -4903,6 +6005,18 @@ export enum ContentfulLinkFieldsEnum {
   OptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNodeUrl = "options___topBarSocialLinks___childrenContentfulLinkUrlTextNode___url",
   OptionsTopBarSocialLinksChildrenChildren = "options___topBarSocialLinks___children___children",
   OptionsTopBarSocialLinksChildrenId = "options___topBarSocialLinks___children___id",
+  OptionsTopBarSocialLinksContentcolumngrid = "options___topBarSocialLinks___contentcolumngrid",
+  OptionsTopBarSocialLinksContentcolumngridAlignColumnsOnMobile = "options___topBarSocialLinks___contentcolumngrid___alignColumnsOnMobile",
+  OptionsTopBarSocialLinksContentcolumngridChildren = "options___topBarSocialLinks___contentcolumngrid___children",
+  OptionsTopBarSocialLinksContentcolumngridContentblock = "options___topBarSocialLinks___contentcolumngrid___contentblock",
+  OptionsTopBarSocialLinksContentcolumngridContentfulId = "options___topBarSocialLinks___contentcolumngrid___contentful_id",
+  OptionsTopBarSocialLinksContentcolumngridCreatedAt = "options___topBarSocialLinks___contentcolumngrid___createdAt",
+  OptionsTopBarSocialLinksContentcolumngridId = "options___topBarSocialLinks___contentcolumngrid___id",
+  OptionsTopBarSocialLinksContentcolumngridNodeLocale = "options___topBarSocialLinks___contentcolumngrid___node_locale",
+  OptionsTopBarSocialLinksContentcolumngridRatio = "options___topBarSocialLinks___contentcolumngrid___ratio",
+  OptionsTopBarSocialLinksContentcolumngridSpaceId = "options___topBarSocialLinks___contentcolumngrid___spaceId",
+  OptionsTopBarSocialLinksContentcolumngridUniqueId = "options___topBarSocialLinks___contentcolumngrid___uniqueId",
+  OptionsTopBarSocialLinksContentcolumngridUpdatedAt = "options___topBarSocialLinks___contentcolumngrid___updatedAt",
   OptionsTopBarSocialLinksContentfulId = "options___topBarSocialLinks___contentful_id",
   OptionsTopBarSocialLinksContentfulid = "options___topBarSocialLinks___contentfulid",
   OptionsTopBarSocialLinksCreatedAt = "options___topBarSocialLinks___createdAt",
@@ -4964,6 +6078,8 @@ export enum ContentfulLinkFieldsEnum {
   OptionsTopBarTabs = "options___topBarTabs",
   OptionsTopBarTabsActioninfoblock = "options___topBarTabs___actioninfoblock",
   OptionsTopBarTabsActioninfoblockChildren = "options___topBarTabs___actioninfoblock___children",
+  OptionsTopBarTabsActioninfoblockContentblock = "options___topBarTabs___actioninfoblock___contentblock",
+  OptionsTopBarTabsActioninfoblockContentcolumngrid = "options___topBarTabs___actioninfoblock___contentcolumngrid",
   OptionsTopBarTabsActioninfoblockContentfulId = "options___topBarTabs___actioninfoblock___contentful_id",
   OptionsTopBarTabsActioninfoblockCreatedAt = "options___topBarTabs___actioninfoblock___createdAt",
   OptionsTopBarTabsActioninfoblockId = "options___topBarTabs___actioninfoblock___id",
@@ -4976,6 +6092,7 @@ export enum ContentfulLinkFieldsEnum {
   OptionsTopBarTabsAuthoravatarblockChildren = "options___topBarTabs___authoravatarblock___children",
   OptionsTopBarTabsAuthoravatarblockChildrenContentfulAuthorAvatarBlockDescriptionTextNode = "options___topBarTabs___authoravatarblock___childrenContentfulAuthorAvatarBlockDescriptionTextNode",
   OptionsTopBarTabsAuthoravatarblockContentblock = "options___topBarTabs___authoravatarblock___contentblock",
+  OptionsTopBarTabsAuthoravatarblockContentcolumngrid = "options___topBarTabs___authoravatarblock___contentcolumngrid",
   OptionsTopBarTabsAuthoravatarblockContentfulId = "options___topBarTabs___authoravatarblock___contentful_id",
   OptionsTopBarTabsAuthoravatarblockCreatedAt = "options___topBarTabs___authoravatarblock___createdAt",
   OptionsTopBarTabsAuthoravatarblockFullName = "options___topBarTabs___authoravatarblock___fullName",
@@ -4997,6 +6114,18 @@ export enum ContentfulLinkFieldsEnum {
   OptionsTopBarTabsChildrenContentfulLinkUrlTextNodeUrl = "options___topBarTabs___childrenContentfulLinkUrlTextNode___url",
   OptionsTopBarTabsChildrenChildren = "options___topBarTabs___children___children",
   OptionsTopBarTabsChildrenId = "options___topBarTabs___children___id",
+  OptionsTopBarTabsContentcolumngrid = "options___topBarTabs___contentcolumngrid",
+  OptionsTopBarTabsContentcolumngridAlignColumnsOnMobile = "options___topBarTabs___contentcolumngrid___alignColumnsOnMobile",
+  OptionsTopBarTabsContentcolumngridChildren = "options___topBarTabs___contentcolumngrid___children",
+  OptionsTopBarTabsContentcolumngridContentblock = "options___topBarTabs___contentcolumngrid___contentblock",
+  OptionsTopBarTabsContentcolumngridContentfulId = "options___topBarTabs___contentcolumngrid___contentful_id",
+  OptionsTopBarTabsContentcolumngridCreatedAt = "options___topBarTabs___contentcolumngrid___createdAt",
+  OptionsTopBarTabsContentcolumngridId = "options___topBarTabs___contentcolumngrid___id",
+  OptionsTopBarTabsContentcolumngridNodeLocale = "options___topBarTabs___contentcolumngrid___node_locale",
+  OptionsTopBarTabsContentcolumngridRatio = "options___topBarTabs___contentcolumngrid___ratio",
+  OptionsTopBarTabsContentcolumngridSpaceId = "options___topBarTabs___contentcolumngrid___spaceId",
+  OptionsTopBarTabsContentcolumngridUniqueId = "options___topBarTabs___contentcolumngrid___uniqueId",
+  OptionsTopBarTabsContentcolumngridUpdatedAt = "options___topBarTabs___contentcolumngrid___updatedAt",
   OptionsTopBarTabsContentfulId = "options___topBarTabs___contentful_id",
   OptionsTopBarTabsContentfulid = "options___topBarTabs___contentfulid",
   OptionsTopBarTabsCreatedAt = "options___topBarTabs___createdAt",
@@ -5221,6 +6350,7 @@ export type ContentfulLinkFilterInput = {
   childContentfulLinkUrlTextNode?: InputMaybe<ContentfulLinkUrlTextNodeFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
   childrenContentfulLinkUrlTextNode?: InputMaybe<ContentfulLinkUrlTextNodeFilterListInput>;
+  contentcolumngrid?: InputMaybe<ContentfulContentColumnGridFilterListInput>;
   contentful_id?: InputMaybe<StringQueryOperatorInput>;
   contentfulid?: InputMaybe<StringQueryOperatorInput>;
   createdAt?: InputMaybe<DateQueryOperatorInput>;
@@ -5622,6 +6752,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoActioninfoblockButtonAuthoravatarblock = "bottomBarLogo___actioninfoblock___button___authoravatarblock",
   BottomBarLogoActioninfoblockButtonChildren = "bottomBarLogo___actioninfoblock___button___children",
   BottomBarLogoActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "bottomBarLogo___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  BottomBarLogoActioninfoblockButtonContentcolumngrid = "bottomBarLogo___actioninfoblock___button___contentcolumngrid",
   BottomBarLogoActioninfoblockButtonContentfulId = "bottomBarLogo___actioninfoblock___button___contentful_id",
   BottomBarLogoActioninfoblockButtonContentfulid = "bottomBarLogo___actioninfoblock___button___contentfulid",
   BottomBarLogoActioninfoblockButtonCreatedAt = "bottomBarLogo___actioninfoblock___button___createdAt",
@@ -5634,6 +6765,29 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoActioninfoblockChildren = "bottomBarLogo___actioninfoblock___children",
   BottomBarLogoActioninfoblockChildrenChildren = "bottomBarLogo___actioninfoblock___children___children",
   BottomBarLogoActioninfoblockChildrenId = "bottomBarLogo___actioninfoblock___children___id",
+  BottomBarLogoActioninfoblockContentblock = "bottomBarLogo___actioninfoblock___contentblock",
+  BottomBarLogoActioninfoblockContentblockChildren = "bottomBarLogo___actioninfoblock___contentblock___children",
+  BottomBarLogoActioninfoblockContentblockContentfulId = "bottomBarLogo___actioninfoblock___contentblock___contentful_id",
+  BottomBarLogoActioninfoblockContentblockCreatedAt = "bottomBarLogo___actioninfoblock___contentblock___createdAt",
+  BottomBarLogoActioninfoblockContentblockId = "bottomBarLogo___actioninfoblock___contentblock___id",
+  BottomBarLogoActioninfoblockContentblockMargin = "bottomBarLogo___actioninfoblock___contentblock___margin",
+  BottomBarLogoActioninfoblockContentblockNodeLocale = "bottomBarLogo___actioninfoblock___contentblock___node_locale",
+  BottomBarLogoActioninfoblockContentblockPage = "bottomBarLogo___actioninfoblock___contentblock___page",
+  BottomBarLogoActioninfoblockContentblockSpaceId = "bottomBarLogo___actioninfoblock___contentblock___spaceId",
+  BottomBarLogoActioninfoblockContentblockUniqueId = "bottomBarLogo___actioninfoblock___contentblock___uniqueId",
+  BottomBarLogoActioninfoblockContentblockUpdatedAt = "bottomBarLogo___actioninfoblock___contentblock___updatedAt",
+  BottomBarLogoActioninfoblockContentcolumngrid = "bottomBarLogo___actioninfoblock___contentcolumngrid",
+  BottomBarLogoActioninfoblockContentcolumngridAlignColumnsOnMobile = "bottomBarLogo___actioninfoblock___contentcolumngrid___alignColumnsOnMobile",
+  BottomBarLogoActioninfoblockContentcolumngridChildren = "bottomBarLogo___actioninfoblock___contentcolumngrid___children",
+  BottomBarLogoActioninfoblockContentcolumngridContentblock = "bottomBarLogo___actioninfoblock___contentcolumngrid___contentblock",
+  BottomBarLogoActioninfoblockContentcolumngridContentfulId = "bottomBarLogo___actioninfoblock___contentcolumngrid___contentful_id",
+  BottomBarLogoActioninfoblockContentcolumngridCreatedAt = "bottomBarLogo___actioninfoblock___contentcolumngrid___createdAt",
+  BottomBarLogoActioninfoblockContentcolumngridId = "bottomBarLogo___actioninfoblock___contentcolumngrid___id",
+  BottomBarLogoActioninfoblockContentcolumngridNodeLocale = "bottomBarLogo___actioninfoblock___contentcolumngrid___node_locale",
+  BottomBarLogoActioninfoblockContentcolumngridRatio = "bottomBarLogo___actioninfoblock___contentcolumngrid___ratio",
+  BottomBarLogoActioninfoblockContentcolumngridSpaceId = "bottomBarLogo___actioninfoblock___contentcolumngrid___spaceId",
+  BottomBarLogoActioninfoblockContentcolumngridUniqueId = "bottomBarLogo___actioninfoblock___contentcolumngrid___uniqueId",
+  BottomBarLogoActioninfoblockContentcolumngridUpdatedAt = "bottomBarLogo___actioninfoblock___contentcolumngrid___updatedAt",
   BottomBarLogoActioninfoblockContentfulId = "bottomBarLogo___actioninfoblock___contentful_id",
   BottomBarLogoActioninfoblockCreatedAt = "bottomBarLogo___actioninfoblock___createdAt",
   BottomBarLogoActioninfoblockId = "bottomBarLogo___actioninfoblock___id",
@@ -5720,6 +6874,18 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoAuthoravatarblockContentblockSpaceId = "bottomBarLogo___authoravatarblock___contentblock___spaceId",
   BottomBarLogoAuthoravatarblockContentblockUniqueId = "bottomBarLogo___authoravatarblock___contentblock___uniqueId",
   BottomBarLogoAuthoravatarblockContentblockUpdatedAt = "bottomBarLogo___authoravatarblock___contentblock___updatedAt",
+  BottomBarLogoAuthoravatarblockContentcolumngrid = "bottomBarLogo___authoravatarblock___contentcolumngrid",
+  BottomBarLogoAuthoravatarblockContentcolumngridAlignColumnsOnMobile = "bottomBarLogo___authoravatarblock___contentcolumngrid___alignColumnsOnMobile",
+  BottomBarLogoAuthoravatarblockContentcolumngridChildren = "bottomBarLogo___authoravatarblock___contentcolumngrid___children",
+  BottomBarLogoAuthoravatarblockContentcolumngridContentblock = "bottomBarLogo___authoravatarblock___contentcolumngrid___contentblock",
+  BottomBarLogoAuthoravatarblockContentcolumngridContentfulId = "bottomBarLogo___authoravatarblock___contentcolumngrid___contentful_id",
+  BottomBarLogoAuthoravatarblockContentcolumngridCreatedAt = "bottomBarLogo___authoravatarblock___contentcolumngrid___createdAt",
+  BottomBarLogoAuthoravatarblockContentcolumngridId = "bottomBarLogo___authoravatarblock___contentcolumngrid___id",
+  BottomBarLogoAuthoravatarblockContentcolumngridNodeLocale = "bottomBarLogo___authoravatarblock___contentcolumngrid___node_locale",
+  BottomBarLogoAuthoravatarblockContentcolumngridRatio = "bottomBarLogo___authoravatarblock___contentcolumngrid___ratio",
+  BottomBarLogoAuthoravatarblockContentcolumngridSpaceId = "bottomBarLogo___authoravatarblock___contentcolumngrid___spaceId",
+  BottomBarLogoAuthoravatarblockContentcolumngridUniqueId = "bottomBarLogo___authoravatarblock___contentcolumngrid___uniqueId",
+  BottomBarLogoAuthoravatarblockContentcolumngridUpdatedAt = "bottomBarLogo___authoravatarblock___contentcolumngrid___updatedAt",
   BottomBarLogoAuthoravatarblockContentfulId = "bottomBarLogo___authoravatarblock___contentful_id",
   BottomBarLogoAuthoravatarblockCreatedAt = "bottomBarLogo___authoravatarblock___createdAt",
   BottomBarLogoAuthoravatarblockDescriptionChildren = "bottomBarLogo___authoravatarblock___description___children",
@@ -5744,6 +6910,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoAuthoravatarblockSocialSiteLinksAuthoravatarblock = "bottomBarLogo___authoravatarblock___socialSiteLinks___authoravatarblock",
   BottomBarLogoAuthoravatarblockSocialSiteLinksChildren = "bottomBarLogo___authoravatarblock___socialSiteLinks___children",
   BottomBarLogoAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "bottomBarLogo___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  BottomBarLogoAuthoravatarblockSocialSiteLinksContentcolumngrid = "bottomBarLogo___authoravatarblock___socialSiteLinks___contentcolumngrid",
   BottomBarLogoAuthoravatarblockSocialSiteLinksContentfulId = "bottomBarLogo___authoravatarblock___socialSiteLinks___contentful_id",
   BottomBarLogoAuthoravatarblockSocialSiteLinksContentfulid = "bottomBarLogo___authoravatarblock___socialSiteLinks___contentfulid",
   BottomBarLogoAuthoravatarblockSocialSiteLinksCreatedAt = "bottomBarLogo___authoravatarblock___socialSiteLinks___createdAt",
@@ -5868,6 +7035,42 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoChildrenInternalType = "bottomBarLogo___children___internal___type",
   BottomBarLogoChildrenParentChildren = "bottomBarLogo___children___parent___children",
   BottomBarLogoChildrenParentId = "bottomBarLogo___children___parent___id",
+  BottomBarLogoContentcolumngrid = "bottomBarLogo___contentcolumngrid",
+  BottomBarLogoContentcolumngridAlignColumnsOnMobile = "bottomBarLogo___contentcolumngrid___alignColumnsOnMobile",
+  BottomBarLogoContentcolumngridChildren = "bottomBarLogo___contentcolumngrid___children",
+  BottomBarLogoContentcolumngridChildrenChildren = "bottomBarLogo___contentcolumngrid___children___children",
+  BottomBarLogoContentcolumngridChildrenId = "bottomBarLogo___contentcolumngrid___children___id",
+  BottomBarLogoContentcolumngridContentblock = "bottomBarLogo___contentcolumngrid___contentblock",
+  BottomBarLogoContentcolumngridContentblockChildren = "bottomBarLogo___contentcolumngrid___contentblock___children",
+  BottomBarLogoContentcolumngridContentblockContentfulId = "bottomBarLogo___contentcolumngrid___contentblock___contentful_id",
+  BottomBarLogoContentcolumngridContentblockCreatedAt = "bottomBarLogo___contentcolumngrid___contentblock___createdAt",
+  BottomBarLogoContentcolumngridContentblockId = "bottomBarLogo___contentcolumngrid___contentblock___id",
+  BottomBarLogoContentcolumngridContentblockMargin = "bottomBarLogo___contentcolumngrid___contentblock___margin",
+  BottomBarLogoContentcolumngridContentblockNodeLocale = "bottomBarLogo___contentcolumngrid___contentblock___node_locale",
+  BottomBarLogoContentcolumngridContentblockPage = "bottomBarLogo___contentcolumngrid___contentblock___page",
+  BottomBarLogoContentcolumngridContentblockSpaceId = "bottomBarLogo___contentcolumngrid___contentblock___spaceId",
+  BottomBarLogoContentcolumngridContentblockUniqueId = "bottomBarLogo___contentcolumngrid___contentblock___uniqueId",
+  BottomBarLogoContentcolumngridContentblockUpdatedAt = "bottomBarLogo___contentcolumngrid___contentblock___updatedAt",
+  BottomBarLogoContentcolumngridContentfulId = "bottomBarLogo___contentcolumngrid___contentful_id",
+  BottomBarLogoContentcolumngridCreatedAt = "bottomBarLogo___contentcolumngrid___createdAt",
+  BottomBarLogoContentcolumngridId = "bottomBarLogo___contentcolumngrid___id",
+  BottomBarLogoContentcolumngridInternalContent = "bottomBarLogo___contentcolumngrid___internal___content",
+  BottomBarLogoContentcolumngridInternalContentDigest = "bottomBarLogo___contentcolumngrid___internal___contentDigest",
+  BottomBarLogoContentcolumngridInternalDescription = "bottomBarLogo___contentcolumngrid___internal___description",
+  BottomBarLogoContentcolumngridInternalFieldOwners = "bottomBarLogo___contentcolumngrid___internal___fieldOwners",
+  BottomBarLogoContentcolumngridInternalIgnoreType = "bottomBarLogo___contentcolumngrid___internal___ignoreType",
+  BottomBarLogoContentcolumngridInternalMediaType = "bottomBarLogo___contentcolumngrid___internal___mediaType",
+  BottomBarLogoContentcolumngridInternalOwner = "bottomBarLogo___contentcolumngrid___internal___owner",
+  BottomBarLogoContentcolumngridInternalType = "bottomBarLogo___contentcolumngrid___internal___type",
+  BottomBarLogoContentcolumngridNodeLocale = "bottomBarLogo___contentcolumngrid___node_locale",
+  BottomBarLogoContentcolumngridParentChildren = "bottomBarLogo___contentcolumngrid___parent___children",
+  BottomBarLogoContentcolumngridParentId = "bottomBarLogo___contentcolumngrid___parent___id",
+  BottomBarLogoContentcolumngridRatio = "bottomBarLogo___contentcolumngrid___ratio",
+  BottomBarLogoContentcolumngridSpaceId = "bottomBarLogo___contentcolumngrid___spaceId",
+  BottomBarLogoContentcolumngridSysRevision = "bottomBarLogo___contentcolumngrid___sys___revision",
+  BottomBarLogoContentcolumngridSysType = "bottomBarLogo___contentcolumngrid___sys___type",
+  BottomBarLogoContentcolumngridUniqueId = "bottomBarLogo___contentcolumngrid___uniqueId",
+  BottomBarLogoContentcolumngridUpdatedAt = "bottomBarLogo___contentcolumngrid___updatedAt",
   BottomBarLogoContentfulId = "bottomBarLogo___contentful_id",
   BottomBarLogoContentfulid = "bottomBarLogo___contentfulid",
   BottomBarLogoCreatedAt = "bottomBarLogo___createdAt",
@@ -5930,6 +7133,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoOptionsBottomBarLogoAuthoravatarblock = "bottomBarLogo___options___bottomBarLogo___authoravatarblock",
   BottomBarLogoOptionsBottomBarLogoChildren = "bottomBarLogo___options___bottomBarLogo___children",
   BottomBarLogoOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "bottomBarLogo___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
+  BottomBarLogoOptionsBottomBarLogoContentcolumngrid = "bottomBarLogo___options___bottomBarLogo___contentcolumngrid",
   BottomBarLogoOptionsBottomBarLogoContentfulId = "bottomBarLogo___options___bottomBarLogo___contentful_id",
   BottomBarLogoOptionsBottomBarLogoContentfulid = "bottomBarLogo___options___bottomBarLogo___contentfulid",
   BottomBarLogoOptionsBottomBarLogoCreatedAt = "bottomBarLogo___options___bottomBarLogo___createdAt",
@@ -5944,6 +7148,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoOptionsBottomBarSocialLinksAuthoravatarblock = "bottomBarLogo___options___bottomBarSocialLinks___authoravatarblock",
   BottomBarLogoOptionsBottomBarSocialLinksChildren = "bottomBarLogo___options___bottomBarSocialLinks___children",
   BottomBarLogoOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "bottomBarLogo___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  BottomBarLogoOptionsBottomBarSocialLinksContentcolumngrid = "bottomBarLogo___options___bottomBarSocialLinks___contentcolumngrid",
   BottomBarLogoOptionsBottomBarSocialLinksContentfulId = "bottomBarLogo___options___bottomBarSocialLinks___contentful_id",
   BottomBarLogoOptionsBottomBarSocialLinksContentfulid = "bottomBarLogo___options___bottomBarSocialLinks___contentfulid",
   BottomBarLogoOptionsBottomBarSocialLinksCreatedAt = "bottomBarLogo___options___bottomBarSocialLinks___createdAt",
@@ -5958,6 +7163,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoOptionsBottomBarTabsAuthoravatarblock = "bottomBarLogo___options___bottomBarTabs___authoravatarblock",
   BottomBarLogoOptionsBottomBarTabsChildren = "bottomBarLogo___options___bottomBarTabs___children",
   BottomBarLogoOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "bottomBarLogo___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
+  BottomBarLogoOptionsBottomBarTabsContentcolumngrid = "bottomBarLogo___options___bottomBarTabs___contentcolumngrid",
   BottomBarLogoOptionsBottomBarTabsContentfulId = "bottomBarLogo___options___bottomBarTabs___contentful_id",
   BottomBarLogoOptionsBottomBarTabsContentfulid = "bottomBarLogo___options___bottomBarTabs___contentfulid",
   BottomBarLogoOptionsBottomBarTabsCreatedAt = "bottomBarLogo___options___bottomBarTabs___createdAt",
@@ -5992,6 +7198,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoOptionsTopBarLogoAuthoravatarblock = "bottomBarLogo___options___topBarLogo___authoravatarblock",
   BottomBarLogoOptionsTopBarLogoChildren = "bottomBarLogo___options___topBarLogo___children",
   BottomBarLogoOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "bottomBarLogo___options___topBarLogo___childrenContentfulLinkUrlTextNode",
+  BottomBarLogoOptionsTopBarLogoContentcolumngrid = "bottomBarLogo___options___topBarLogo___contentcolumngrid",
   BottomBarLogoOptionsTopBarLogoContentfulId = "bottomBarLogo___options___topBarLogo___contentful_id",
   BottomBarLogoOptionsTopBarLogoContentfulid = "bottomBarLogo___options___topBarLogo___contentfulid",
   BottomBarLogoOptionsTopBarLogoCreatedAt = "bottomBarLogo___options___topBarLogo___createdAt",
@@ -6006,6 +7213,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoOptionsTopBarSocialLinksAuthoravatarblock = "bottomBarLogo___options___topBarSocialLinks___authoravatarblock",
   BottomBarLogoOptionsTopBarSocialLinksChildren = "bottomBarLogo___options___topBarSocialLinks___children",
   BottomBarLogoOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "bottomBarLogo___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  BottomBarLogoOptionsTopBarSocialLinksContentcolumngrid = "bottomBarLogo___options___topBarSocialLinks___contentcolumngrid",
   BottomBarLogoOptionsTopBarSocialLinksContentfulId = "bottomBarLogo___options___topBarSocialLinks___contentful_id",
   BottomBarLogoOptionsTopBarSocialLinksContentfulid = "bottomBarLogo___options___topBarSocialLinks___contentfulid",
   BottomBarLogoOptionsTopBarSocialLinksCreatedAt = "bottomBarLogo___options___topBarSocialLinks___createdAt",
@@ -6020,6 +7228,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarLogoOptionsTopBarTabsAuthoravatarblock = "bottomBarLogo___options___topBarTabs___authoravatarblock",
   BottomBarLogoOptionsTopBarTabsChildren = "bottomBarLogo___options___topBarTabs___children",
   BottomBarLogoOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "bottomBarLogo___options___topBarTabs___childrenContentfulLinkUrlTextNode",
+  BottomBarLogoOptionsTopBarTabsContentcolumngrid = "bottomBarLogo___options___topBarTabs___contentcolumngrid",
   BottomBarLogoOptionsTopBarTabsContentfulId = "bottomBarLogo___options___topBarTabs___contentful_id",
   BottomBarLogoOptionsTopBarTabsContentfulid = "bottomBarLogo___options___topBarTabs___contentfulid",
   BottomBarLogoOptionsTopBarTabsCreatedAt = "bottomBarLogo___options___topBarTabs___createdAt",
@@ -6103,6 +7312,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksActioninfoblockButtonAuthoravatarblock = "bottomBarSocialLinks___actioninfoblock___button___authoravatarblock",
   BottomBarSocialLinksActioninfoblockButtonChildren = "bottomBarSocialLinks___actioninfoblock___button___children",
   BottomBarSocialLinksActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  BottomBarSocialLinksActioninfoblockButtonContentcolumngrid = "bottomBarSocialLinks___actioninfoblock___button___contentcolumngrid",
   BottomBarSocialLinksActioninfoblockButtonContentfulId = "bottomBarSocialLinks___actioninfoblock___button___contentful_id",
   BottomBarSocialLinksActioninfoblockButtonContentfulid = "bottomBarSocialLinks___actioninfoblock___button___contentfulid",
   BottomBarSocialLinksActioninfoblockButtonCreatedAt = "bottomBarSocialLinks___actioninfoblock___button___createdAt",
@@ -6115,6 +7325,29 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksActioninfoblockChildren = "bottomBarSocialLinks___actioninfoblock___children",
   BottomBarSocialLinksActioninfoblockChildrenChildren = "bottomBarSocialLinks___actioninfoblock___children___children",
   BottomBarSocialLinksActioninfoblockChildrenId = "bottomBarSocialLinks___actioninfoblock___children___id",
+  BottomBarSocialLinksActioninfoblockContentblock = "bottomBarSocialLinks___actioninfoblock___contentblock",
+  BottomBarSocialLinksActioninfoblockContentblockChildren = "bottomBarSocialLinks___actioninfoblock___contentblock___children",
+  BottomBarSocialLinksActioninfoblockContentblockContentfulId = "bottomBarSocialLinks___actioninfoblock___contentblock___contentful_id",
+  BottomBarSocialLinksActioninfoblockContentblockCreatedAt = "bottomBarSocialLinks___actioninfoblock___contentblock___createdAt",
+  BottomBarSocialLinksActioninfoblockContentblockId = "bottomBarSocialLinks___actioninfoblock___contentblock___id",
+  BottomBarSocialLinksActioninfoblockContentblockMargin = "bottomBarSocialLinks___actioninfoblock___contentblock___margin",
+  BottomBarSocialLinksActioninfoblockContentblockNodeLocale = "bottomBarSocialLinks___actioninfoblock___contentblock___node_locale",
+  BottomBarSocialLinksActioninfoblockContentblockPage = "bottomBarSocialLinks___actioninfoblock___contentblock___page",
+  BottomBarSocialLinksActioninfoblockContentblockSpaceId = "bottomBarSocialLinks___actioninfoblock___contentblock___spaceId",
+  BottomBarSocialLinksActioninfoblockContentblockUniqueId = "bottomBarSocialLinks___actioninfoblock___contentblock___uniqueId",
+  BottomBarSocialLinksActioninfoblockContentblockUpdatedAt = "bottomBarSocialLinks___actioninfoblock___contentblock___updatedAt",
+  BottomBarSocialLinksActioninfoblockContentcolumngrid = "bottomBarSocialLinks___actioninfoblock___contentcolumngrid",
+  BottomBarSocialLinksActioninfoblockContentcolumngridAlignColumnsOnMobile = "bottomBarSocialLinks___actioninfoblock___contentcolumngrid___alignColumnsOnMobile",
+  BottomBarSocialLinksActioninfoblockContentcolumngridChildren = "bottomBarSocialLinks___actioninfoblock___contentcolumngrid___children",
+  BottomBarSocialLinksActioninfoblockContentcolumngridContentblock = "bottomBarSocialLinks___actioninfoblock___contentcolumngrid___contentblock",
+  BottomBarSocialLinksActioninfoblockContentcolumngridContentfulId = "bottomBarSocialLinks___actioninfoblock___contentcolumngrid___contentful_id",
+  BottomBarSocialLinksActioninfoblockContentcolumngridCreatedAt = "bottomBarSocialLinks___actioninfoblock___contentcolumngrid___createdAt",
+  BottomBarSocialLinksActioninfoblockContentcolumngridId = "bottomBarSocialLinks___actioninfoblock___contentcolumngrid___id",
+  BottomBarSocialLinksActioninfoblockContentcolumngridNodeLocale = "bottomBarSocialLinks___actioninfoblock___contentcolumngrid___node_locale",
+  BottomBarSocialLinksActioninfoblockContentcolumngridRatio = "bottomBarSocialLinks___actioninfoblock___contentcolumngrid___ratio",
+  BottomBarSocialLinksActioninfoblockContentcolumngridSpaceId = "bottomBarSocialLinks___actioninfoblock___contentcolumngrid___spaceId",
+  BottomBarSocialLinksActioninfoblockContentcolumngridUniqueId = "bottomBarSocialLinks___actioninfoblock___contentcolumngrid___uniqueId",
+  BottomBarSocialLinksActioninfoblockContentcolumngridUpdatedAt = "bottomBarSocialLinks___actioninfoblock___contentcolumngrid___updatedAt",
   BottomBarSocialLinksActioninfoblockContentfulId = "bottomBarSocialLinks___actioninfoblock___contentful_id",
   BottomBarSocialLinksActioninfoblockCreatedAt = "bottomBarSocialLinks___actioninfoblock___createdAt",
   BottomBarSocialLinksActioninfoblockId = "bottomBarSocialLinks___actioninfoblock___id",
@@ -6201,6 +7434,18 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksAuthoravatarblockContentblockSpaceId = "bottomBarSocialLinks___authoravatarblock___contentblock___spaceId",
   BottomBarSocialLinksAuthoravatarblockContentblockUniqueId = "bottomBarSocialLinks___authoravatarblock___contentblock___uniqueId",
   BottomBarSocialLinksAuthoravatarblockContentblockUpdatedAt = "bottomBarSocialLinks___authoravatarblock___contentblock___updatedAt",
+  BottomBarSocialLinksAuthoravatarblockContentcolumngrid = "bottomBarSocialLinks___authoravatarblock___contentcolumngrid",
+  BottomBarSocialLinksAuthoravatarblockContentcolumngridAlignColumnsOnMobile = "bottomBarSocialLinks___authoravatarblock___contentcolumngrid___alignColumnsOnMobile",
+  BottomBarSocialLinksAuthoravatarblockContentcolumngridChildren = "bottomBarSocialLinks___authoravatarblock___contentcolumngrid___children",
+  BottomBarSocialLinksAuthoravatarblockContentcolumngridContentblock = "bottomBarSocialLinks___authoravatarblock___contentcolumngrid___contentblock",
+  BottomBarSocialLinksAuthoravatarblockContentcolumngridContentfulId = "bottomBarSocialLinks___authoravatarblock___contentcolumngrid___contentful_id",
+  BottomBarSocialLinksAuthoravatarblockContentcolumngridCreatedAt = "bottomBarSocialLinks___authoravatarblock___contentcolumngrid___createdAt",
+  BottomBarSocialLinksAuthoravatarblockContentcolumngridId = "bottomBarSocialLinks___authoravatarblock___contentcolumngrid___id",
+  BottomBarSocialLinksAuthoravatarblockContentcolumngridNodeLocale = "bottomBarSocialLinks___authoravatarblock___contentcolumngrid___node_locale",
+  BottomBarSocialLinksAuthoravatarblockContentcolumngridRatio = "bottomBarSocialLinks___authoravatarblock___contentcolumngrid___ratio",
+  BottomBarSocialLinksAuthoravatarblockContentcolumngridSpaceId = "bottomBarSocialLinks___authoravatarblock___contentcolumngrid___spaceId",
+  BottomBarSocialLinksAuthoravatarblockContentcolumngridUniqueId = "bottomBarSocialLinks___authoravatarblock___contentcolumngrid___uniqueId",
+  BottomBarSocialLinksAuthoravatarblockContentcolumngridUpdatedAt = "bottomBarSocialLinks___authoravatarblock___contentcolumngrid___updatedAt",
   BottomBarSocialLinksAuthoravatarblockContentfulId = "bottomBarSocialLinks___authoravatarblock___contentful_id",
   BottomBarSocialLinksAuthoravatarblockCreatedAt = "bottomBarSocialLinks___authoravatarblock___createdAt",
   BottomBarSocialLinksAuthoravatarblockDescriptionChildren = "bottomBarSocialLinks___authoravatarblock___description___children",
@@ -6225,6 +7470,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksAuthoravatarblockSocialSiteLinksAuthoravatarblock = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___authoravatarblock",
   BottomBarSocialLinksAuthoravatarblockSocialSiteLinksChildren = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___children",
   BottomBarSocialLinksAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  BottomBarSocialLinksAuthoravatarblockSocialSiteLinksContentcolumngrid = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___contentcolumngrid",
   BottomBarSocialLinksAuthoravatarblockSocialSiteLinksContentfulId = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___contentful_id",
   BottomBarSocialLinksAuthoravatarblockSocialSiteLinksContentfulid = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___contentfulid",
   BottomBarSocialLinksAuthoravatarblockSocialSiteLinksCreatedAt = "bottomBarSocialLinks___authoravatarblock___socialSiteLinks___createdAt",
@@ -6349,6 +7595,42 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksChildrenInternalType = "bottomBarSocialLinks___children___internal___type",
   BottomBarSocialLinksChildrenParentChildren = "bottomBarSocialLinks___children___parent___children",
   BottomBarSocialLinksChildrenParentId = "bottomBarSocialLinks___children___parent___id",
+  BottomBarSocialLinksContentcolumngrid = "bottomBarSocialLinks___contentcolumngrid",
+  BottomBarSocialLinksContentcolumngridAlignColumnsOnMobile = "bottomBarSocialLinks___contentcolumngrid___alignColumnsOnMobile",
+  BottomBarSocialLinksContentcolumngridChildren = "bottomBarSocialLinks___contentcolumngrid___children",
+  BottomBarSocialLinksContentcolumngridChildrenChildren = "bottomBarSocialLinks___contentcolumngrid___children___children",
+  BottomBarSocialLinksContentcolumngridChildrenId = "bottomBarSocialLinks___contentcolumngrid___children___id",
+  BottomBarSocialLinksContentcolumngridContentblock = "bottomBarSocialLinks___contentcolumngrid___contentblock",
+  BottomBarSocialLinksContentcolumngridContentblockChildren = "bottomBarSocialLinks___contentcolumngrid___contentblock___children",
+  BottomBarSocialLinksContentcolumngridContentblockContentfulId = "bottomBarSocialLinks___contentcolumngrid___contentblock___contentful_id",
+  BottomBarSocialLinksContentcolumngridContentblockCreatedAt = "bottomBarSocialLinks___contentcolumngrid___contentblock___createdAt",
+  BottomBarSocialLinksContentcolumngridContentblockId = "bottomBarSocialLinks___contentcolumngrid___contentblock___id",
+  BottomBarSocialLinksContentcolumngridContentblockMargin = "bottomBarSocialLinks___contentcolumngrid___contentblock___margin",
+  BottomBarSocialLinksContentcolumngridContentblockNodeLocale = "bottomBarSocialLinks___contentcolumngrid___contentblock___node_locale",
+  BottomBarSocialLinksContentcolumngridContentblockPage = "bottomBarSocialLinks___contentcolumngrid___contentblock___page",
+  BottomBarSocialLinksContentcolumngridContentblockSpaceId = "bottomBarSocialLinks___contentcolumngrid___contentblock___spaceId",
+  BottomBarSocialLinksContentcolumngridContentblockUniqueId = "bottomBarSocialLinks___contentcolumngrid___contentblock___uniqueId",
+  BottomBarSocialLinksContentcolumngridContentblockUpdatedAt = "bottomBarSocialLinks___contentcolumngrid___contentblock___updatedAt",
+  BottomBarSocialLinksContentcolumngridContentfulId = "bottomBarSocialLinks___contentcolumngrid___contentful_id",
+  BottomBarSocialLinksContentcolumngridCreatedAt = "bottomBarSocialLinks___contentcolumngrid___createdAt",
+  BottomBarSocialLinksContentcolumngridId = "bottomBarSocialLinks___contentcolumngrid___id",
+  BottomBarSocialLinksContentcolumngridInternalContent = "bottomBarSocialLinks___contentcolumngrid___internal___content",
+  BottomBarSocialLinksContentcolumngridInternalContentDigest = "bottomBarSocialLinks___contentcolumngrid___internal___contentDigest",
+  BottomBarSocialLinksContentcolumngridInternalDescription = "bottomBarSocialLinks___contentcolumngrid___internal___description",
+  BottomBarSocialLinksContentcolumngridInternalFieldOwners = "bottomBarSocialLinks___contentcolumngrid___internal___fieldOwners",
+  BottomBarSocialLinksContentcolumngridInternalIgnoreType = "bottomBarSocialLinks___contentcolumngrid___internal___ignoreType",
+  BottomBarSocialLinksContentcolumngridInternalMediaType = "bottomBarSocialLinks___contentcolumngrid___internal___mediaType",
+  BottomBarSocialLinksContentcolumngridInternalOwner = "bottomBarSocialLinks___contentcolumngrid___internal___owner",
+  BottomBarSocialLinksContentcolumngridInternalType = "bottomBarSocialLinks___contentcolumngrid___internal___type",
+  BottomBarSocialLinksContentcolumngridNodeLocale = "bottomBarSocialLinks___contentcolumngrid___node_locale",
+  BottomBarSocialLinksContentcolumngridParentChildren = "bottomBarSocialLinks___contentcolumngrid___parent___children",
+  BottomBarSocialLinksContentcolumngridParentId = "bottomBarSocialLinks___contentcolumngrid___parent___id",
+  BottomBarSocialLinksContentcolumngridRatio = "bottomBarSocialLinks___contentcolumngrid___ratio",
+  BottomBarSocialLinksContentcolumngridSpaceId = "bottomBarSocialLinks___contentcolumngrid___spaceId",
+  BottomBarSocialLinksContentcolumngridSysRevision = "bottomBarSocialLinks___contentcolumngrid___sys___revision",
+  BottomBarSocialLinksContentcolumngridSysType = "bottomBarSocialLinks___contentcolumngrid___sys___type",
+  BottomBarSocialLinksContentcolumngridUniqueId = "bottomBarSocialLinks___contentcolumngrid___uniqueId",
+  BottomBarSocialLinksContentcolumngridUpdatedAt = "bottomBarSocialLinks___contentcolumngrid___updatedAt",
   BottomBarSocialLinksContentfulId = "bottomBarSocialLinks___contentful_id",
   BottomBarSocialLinksContentfulid = "bottomBarSocialLinks___contentfulid",
   BottomBarSocialLinksCreatedAt = "bottomBarSocialLinks___createdAt",
@@ -6411,6 +7693,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksOptionsBottomBarLogoAuthoravatarblock = "bottomBarSocialLinks___options___bottomBarLogo___authoravatarblock",
   BottomBarSocialLinksOptionsBottomBarLogoChildren = "bottomBarSocialLinks___options___bottomBarLogo___children",
   BottomBarSocialLinksOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
+  BottomBarSocialLinksOptionsBottomBarLogoContentcolumngrid = "bottomBarSocialLinks___options___bottomBarLogo___contentcolumngrid",
   BottomBarSocialLinksOptionsBottomBarLogoContentfulId = "bottomBarSocialLinks___options___bottomBarLogo___contentful_id",
   BottomBarSocialLinksOptionsBottomBarLogoContentfulid = "bottomBarSocialLinks___options___bottomBarLogo___contentfulid",
   BottomBarSocialLinksOptionsBottomBarLogoCreatedAt = "bottomBarSocialLinks___options___bottomBarLogo___createdAt",
@@ -6425,6 +7708,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksOptionsBottomBarSocialLinksAuthoravatarblock = "bottomBarSocialLinks___options___bottomBarSocialLinks___authoravatarblock",
   BottomBarSocialLinksOptionsBottomBarSocialLinksChildren = "bottomBarSocialLinks___options___bottomBarSocialLinks___children",
   BottomBarSocialLinksOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  BottomBarSocialLinksOptionsBottomBarSocialLinksContentcolumngrid = "bottomBarSocialLinks___options___bottomBarSocialLinks___contentcolumngrid",
   BottomBarSocialLinksOptionsBottomBarSocialLinksContentfulId = "bottomBarSocialLinks___options___bottomBarSocialLinks___contentful_id",
   BottomBarSocialLinksOptionsBottomBarSocialLinksContentfulid = "bottomBarSocialLinks___options___bottomBarSocialLinks___contentfulid",
   BottomBarSocialLinksOptionsBottomBarSocialLinksCreatedAt = "bottomBarSocialLinks___options___bottomBarSocialLinks___createdAt",
@@ -6439,6 +7723,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksOptionsBottomBarTabsAuthoravatarblock = "bottomBarSocialLinks___options___bottomBarTabs___authoravatarblock",
   BottomBarSocialLinksOptionsBottomBarTabsChildren = "bottomBarSocialLinks___options___bottomBarTabs___children",
   BottomBarSocialLinksOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
+  BottomBarSocialLinksOptionsBottomBarTabsContentcolumngrid = "bottomBarSocialLinks___options___bottomBarTabs___contentcolumngrid",
   BottomBarSocialLinksOptionsBottomBarTabsContentfulId = "bottomBarSocialLinks___options___bottomBarTabs___contentful_id",
   BottomBarSocialLinksOptionsBottomBarTabsContentfulid = "bottomBarSocialLinks___options___bottomBarTabs___contentfulid",
   BottomBarSocialLinksOptionsBottomBarTabsCreatedAt = "bottomBarSocialLinks___options___bottomBarTabs___createdAt",
@@ -6473,6 +7758,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksOptionsTopBarLogoAuthoravatarblock = "bottomBarSocialLinks___options___topBarLogo___authoravatarblock",
   BottomBarSocialLinksOptionsTopBarLogoChildren = "bottomBarSocialLinks___options___topBarLogo___children",
   BottomBarSocialLinksOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___options___topBarLogo___childrenContentfulLinkUrlTextNode",
+  BottomBarSocialLinksOptionsTopBarLogoContentcolumngrid = "bottomBarSocialLinks___options___topBarLogo___contentcolumngrid",
   BottomBarSocialLinksOptionsTopBarLogoContentfulId = "bottomBarSocialLinks___options___topBarLogo___contentful_id",
   BottomBarSocialLinksOptionsTopBarLogoContentfulid = "bottomBarSocialLinks___options___topBarLogo___contentfulid",
   BottomBarSocialLinksOptionsTopBarLogoCreatedAt = "bottomBarSocialLinks___options___topBarLogo___createdAt",
@@ -6487,6 +7773,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksOptionsTopBarSocialLinksAuthoravatarblock = "bottomBarSocialLinks___options___topBarSocialLinks___authoravatarblock",
   BottomBarSocialLinksOptionsTopBarSocialLinksChildren = "bottomBarSocialLinks___options___topBarSocialLinks___children",
   BottomBarSocialLinksOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  BottomBarSocialLinksOptionsTopBarSocialLinksContentcolumngrid = "bottomBarSocialLinks___options___topBarSocialLinks___contentcolumngrid",
   BottomBarSocialLinksOptionsTopBarSocialLinksContentfulId = "bottomBarSocialLinks___options___topBarSocialLinks___contentful_id",
   BottomBarSocialLinksOptionsTopBarSocialLinksContentfulid = "bottomBarSocialLinks___options___topBarSocialLinks___contentfulid",
   BottomBarSocialLinksOptionsTopBarSocialLinksCreatedAt = "bottomBarSocialLinks___options___topBarSocialLinks___createdAt",
@@ -6501,6 +7788,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarSocialLinksOptionsTopBarTabsAuthoravatarblock = "bottomBarSocialLinks___options___topBarTabs___authoravatarblock",
   BottomBarSocialLinksOptionsTopBarTabsChildren = "bottomBarSocialLinks___options___topBarTabs___children",
   BottomBarSocialLinksOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "bottomBarSocialLinks___options___topBarTabs___childrenContentfulLinkUrlTextNode",
+  BottomBarSocialLinksOptionsTopBarTabsContentcolumngrid = "bottomBarSocialLinks___options___topBarTabs___contentcolumngrid",
   BottomBarSocialLinksOptionsTopBarTabsContentfulId = "bottomBarSocialLinks___options___topBarTabs___contentful_id",
   BottomBarSocialLinksOptionsTopBarTabsContentfulid = "bottomBarSocialLinks___options___topBarTabs___contentfulid",
   BottomBarSocialLinksOptionsTopBarTabsCreatedAt = "bottomBarSocialLinks___options___topBarTabs___createdAt",
@@ -6584,6 +7872,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsActioninfoblockButtonAuthoravatarblock = "bottomBarTabs___actioninfoblock___button___authoravatarblock",
   BottomBarTabsActioninfoblockButtonChildren = "bottomBarTabs___actioninfoblock___button___children",
   BottomBarTabsActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "bottomBarTabs___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  BottomBarTabsActioninfoblockButtonContentcolumngrid = "bottomBarTabs___actioninfoblock___button___contentcolumngrid",
   BottomBarTabsActioninfoblockButtonContentfulId = "bottomBarTabs___actioninfoblock___button___contentful_id",
   BottomBarTabsActioninfoblockButtonContentfulid = "bottomBarTabs___actioninfoblock___button___contentfulid",
   BottomBarTabsActioninfoblockButtonCreatedAt = "bottomBarTabs___actioninfoblock___button___createdAt",
@@ -6596,6 +7885,29 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsActioninfoblockChildren = "bottomBarTabs___actioninfoblock___children",
   BottomBarTabsActioninfoblockChildrenChildren = "bottomBarTabs___actioninfoblock___children___children",
   BottomBarTabsActioninfoblockChildrenId = "bottomBarTabs___actioninfoblock___children___id",
+  BottomBarTabsActioninfoblockContentblock = "bottomBarTabs___actioninfoblock___contentblock",
+  BottomBarTabsActioninfoblockContentblockChildren = "bottomBarTabs___actioninfoblock___contentblock___children",
+  BottomBarTabsActioninfoblockContentblockContentfulId = "bottomBarTabs___actioninfoblock___contentblock___contentful_id",
+  BottomBarTabsActioninfoblockContentblockCreatedAt = "bottomBarTabs___actioninfoblock___contentblock___createdAt",
+  BottomBarTabsActioninfoblockContentblockId = "bottomBarTabs___actioninfoblock___contentblock___id",
+  BottomBarTabsActioninfoblockContentblockMargin = "bottomBarTabs___actioninfoblock___contentblock___margin",
+  BottomBarTabsActioninfoblockContentblockNodeLocale = "bottomBarTabs___actioninfoblock___contentblock___node_locale",
+  BottomBarTabsActioninfoblockContentblockPage = "bottomBarTabs___actioninfoblock___contentblock___page",
+  BottomBarTabsActioninfoblockContentblockSpaceId = "bottomBarTabs___actioninfoblock___contentblock___spaceId",
+  BottomBarTabsActioninfoblockContentblockUniqueId = "bottomBarTabs___actioninfoblock___contentblock___uniqueId",
+  BottomBarTabsActioninfoblockContentblockUpdatedAt = "bottomBarTabs___actioninfoblock___contentblock___updatedAt",
+  BottomBarTabsActioninfoblockContentcolumngrid = "bottomBarTabs___actioninfoblock___contentcolumngrid",
+  BottomBarTabsActioninfoblockContentcolumngridAlignColumnsOnMobile = "bottomBarTabs___actioninfoblock___contentcolumngrid___alignColumnsOnMobile",
+  BottomBarTabsActioninfoblockContentcolumngridChildren = "bottomBarTabs___actioninfoblock___contentcolumngrid___children",
+  BottomBarTabsActioninfoblockContentcolumngridContentblock = "bottomBarTabs___actioninfoblock___contentcolumngrid___contentblock",
+  BottomBarTabsActioninfoblockContentcolumngridContentfulId = "bottomBarTabs___actioninfoblock___contentcolumngrid___contentful_id",
+  BottomBarTabsActioninfoblockContentcolumngridCreatedAt = "bottomBarTabs___actioninfoblock___contentcolumngrid___createdAt",
+  BottomBarTabsActioninfoblockContentcolumngridId = "bottomBarTabs___actioninfoblock___contentcolumngrid___id",
+  BottomBarTabsActioninfoblockContentcolumngridNodeLocale = "bottomBarTabs___actioninfoblock___contentcolumngrid___node_locale",
+  BottomBarTabsActioninfoblockContentcolumngridRatio = "bottomBarTabs___actioninfoblock___contentcolumngrid___ratio",
+  BottomBarTabsActioninfoblockContentcolumngridSpaceId = "bottomBarTabs___actioninfoblock___contentcolumngrid___spaceId",
+  BottomBarTabsActioninfoblockContentcolumngridUniqueId = "bottomBarTabs___actioninfoblock___contentcolumngrid___uniqueId",
+  BottomBarTabsActioninfoblockContentcolumngridUpdatedAt = "bottomBarTabs___actioninfoblock___contentcolumngrid___updatedAt",
   BottomBarTabsActioninfoblockContentfulId = "bottomBarTabs___actioninfoblock___contentful_id",
   BottomBarTabsActioninfoblockCreatedAt = "bottomBarTabs___actioninfoblock___createdAt",
   BottomBarTabsActioninfoblockId = "bottomBarTabs___actioninfoblock___id",
@@ -6682,6 +7994,18 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsAuthoravatarblockContentblockSpaceId = "bottomBarTabs___authoravatarblock___contentblock___spaceId",
   BottomBarTabsAuthoravatarblockContentblockUniqueId = "bottomBarTabs___authoravatarblock___contentblock___uniqueId",
   BottomBarTabsAuthoravatarblockContentblockUpdatedAt = "bottomBarTabs___authoravatarblock___contentblock___updatedAt",
+  BottomBarTabsAuthoravatarblockContentcolumngrid = "bottomBarTabs___authoravatarblock___contentcolumngrid",
+  BottomBarTabsAuthoravatarblockContentcolumngridAlignColumnsOnMobile = "bottomBarTabs___authoravatarblock___contentcolumngrid___alignColumnsOnMobile",
+  BottomBarTabsAuthoravatarblockContentcolumngridChildren = "bottomBarTabs___authoravatarblock___contentcolumngrid___children",
+  BottomBarTabsAuthoravatarblockContentcolumngridContentblock = "bottomBarTabs___authoravatarblock___contentcolumngrid___contentblock",
+  BottomBarTabsAuthoravatarblockContentcolumngridContentfulId = "bottomBarTabs___authoravatarblock___contentcolumngrid___contentful_id",
+  BottomBarTabsAuthoravatarblockContentcolumngridCreatedAt = "bottomBarTabs___authoravatarblock___contentcolumngrid___createdAt",
+  BottomBarTabsAuthoravatarblockContentcolumngridId = "bottomBarTabs___authoravatarblock___contentcolumngrid___id",
+  BottomBarTabsAuthoravatarblockContentcolumngridNodeLocale = "bottomBarTabs___authoravatarblock___contentcolumngrid___node_locale",
+  BottomBarTabsAuthoravatarblockContentcolumngridRatio = "bottomBarTabs___authoravatarblock___contentcolumngrid___ratio",
+  BottomBarTabsAuthoravatarblockContentcolumngridSpaceId = "bottomBarTabs___authoravatarblock___contentcolumngrid___spaceId",
+  BottomBarTabsAuthoravatarblockContentcolumngridUniqueId = "bottomBarTabs___authoravatarblock___contentcolumngrid___uniqueId",
+  BottomBarTabsAuthoravatarblockContentcolumngridUpdatedAt = "bottomBarTabs___authoravatarblock___contentcolumngrid___updatedAt",
   BottomBarTabsAuthoravatarblockContentfulId = "bottomBarTabs___authoravatarblock___contentful_id",
   BottomBarTabsAuthoravatarblockCreatedAt = "bottomBarTabs___authoravatarblock___createdAt",
   BottomBarTabsAuthoravatarblockDescriptionChildren = "bottomBarTabs___authoravatarblock___description___children",
@@ -6706,6 +8030,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsAuthoravatarblockSocialSiteLinksAuthoravatarblock = "bottomBarTabs___authoravatarblock___socialSiteLinks___authoravatarblock",
   BottomBarTabsAuthoravatarblockSocialSiteLinksChildren = "bottomBarTabs___authoravatarblock___socialSiteLinks___children",
   BottomBarTabsAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "bottomBarTabs___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  BottomBarTabsAuthoravatarblockSocialSiteLinksContentcolumngrid = "bottomBarTabs___authoravatarblock___socialSiteLinks___contentcolumngrid",
   BottomBarTabsAuthoravatarblockSocialSiteLinksContentfulId = "bottomBarTabs___authoravatarblock___socialSiteLinks___contentful_id",
   BottomBarTabsAuthoravatarblockSocialSiteLinksContentfulid = "bottomBarTabs___authoravatarblock___socialSiteLinks___contentfulid",
   BottomBarTabsAuthoravatarblockSocialSiteLinksCreatedAt = "bottomBarTabs___authoravatarblock___socialSiteLinks___createdAt",
@@ -6830,6 +8155,42 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsChildrenInternalType = "bottomBarTabs___children___internal___type",
   BottomBarTabsChildrenParentChildren = "bottomBarTabs___children___parent___children",
   BottomBarTabsChildrenParentId = "bottomBarTabs___children___parent___id",
+  BottomBarTabsContentcolumngrid = "bottomBarTabs___contentcolumngrid",
+  BottomBarTabsContentcolumngridAlignColumnsOnMobile = "bottomBarTabs___contentcolumngrid___alignColumnsOnMobile",
+  BottomBarTabsContentcolumngridChildren = "bottomBarTabs___contentcolumngrid___children",
+  BottomBarTabsContentcolumngridChildrenChildren = "bottomBarTabs___contentcolumngrid___children___children",
+  BottomBarTabsContentcolumngridChildrenId = "bottomBarTabs___contentcolumngrid___children___id",
+  BottomBarTabsContentcolumngridContentblock = "bottomBarTabs___contentcolumngrid___contentblock",
+  BottomBarTabsContentcolumngridContentblockChildren = "bottomBarTabs___contentcolumngrid___contentblock___children",
+  BottomBarTabsContentcolumngridContentblockContentfulId = "bottomBarTabs___contentcolumngrid___contentblock___contentful_id",
+  BottomBarTabsContentcolumngridContentblockCreatedAt = "bottomBarTabs___contentcolumngrid___contentblock___createdAt",
+  BottomBarTabsContentcolumngridContentblockId = "bottomBarTabs___contentcolumngrid___contentblock___id",
+  BottomBarTabsContentcolumngridContentblockMargin = "bottomBarTabs___contentcolumngrid___contentblock___margin",
+  BottomBarTabsContentcolumngridContentblockNodeLocale = "bottomBarTabs___contentcolumngrid___contentblock___node_locale",
+  BottomBarTabsContentcolumngridContentblockPage = "bottomBarTabs___contentcolumngrid___contentblock___page",
+  BottomBarTabsContentcolumngridContentblockSpaceId = "bottomBarTabs___contentcolumngrid___contentblock___spaceId",
+  BottomBarTabsContentcolumngridContentblockUniqueId = "bottomBarTabs___contentcolumngrid___contentblock___uniqueId",
+  BottomBarTabsContentcolumngridContentblockUpdatedAt = "bottomBarTabs___contentcolumngrid___contentblock___updatedAt",
+  BottomBarTabsContentcolumngridContentfulId = "bottomBarTabs___contentcolumngrid___contentful_id",
+  BottomBarTabsContentcolumngridCreatedAt = "bottomBarTabs___contentcolumngrid___createdAt",
+  BottomBarTabsContentcolumngridId = "bottomBarTabs___contentcolumngrid___id",
+  BottomBarTabsContentcolumngridInternalContent = "bottomBarTabs___contentcolumngrid___internal___content",
+  BottomBarTabsContentcolumngridInternalContentDigest = "bottomBarTabs___contentcolumngrid___internal___contentDigest",
+  BottomBarTabsContentcolumngridInternalDescription = "bottomBarTabs___contentcolumngrid___internal___description",
+  BottomBarTabsContentcolumngridInternalFieldOwners = "bottomBarTabs___contentcolumngrid___internal___fieldOwners",
+  BottomBarTabsContentcolumngridInternalIgnoreType = "bottomBarTabs___contentcolumngrid___internal___ignoreType",
+  BottomBarTabsContentcolumngridInternalMediaType = "bottomBarTabs___contentcolumngrid___internal___mediaType",
+  BottomBarTabsContentcolumngridInternalOwner = "bottomBarTabs___contentcolumngrid___internal___owner",
+  BottomBarTabsContentcolumngridInternalType = "bottomBarTabs___contentcolumngrid___internal___type",
+  BottomBarTabsContentcolumngridNodeLocale = "bottomBarTabs___contentcolumngrid___node_locale",
+  BottomBarTabsContentcolumngridParentChildren = "bottomBarTabs___contentcolumngrid___parent___children",
+  BottomBarTabsContentcolumngridParentId = "bottomBarTabs___contentcolumngrid___parent___id",
+  BottomBarTabsContentcolumngridRatio = "bottomBarTabs___contentcolumngrid___ratio",
+  BottomBarTabsContentcolumngridSpaceId = "bottomBarTabs___contentcolumngrid___spaceId",
+  BottomBarTabsContentcolumngridSysRevision = "bottomBarTabs___contentcolumngrid___sys___revision",
+  BottomBarTabsContentcolumngridSysType = "bottomBarTabs___contentcolumngrid___sys___type",
+  BottomBarTabsContentcolumngridUniqueId = "bottomBarTabs___contentcolumngrid___uniqueId",
+  BottomBarTabsContentcolumngridUpdatedAt = "bottomBarTabs___contentcolumngrid___updatedAt",
   BottomBarTabsContentfulId = "bottomBarTabs___contentful_id",
   BottomBarTabsContentfulid = "bottomBarTabs___contentfulid",
   BottomBarTabsCreatedAt = "bottomBarTabs___createdAt",
@@ -6892,6 +8253,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsOptionsBottomBarLogoAuthoravatarblock = "bottomBarTabs___options___bottomBarLogo___authoravatarblock",
   BottomBarTabsOptionsBottomBarLogoChildren = "bottomBarTabs___options___bottomBarLogo___children",
   BottomBarTabsOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "bottomBarTabs___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
+  BottomBarTabsOptionsBottomBarLogoContentcolumngrid = "bottomBarTabs___options___bottomBarLogo___contentcolumngrid",
   BottomBarTabsOptionsBottomBarLogoContentfulId = "bottomBarTabs___options___bottomBarLogo___contentful_id",
   BottomBarTabsOptionsBottomBarLogoContentfulid = "bottomBarTabs___options___bottomBarLogo___contentfulid",
   BottomBarTabsOptionsBottomBarLogoCreatedAt = "bottomBarTabs___options___bottomBarLogo___createdAt",
@@ -6906,6 +8268,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsOptionsBottomBarSocialLinksAuthoravatarblock = "bottomBarTabs___options___bottomBarSocialLinks___authoravatarblock",
   BottomBarTabsOptionsBottomBarSocialLinksChildren = "bottomBarTabs___options___bottomBarSocialLinks___children",
   BottomBarTabsOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "bottomBarTabs___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  BottomBarTabsOptionsBottomBarSocialLinksContentcolumngrid = "bottomBarTabs___options___bottomBarSocialLinks___contentcolumngrid",
   BottomBarTabsOptionsBottomBarSocialLinksContentfulId = "bottomBarTabs___options___bottomBarSocialLinks___contentful_id",
   BottomBarTabsOptionsBottomBarSocialLinksContentfulid = "bottomBarTabs___options___bottomBarSocialLinks___contentfulid",
   BottomBarTabsOptionsBottomBarSocialLinksCreatedAt = "bottomBarTabs___options___bottomBarSocialLinks___createdAt",
@@ -6920,6 +8283,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsOptionsBottomBarTabsAuthoravatarblock = "bottomBarTabs___options___bottomBarTabs___authoravatarblock",
   BottomBarTabsOptionsBottomBarTabsChildren = "bottomBarTabs___options___bottomBarTabs___children",
   BottomBarTabsOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "bottomBarTabs___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
+  BottomBarTabsOptionsBottomBarTabsContentcolumngrid = "bottomBarTabs___options___bottomBarTabs___contentcolumngrid",
   BottomBarTabsOptionsBottomBarTabsContentfulId = "bottomBarTabs___options___bottomBarTabs___contentful_id",
   BottomBarTabsOptionsBottomBarTabsContentfulid = "bottomBarTabs___options___bottomBarTabs___contentfulid",
   BottomBarTabsOptionsBottomBarTabsCreatedAt = "bottomBarTabs___options___bottomBarTabs___createdAt",
@@ -6954,6 +8318,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsOptionsTopBarLogoAuthoravatarblock = "bottomBarTabs___options___topBarLogo___authoravatarblock",
   BottomBarTabsOptionsTopBarLogoChildren = "bottomBarTabs___options___topBarLogo___children",
   BottomBarTabsOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "bottomBarTabs___options___topBarLogo___childrenContentfulLinkUrlTextNode",
+  BottomBarTabsOptionsTopBarLogoContentcolumngrid = "bottomBarTabs___options___topBarLogo___contentcolumngrid",
   BottomBarTabsOptionsTopBarLogoContentfulId = "bottomBarTabs___options___topBarLogo___contentful_id",
   BottomBarTabsOptionsTopBarLogoContentfulid = "bottomBarTabs___options___topBarLogo___contentfulid",
   BottomBarTabsOptionsTopBarLogoCreatedAt = "bottomBarTabs___options___topBarLogo___createdAt",
@@ -6968,6 +8333,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsOptionsTopBarSocialLinksAuthoravatarblock = "bottomBarTabs___options___topBarSocialLinks___authoravatarblock",
   BottomBarTabsOptionsTopBarSocialLinksChildren = "bottomBarTabs___options___topBarSocialLinks___children",
   BottomBarTabsOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "bottomBarTabs___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  BottomBarTabsOptionsTopBarSocialLinksContentcolumngrid = "bottomBarTabs___options___topBarSocialLinks___contentcolumngrid",
   BottomBarTabsOptionsTopBarSocialLinksContentfulId = "bottomBarTabs___options___topBarSocialLinks___contentful_id",
   BottomBarTabsOptionsTopBarSocialLinksContentfulid = "bottomBarTabs___options___topBarSocialLinks___contentfulid",
   BottomBarTabsOptionsTopBarSocialLinksCreatedAt = "bottomBarTabs___options___topBarSocialLinks___createdAt",
@@ -6982,6 +8348,7 @@ export enum ContentfulOptionsFieldsEnum {
   BottomBarTabsOptionsTopBarTabsAuthoravatarblock = "bottomBarTabs___options___topBarTabs___authoravatarblock",
   BottomBarTabsOptionsTopBarTabsChildren = "bottomBarTabs___options___topBarTabs___children",
   BottomBarTabsOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "bottomBarTabs___options___topBarTabs___childrenContentfulLinkUrlTextNode",
+  BottomBarTabsOptionsTopBarTabsContentcolumngrid = "bottomBarTabs___options___topBarTabs___contentcolumngrid",
   BottomBarTabsOptionsTopBarTabsContentfulId = "bottomBarTabs___options___topBarTabs___contentful_id",
   BottomBarTabsOptionsTopBarTabsContentfulid = "bottomBarTabs___options___topBarTabs___contentfulid",
   BottomBarTabsOptionsTopBarTabsCreatedAt = "bottomBarTabs___options___topBarTabs___createdAt",
@@ -7160,6 +8527,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoActioninfoblockButtonAuthoravatarblock = "topBarLogo___actioninfoblock___button___authoravatarblock",
   TopBarLogoActioninfoblockButtonChildren = "topBarLogo___actioninfoblock___button___children",
   TopBarLogoActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "topBarLogo___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  TopBarLogoActioninfoblockButtonContentcolumngrid = "topBarLogo___actioninfoblock___button___contentcolumngrid",
   TopBarLogoActioninfoblockButtonContentfulId = "topBarLogo___actioninfoblock___button___contentful_id",
   TopBarLogoActioninfoblockButtonContentfulid = "topBarLogo___actioninfoblock___button___contentfulid",
   TopBarLogoActioninfoblockButtonCreatedAt = "topBarLogo___actioninfoblock___button___createdAt",
@@ -7172,6 +8540,29 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoActioninfoblockChildren = "topBarLogo___actioninfoblock___children",
   TopBarLogoActioninfoblockChildrenChildren = "topBarLogo___actioninfoblock___children___children",
   TopBarLogoActioninfoblockChildrenId = "topBarLogo___actioninfoblock___children___id",
+  TopBarLogoActioninfoblockContentblock = "topBarLogo___actioninfoblock___contentblock",
+  TopBarLogoActioninfoblockContentblockChildren = "topBarLogo___actioninfoblock___contentblock___children",
+  TopBarLogoActioninfoblockContentblockContentfulId = "topBarLogo___actioninfoblock___contentblock___contentful_id",
+  TopBarLogoActioninfoblockContentblockCreatedAt = "topBarLogo___actioninfoblock___contentblock___createdAt",
+  TopBarLogoActioninfoblockContentblockId = "topBarLogo___actioninfoblock___contentblock___id",
+  TopBarLogoActioninfoblockContentblockMargin = "topBarLogo___actioninfoblock___contentblock___margin",
+  TopBarLogoActioninfoblockContentblockNodeLocale = "topBarLogo___actioninfoblock___contentblock___node_locale",
+  TopBarLogoActioninfoblockContentblockPage = "topBarLogo___actioninfoblock___contentblock___page",
+  TopBarLogoActioninfoblockContentblockSpaceId = "topBarLogo___actioninfoblock___contentblock___spaceId",
+  TopBarLogoActioninfoblockContentblockUniqueId = "topBarLogo___actioninfoblock___contentblock___uniqueId",
+  TopBarLogoActioninfoblockContentblockUpdatedAt = "topBarLogo___actioninfoblock___contentblock___updatedAt",
+  TopBarLogoActioninfoblockContentcolumngrid = "topBarLogo___actioninfoblock___contentcolumngrid",
+  TopBarLogoActioninfoblockContentcolumngridAlignColumnsOnMobile = "topBarLogo___actioninfoblock___contentcolumngrid___alignColumnsOnMobile",
+  TopBarLogoActioninfoblockContentcolumngridChildren = "topBarLogo___actioninfoblock___contentcolumngrid___children",
+  TopBarLogoActioninfoblockContentcolumngridContentblock = "topBarLogo___actioninfoblock___contentcolumngrid___contentblock",
+  TopBarLogoActioninfoblockContentcolumngridContentfulId = "topBarLogo___actioninfoblock___contentcolumngrid___contentful_id",
+  TopBarLogoActioninfoblockContentcolumngridCreatedAt = "topBarLogo___actioninfoblock___contentcolumngrid___createdAt",
+  TopBarLogoActioninfoblockContentcolumngridId = "topBarLogo___actioninfoblock___contentcolumngrid___id",
+  TopBarLogoActioninfoblockContentcolumngridNodeLocale = "topBarLogo___actioninfoblock___contentcolumngrid___node_locale",
+  TopBarLogoActioninfoblockContentcolumngridRatio = "topBarLogo___actioninfoblock___contentcolumngrid___ratio",
+  TopBarLogoActioninfoblockContentcolumngridSpaceId = "topBarLogo___actioninfoblock___contentcolumngrid___spaceId",
+  TopBarLogoActioninfoblockContentcolumngridUniqueId = "topBarLogo___actioninfoblock___contentcolumngrid___uniqueId",
+  TopBarLogoActioninfoblockContentcolumngridUpdatedAt = "topBarLogo___actioninfoblock___contentcolumngrid___updatedAt",
   TopBarLogoActioninfoblockContentfulId = "topBarLogo___actioninfoblock___contentful_id",
   TopBarLogoActioninfoblockCreatedAt = "topBarLogo___actioninfoblock___createdAt",
   TopBarLogoActioninfoblockId = "topBarLogo___actioninfoblock___id",
@@ -7258,6 +8649,18 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoAuthoravatarblockContentblockSpaceId = "topBarLogo___authoravatarblock___contentblock___spaceId",
   TopBarLogoAuthoravatarblockContentblockUniqueId = "topBarLogo___authoravatarblock___contentblock___uniqueId",
   TopBarLogoAuthoravatarblockContentblockUpdatedAt = "topBarLogo___authoravatarblock___contentblock___updatedAt",
+  TopBarLogoAuthoravatarblockContentcolumngrid = "topBarLogo___authoravatarblock___contentcolumngrid",
+  TopBarLogoAuthoravatarblockContentcolumngridAlignColumnsOnMobile = "topBarLogo___authoravatarblock___contentcolumngrid___alignColumnsOnMobile",
+  TopBarLogoAuthoravatarblockContentcolumngridChildren = "topBarLogo___authoravatarblock___contentcolumngrid___children",
+  TopBarLogoAuthoravatarblockContentcolumngridContentblock = "topBarLogo___authoravatarblock___contentcolumngrid___contentblock",
+  TopBarLogoAuthoravatarblockContentcolumngridContentfulId = "topBarLogo___authoravatarblock___contentcolumngrid___contentful_id",
+  TopBarLogoAuthoravatarblockContentcolumngridCreatedAt = "topBarLogo___authoravatarblock___contentcolumngrid___createdAt",
+  TopBarLogoAuthoravatarblockContentcolumngridId = "topBarLogo___authoravatarblock___contentcolumngrid___id",
+  TopBarLogoAuthoravatarblockContentcolumngridNodeLocale = "topBarLogo___authoravatarblock___contentcolumngrid___node_locale",
+  TopBarLogoAuthoravatarblockContentcolumngridRatio = "topBarLogo___authoravatarblock___contentcolumngrid___ratio",
+  TopBarLogoAuthoravatarblockContentcolumngridSpaceId = "topBarLogo___authoravatarblock___contentcolumngrid___spaceId",
+  TopBarLogoAuthoravatarblockContentcolumngridUniqueId = "topBarLogo___authoravatarblock___contentcolumngrid___uniqueId",
+  TopBarLogoAuthoravatarblockContentcolumngridUpdatedAt = "topBarLogo___authoravatarblock___contentcolumngrid___updatedAt",
   TopBarLogoAuthoravatarblockContentfulId = "topBarLogo___authoravatarblock___contentful_id",
   TopBarLogoAuthoravatarblockCreatedAt = "topBarLogo___authoravatarblock___createdAt",
   TopBarLogoAuthoravatarblockDescriptionChildren = "topBarLogo___authoravatarblock___description___children",
@@ -7282,6 +8685,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoAuthoravatarblockSocialSiteLinksAuthoravatarblock = "topBarLogo___authoravatarblock___socialSiteLinks___authoravatarblock",
   TopBarLogoAuthoravatarblockSocialSiteLinksChildren = "topBarLogo___authoravatarblock___socialSiteLinks___children",
   TopBarLogoAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "topBarLogo___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  TopBarLogoAuthoravatarblockSocialSiteLinksContentcolumngrid = "topBarLogo___authoravatarblock___socialSiteLinks___contentcolumngrid",
   TopBarLogoAuthoravatarblockSocialSiteLinksContentfulId = "topBarLogo___authoravatarblock___socialSiteLinks___contentful_id",
   TopBarLogoAuthoravatarblockSocialSiteLinksContentfulid = "topBarLogo___authoravatarblock___socialSiteLinks___contentfulid",
   TopBarLogoAuthoravatarblockSocialSiteLinksCreatedAt = "topBarLogo___authoravatarblock___socialSiteLinks___createdAt",
@@ -7406,6 +8810,42 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoChildrenInternalType = "topBarLogo___children___internal___type",
   TopBarLogoChildrenParentChildren = "topBarLogo___children___parent___children",
   TopBarLogoChildrenParentId = "topBarLogo___children___parent___id",
+  TopBarLogoContentcolumngrid = "topBarLogo___contentcolumngrid",
+  TopBarLogoContentcolumngridAlignColumnsOnMobile = "topBarLogo___contentcolumngrid___alignColumnsOnMobile",
+  TopBarLogoContentcolumngridChildren = "topBarLogo___contentcolumngrid___children",
+  TopBarLogoContentcolumngridChildrenChildren = "topBarLogo___contentcolumngrid___children___children",
+  TopBarLogoContentcolumngridChildrenId = "topBarLogo___contentcolumngrid___children___id",
+  TopBarLogoContentcolumngridContentblock = "topBarLogo___contentcolumngrid___contentblock",
+  TopBarLogoContentcolumngridContentblockChildren = "topBarLogo___contentcolumngrid___contentblock___children",
+  TopBarLogoContentcolumngridContentblockContentfulId = "topBarLogo___contentcolumngrid___contentblock___contentful_id",
+  TopBarLogoContentcolumngridContentblockCreatedAt = "topBarLogo___contentcolumngrid___contentblock___createdAt",
+  TopBarLogoContentcolumngridContentblockId = "topBarLogo___contentcolumngrid___contentblock___id",
+  TopBarLogoContentcolumngridContentblockMargin = "topBarLogo___contentcolumngrid___contentblock___margin",
+  TopBarLogoContentcolumngridContentblockNodeLocale = "topBarLogo___contentcolumngrid___contentblock___node_locale",
+  TopBarLogoContentcolumngridContentblockPage = "topBarLogo___contentcolumngrid___contentblock___page",
+  TopBarLogoContentcolumngridContentblockSpaceId = "topBarLogo___contentcolumngrid___contentblock___spaceId",
+  TopBarLogoContentcolumngridContentblockUniqueId = "topBarLogo___contentcolumngrid___contentblock___uniqueId",
+  TopBarLogoContentcolumngridContentblockUpdatedAt = "topBarLogo___contentcolumngrid___contentblock___updatedAt",
+  TopBarLogoContentcolumngridContentfulId = "topBarLogo___contentcolumngrid___contentful_id",
+  TopBarLogoContentcolumngridCreatedAt = "topBarLogo___contentcolumngrid___createdAt",
+  TopBarLogoContentcolumngridId = "topBarLogo___contentcolumngrid___id",
+  TopBarLogoContentcolumngridInternalContent = "topBarLogo___contentcolumngrid___internal___content",
+  TopBarLogoContentcolumngridInternalContentDigest = "topBarLogo___contentcolumngrid___internal___contentDigest",
+  TopBarLogoContentcolumngridInternalDescription = "topBarLogo___contentcolumngrid___internal___description",
+  TopBarLogoContentcolumngridInternalFieldOwners = "topBarLogo___contentcolumngrid___internal___fieldOwners",
+  TopBarLogoContentcolumngridInternalIgnoreType = "topBarLogo___contentcolumngrid___internal___ignoreType",
+  TopBarLogoContentcolumngridInternalMediaType = "topBarLogo___contentcolumngrid___internal___mediaType",
+  TopBarLogoContentcolumngridInternalOwner = "topBarLogo___contentcolumngrid___internal___owner",
+  TopBarLogoContentcolumngridInternalType = "topBarLogo___contentcolumngrid___internal___type",
+  TopBarLogoContentcolumngridNodeLocale = "topBarLogo___contentcolumngrid___node_locale",
+  TopBarLogoContentcolumngridParentChildren = "topBarLogo___contentcolumngrid___parent___children",
+  TopBarLogoContentcolumngridParentId = "topBarLogo___contentcolumngrid___parent___id",
+  TopBarLogoContentcolumngridRatio = "topBarLogo___contentcolumngrid___ratio",
+  TopBarLogoContentcolumngridSpaceId = "topBarLogo___contentcolumngrid___spaceId",
+  TopBarLogoContentcolumngridSysRevision = "topBarLogo___contentcolumngrid___sys___revision",
+  TopBarLogoContentcolumngridSysType = "topBarLogo___contentcolumngrid___sys___type",
+  TopBarLogoContentcolumngridUniqueId = "topBarLogo___contentcolumngrid___uniqueId",
+  TopBarLogoContentcolumngridUpdatedAt = "topBarLogo___contentcolumngrid___updatedAt",
   TopBarLogoContentfulId = "topBarLogo___contentful_id",
   TopBarLogoContentfulid = "topBarLogo___contentfulid",
   TopBarLogoCreatedAt = "topBarLogo___createdAt",
@@ -7468,6 +8908,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoOptionsBottomBarLogoAuthoravatarblock = "topBarLogo___options___bottomBarLogo___authoravatarblock",
   TopBarLogoOptionsBottomBarLogoChildren = "topBarLogo___options___bottomBarLogo___children",
   TopBarLogoOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "topBarLogo___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
+  TopBarLogoOptionsBottomBarLogoContentcolumngrid = "topBarLogo___options___bottomBarLogo___contentcolumngrid",
   TopBarLogoOptionsBottomBarLogoContentfulId = "topBarLogo___options___bottomBarLogo___contentful_id",
   TopBarLogoOptionsBottomBarLogoContentfulid = "topBarLogo___options___bottomBarLogo___contentfulid",
   TopBarLogoOptionsBottomBarLogoCreatedAt = "topBarLogo___options___bottomBarLogo___createdAt",
@@ -7482,6 +8923,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoOptionsBottomBarSocialLinksAuthoravatarblock = "topBarLogo___options___bottomBarSocialLinks___authoravatarblock",
   TopBarLogoOptionsBottomBarSocialLinksChildren = "topBarLogo___options___bottomBarSocialLinks___children",
   TopBarLogoOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "topBarLogo___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  TopBarLogoOptionsBottomBarSocialLinksContentcolumngrid = "topBarLogo___options___bottomBarSocialLinks___contentcolumngrid",
   TopBarLogoOptionsBottomBarSocialLinksContentfulId = "topBarLogo___options___bottomBarSocialLinks___contentful_id",
   TopBarLogoOptionsBottomBarSocialLinksContentfulid = "topBarLogo___options___bottomBarSocialLinks___contentfulid",
   TopBarLogoOptionsBottomBarSocialLinksCreatedAt = "topBarLogo___options___bottomBarSocialLinks___createdAt",
@@ -7496,6 +8938,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoOptionsBottomBarTabsAuthoravatarblock = "topBarLogo___options___bottomBarTabs___authoravatarblock",
   TopBarLogoOptionsBottomBarTabsChildren = "topBarLogo___options___bottomBarTabs___children",
   TopBarLogoOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "topBarLogo___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
+  TopBarLogoOptionsBottomBarTabsContentcolumngrid = "topBarLogo___options___bottomBarTabs___contentcolumngrid",
   TopBarLogoOptionsBottomBarTabsContentfulId = "topBarLogo___options___bottomBarTabs___contentful_id",
   TopBarLogoOptionsBottomBarTabsContentfulid = "topBarLogo___options___bottomBarTabs___contentfulid",
   TopBarLogoOptionsBottomBarTabsCreatedAt = "topBarLogo___options___bottomBarTabs___createdAt",
@@ -7530,6 +8973,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoOptionsTopBarLogoAuthoravatarblock = "topBarLogo___options___topBarLogo___authoravatarblock",
   TopBarLogoOptionsTopBarLogoChildren = "topBarLogo___options___topBarLogo___children",
   TopBarLogoOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "topBarLogo___options___topBarLogo___childrenContentfulLinkUrlTextNode",
+  TopBarLogoOptionsTopBarLogoContentcolumngrid = "topBarLogo___options___topBarLogo___contentcolumngrid",
   TopBarLogoOptionsTopBarLogoContentfulId = "topBarLogo___options___topBarLogo___contentful_id",
   TopBarLogoOptionsTopBarLogoContentfulid = "topBarLogo___options___topBarLogo___contentfulid",
   TopBarLogoOptionsTopBarLogoCreatedAt = "topBarLogo___options___topBarLogo___createdAt",
@@ -7544,6 +8988,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoOptionsTopBarSocialLinksAuthoravatarblock = "topBarLogo___options___topBarSocialLinks___authoravatarblock",
   TopBarLogoOptionsTopBarSocialLinksChildren = "topBarLogo___options___topBarSocialLinks___children",
   TopBarLogoOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "topBarLogo___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  TopBarLogoOptionsTopBarSocialLinksContentcolumngrid = "topBarLogo___options___topBarSocialLinks___contentcolumngrid",
   TopBarLogoOptionsTopBarSocialLinksContentfulId = "topBarLogo___options___topBarSocialLinks___contentful_id",
   TopBarLogoOptionsTopBarSocialLinksContentfulid = "topBarLogo___options___topBarSocialLinks___contentfulid",
   TopBarLogoOptionsTopBarSocialLinksCreatedAt = "topBarLogo___options___topBarSocialLinks___createdAt",
@@ -7558,6 +9003,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarLogoOptionsTopBarTabsAuthoravatarblock = "topBarLogo___options___topBarTabs___authoravatarblock",
   TopBarLogoOptionsTopBarTabsChildren = "topBarLogo___options___topBarTabs___children",
   TopBarLogoOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "topBarLogo___options___topBarTabs___childrenContentfulLinkUrlTextNode",
+  TopBarLogoOptionsTopBarTabsContentcolumngrid = "topBarLogo___options___topBarTabs___contentcolumngrid",
   TopBarLogoOptionsTopBarTabsContentfulId = "topBarLogo___options___topBarTabs___contentful_id",
   TopBarLogoOptionsTopBarTabsContentfulid = "topBarLogo___options___topBarTabs___contentfulid",
   TopBarLogoOptionsTopBarTabsCreatedAt = "topBarLogo___options___topBarTabs___createdAt",
@@ -7641,6 +9087,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksActioninfoblockButtonAuthoravatarblock = "topBarSocialLinks___actioninfoblock___button___authoravatarblock",
   TopBarSocialLinksActioninfoblockButtonChildren = "topBarSocialLinks___actioninfoblock___button___children",
   TopBarSocialLinksActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  TopBarSocialLinksActioninfoblockButtonContentcolumngrid = "topBarSocialLinks___actioninfoblock___button___contentcolumngrid",
   TopBarSocialLinksActioninfoblockButtonContentfulId = "topBarSocialLinks___actioninfoblock___button___contentful_id",
   TopBarSocialLinksActioninfoblockButtonContentfulid = "topBarSocialLinks___actioninfoblock___button___contentfulid",
   TopBarSocialLinksActioninfoblockButtonCreatedAt = "topBarSocialLinks___actioninfoblock___button___createdAt",
@@ -7653,6 +9100,29 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksActioninfoblockChildren = "topBarSocialLinks___actioninfoblock___children",
   TopBarSocialLinksActioninfoblockChildrenChildren = "topBarSocialLinks___actioninfoblock___children___children",
   TopBarSocialLinksActioninfoblockChildrenId = "topBarSocialLinks___actioninfoblock___children___id",
+  TopBarSocialLinksActioninfoblockContentblock = "topBarSocialLinks___actioninfoblock___contentblock",
+  TopBarSocialLinksActioninfoblockContentblockChildren = "topBarSocialLinks___actioninfoblock___contentblock___children",
+  TopBarSocialLinksActioninfoblockContentblockContentfulId = "topBarSocialLinks___actioninfoblock___contentblock___contentful_id",
+  TopBarSocialLinksActioninfoblockContentblockCreatedAt = "topBarSocialLinks___actioninfoblock___contentblock___createdAt",
+  TopBarSocialLinksActioninfoblockContentblockId = "topBarSocialLinks___actioninfoblock___contentblock___id",
+  TopBarSocialLinksActioninfoblockContentblockMargin = "topBarSocialLinks___actioninfoblock___contentblock___margin",
+  TopBarSocialLinksActioninfoblockContentblockNodeLocale = "topBarSocialLinks___actioninfoblock___contentblock___node_locale",
+  TopBarSocialLinksActioninfoblockContentblockPage = "topBarSocialLinks___actioninfoblock___contentblock___page",
+  TopBarSocialLinksActioninfoblockContentblockSpaceId = "topBarSocialLinks___actioninfoblock___contentblock___spaceId",
+  TopBarSocialLinksActioninfoblockContentblockUniqueId = "topBarSocialLinks___actioninfoblock___contentblock___uniqueId",
+  TopBarSocialLinksActioninfoblockContentblockUpdatedAt = "topBarSocialLinks___actioninfoblock___contentblock___updatedAt",
+  TopBarSocialLinksActioninfoblockContentcolumngrid = "topBarSocialLinks___actioninfoblock___contentcolumngrid",
+  TopBarSocialLinksActioninfoblockContentcolumngridAlignColumnsOnMobile = "topBarSocialLinks___actioninfoblock___contentcolumngrid___alignColumnsOnMobile",
+  TopBarSocialLinksActioninfoblockContentcolumngridChildren = "topBarSocialLinks___actioninfoblock___contentcolumngrid___children",
+  TopBarSocialLinksActioninfoblockContentcolumngridContentblock = "topBarSocialLinks___actioninfoblock___contentcolumngrid___contentblock",
+  TopBarSocialLinksActioninfoblockContentcolumngridContentfulId = "topBarSocialLinks___actioninfoblock___contentcolumngrid___contentful_id",
+  TopBarSocialLinksActioninfoblockContentcolumngridCreatedAt = "topBarSocialLinks___actioninfoblock___contentcolumngrid___createdAt",
+  TopBarSocialLinksActioninfoblockContentcolumngridId = "topBarSocialLinks___actioninfoblock___contentcolumngrid___id",
+  TopBarSocialLinksActioninfoblockContentcolumngridNodeLocale = "topBarSocialLinks___actioninfoblock___contentcolumngrid___node_locale",
+  TopBarSocialLinksActioninfoblockContentcolumngridRatio = "topBarSocialLinks___actioninfoblock___contentcolumngrid___ratio",
+  TopBarSocialLinksActioninfoblockContentcolumngridSpaceId = "topBarSocialLinks___actioninfoblock___contentcolumngrid___spaceId",
+  TopBarSocialLinksActioninfoblockContentcolumngridUniqueId = "topBarSocialLinks___actioninfoblock___contentcolumngrid___uniqueId",
+  TopBarSocialLinksActioninfoblockContentcolumngridUpdatedAt = "topBarSocialLinks___actioninfoblock___contentcolumngrid___updatedAt",
   TopBarSocialLinksActioninfoblockContentfulId = "topBarSocialLinks___actioninfoblock___contentful_id",
   TopBarSocialLinksActioninfoblockCreatedAt = "topBarSocialLinks___actioninfoblock___createdAt",
   TopBarSocialLinksActioninfoblockId = "topBarSocialLinks___actioninfoblock___id",
@@ -7739,6 +9209,18 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksAuthoravatarblockContentblockSpaceId = "topBarSocialLinks___authoravatarblock___contentblock___spaceId",
   TopBarSocialLinksAuthoravatarblockContentblockUniqueId = "topBarSocialLinks___authoravatarblock___contentblock___uniqueId",
   TopBarSocialLinksAuthoravatarblockContentblockUpdatedAt = "topBarSocialLinks___authoravatarblock___contentblock___updatedAt",
+  TopBarSocialLinksAuthoravatarblockContentcolumngrid = "topBarSocialLinks___authoravatarblock___contentcolumngrid",
+  TopBarSocialLinksAuthoravatarblockContentcolumngridAlignColumnsOnMobile = "topBarSocialLinks___authoravatarblock___contentcolumngrid___alignColumnsOnMobile",
+  TopBarSocialLinksAuthoravatarblockContentcolumngridChildren = "topBarSocialLinks___authoravatarblock___contentcolumngrid___children",
+  TopBarSocialLinksAuthoravatarblockContentcolumngridContentblock = "topBarSocialLinks___authoravatarblock___contentcolumngrid___contentblock",
+  TopBarSocialLinksAuthoravatarblockContentcolumngridContentfulId = "topBarSocialLinks___authoravatarblock___contentcolumngrid___contentful_id",
+  TopBarSocialLinksAuthoravatarblockContentcolumngridCreatedAt = "topBarSocialLinks___authoravatarblock___contentcolumngrid___createdAt",
+  TopBarSocialLinksAuthoravatarblockContentcolumngridId = "topBarSocialLinks___authoravatarblock___contentcolumngrid___id",
+  TopBarSocialLinksAuthoravatarblockContentcolumngridNodeLocale = "topBarSocialLinks___authoravatarblock___contentcolumngrid___node_locale",
+  TopBarSocialLinksAuthoravatarblockContentcolumngridRatio = "topBarSocialLinks___authoravatarblock___contentcolumngrid___ratio",
+  TopBarSocialLinksAuthoravatarblockContentcolumngridSpaceId = "topBarSocialLinks___authoravatarblock___contentcolumngrid___spaceId",
+  TopBarSocialLinksAuthoravatarblockContentcolumngridUniqueId = "topBarSocialLinks___authoravatarblock___contentcolumngrid___uniqueId",
+  TopBarSocialLinksAuthoravatarblockContentcolumngridUpdatedAt = "topBarSocialLinks___authoravatarblock___contentcolumngrid___updatedAt",
   TopBarSocialLinksAuthoravatarblockContentfulId = "topBarSocialLinks___authoravatarblock___contentful_id",
   TopBarSocialLinksAuthoravatarblockCreatedAt = "topBarSocialLinks___authoravatarblock___createdAt",
   TopBarSocialLinksAuthoravatarblockDescriptionChildren = "topBarSocialLinks___authoravatarblock___description___children",
@@ -7763,6 +9245,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksAuthoravatarblockSocialSiteLinksAuthoravatarblock = "topBarSocialLinks___authoravatarblock___socialSiteLinks___authoravatarblock",
   TopBarSocialLinksAuthoravatarblockSocialSiteLinksChildren = "topBarSocialLinks___authoravatarblock___socialSiteLinks___children",
   TopBarSocialLinksAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  TopBarSocialLinksAuthoravatarblockSocialSiteLinksContentcolumngrid = "topBarSocialLinks___authoravatarblock___socialSiteLinks___contentcolumngrid",
   TopBarSocialLinksAuthoravatarblockSocialSiteLinksContentfulId = "topBarSocialLinks___authoravatarblock___socialSiteLinks___contentful_id",
   TopBarSocialLinksAuthoravatarblockSocialSiteLinksContentfulid = "topBarSocialLinks___authoravatarblock___socialSiteLinks___contentfulid",
   TopBarSocialLinksAuthoravatarblockSocialSiteLinksCreatedAt = "topBarSocialLinks___authoravatarblock___socialSiteLinks___createdAt",
@@ -7887,6 +9370,42 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksChildrenInternalType = "topBarSocialLinks___children___internal___type",
   TopBarSocialLinksChildrenParentChildren = "topBarSocialLinks___children___parent___children",
   TopBarSocialLinksChildrenParentId = "topBarSocialLinks___children___parent___id",
+  TopBarSocialLinksContentcolumngrid = "topBarSocialLinks___contentcolumngrid",
+  TopBarSocialLinksContentcolumngridAlignColumnsOnMobile = "topBarSocialLinks___contentcolumngrid___alignColumnsOnMobile",
+  TopBarSocialLinksContentcolumngridChildren = "topBarSocialLinks___contentcolumngrid___children",
+  TopBarSocialLinksContentcolumngridChildrenChildren = "topBarSocialLinks___contentcolumngrid___children___children",
+  TopBarSocialLinksContentcolumngridChildrenId = "topBarSocialLinks___contentcolumngrid___children___id",
+  TopBarSocialLinksContentcolumngridContentblock = "topBarSocialLinks___contentcolumngrid___contentblock",
+  TopBarSocialLinksContentcolumngridContentblockChildren = "topBarSocialLinks___contentcolumngrid___contentblock___children",
+  TopBarSocialLinksContentcolumngridContentblockContentfulId = "topBarSocialLinks___contentcolumngrid___contentblock___contentful_id",
+  TopBarSocialLinksContentcolumngridContentblockCreatedAt = "topBarSocialLinks___contentcolumngrid___contentblock___createdAt",
+  TopBarSocialLinksContentcolumngridContentblockId = "topBarSocialLinks___contentcolumngrid___contentblock___id",
+  TopBarSocialLinksContentcolumngridContentblockMargin = "topBarSocialLinks___contentcolumngrid___contentblock___margin",
+  TopBarSocialLinksContentcolumngridContentblockNodeLocale = "topBarSocialLinks___contentcolumngrid___contentblock___node_locale",
+  TopBarSocialLinksContentcolumngridContentblockPage = "topBarSocialLinks___contentcolumngrid___contentblock___page",
+  TopBarSocialLinksContentcolumngridContentblockSpaceId = "topBarSocialLinks___contentcolumngrid___contentblock___spaceId",
+  TopBarSocialLinksContentcolumngridContentblockUniqueId = "topBarSocialLinks___contentcolumngrid___contentblock___uniqueId",
+  TopBarSocialLinksContentcolumngridContentblockUpdatedAt = "topBarSocialLinks___contentcolumngrid___contentblock___updatedAt",
+  TopBarSocialLinksContentcolumngridContentfulId = "topBarSocialLinks___contentcolumngrid___contentful_id",
+  TopBarSocialLinksContentcolumngridCreatedAt = "topBarSocialLinks___contentcolumngrid___createdAt",
+  TopBarSocialLinksContentcolumngridId = "topBarSocialLinks___contentcolumngrid___id",
+  TopBarSocialLinksContentcolumngridInternalContent = "topBarSocialLinks___contentcolumngrid___internal___content",
+  TopBarSocialLinksContentcolumngridInternalContentDigest = "topBarSocialLinks___contentcolumngrid___internal___contentDigest",
+  TopBarSocialLinksContentcolumngridInternalDescription = "topBarSocialLinks___contentcolumngrid___internal___description",
+  TopBarSocialLinksContentcolumngridInternalFieldOwners = "topBarSocialLinks___contentcolumngrid___internal___fieldOwners",
+  TopBarSocialLinksContentcolumngridInternalIgnoreType = "topBarSocialLinks___contentcolumngrid___internal___ignoreType",
+  TopBarSocialLinksContentcolumngridInternalMediaType = "topBarSocialLinks___contentcolumngrid___internal___mediaType",
+  TopBarSocialLinksContentcolumngridInternalOwner = "topBarSocialLinks___contentcolumngrid___internal___owner",
+  TopBarSocialLinksContentcolumngridInternalType = "topBarSocialLinks___contentcolumngrid___internal___type",
+  TopBarSocialLinksContentcolumngridNodeLocale = "topBarSocialLinks___contentcolumngrid___node_locale",
+  TopBarSocialLinksContentcolumngridParentChildren = "topBarSocialLinks___contentcolumngrid___parent___children",
+  TopBarSocialLinksContentcolumngridParentId = "topBarSocialLinks___contentcolumngrid___parent___id",
+  TopBarSocialLinksContentcolumngridRatio = "topBarSocialLinks___contentcolumngrid___ratio",
+  TopBarSocialLinksContentcolumngridSpaceId = "topBarSocialLinks___contentcolumngrid___spaceId",
+  TopBarSocialLinksContentcolumngridSysRevision = "topBarSocialLinks___contentcolumngrid___sys___revision",
+  TopBarSocialLinksContentcolumngridSysType = "topBarSocialLinks___contentcolumngrid___sys___type",
+  TopBarSocialLinksContentcolumngridUniqueId = "topBarSocialLinks___contentcolumngrid___uniqueId",
+  TopBarSocialLinksContentcolumngridUpdatedAt = "topBarSocialLinks___contentcolumngrid___updatedAt",
   TopBarSocialLinksContentfulId = "topBarSocialLinks___contentful_id",
   TopBarSocialLinksContentfulid = "topBarSocialLinks___contentfulid",
   TopBarSocialLinksCreatedAt = "topBarSocialLinks___createdAt",
@@ -7949,6 +9468,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksOptionsBottomBarLogoAuthoravatarblock = "topBarSocialLinks___options___bottomBarLogo___authoravatarblock",
   TopBarSocialLinksOptionsBottomBarLogoChildren = "topBarSocialLinks___options___bottomBarLogo___children",
   TopBarSocialLinksOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
+  TopBarSocialLinksOptionsBottomBarLogoContentcolumngrid = "topBarSocialLinks___options___bottomBarLogo___contentcolumngrid",
   TopBarSocialLinksOptionsBottomBarLogoContentfulId = "topBarSocialLinks___options___bottomBarLogo___contentful_id",
   TopBarSocialLinksOptionsBottomBarLogoContentfulid = "topBarSocialLinks___options___bottomBarLogo___contentfulid",
   TopBarSocialLinksOptionsBottomBarLogoCreatedAt = "topBarSocialLinks___options___bottomBarLogo___createdAt",
@@ -7963,6 +9483,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksOptionsBottomBarSocialLinksAuthoravatarblock = "topBarSocialLinks___options___bottomBarSocialLinks___authoravatarblock",
   TopBarSocialLinksOptionsBottomBarSocialLinksChildren = "topBarSocialLinks___options___bottomBarSocialLinks___children",
   TopBarSocialLinksOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  TopBarSocialLinksOptionsBottomBarSocialLinksContentcolumngrid = "topBarSocialLinks___options___bottomBarSocialLinks___contentcolumngrid",
   TopBarSocialLinksOptionsBottomBarSocialLinksContentfulId = "topBarSocialLinks___options___bottomBarSocialLinks___contentful_id",
   TopBarSocialLinksOptionsBottomBarSocialLinksContentfulid = "topBarSocialLinks___options___bottomBarSocialLinks___contentfulid",
   TopBarSocialLinksOptionsBottomBarSocialLinksCreatedAt = "topBarSocialLinks___options___bottomBarSocialLinks___createdAt",
@@ -7977,6 +9498,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksOptionsBottomBarTabsAuthoravatarblock = "topBarSocialLinks___options___bottomBarTabs___authoravatarblock",
   TopBarSocialLinksOptionsBottomBarTabsChildren = "topBarSocialLinks___options___bottomBarTabs___children",
   TopBarSocialLinksOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
+  TopBarSocialLinksOptionsBottomBarTabsContentcolumngrid = "topBarSocialLinks___options___bottomBarTabs___contentcolumngrid",
   TopBarSocialLinksOptionsBottomBarTabsContentfulId = "topBarSocialLinks___options___bottomBarTabs___contentful_id",
   TopBarSocialLinksOptionsBottomBarTabsContentfulid = "topBarSocialLinks___options___bottomBarTabs___contentfulid",
   TopBarSocialLinksOptionsBottomBarTabsCreatedAt = "topBarSocialLinks___options___bottomBarTabs___createdAt",
@@ -8011,6 +9533,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksOptionsTopBarLogoAuthoravatarblock = "topBarSocialLinks___options___topBarLogo___authoravatarblock",
   TopBarSocialLinksOptionsTopBarLogoChildren = "topBarSocialLinks___options___topBarLogo___children",
   TopBarSocialLinksOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___options___topBarLogo___childrenContentfulLinkUrlTextNode",
+  TopBarSocialLinksOptionsTopBarLogoContentcolumngrid = "topBarSocialLinks___options___topBarLogo___contentcolumngrid",
   TopBarSocialLinksOptionsTopBarLogoContentfulId = "topBarSocialLinks___options___topBarLogo___contentful_id",
   TopBarSocialLinksOptionsTopBarLogoContentfulid = "topBarSocialLinks___options___topBarLogo___contentfulid",
   TopBarSocialLinksOptionsTopBarLogoCreatedAt = "topBarSocialLinks___options___topBarLogo___createdAt",
@@ -8025,6 +9548,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksOptionsTopBarSocialLinksAuthoravatarblock = "topBarSocialLinks___options___topBarSocialLinks___authoravatarblock",
   TopBarSocialLinksOptionsTopBarSocialLinksChildren = "topBarSocialLinks___options___topBarSocialLinks___children",
   TopBarSocialLinksOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  TopBarSocialLinksOptionsTopBarSocialLinksContentcolumngrid = "topBarSocialLinks___options___topBarSocialLinks___contentcolumngrid",
   TopBarSocialLinksOptionsTopBarSocialLinksContentfulId = "topBarSocialLinks___options___topBarSocialLinks___contentful_id",
   TopBarSocialLinksOptionsTopBarSocialLinksContentfulid = "topBarSocialLinks___options___topBarSocialLinks___contentfulid",
   TopBarSocialLinksOptionsTopBarSocialLinksCreatedAt = "topBarSocialLinks___options___topBarSocialLinks___createdAt",
@@ -8039,6 +9563,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarSocialLinksOptionsTopBarTabsAuthoravatarblock = "topBarSocialLinks___options___topBarTabs___authoravatarblock",
   TopBarSocialLinksOptionsTopBarTabsChildren = "topBarSocialLinks___options___topBarTabs___children",
   TopBarSocialLinksOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "topBarSocialLinks___options___topBarTabs___childrenContentfulLinkUrlTextNode",
+  TopBarSocialLinksOptionsTopBarTabsContentcolumngrid = "topBarSocialLinks___options___topBarTabs___contentcolumngrid",
   TopBarSocialLinksOptionsTopBarTabsContentfulId = "topBarSocialLinks___options___topBarTabs___contentful_id",
   TopBarSocialLinksOptionsTopBarTabsContentfulid = "topBarSocialLinks___options___topBarTabs___contentfulid",
   TopBarSocialLinksOptionsTopBarTabsCreatedAt = "topBarSocialLinks___options___topBarTabs___createdAt",
@@ -8122,6 +9647,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsActioninfoblockButtonAuthoravatarblock = "topBarTabs___actioninfoblock___button___authoravatarblock",
   TopBarTabsActioninfoblockButtonChildren = "topBarTabs___actioninfoblock___button___children",
   TopBarTabsActioninfoblockButtonChildrenContentfulLinkUrlTextNode = "topBarTabs___actioninfoblock___button___childrenContentfulLinkUrlTextNode",
+  TopBarTabsActioninfoblockButtonContentcolumngrid = "topBarTabs___actioninfoblock___button___contentcolumngrid",
   TopBarTabsActioninfoblockButtonContentfulId = "topBarTabs___actioninfoblock___button___contentful_id",
   TopBarTabsActioninfoblockButtonContentfulid = "topBarTabs___actioninfoblock___button___contentfulid",
   TopBarTabsActioninfoblockButtonCreatedAt = "topBarTabs___actioninfoblock___button___createdAt",
@@ -8134,6 +9660,29 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsActioninfoblockChildren = "topBarTabs___actioninfoblock___children",
   TopBarTabsActioninfoblockChildrenChildren = "topBarTabs___actioninfoblock___children___children",
   TopBarTabsActioninfoblockChildrenId = "topBarTabs___actioninfoblock___children___id",
+  TopBarTabsActioninfoblockContentblock = "topBarTabs___actioninfoblock___contentblock",
+  TopBarTabsActioninfoblockContentblockChildren = "topBarTabs___actioninfoblock___contentblock___children",
+  TopBarTabsActioninfoblockContentblockContentfulId = "topBarTabs___actioninfoblock___contentblock___contentful_id",
+  TopBarTabsActioninfoblockContentblockCreatedAt = "topBarTabs___actioninfoblock___contentblock___createdAt",
+  TopBarTabsActioninfoblockContentblockId = "topBarTabs___actioninfoblock___contentblock___id",
+  TopBarTabsActioninfoblockContentblockMargin = "topBarTabs___actioninfoblock___contentblock___margin",
+  TopBarTabsActioninfoblockContentblockNodeLocale = "topBarTabs___actioninfoblock___contentblock___node_locale",
+  TopBarTabsActioninfoblockContentblockPage = "topBarTabs___actioninfoblock___contentblock___page",
+  TopBarTabsActioninfoblockContentblockSpaceId = "topBarTabs___actioninfoblock___contentblock___spaceId",
+  TopBarTabsActioninfoblockContentblockUniqueId = "topBarTabs___actioninfoblock___contentblock___uniqueId",
+  TopBarTabsActioninfoblockContentblockUpdatedAt = "topBarTabs___actioninfoblock___contentblock___updatedAt",
+  TopBarTabsActioninfoblockContentcolumngrid = "topBarTabs___actioninfoblock___contentcolumngrid",
+  TopBarTabsActioninfoblockContentcolumngridAlignColumnsOnMobile = "topBarTabs___actioninfoblock___contentcolumngrid___alignColumnsOnMobile",
+  TopBarTabsActioninfoblockContentcolumngridChildren = "topBarTabs___actioninfoblock___contentcolumngrid___children",
+  TopBarTabsActioninfoblockContentcolumngridContentblock = "topBarTabs___actioninfoblock___contentcolumngrid___contentblock",
+  TopBarTabsActioninfoblockContentcolumngridContentfulId = "topBarTabs___actioninfoblock___contentcolumngrid___contentful_id",
+  TopBarTabsActioninfoblockContentcolumngridCreatedAt = "topBarTabs___actioninfoblock___contentcolumngrid___createdAt",
+  TopBarTabsActioninfoblockContentcolumngridId = "topBarTabs___actioninfoblock___contentcolumngrid___id",
+  TopBarTabsActioninfoblockContentcolumngridNodeLocale = "topBarTabs___actioninfoblock___contentcolumngrid___node_locale",
+  TopBarTabsActioninfoblockContentcolumngridRatio = "topBarTabs___actioninfoblock___contentcolumngrid___ratio",
+  TopBarTabsActioninfoblockContentcolumngridSpaceId = "topBarTabs___actioninfoblock___contentcolumngrid___spaceId",
+  TopBarTabsActioninfoblockContentcolumngridUniqueId = "topBarTabs___actioninfoblock___contentcolumngrid___uniqueId",
+  TopBarTabsActioninfoblockContentcolumngridUpdatedAt = "topBarTabs___actioninfoblock___contentcolumngrid___updatedAt",
   TopBarTabsActioninfoblockContentfulId = "topBarTabs___actioninfoblock___contentful_id",
   TopBarTabsActioninfoblockCreatedAt = "topBarTabs___actioninfoblock___createdAt",
   TopBarTabsActioninfoblockId = "topBarTabs___actioninfoblock___id",
@@ -8220,6 +9769,18 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsAuthoravatarblockContentblockSpaceId = "topBarTabs___authoravatarblock___contentblock___spaceId",
   TopBarTabsAuthoravatarblockContentblockUniqueId = "topBarTabs___authoravatarblock___contentblock___uniqueId",
   TopBarTabsAuthoravatarblockContentblockUpdatedAt = "topBarTabs___authoravatarblock___contentblock___updatedAt",
+  TopBarTabsAuthoravatarblockContentcolumngrid = "topBarTabs___authoravatarblock___contentcolumngrid",
+  TopBarTabsAuthoravatarblockContentcolumngridAlignColumnsOnMobile = "topBarTabs___authoravatarblock___contentcolumngrid___alignColumnsOnMobile",
+  TopBarTabsAuthoravatarblockContentcolumngridChildren = "topBarTabs___authoravatarblock___contentcolumngrid___children",
+  TopBarTabsAuthoravatarblockContentcolumngridContentblock = "topBarTabs___authoravatarblock___contentcolumngrid___contentblock",
+  TopBarTabsAuthoravatarblockContentcolumngridContentfulId = "topBarTabs___authoravatarblock___contentcolumngrid___contentful_id",
+  TopBarTabsAuthoravatarblockContentcolumngridCreatedAt = "topBarTabs___authoravatarblock___contentcolumngrid___createdAt",
+  TopBarTabsAuthoravatarblockContentcolumngridId = "topBarTabs___authoravatarblock___contentcolumngrid___id",
+  TopBarTabsAuthoravatarblockContentcolumngridNodeLocale = "topBarTabs___authoravatarblock___contentcolumngrid___node_locale",
+  TopBarTabsAuthoravatarblockContentcolumngridRatio = "topBarTabs___authoravatarblock___contentcolumngrid___ratio",
+  TopBarTabsAuthoravatarblockContentcolumngridSpaceId = "topBarTabs___authoravatarblock___contentcolumngrid___spaceId",
+  TopBarTabsAuthoravatarblockContentcolumngridUniqueId = "topBarTabs___authoravatarblock___contentcolumngrid___uniqueId",
+  TopBarTabsAuthoravatarblockContentcolumngridUpdatedAt = "topBarTabs___authoravatarblock___contentcolumngrid___updatedAt",
   TopBarTabsAuthoravatarblockContentfulId = "topBarTabs___authoravatarblock___contentful_id",
   TopBarTabsAuthoravatarblockCreatedAt = "topBarTabs___authoravatarblock___createdAt",
   TopBarTabsAuthoravatarblockDescriptionChildren = "topBarTabs___authoravatarblock___description___children",
@@ -8244,6 +9805,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsAuthoravatarblockSocialSiteLinksAuthoravatarblock = "topBarTabs___authoravatarblock___socialSiteLinks___authoravatarblock",
   TopBarTabsAuthoravatarblockSocialSiteLinksChildren = "topBarTabs___authoravatarblock___socialSiteLinks___children",
   TopBarTabsAuthoravatarblockSocialSiteLinksChildrenContentfulLinkUrlTextNode = "topBarTabs___authoravatarblock___socialSiteLinks___childrenContentfulLinkUrlTextNode",
+  TopBarTabsAuthoravatarblockSocialSiteLinksContentcolumngrid = "topBarTabs___authoravatarblock___socialSiteLinks___contentcolumngrid",
   TopBarTabsAuthoravatarblockSocialSiteLinksContentfulId = "topBarTabs___authoravatarblock___socialSiteLinks___contentful_id",
   TopBarTabsAuthoravatarblockSocialSiteLinksContentfulid = "topBarTabs___authoravatarblock___socialSiteLinks___contentfulid",
   TopBarTabsAuthoravatarblockSocialSiteLinksCreatedAt = "topBarTabs___authoravatarblock___socialSiteLinks___createdAt",
@@ -8368,6 +9930,42 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsChildrenInternalType = "topBarTabs___children___internal___type",
   TopBarTabsChildrenParentChildren = "topBarTabs___children___parent___children",
   TopBarTabsChildrenParentId = "topBarTabs___children___parent___id",
+  TopBarTabsContentcolumngrid = "topBarTabs___contentcolumngrid",
+  TopBarTabsContentcolumngridAlignColumnsOnMobile = "topBarTabs___contentcolumngrid___alignColumnsOnMobile",
+  TopBarTabsContentcolumngridChildren = "topBarTabs___contentcolumngrid___children",
+  TopBarTabsContentcolumngridChildrenChildren = "topBarTabs___contentcolumngrid___children___children",
+  TopBarTabsContentcolumngridChildrenId = "topBarTabs___contentcolumngrid___children___id",
+  TopBarTabsContentcolumngridContentblock = "topBarTabs___contentcolumngrid___contentblock",
+  TopBarTabsContentcolumngridContentblockChildren = "topBarTabs___contentcolumngrid___contentblock___children",
+  TopBarTabsContentcolumngridContentblockContentfulId = "topBarTabs___contentcolumngrid___contentblock___contentful_id",
+  TopBarTabsContentcolumngridContentblockCreatedAt = "topBarTabs___contentcolumngrid___contentblock___createdAt",
+  TopBarTabsContentcolumngridContentblockId = "topBarTabs___contentcolumngrid___contentblock___id",
+  TopBarTabsContentcolumngridContentblockMargin = "topBarTabs___contentcolumngrid___contentblock___margin",
+  TopBarTabsContentcolumngridContentblockNodeLocale = "topBarTabs___contentcolumngrid___contentblock___node_locale",
+  TopBarTabsContentcolumngridContentblockPage = "topBarTabs___contentcolumngrid___contentblock___page",
+  TopBarTabsContentcolumngridContentblockSpaceId = "topBarTabs___contentcolumngrid___contentblock___spaceId",
+  TopBarTabsContentcolumngridContentblockUniqueId = "topBarTabs___contentcolumngrid___contentblock___uniqueId",
+  TopBarTabsContentcolumngridContentblockUpdatedAt = "topBarTabs___contentcolumngrid___contentblock___updatedAt",
+  TopBarTabsContentcolumngridContentfulId = "topBarTabs___contentcolumngrid___contentful_id",
+  TopBarTabsContentcolumngridCreatedAt = "topBarTabs___contentcolumngrid___createdAt",
+  TopBarTabsContentcolumngridId = "topBarTabs___contentcolumngrid___id",
+  TopBarTabsContentcolumngridInternalContent = "topBarTabs___contentcolumngrid___internal___content",
+  TopBarTabsContentcolumngridInternalContentDigest = "topBarTabs___contentcolumngrid___internal___contentDigest",
+  TopBarTabsContentcolumngridInternalDescription = "topBarTabs___contentcolumngrid___internal___description",
+  TopBarTabsContentcolumngridInternalFieldOwners = "topBarTabs___contentcolumngrid___internal___fieldOwners",
+  TopBarTabsContentcolumngridInternalIgnoreType = "topBarTabs___contentcolumngrid___internal___ignoreType",
+  TopBarTabsContentcolumngridInternalMediaType = "topBarTabs___contentcolumngrid___internal___mediaType",
+  TopBarTabsContentcolumngridInternalOwner = "topBarTabs___contentcolumngrid___internal___owner",
+  TopBarTabsContentcolumngridInternalType = "topBarTabs___contentcolumngrid___internal___type",
+  TopBarTabsContentcolumngridNodeLocale = "topBarTabs___contentcolumngrid___node_locale",
+  TopBarTabsContentcolumngridParentChildren = "topBarTabs___contentcolumngrid___parent___children",
+  TopBarTabsContentcolumngridParentId = "topBarTabs___contentcolumngrid___parent___id",
+  TopBarTabsContentcolumngridRatio = "topBarTabs___contentcolumngrid___ratio",
+  TopBarTabsContentcolumngridSpaceId = "topBarTabs___contentcolumngrid___spaceId",
+  TopBarTabsContentcolumngridSysRevision = "topBarTabs___contentcolumngrid___sys___revision",
+  TopBarTabsContentcolumngridSysType = "topBarTabs___contentcolumngrid___sys___type",
+  TopBarTabsContentcolumngridUniqueId = "topBarTabs___contentcolumngrid___uniqueId",
+  TopBarTabsContentcolumngridUpdatedAt = "topBarTabs___contentcolumngrid___updatedAt",
   TopBarTabsContentfulId = "topBarTabs___contentful_id",
   TopBarTabsContentfulid = "topBarTabs___contentfulid",
   TopBarTabsCreatedAt = "topBarTabs___createdAt",
@@ -8430,6 +10028,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsOptionsBottomBarLogoAuthoravatarblock = "topBarTabs___options___bottomBarLogo___authoravatarblock",
   TopBarTabsOptionsBottomBarLogoChildren = "topBarTabs___options___bottomBarLogo___children",
   TopBarTabsOptionsBottomBarLogoChildrenContentfulLinkUrlTextNode = "topBarTabs___options___bottomBarLogo___childrenContentfulLinkUrlTextNode",
+  TopBarTabsOptionsBottomBarLogoContentcolumngrid = "topBarTabs___options___bottomBarLogo___contentcolumngrid",
   TopBarTabsOptionsBottomBarLogoContentfulId = "topBarTabs___options___bottomBarLogo___contentful_id",
   TopBarTabsOptionsBottomBarLogoContentfulid = "topBarTabs___options___bottomBarLogo___contentfulid",
   TopBarTabsOptionsBottomBarLogoCreatedAt = "topBarTabs___options___bottomBarLogo___createdAt",
@@ -8444,6 +10043,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsOptionsBottomBarSocialLinksAuthoravatarblock = "topBarTabs___options___bottomBarSocialLinks___authoravatarblock",
   TopBarTabsOptionsBottomBarSocialLinksChildren = "topBarTabs___options___bottomBarSocialLinks___children",
   TopBarTabsOptionsBottomBarSocialLinksChildrenContentfulLinkUrlTextNode = "topBarTabs___options___bottomBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  TopBarTabsOptionsBottomBarSocialLinksContentcolumngrid = "topBarTabs___options___bottomBarSocialLinks___contentcolumngrid",
   TopBarTabsOptionsBottomBarSocialLinksContentfulId = "topBarTabs___options___bottomBarSocialLinks___contentful_id",
   TopBarTabsOptionsBottomBarSocialLinksContentfulid = "topBarTabs___options___bottomBarSocialLinks___contentfulid",
   TopBarTabsOptionsBottomBarSocialLinksCreatedAt = "topBarTabs___options___bottomBarSocialLinks___createdAt",
@@ -8458,6 +10058,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsOptionsBottomBarTabsAuthoravatarblock = "topBarTabs___options___bottomBarTabs___authoravatarblock",
   TopBarTabsOptionsBottomBarTabsChildren = "topBarTabs___options___bottomBarTabs___children",
   TopBarTabsOptionsBottomBarTabsChildrenContentfulLinkUrlTextNode = "topBarTabs___options___bottomBarTabs___childrenContentfulLinkUrlTextNode",
+  TopBarTabsOptionsBottomBarTabsContentcolumngrid = "topBarTabs___options___bottomBarTabs___contentcolumngrid",
   TopBarTabsOptionsBottomBarTabsContentfulId = "topBarTabs___options___bottomBarTabs___contentful_id",
   TopBarTabsOptionsBottomBarTabsContentfulid = "topBarTabs___options___bottomBarTabs___contentfulid",
   TopBarTabsOptionsBottomBarTabsCreatedAt = "topBarTabs___options___bottomBarTabs___createdAt",
@@ -8492,6 +10093,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsOptionsTopBarLogoAuthoravatarblock = "topBarTabs___options___topBarLogo___authoravatarblock",
   TopBarTabsOptionsTopBarLogoChildren = "topBarTabs___options___topBarLogo___children",
   TopBarTabsOptionsTopBarLogoChildrenContentfulLinkUrlTextNode = "topBarTabs___options___topBarLogo___childrenContentfulLinkUrlTextNode",
+  TopBarTabsOptionsTopBarLogoContentcolumngrid = "topBarTabs___options___topBarLogo___contentcolumngrid",
   TopBarTabsOptionsTopBarLogoContentfulId = "topBarTabs___options___topBarLogo___contentful_id",
   TopBarTabsOptionsTopBarLogoContentfulid = "topBarTabs___options___topBarLogo___contentfulid",
   TopBarTabsOptionsTopBarLogoCreatedAt = "topBarTabs___options___topBarLogo___createdAt",
@@ -8506,6 +10108,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsOptionsTopBarSocialLinksAuthoravatarblock = "topBarTabs___options___topBarSocialLinks___authoravatarblock",
   TopBarTabsOptionsTopBarSocialLinksChildren = "topBarTabs___options___topBarSocialLinks___children",
   TopBarTabsOptionsTopBarSocialLinksChildrenContentfulLinkUrlTextNode = "topBarTabs___options___topBarSocialLinks___childrenContentfulLinkUrlTextNode",
+  TopBarTabsOptionsTopBarSocialLinksContentcolumngrid = "topBarTabs___options___topBarSocialLinks___contentcolumngrid",
   TopBarTabsOptionsTopBarSocialLinksContentfulId = "topBarTabs___options___topBarSocialLinks___contentful_id",
   TopBarTabsOptionsTopBarSocialLinksContentfulid = "topBarTabs___options___topBarSocialLinks___contentfulid",
   TopBarTabsOptionsTopBarSocialLinksCreatedAt = "topBarTabs___options___topBarSocialLinks___createdAt",
@@ -8520,6 +10123,7 @@ export enum ContentfulOptionsFieldsEnum {
   TopBarTabsOptionsTopBarTabsAuthoravatarblock = "topBarTabs___options___topBarTabs___authoravatarblock",
   TopBarTabsOptionsTopBarTabsChildren = "topBarTabs___options___topBarTabs___children",
   TopBarTabsOptionsTopBarTabsChildrenContentfulLinkUrlTextNode = "topBarTabs___options___topBarTabs___childrenContentfulLinkUrlTextNode",
+  TopBarTabsOptionsTopBarTabsContentcolumngrid = "topBarTabs___options___topBarTabs___contentcolumngrid",
   TopBarTabsOptionsTopBarTabsContentfulId = "topBarTabs___options___topBarTabs___contentful_id",
   TopBarTabsOptionsTopBarTabsContentfulid = "topBarTabs___options___topBarTabs___contentfulid",
   TopBarTabsOptionsTopBarTabsCreatedAt = "topBarTabs___options___topBarTabs___createdAt",
@@ -9425,6 +11029,7 @@ export type ContentfulRichTextBlock = ContentfulEntry &
     alignTextTo?: Maybe<Scalars["String"]>;
     children: Array<Node>;
     contentblock?: Maybe<Array<Maybe<ContentfulContentBlock>>>;
+    contentcolumngrid?: Maybe<Array<Maybe<ContentfulContentColumnGrid>>>;
     contentful_id: Scalars["String"];
     createdAt?: Maybe<Scalars["Date"]>;
     id: Scalars["ID"];
@@ -9631,6 +11236,91 @@ export enum ContentfulRichTextBlockFieldsEnum {
   ContentblockSysType = "contentblock___sys___type",
   ContentblockUniqueId = "contentblock___uniqueId",
   ContentblockUpdatedAt = "contentblock___updatedAt",
+  Contentcolumngrid = "contentcolumngrid",
+  ContentcolumngridAlignColumnsOnMobile = "contentcolumngrid___alignColumnsOnMobile",
+  ContentcolumngridChildren = "contentcolumngrid___children",
+  ContentcolumngridChildrenChildren = "contentcolumngrid___children___children",
+  ContentcolumngridChildrenChildrenChildren = "contentcolumngrid___children___children___children",
+  ContentcolumngridChildrenChildrenId = "contentcolumngrid___children___children___id",
+  ContentcolumngridChildrenId = "contentcolumngrid___children___id",
+  ContentcolumngridChildrenInternalContent = "contentcolumngrid___children___internal___content",
+  ContentcolumngridChildrenInternalContentDigest = "contentcolumngrid___children___internal___contentDigest",
+  ContentcolumngridChildrenInternalDescription = "contentcolumngrid___children___internal___description",
+  ContentcolumngridChildrenInternalFieldOwners = "contentcolumngrid___children___internal___fieldOwners",
+  ContentcolumngridChildrenInternalIgnoreType = "contentcolumngrid___children___internal___ignoreType",
+  ContentcolumngridChildrenInternalMediaType = "contentcolumngrid___children___internal___mediaType",
+  ContentcolumngridChildrenInternalOwner = "contentcolumngrid___children___internal___owner",
+  ContentcolumngridChildrenInternalType = "contentcolumngrid___children___internal___type",
+  ContentcolumngridChildrenParentChildren = "contentcolumngrid___children___parent___children",
+  ContentcolumngridChildrenParentId = "contentcolumngrid___children___parent___id",
+  ContentcolumngridContentblock = "contentcolumngrid___contentblock",
+  ContentcolumngridContentblockChildren = "contentcolumngrid___contentblock___children",
+  ContentcolumngridContentblockChildrenChildren = "contentcolumngrid___contentblock___children___children",
+  ContentcolumngridContentblockChildrenId = "contentcolumngrid___contentblock___children___id",
+  ContentcolumngridContentblockContentfulId = "contentcolumngrid___contentblock___contentful_id",
+  ContentcolumngridContentblockCreatedAt = "contentcolumngrid___contentblock___createdAt",
+  ContentcolumngridContentblockId = "contentcolumngrid___contentblock___id",
+  ContentcolumngridContentblockInternalContent = "contentcolumngrid___contentblock___internal___content",
+  ContentcolumngridContentblockInternalContentDigest = "contentcolumngrid___contentblock___internal___contentDigest",
+  ContentcolumngridContentblockInternalDescription = "contentcolumngrid___contentblock___internal___description",
+  ContentcolumngridContentblockInternalFieldOwners = "contentcolumngrid___contentblock___internal___fieldOwners",
+  ContentcolumngridContentblockInternalIgnoreType = "contentcolumngrid___contentblock___internal___ignoreType",
+  ContentcolumngridContentblockInternalMediaType = "contentcolumngrid___contentblock___internal___mediaType",
+  ContentcolumngridContentblockInternalOwner = "contentcolumngrid___contentblock___internal___owner",
+  ContentcolumngridContentblockInternalType = "contentcolumngrid___contentblock___internal___type",
+  ContentcolumngridContentblockMargin = "contentcolumngrid___contentblock___margin",
+  ContentcolumngridContentblockNodeLocale = "contentcolumngrid___contentblock___node_locale",
+  ContentcolumngridContentblockPage = "contentcolumngrid___contentblock___page",
+  ContentcolumngridContentblockPageChildren = "contentcolumngrid___contentblock___page___children",
+  ContentcolumngridContentblockPageChildrenContentfulPageDescriptionTextNode = "contentcolumngrid___contentblock___page___childrenContentfulPageDescriptionTextNode",
+  ContentcolumngridContentblockPageContent = "contentcolumngrid___contentblock___page___content",
+  ContentcolumngridContentblockPageContentfulId = "contentcolumngrid___contentblock___page___contentful_id",
+  ContentcolumngridContentblockPageCreatedAt = "contentcolumngrid___contentblock___page___createdAt",
+  ContentcolumngridContentblockPageId = "contentcolumngrid___contentblock___page___id",
+  ContentcolumngridContentblockPageNodeLocale = "contentcolumngrid___contentblock___page___node_locale",
+  ContentcolumngridContentblockPageSpaceId = "contentcolumngrid___contentblock___page___spaceId",
+  ContentcolumngridContentblockPageTitle = "contentcolumngrid___contentblock___page___title",
+  ContentcolumngridContentblockPageUpdatedAt = "contentcolumngrid___contentblock___page___updatedAt",
+  ContentcolumngridContentblockPageUrl = "contentcolumngrid___contentblock___page___url",
+  ContentcolumngridContentblockParentChildren = "contentcolumngrid___contentblock___parent___children",
+  ContentcolumngridContentblockParentId = "contentcolumngrid___contentblock___parent___id",
+  ContentcolumngridContentblockSpaceId = "contentcolumngrid___contentblock___spaceId",
+  ContentcolumngridContentblockSysRevision = "contentcolumngrid___contentblock___sys___revision",
+  ContentcolumngridContentblockSysType = "contentcolumngrid___contentblock___sys___type",
+  ContentcolumngridContentblockUniqueId = "contentcolumngrid___contentblock___uniqueId",
+  ContentcolumngridContentblockUpdatedAt = "contentcolumngrid___contentblock___updatedAt",
+  ContentcolumngridContentfulId = "contentcolumngrid___contentful_id",
+  ContentcolumngridCreatedAt = "contentcolumngrid___createdAt",
+  ContentcolumngridId = "contentcolumngrid___id",
+  ContentcolumngridInternalContent = "contentcolumngrid___internal___content",
+  ContentcolumngridInternalContentDigest = "contentcolumngrid___internal___contentDigest",
+  ContentcolumngridInternalDescription = "contentcolumngrid___internal___description",
+  ContentcolumngridInternalFieldOwners = "contentcolumngrid___internal___fieldOwners",
+  ContentcolumngridInternalIgnoreType = "contentcolumngrid___internal___ignoreType",
+  ContentcolumngridInternalMediaType = "contentcolumngrid___internal___mediaType",
+  ContentcolumngridInternalOwner = "contentcolumngrid___internal___owner",
+  ContentcolumngridInternalType = "contentcolumngrid___internal___type",
+  ContentcolumngridNodeLocale = "contentcolumngrid___node_locale",
+  ContentcolumngridParentChildren = "contentcolumngrid___parent___children",
+  ContentcolumngridParentChildrenChildren = "contentcolumngrid___parent___children___children",
+  ContentcolumngridParentChildrenId = "contentcolumngrid___parent___children___id",
+  ContentcolumngridParentId = "contentcolumngrid___parent___id",
+  ContentcolumngridParentInternalContent = "contentcolumngrid___parent___internal___content",
+  ContentcolumngridParentInternalContentDigest = "contentcolumngrid___parent___internal___contentDigest",
+  ContentcolumngridParentInternalDescription = "contentcolumngrid___parent___internal___description",
+  ContentcolumngridParentInternalFieldOwners = "contentcolumngrid___parent___internal___fieldOwners",
+  ContentcolumngridParentInternalIgnoreType = "contentcolumngrid___parent___internal___ignoreType",
+  ContentcolumngridParentInternalMediaType = "contentcolumngrid___parent___internal___mediaType",
+  ContentcolumngridParentInternalOwner = "contentcolumngrid___parent___internal___owner",
+  ContentcolumngridParentInternalType = "contentcolumngrid___parent___internal___type",
+  ContentcolumngridParentParentChildren = "contentcolumngrid___parent___parent___children",
+  ContentcolumngridParentParentId = "contentcolumngrid___parent___parent___id",
+  ContentcolumngridRatio = "contentcolumngrid___ratio",
+  ContentcolumngridSpaceId = "contentcolumngrid___spaceId",
+  ContentcolumngridSysRevision = "contentcolumngrid___sys___revision",
+  ContentcolumngridSysType = "contentcolumngrid___sys___type",
+  ContentcolumngridUniqueId = "contentcolumngrid___uniqueId",
+  ContentcolumngridUpdatedAt = "contentcolumngrid___updatedAt",
   ContentfulId = "contentful_id",
   CreatedAt = "createdAt",
   Id = "id",
@@ -9696,6 +11386,7 @@ export type ContentfulRichTextBlockFilterInput = {
   alignTextTo?: InputMaybe<StringQueryOperatorInput>;
   children?: InputMaybe<NodeFilterListInput>;
   contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentcolumngrid?: InputMaybe<ContentfulContentColumnGridFilterListInput>;
   contentful_id?: InputMaybe<StringQueryOperatorInput>;
   createdAt?: InputMaybe<DateQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
@@ -11631,6 +13322,7 @@ export type Query = {
   allContentfulAuthorAvatarBlock: ContentfulAuthorAvatarBlockConnection;
   allContentfulAuthorAvatarBlockDescriptionTextNode: ContentfulAuthorAvatarBlockDescriptionTextNodeConnection;
   allContentfulContentBlock: ContentfulContentBlockConnection;
+  allContentfulContentColumnGrid: ContentfulContentColumnGridConnection;
   allContentfulContentType: ContentfulContentTypeConnection;
   allContentfulEntry: ContentfulEntryConnection;
   allContentfulLink: ContentfulLinkConnection;
@@ -11654,6 +13346,7 @@ export type Query = {
   contentfulAuthorAvatarBlock?: Maybe<ContentfulAuthorAvatarBlock>;
   contentfulAuthorAvatarBlockDescriptionTextNode?: Maybe<ContentfulAuthorAvatarBlockDescriptionTextNode>;
   contentfulContentBlock?: Maybe<ContentfulContentBlock>;
+  contentfulContentColumnGrid?: Maybe<ContentfulContentColumnGrid>;
   contentfulContentType?: Maybe<ContentfulContentType>;
   contentfulEntry?: Maybe<ContentfulEntry>;
   contentfulLink?: Maybe<ContentfulLink>;
@@ -11707,6 +13400,13 @@ export type QueryAllContentfulContentBlockArgs = {
   limit?: InputMaybe<Scalars["Int"]>;
   skip?: InputMaybe<Scalars["Int"]>;
   sort?: InputMaybe<ContentfulContentBlockSortInput>;
+};
+
+export type QueryAllContentfulContentColumnGridArgs = {
+  filter?: InputMaybe<ContentfulContentColumnGridFilterInput>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  skip?: InputMaybe<Scalars["Int"]>;
+  sort?: InputMaybe<ContentfulContentColumnGridSortInput>;
 };
 
 export type QueryAllContentfulContentTypeArgs = {
@@ -11839,6 +13539,8 @@ export type QueryContentfulActionInfoBlockArgs = {
   article?: InputMaybe<ContentfulActionInfoBlockArticleFilterInput>;
   button?: InputMaybe<ContentfulLinkFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
+  contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentcolumngrid?: InputMaybe<ContentfulContentColumnGridFilterListInput>;
   contentful_id?: InputMaybe<StringQueryOperatorInput>;
   createdAt?: InputMaybe<DateQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
@@ -11886,6 +13588,7 @@ export type QueryContentfulAuthorAvatarBlockArgs = {
   children?: InputMaybe<NodeFilterListInput>;
   childrenContentfulAuthorAvatarBlockDescriptionTextNode?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFilterListInput>;
   contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentcolumngrid?: InputMaybe<ContentfulContentColumnGridFilterListInput>;
   contentful_id?: InputMaybe<StringQueryOperatorInput>;
   createdAt?: InputMaybe<DateQueryOperatorInput>;
   description?: InputMaybe<ContentfulAuthorAvatarBlockDescriptionTextNodeFilterInput>;
@@ -11928,6 +13631,23 @@ export type QueryContentfulContentBlockArgs = {
   updatedAt?: InputMaybe<DateQueryOperatorInput>;
 };
 
+export type QueryContentfulContentColumnGridArgs = {
+  alignColumnsOnMobile?: InputMaybe<StringQueryOperatorInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentful_id?: InputMaybe<StringQueryOperatorInput>;
+  createdAt?: InputMaybe<DateQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  node_locale?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  ratio?: InputMaybe<StringQueryOperatorInput>;
+  spaceId?: InputMaybe<StringQueryOperatorInput>;
+  sys?: InputMaybe<ContentfulContentColumnGridSysFilterInput>;
+  uniqueId?: InputMaybe<StringQueryOperatorInput>;
+  updatedAt?: InputMaybe<DateQueryOperatorInput>;
+};
+
 export type QueryContentfulContentTypeArgs = {
   children?: InputMaybe<NodeFilterListInput>;
   description?: InputMaybe<StringQueryOperatorInput>;
@@ -11954,6 +13674,7 @@ export type QueryContentfulLinkArgs = {
   childContentfulLinkUrlTextNode?: InputMaybe<ContentfulLinkUrlTextNodeFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
   childrenContentfulLinkUrlTextNode?: InputMaybe<ContentfulLinkUrlTextNodeFilterListInput>;
+  contentcolumngrid?: InputMaybe<ContentfulContentColumnGridFilterListInput>;
   contentful_id?: InputMaybe<StringQueryOperatorInput>;
   contentfulid?: InputMaybe<StringQueryOperatorInput>;
   createdAt?: InputMaybe<DateQueryOperatorInput>;
@@ -12047,6 +13768,7 @@ export type QueryContentfulRichTextBlockArgs = {
   alignTextTo?: InputMaybe<StringQueryOperatorInput>;
   children?: InputMaybe<NodeFilterListInput>;
   contentblock?: InputMaybe<ContentfulContentBlockFilterListInput>;
+  contentcolumngrid?: InputMaybe<ContentfulContentColumnGridFilterListInput>;
   contentful_id?: InputMaybe<StringQueryOperatorInput>;
   createdAt?: InputMaybe<DateQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
@@ -14879,6 +16601,131 @@ export type GetAllSiteContentQuery = {
               } | null> | null;
             }
           | {
+              __typename?: "ContentfulContentColumnGrid";
+              id: string;
+              ratio?: Array<string | null> | null;
+              alignColumnsOnMobile?: string | null;
+              columns?: Array<
+                | {
+                    __typename?: "ContentfulActionInfoBlock";
+                    id: string;
+                    textPosition?: string | null;
+                    article?: {
+                      __typename?: "ContentfulActionInfoBlockArticle";
+                      raw?: string | null;
+                    } | null;
+                    button?: {
+                      __typename?: "ContentfulLink";
+                      id: string;
+                      title?: string | null;
+                      url?: {
+                        __typename?: "contentfulLinkUrlTextNode";
+                        url?: string | null;
+                      } | null;
+                      image?: {
+                        __typename?: "ContentfulAsset";
+                        gatsbyImageData?: any | null;
+                      } | null;
+                    } | null;
+                    illustration?: {
+                      __typename?: "ContentfulAsset";
+                      gatsbyImageData?: any | null;
+                      title?: string | null;
+                      description?: string | null;
+                    } | null;
+                  }
+                | {
+                    __typename?: "ContentfulAuthorAvatarBlock";
+                    id: string;
+                    fullName?: string | null;
+                    description?: {
+                      __typename?: "contentfulAuthorAvatarBlockDescriptionTextNode";
+                      description?: string | null;
+                      sys?: {
+                        __typename?: "contentfulAuthorAvatarBlockDescriptionTextNodeSys";
+                        type?: string | null;
+                      } | null;
+                    } | null;
+                    sys?: {
+                      __typename?: "ContentfulAuthorAvatarBlockSys";
+                      type?: string | null;
+                      contentType?: {
+                        __typename?: "ContentfulAuthorAvatarBlockSysContentType";
+                        sys?: {
+                          __typename?: "ContentfulAuthorAvatarBlockSysContentTypeSys";
+                          id?: string | null;
+                        } | null;
+                      } | null;
+                    } | null;
+                    avatar?: {
+                      __typename?: "ContentfulAsset";
+                      gatsbyImageData?: any | null;
+                      title?: string | null;
+                      description?: string | null;
+                      id: string;
+                      sys?: {
+                        __typename?: "ContentfulAssetSys";
+                        type?: string | null;
+                      } | null;
+                    } | null;
+                    socialSiteLinks?: Array<{
+                      __typename?: "ContentfulLink";
+                      id: string;
+                      title?: string | null;
+                      url?: {
+                        __typename?: "contentfulLinkUrlTextNode";
+                        url?: string | null;
+                        sys?: {
+                          __typename?: "contentfulLinkUrlTextNodeSys";
+                          type?: string | null;
+                        } | null;
+                      } | null;
+                      image?: {
+                        __typename?: "ContentfulAsset";
+                        id: string;
+                        gatsbyImageData?: any | null;
+                        title?: string | null;
+                        description?: string | null;
+                      } | null;
+                    } | null> | null;
+                  }
+                | {
+                    __typename?: "ContentfulLink";
+                    title?: string | null;
+                    id: string;
+                    url?: {
+                      __typename?: "contentfulLinkUrlTextNode";
+                      url?: string | null;
+                    } | null;
+                    image?: {
+                      __typename?: "ContentfulAsset";
+                      gatsbyImageData?: any | null;
+                    } | null;
+                  }
+                | {
+                    __typename?: "ContentfulRichTextBlock";
+                    id: string;
+                    alignTextTo?: string | null;
+                    text?: {
+                      __typename?: "ContentfulRichTextBlockText";
+                      raw?: string | null;
+                    } | null;
+                    sys?: {
+                      __typename?: "ContentfulRichTextBlockSys";
+                      type?: string | null;
+                      contentType?: {
+                        __typename?: "ContentfulRichTextBlockSysContentType";
+                        sys?: {
+                          __typename?: "ContentfulRichTextBlockSysContentTypeSys";
+                          id?: string | null;
+                        } | null;
+                      } | null;
+                    } | null;
+                  }
+                | null
+              > | null;
+            }
+          | {
               __typename?: "ContentfulRichTextBlock";
               id: string;
               alignTextTo?: string | null;
@@ -15350,6 +17197,103 @@ export const GetAllSiteContentDocument = `
               contentType {
                 sys {
                   id
+                }
+              }
+            }
+          }
+          ... on ContentfulContentColumnGrid {
+            id
+            ratio
+            alignColumnsOnMobile
+            columns {
+              ... on ContentfulActionInfoBlock {
+                id
+                textPosition
+                article {
+                  raw
+                }
+                button {
+                  id
+                  url {
+                    url
+                  }
+                  title
+                  image {
+                    gatsbyImageData
+                  }
+                }
+                illustration {
+                  gatsbyImageData(width: 416, height: 416, quality: 80)
+                  title
+                  description
+                }
+              }
+              ... on ContentfulAuthorAvatarBlock {
+                id
+                fullName
+                description {
+                  description
+                  sys {
+                    type
+                  }
+                }
+                sys {
+                  type
+                  contentType {
+                    sys {
+                      id
+                    }
+                  }
+                }
+                avatar {
+                  gatsbyImageData(quality: 80, width: 100, height: 100)
+                  title
+                  description
+                  sys {
+                    type
+                  }
+                  id
+                }
+                socialSiteLinks {
+                  id
+                  title
+                  url {
+                    url
+                    sys {
+                      type
+                    }
+                  }
+                  image {
+                    id
+                    gatsbyImageData(width: 32, height: 32, quality: 80)
+                    title
+                    description
+                  }
+                }
+              }
+              ... on ContentfulLink {
+                title
+                id
+                url {
+                  url
+                }
+                image {
+                  gatsbyImageData
+                }
+              }
+              ... on ContentfulRichTextBlock {
+                id
+                text {
+                  raw
+                }
+                alignTextTo
+                sys {
+                  type
+                  contentType {
+                    sys {
+                      id
+                    }
+                  }
                 }
               }
             }

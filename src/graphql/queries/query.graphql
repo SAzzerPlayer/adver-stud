@@ -118,6 +118,103 @@ query GetAllSiteContent {
               }
             }
           }
+          ... on ContentfulContentColumnGrid {
+            id
+            ratio
+            alignColumnsOnMobile
+            columns {
+              ... on ContentfulActionInfoBlock {
+                id
+                textPosition
+                article {
+                  raw
+                }
+                button {
+                  id
+                  url {
+                    url
+                  }
+                  title
+                  image {
+                    gatsbyImageData
+                  }
+                }
+                illustration {
+                  gatsbyImageData(width: 416, height: 416, quality: 80)
+                  title
+                  description
+                }
+              }
+              ... on ContentfulAuthorAvatarBlock {
+                id
+                fullName
+                description {
+                  description
+                  sys {
+                    type
+                  }
+                }
+                sys {
+                  type
+                  contentType {
+                    sys {
+                      id
+                    }
+                  }
+                }
+                avatar {
+                  gatsbyImageData(quality: 80, width: 100, height: 100)
+                  title
+                  description
+                  sys {
+                    type
+                  }
+                  id
+                }
+                socialSiteLinks {
+                  id
+                  title
+                  url {
+                    url
+                    sys {
+                      type
+                    }
+                  }
+                  image {
+                    id
+                    gatsbyImageData(width: 32, height: 32, quality: 80)
+                    title
+                    description
+                  }
+                }
+              }
+              ... on ContentfulLink {
+                title
+                id
+                url {
+                  url
+                }
+                image {
+                  gatsbyImageData
+                }
+              }
+              ... on ContentfulRichTextBlock {
+                id
+                text {
+                  raw
+                }
+                alignTextTo
+                sys {
+                  type
+                  contentType {
+                    sys {
+                      id
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

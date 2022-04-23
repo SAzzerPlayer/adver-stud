@@ -39,11 +39,8 @@ export const RichTextBlock: React.FC<ContentfulRichTextBlock> = ({
 };
 
 export const Wrapper = styled.span`
-  > * + * {
-    margin-top: 8px;
-  }
-  
+  padding: 0 16px;
   > * {
-    padding: 0 16px;
+    min-height: 8px;
   }
 `;
