@@ -4,7 +4,7 @@ import { FindSiteMainOptionsBottomTabQuery } from "src/graphql/generated";
 export const useStaticFooterData = (): FindSiteMainOptionsBottomTabQuery =>
   useStaticQuery(graphql`
     query FindSiteMainOptionsBottomTab {
-      contentfulOptions(contentfulid: { regex: "/Main/" }) {
+      contentfulSiteOptions(contentfulid: { regex: "/Main/" }) {
         id
         node_locale
         contentfulid

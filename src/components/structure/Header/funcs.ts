@@ -3,7 +3,7 @@ import { FindSiteMainOptionsTopTabQuery } from "src/graphql/generated";
 export const getTopBarTabs = (
   result: FindSiteMainOptionsTopTabQuery
 ): { url: string; title: string }[] =>
-  (result.contentfulOptions?.topBarTabs || [])
+  (result.contentfulSiteOptions?.topBarTabs || [])
     .filter((tab) => tab?.node_locale === "uk-UA")
     .map((tab) => ({
       url: tab?.url?.url!,
@@ -12,7 +12,7 @@ export const getTopBarTabs = (
     .filter((tab) => !!tab.url && !!tab.title);
 
 export const getTopBarSocialTabs = (result: FindSiteMainOptionsTopTabQuery) =>
-  (result.contentfulOptions?.topBarSocialLinks || [])
+  (result.contentfulSiteOptions?.topBarSocialLinks || [])
     .filter((tab) => tab?.node_locale === "uk-UA")
     .map((tab) => ({
       url: tab?.url?.url!,

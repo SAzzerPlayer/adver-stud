@@ -9,8 +9,8 @@ import { getTopBarSocialTabs, getTopBarTabs } from "./funcs";
 const Header: React.FC = () => {
   const result = useStaticHeaderData();
 
-  const logoUrl = result.contentfulOptions?.topBarLogo?.url?.url || "/";
-  const logoTitle = result.contentfulOptions?.topBarLogo?.title || "AdverStud";
+  const logoUrl = result.contentfulSiteOptions?.topBarLogo?.url?.url || "/";
+  const logoTitle = result.contentfulSiteOptions?.topBarLogo?.title || "AdverStud";
 
   return (
     <Styled.Container>
@@ -25,7 +25,7 @@ const Header: React.FC = () => {
         </Styled.MenuLabel>
         <Styled.Tabs>
           {getTopBarTabs(result).map(({ url, title }, index) => (
-            <HoverLink key={index} to={"/"}>
+            <HoverLink key={index} to={url}>
               <h6>{title}</h6>
             </HoverLink>
           ))}

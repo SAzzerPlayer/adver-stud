@@ -1,18 +1,23 @@
 import React from "react";
 import { Link, GatsbyLinkProps } from "gatsby";
 import styled from "styled-components";
-import {colors} from 'src/styles';
+import { colors } from "src/styles";
 
 type TBaseLinkProps = Omit<GatsbyLinkProps<any>, "ref">;
 
 export const BaseLink = React.forwardRef<any, TBaseLinkProps>(
   ({ children, to, activeClassName, partiallyActive, ...props }, ref) => {
     const internal = !to.includes("http");
+    const isEnglish =
+      internal && !to.startsWith("/en/")
+        ? location.pathname.startsWith("/en/")
+        : false;
+    const link = isEnglish ? "/en" + to : to;
     if (internal) {
       return (
         <Link
           ref={ref}
-          to={to}
+          to={link}
           activeClassName={activeClassName}
           partiallyActive={partiallyActive}
           {...props}
@@ -22,7 +27,7 @@ export const BaseLink = React.forwardRef<any, TBaseLinkProps>(
       );
     }
     return (
-      <a ref={ref} href={to} className={activeClassName} {...props}>
+      <a ref={ref} href={link} className={activeClassName} {...props}>
         {children}
       </a>
     );

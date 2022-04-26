@@ -4,7 +4,7 @@ import { FindSiteMainOptionsTopTabQuery } from "src/graphql/generated";
 export const useStaticHeaderData = (): FindSiteMainOptionsTopTabQuery =>
   useStaticQuery(graphql`
     query FindSiteMainOptionsTopTab {
-      contentfulOptions(contentfulid: { regex: "/Main/" }) {
+      contentfulSiteOptions(contentfulid: { regex: "/Main/" }) {
         id
         node_locale
         contentfulid

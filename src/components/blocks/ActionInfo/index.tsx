@@ -1,11 +1,11 @@
 import React from "react";
-import { ContentfulActionInfoBlock } from "src/graphql/generated";
+import { ContentfulActionBlock } from "src/graphql/generated";
 import { TextContent, Container } from "./styles";
 import { YellowHoverLink } from "src/components/shared";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-export const ActionInfoBlock: React.FC<ContentfulActionInfoBlock> = ({
+export const ActionInfoBlock: React.FC<ContentfulActionBlock> = ({
   textPosition = "onLeftSide",
   article,
   button,

@@ -1,4 +1,4 @@
 export * from "./colors";
 export * from "./shadows";
-export * from './breakpoints';
-export * from './common';
+export * from "./breakpoints";
+export * from "./common";

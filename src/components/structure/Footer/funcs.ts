@@ -3,7 +3,7 @@ import { FindSiteMainOptionsBottomTabQuery } from "src/graphql/generated";
 export const getBottomBarTabs = (
   result: FindSiteMainOptionsBottomTabQuery
 ): { url: string; title: string }[] =>
-  (result.contentfulOptions?.bottomBarTabs || [])
+  (result.contentfulSiteOptions?.bottomBarTabs || [])
     .filter((tab) => tab?.node_locale === "uk-UA")
     .map((tab) => ({
       url: tab?.url?.url!,
@@ -14,7 +14,7 @@ export const getBottomBarTabs = (
 export const getBottomBarSocialTabs = (
   result: FindSiteMainOptionsBottomTabQuery
 ) =>
-  (result.contentfulOptions?.bottomBarSocialLinks || [])
+  (result.contentfulSiteOptions?.bottomBarSocialLinks || [])
     .filter((tab) => tab?.node_locale === "uk-UA")
     .map((tab) => ({
       url: tab?.url?.url!,

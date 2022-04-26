@@ -1,4 +1,4 @@
-import { TIconName } from "src/_components/Icon";
+import { TIconName } from "src/components/shared/Icon";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 
 export type TLinkToSite = {

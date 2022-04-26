@@ -1,3 +1,401 @@
+fragment tabsColumn on ContentfulTabsColumn {
+  id
+  title
+  content {
+    ... on ContentfulActionBlock {
+      id
+      textPosition
+      article {
+        raw
+      }
+      button {
+        id
+        title
+        url {
+          url
+        }
+        image {
+          id
+          gatsbyImageData
+        }
+      }
+      illustration {
+        title
+        description
+        gatsbyImageData(width: 416, height: 416, quality: 80)
+      }
+    }
+    ... on ContentfulGrid {
+      id
+      ratio
+      column_1 {
+        ... on ContentfulActionBlock {
+          id
+          textPosition
+          article {
+            raw
+          }
+          button {
+            id
+            title
+            url {
+              url
+            }
+            image {
+              id
+              gatsbyImageData
+            }
+          }
+          illustration {
+            title
+            description
+            gatsbyImageData(width: 416, height: 416, quality: 80)
+          }
+        }
+        ... on ContentfulTable {
+          id
+          columns {
+            ... on ContentfulTableColumn {
+              id
+              title
+              content {
+                raw
+              }
+            }
+          }
+          numerateRows
+        }
+
+        ... on ContentfulTextBlock {
+          id
+          text {
+            raw
+          }
+          alignTextTo
+        }
+
+        ... on ContentfulTipList {
+          id
+          style
+          tipMarker
+          tips {
+            raw
+          }
+          amountOfColumns
+        }
+
+        ... on ContentfulPerson {
+          id
+          image {
+            gatsbyImageData(quality: 80)
+          }
+          description {
+            raw
+          }
+          socialLinks {
+            id
+            node_locale
+            title
+            url {
+              url
+            }
+            image {
+              gatsbyImageData(quality: 80, width: 32, height: 32)
+            }
+          }
+        }
+      }
+      column_2 {
+        ... on ContentfulActionBlock {
+          id
+          textPosition
+          article {
+            raw
+          }
+          button {
+            id
+            title
+            url {
+              url
+            }
+            image {
+              id
+              gatsbyImageData
+            }
+          }
+          illustration {
+            title
+            description
+            gatsbyImageData(width: 416, height: 416, quality: 80)
+          }
+        }
+        ... on ContentfulTable {
+          id
+          columns {
+            ... on ContentfulTableColumn {
+              id
+              title
+              content {
+                raw
+              }
+            }
+          }
+          numerateRows
+        }
+
+        ... on ContentfulTextBlock {
+          id
+          text {
+            raw
+          }
+          alignTextTo
+        }
+
+        ... on ContentfulTipList {
+          id
+          style
+          tipMarker
+          tips {
+            raw
+          }
+          amountOfColumns
+        }
+
+        ... on ContentfulPerson {
+          id
+          image {
+            gatsbyImageData(quality: 80)
+          }
+          description {
+            raw
+          }
+          socialLinks {
+            id
+            title
+            url {
+              url
+            }
+            image {
+              gatsbyImageData(quality: 80, width: 32, height: 32)
+            }
+          }
+        }
+      }
+      column_3 {
+        ... on ContentfulActionBlock {
+          id
+          textPosition
+          article {
+            raw
+          }
+          button {
+            id
+            title
+            url {
+              url
+            }
+            image {
+              id
+              gatsbyImageData
+            }
+          }
+          illustration {
+            title
+            description
+            gatsbyImageData(width: 416, height: 416, quality: 80)
+          }
+        }
+        ... on ContentfulTable {
+          id
+          columns {
+            ... on ContentfulTableColumn {
+              id
+              title
+              content {
+                raw
+              }
+            }
+          }
+          numerateRows
+        }
+
+        ... on ContentfulTextBlock {
+          id
+          text {
+            raw
+          }
+          alignTextTo
+        }
+
+        ... on ContentfulTipList {
+          id
+          style
+          tipMarker
+          tips {
+            raw
+          }
+          amountOfColumns
+        }
+
+        ... on ContentfulPerson {
+          id
+          image {
+            gatsbyImageData(quality: 80)
+          }
+          description {
+            raw
+          }
+          socialLinks {
+            id
+            title
+            url {
+              url
+            }
+            image {
+              gatsbyImageData(quality: 80, width: 32, height: 32)
+            }
+          }
+        }
+      }
+      column_4 {
+        ... on ContentfulActionBlock {
+          id
+          textPosition
+          article {
+            raw
+          }
+          button {
+            id
+            title
+            url {
+              url
+            }
+            image {
+              id
+              gatsbyImageData
+            }
+          }
+          illustration {
+            title
+            description
+            gatsbyImageData(width: 416, height: 416, quality: 80)
+          }
+        }
+        ... on ContentfulTable {
+          id
+          columns {
+            ... on ContentfulTableColumn {
+              id
+              title
+              content {
+                raw
+              }
+            }
+          }
+          numerateRows
+        }
+
+        ... on ContentfulTextBlock {
+          id
+          text {
+            raw
+          }
+          alignTextTo
+        }
+
+        ... on ContentfulTipList {
+          id
+          style
+          tipMarker
+          tips {
+            raw
+          }
+          amountOfColumns
+        }
+
+        ... on ContentfulPerson {
+          id
+          image {
+            gatsbyImageData(quality: 80)
+          }
+          description {
+            raw
+          }
+          socialLinks {
+            id
+            title
+            url {
+              url
+            }
+            image {
+              gatsbyImageData(quality: 80, width: 32, height: 32)
+            }
+          }
+        }
+      }
+    }
+
+    ... on ContentfulTextBlock {
+      id
+      text {
+        raw
+      }
+      alignTextTo
+    }
+
+    ... on ContentfulTipList {
+      id
+      style
+      tipMarker
+      tips {
+        raw
+      }
+      amountOfColumns
+    }
+    ... on ContentfulTable {
+      id
+      columns {
+        ... on ContentfulTableColumn {
+          id
+          title
+          content {
+            raw
+          }
+        }
+      }
+      numerateRows
+    }
+
+    ... on ContentfulPerson {
+      id
+      image {
+        gatsbyImageData(quality: 80)
+      }
+      description {
+        raw
+      }
+      socialLinks {
+        id
+        title
+        url {
+          url
+        }
+        image {
+          gatsbyImageData(quality: 80, width: 32, height: 32)
+        }
+      }
+    }
+  }
+}
+
+fragment tabs on ContentfulTabs {
+  id
+  initialTab
+  tabs {
+    ...tabsColumn
+  }
+}
+
 query GetAllSiteContent {
   allContentfulPage(filter: { url: { regex: "///" } }, limit: 500) {
     nodes {
@@ -7,33 +405,15 @@ query GetAllSiteContent {
       node_locale
       description {
         description
-        sys {
-          type
-        }
-      }
-      sys {
-        type
       }
       content {
-        sys {
-          type
-          revision
-        }
         id
         uniqueId
         margin
         blocks {
-          ... on ContentfulActionInfoBlock {
+          ... on ContentfulActionBlock {
             id
             textPosition
-            sys {
-              type
-              contentType {
-                sys {
-                  id
-                }
-              }
-            }
             article {
               raw
             }
@@ -42,12 +422,6 @@ query GetAllSiteContent {
               title
               url {
                 url
-                sys {
-                  type
-                }
-              }
-              sys {
-                type
               }
               image {
                 id
@@ -60,70 +434,43 @@ query GetAllSiteContent {
               gatsbyImageData(width: 416, height: 416, quality: 80)
             }
           }
-          ... on ContentfulAuthorAvatarBlock {
-            id
-            fullName
-            description {
-              description
-              sys {
-                type
-              }
-            }
-            sys {
-              type
-              contentType {
-                sys {
-                  id
-                }
-              }
-            }
-            avatar {
-              gatsbyImageData(quality: 80, width: 100, height: 100)
-              title
-              description
-              sys {
-                type
-              }
-              id
-            }
-            socialSiteLinks {
-              id
-              title
-              url {
-                url
-                sys {
-                  type
-                }
-              }
-              image {
-                id
-                gatsbyImageData(width: 32, height: 32, quality: 80)
-                title
-                description
-              }
-            }
-          }
-          ... on ContentfulRichTextBlock {
+
+          ... on ContentfulTextBlock {
             id
             text {
               raw
             }
             alignTextTo
-            sys {
-              type
-              contentType {
-                sys {
-                  id
+          }
+
+          ... on ContentfulTipList {
+            id
+            style
+            tipMarker
+            tips {
+              raw
+            }
+            amountOfColumns
+          }
+          ... on ContentfulTable {
+            id
+            columns {
+              ... on ContentfulTableColumn {
+                id
+                title
+                content {
+                  raw
                 }
               }
             }
+            numerateRows
           }
-          ... on ContentfulContentColumnGrid {
+          ...tabs
+          ... on ContentfulGrid {
             id
             ratio
-            alignColumnsOnMobile
-            columns {
-              ... on ContentfulActionInfoBlock {
+            column_1 {
+              ... on ContentfulActionBlock {
                 id
                 textPosition
                 article {
@@ -131,85 +478,297 @@ query GetAllSiteContent {
                 }
                 button {
                   id
+                  title
                   url {
                     url
                   }
-                  title
                   image {
+                    id
                     gatsbyImageData
                   }
                 }
                 illustration {
+                  title
+                  description
                   gatsbyImageData(width: 416, height: 416, quality: 80)
-                  title
-                  description
                 }
               }
-              ... on ContentfulAuthorAvatarBlock {
+              ... on ContentfulTable {
                 id
-                fullName
-                description {
-                  description
-                  sys {
-                    type
-                  }
-                }
-                sys {
-                  type
-                  contentType {
-                    sys {
-                      id
-                    }
-                  }
-                }
-                avatar {
-                  gatsbyImageData(quality: 80, width: 100, height: 100)
-                  title
-                  description
-                  sys {
-                    type
-                  }
-                  id
-                }
-                socialSiteLinks {
-                  id
-                  title
-                  url {
-                    url
-                    sys {
-                      type
-                    }
-                  }
-                  image {
+                columns {
+                  ... on ContentfulTableColumn {
                     id
-                    gatsbyImageData(width: 32, height: 32, quality: 80)
                     title
-                    description
+                    content {
+                      raw
+                    }
                   }
                 }
+                numerateRows
               }
-              ... on ContentfulLink {
-                title
-                id
-                url {
-                  url
-                }
-                image {
-                  gatsbyImageData
-                }
-              }
-              ... on ContentfulRichTextBlock {
+
+              ... on ContentfulTextBlock {
                 id
                 text {
                   raw
                 }
                 alignTextTo
-                sys {
-                  type
-                  contentType {
-                    sys {
-                      id
+              }
+
+              ... on ContentfulTipList {
+                id
+                style
+                tipMarker
+                tips {
+                  raw
+                }
+                amountOfColumns
+              }
+
+              ... on ContentfulPerson {
+                id
+                image {
+                  gatsbyImageData(quality: 80)
+                }
+                description {
+                  raw
+                }
+                socialLinks {
+                  id
+                  title
+                  url {
+                    url
+                  }
+                  image {
+                    gatsbyImageData(quality: 80, width: 32, height: 32)
+                  }
+                }
+              }
+            }
+            column_2 {
+              ... on ContentfulActionBlock {
+                id
+                textPosition
+                article {
+                  raw
+                }
+                button {
+                  id
+                  title
+                  url {
+                    url
+                  }
+                  image {
+                    id
+                    gatsbyImageData
+                  }
+                }
+                illustration {
+                  title
+                  description
+                  gatsbyImageData(width: 416, height: 416, quality: 80)
+                }
+              }
+              ... on ContentfulTable {
+                id
+                columns {
+                  ... on ContentfulTableColumn {
+                    id
+                    title
+                    content {
+                      raw
                     }
+                  }
+                }
+                numerateRows
+              }
+
+              ... on ContentfulTextBlock {
+                id
+                text {
+                  raw
+                }
+                alignTextTo
+              }
+
+              ... on ContentfulTipList {
+                id
+                style
+                tipMarker
+                tips {
+                  raw
+                }
+                amountOfColumns
+              }
+
+              ... on ContentfulPerson {
+                id
+                image {
+                  gatsbyImageData(quality: 80)
+                }
+                description {
+                  raw
+                }
+                socialLinks {
+                  id
+                  title
+                  url {
+                    url
+                  }
+                  image {
+                    gatsbyImageData(quality: 80, width: 32, height: 32)
+                  }
+                }
+              }
+            }
+            column_3 {
+              ... on ContentfulActionBlock {
+                id
+                textPosition
+                article {
+                  raw
+                }
+                button {
+                  id
+                  title
+                  url {
+                    url
+                  }
+                  image {
+                    id
+                    gatsbyImageData
+                  }
+                }
+                illustration {
+                  title
+                  description
+                  gatsbyImageData(width: 416, height: 416, quality: 80)
+                }
+              }
+              ... on ContentfulTable {
+                id
+                columns {
+                  ... on ContentfulTableColumn {
+                    id
+                    title
+                    content {
+                      raw
+                    }
+                  }
+                }
+                numerateRows
+              }
+
+              ... on ContentfulTextBlock {
+                id
+                text {
+                  raw
+                }
+                alignTextTo
+              }
+
+              ... on ContentfulTipList {
+                id
+                style
+                tipMarker
+                tips {
+                  raw
+                }
+                amountOfColumns
+              }
+
+              ... on ContentfulPerson {
+                id
+                image {
+                  gatsbyImageData(quality: 80)
+                }
+                description {
+                  raw
+                }
+                socialLinks {
+                  id
+                  title
+                  url {
+                    url
+                  }
+                  image {
+                    gatsbyImageData(quality: 80, width: 32, height: 32)
+                  }
+                }
+              }
+            }
+            column_4 {
+              ... on ContentfulActionBlock {
+                id
+                textPosition
+                article {
+                  raw
+                }
+                button {
+                  id
+                  title
+                  url {
+                    url
+                  }
+                  image {
+                    id
+                    gatsbyImageData
+                  }
+                }
+                illustration {
+                  title
+                  description
+                  gatsbyImageData(width: 416, height: 416, quality: 80)
+                }
+              }
+              ... on ContentfulTable {
+                id
+                columns {
+                  ... on ContentfulTableColumn {
+                    id
+                    title
+                    content {
+                      raw
+                    }
+                  }
+                }
+                numerateRows
+              }
+
+              ... on ContentfulTextBlock {
+                id
+                text {
+                  raw
+                }
+                alignTextTo
+              }
+
+              ... on ContentfulTipList {
+                id
+                style
+                tipMarker
+                tips {
+                  raw
+                }
+                amountOfColumns
+              }
+
+              ... on ContentfulPerson {
+                id
+                image {
+                  gatsbyImageData(quality: 80)
+                }
+                description {
+                  raw
+                }
+                socialLinks {
+                  id
+                  title
+                  url {
+                    url
+                  }
+                  image {
+                    gatsbyImageData(quality: 80, width: 32, height: 32)
                   }
                 }
               }

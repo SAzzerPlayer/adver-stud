@@ -1,11 +1,11 @@
 import React from "react";
 import {
-  ContentfulActionInfoBlock,
-  ContentfulAuthorAvatarBlock,
+  ContentfulActionBlock,
+  ContentfulPerson,
   ContentfulContentBlock,
-  ContentfulContentColumnGrid,
+  ContentfulGrid,
   ContentfulLink,
-  ContentfulRichTextBlock,
+  ContentfulTextBlock,
 } from "src/graphql/generated";
 import Block from "./Block";
 import GridAligner from "./GridAligner";
@@ -14,34 +14,50 @@ import { ActionInfoBlock } from "../../blocks/ActionInfo";
 
 const extractContentOfBlock = (
   block:
-    | ContentfulActionInfoBlock
-    | ContentfulRichTextBlock
-    | ContentfulAuthorAvatarBlock
+    | ContentfulActionBlock
+    | ContentfulTextBlock
+    | ContentfulPerson
     | ContentfulLink
 ) => {
-  if ((block as ContentfulAuthorAvatarBlock).avatar) {
-    return null;
-  } else if (!!(block as ContentfulRichTextBlock).alignTextTo) {
-    return <RichTextBlock {...(block as ContentfulRichTextBlock)} />;
-  } else if (!!(block as ContentfulActionInfoBlock).textPosition) {
-    return <ActionInfoBlock {...(block as ContentfulActionInfoBlock)} />;
+  if (!!(block as ContentfulTextBlock).alignTextTo) {
+    return <RichTextBlock {...(block as ContentfulTextBlock)} />;
+  } else if (!!(block as ContentfulActionBlock).textPosition) {
+    return <ActionInfoBlock {...(block as ContentfulActionBlock)} />;
   } else if (!!(block as ContentfulLink).url) {
     return null;
   }
 };
 
-const GridBlock: React.FC<ContentfulContentColumnGrid> = ({
-  columns,
+const GridBlock: React.FC<ContentfulGrid> = ({
+  column_1,
+  column_2,
+  column_3,
+  column_4,
   alignColumnsOnMobile,
   ratio,
 }) => {
   return (
     <GridAligner reversed={alignColumnsOnMobile === "fromRightToLeft"}>
-      {columns?.map((block, index) => (
-        <div key={index} style={{ flex: Number(ratio![index]) / 100 }}>
-          {extractContentOfBlock(block!)}
+      {!!column_1 && (
+        <div style={{ flex: Number(ratio![0]) / 100 }}>
+          {column_1.map((block) => extractContentOfBlock(block! as any))}
         </div>
-      ))}
+      )}
+      {!!column_2 && (
+        <div style={{ flex: Number(ratio![1]) / 100 }}>
+          {column_2.map((block) => extractContentOfBlock(block! as any))}
+        </div>
+      )}
+      {!!column_3 && (
+        <div style={{ flex: Number(ratio![2]) / 100 }}>
+          {column_3.map((block) => extractContentOfBlock(block! as any))}
+        </div>
+      )}
+      {!!column_4 && (
+        <div style={{ flex: Number(ratio![3]) / 100 }}>
+          {column_4.map((block) => extractContentOfBlock(block! as any))}
+        </div>
+      )}
     </GridAligner>
   );
 };
@@ -53,13 +69,8 @@ export const ContentBlock: React.FC<ContentfulContentBlock> = ({
   return (
     <Block margin={margin!}>
       {blocks?.map((block, index) => {
-        if ((block as ContentfulContentColumnGrid).columns) {
-          return (
-            <GridBlock
-              {...(block as ContentfulContentColumnGrid)}
-              key={index}
-            />
-          );
+        if ((block as ContentfulGrid).column_1) {
+          return <GridBlock {...(block as ContentfulGrid)} key={index} />;
         }
         //@ts-ignore
         const Block = extractContentOfBlock(block!);

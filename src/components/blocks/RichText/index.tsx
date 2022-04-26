@@ -1,5 +1,5 @@
 import React from "react";
-import { ContentfulRichTextBlock } from "src/graphql/generated";
+import { ContentfulTextBlock } from "src/graphql/generated";
 import styled from "styled-components";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 
@@ -21,7 +21,7 @@ const parseAlignTextToFlex = (type: string) => {
   return "flex-end";
 };
 
-export const RichTextBlock: React.FC<ContentfulRichTextBlock> = ({
+export const RichTextBlock: React.FC<ContentfulTextBlock> = ({
   alignTextTo = "left",
   text,
 }) => {
