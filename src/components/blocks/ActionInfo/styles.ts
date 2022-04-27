@@ -13,13 +13,13 @@ export const Container = styled.div<{ reversed?: boolean }>`
     flex-direction: column-reverse;
     justify-content: flex-start;
     align-items: flex-start;
-    
+
     img {
       max-width: 328px;
       max-height: 328px;
     }
   }
-  
+
   & > * {
     margin: 0 24px;
   }
@@ -27,7 +27,17 @@ export const Container = styled.div<{ reversed?: boolean }>`
 
 export const TextContent = styled.div`
   display: flex;
-  flex: 1;
   flex-direction: column;
-  ${getGapStyle("8px", "column")}
+  flex: 1;
+  padding: 0 16px !important;
+  p,
+  a,
+  b,
+  strong,
+  i,
+  em,
+  mark,
+  u {
+    margin: 1.25em 0 !important;
+  }
 `;

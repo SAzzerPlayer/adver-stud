@@ -62,7 +62,7 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: 400;
     font-size: 1em;
-    line-height: 136%;
+    line-height: 160%;
     color: ${colors.accentBlack};
   }
   

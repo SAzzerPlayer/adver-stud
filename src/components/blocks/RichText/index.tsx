@@ -27,20 +27,33 @@ export const RichTextBlock: React.FC<ContentfulTextBlock> = ({
 }) => {
   if (!text?.raw) return null;
   return (
-    <Wrapper
-      style={{
-        alignItems: parseAlignTextToFlex(alignTextTo!),
-        textAlign: parseAlignTextTo(alignTextTo!),
-      }}
-    >
-      {renderRichText({ references: [], raw: text.raw })}
-    </Wrapper>
+    <div style={{ display: "flex", flex: 1, width: "100%"}}>
+      <Wrapper
+        style={{
+          alignItems: parseAlignTextToFlex(alignTextTo!),
+          textAlign: parseAlignTextTo(alignTextTo!),
+        }}
+      >
+        {renderRichText({ references: [], raw: text.raw })}
+      </Wrapper>
+    </div>
   );
 };
 
-export const Wrapper = styled.span`
-  padding: 0 16px;
-  > * {
-    min-height: 8px;
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 16px !important;
+
+  p,
+  a,
+  b,
+  strong,
+  i,
+  em,
+  mark,
+  u {
+    margin: 1.25em 0 !important;
   }
 `;
