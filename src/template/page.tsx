@@ -6,8 +6,9 @@ import { GlobalStyle } from "src/components/GlobalStyle";
 import { ContentBlock } from "src/components/structure/ContentBlock";
 
 const Template: React.FC<any> = ({ pageContext }) => {
-  const { title, description, content } = pageContext as ContentfulPage;
-
+  const { title, description, content, node_locale } =
+    pageContext as ContentfulPage;
+  console.log(node_locale);
   return (
     <>
       <SEO title={title!} description={description?.description} />

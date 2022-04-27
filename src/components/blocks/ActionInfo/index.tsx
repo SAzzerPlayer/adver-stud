@@ -10,13 +10,14 @@ export const ActionInfoBlock: React.FC<ContentfulActionBlock> = ({
   article,
   button,
   illustration,
+  node_locale,
 }) => {
   const reversed = textPosition === "onRightSide";
   const content = [
     <TextContent key={"content"}>
       {!!article ? renderRichText({ raw: article.raw!, references: [] }) : null}
       {!!button?.title ? (
-        <YellowHoverLink to={button.url?.url! || "/"}>
+        <YellowHoverLink to={button.url?.url! || "/"} locale={node_locale}>
           {button.title}
         </YellowHoverLink>
       ) : null}

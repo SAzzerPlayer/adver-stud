@@ -5,14 +5,18 @@ import { colors } from "src/styles";
 
 type TBaseLinkProps = Omit<GatsbyLinkProps<any>, "ref">;
 
-export const BaseLink = React.forwardRef<any, TBaseLinkProps>(
-  ({ children, to, activeClassName, partiallyActive, ...props }, ref) => {
+export const BaseLink = React.forwardRef<
+  any,
+  TBaseLinkProps & { locale?: string }
+>(
+  (
+    { children, to, activeClassName, partiallyActive, locale, ...props },
+    ref
+  ) => {
     const internal = !to.includes("http");
-    const isEnglish =
-      internal && !to.startsWith("/en/")
-        ? location.pathname.startsWith("/en/")
-        : false;
-    const link = isEnglish ? "/en" + to : to;
+
+    const link =
+      internal && locale && locale !== "uk-UA" ? `/${locale}${to}` : to;
     if (internal) {
       return (
         <Link
