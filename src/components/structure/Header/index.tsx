@@ -3,16 +3,13 @@ import Styled from "./styles";
 import { HoverLink, Icon } from "src/components/shared";
 import { colors } from "src/styles";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { useStaticHeaderData } from "./useStaticHeaderData";
 import { getTopBarSocialTabs, getTopBarTabs } from "./funcs";
+import { ContentfulSiteOptions } from "../../../graphql/generated";
 
-const Header: React.FC = () => {
-  const result = useStaticHeaderData();
+const Header: React.FC<ContentfulSiteOptions> = (props) => {
+  const logoUrl = props.topBarLogo?.url?.url || "/";
+  const logoTitle = props.topBarLogo?.title || "AdverStud";
 
-  const logoUrl = result.contentfulSiteOptions?.topBarLogo?.url?.url || "/";
-  const logoTitle =
-    result.contentfulSiteOptions?.topBarLogo?.title || "AdverStud";
-  console.log(result);
   return (
     <Styled.Container>
       <Styled.Content>
@@ -25,14 +22,14 @@ const Header: React.FC = () => {
           <Icon name={"close"} size={24} />
         </Styled.MenuLabel>
         <Styled.Tabs>
-          {getTopBarTabs(result).map(({ url, title, locale }, index) => (
+          {getTopBarTabs(props).map(({ url, title, locale }, index) => (
             <HoverLink key={index} to={url} locale={locale}>
               <h6>{title}</h6>
             </HoverLink>
           ))}
         </Styled.Tabs>
         <Styled.Social>
-          {getTopBarSocialTabs(result).map(
+          {getTopBarSocialTabs(props).map(
             ({ url, image, alt = "Image" }, index) => (
               <HoverLink key={index} to={url}>
                 <GatsbyImage alt={alt} image={image} />

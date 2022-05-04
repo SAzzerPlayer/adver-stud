@@ -23,7 +23,6 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
         trackingId: "G-6N7ENKSNZG",
       },
     },

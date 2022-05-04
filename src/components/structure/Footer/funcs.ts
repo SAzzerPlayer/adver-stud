@@ -1,9 +1,9 @@
-import { FindSiteMainOptionsBottomTabQuery } from "src/graphql/generated";
+import { ContentfulSiteOptions } from "src/graphql/generated";
 
 export const getBottomBarTabs = (
-  result: FindSiteMainOptionsBottomTabQuery
+  result: ContentfulSiteOptions
 ): { url: string; title: string; locale?: string }[] =>
-  (result.contentfulSiteOptions?.bottomBarTabs || [])
+  (result.bottomBarTabs || [])
     .map((tab) => ({
       url: tab?.url?.url!,
       title: tab?.title!,
@@ -11,10 +11,8 @@ export const getBottomBarTabs = (
     }))
     .filter((tab) => !!tab.url && !!tab.title);
 
-export const getBottomBarSocialTabs = (
-  result: FindSiteMainOptionsBottomTabQuery
-) =>
-  (result.contentfulSiteOptions?.bottomBarSocialLinks || [])
+export const getBottomBarSocialTabs = (result: ContentfulSiteOptions) =>
+  (result.bottomBarSocialLinks || [])
     .map((tab) => ({
       url: tab?.url?.url!,
       alt: tab?.image?.description!,

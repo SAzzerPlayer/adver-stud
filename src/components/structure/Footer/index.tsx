@@ -3,11 +3,10 @@ import Styled from "./styles";
 import { HoverLink } from "src/components/shared";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { getBottomBarSocialTabs, getBottomBarTabs } from "./funcs";
-import { useStaticFooterData } from "./useStaticHeaderData";
+import { ContentfulSiteOptions } from "../../../graphql/generated";
 
-const Footer: React.FC = () => {
-  const result = useStaticFooterData();
-  const tabLinks = getBottomBarTabs(result).map(({ url, title }, index) => (
+const Footer: React.FC<ContentfulSiteOptions> = (props) => {
+  const tabLinks = getBottomBarTabs(props).map(({ url, title }, index) => (
     <HoverLink key={index} to={url}>
       <h6>{title}</h6>
     </HoverLink>
@@ -21,7 +20,7 @@ const Footer: React.FC = () => {
           </HoverLink>
           <Styled.Tabs className={"only-not-device"}>{tabLinks}</Styled.Tabs>
           <Styled.Social>
-            {getBottomBarSocialTabs(result).map(
+            {getBottomBarSocialTabs(props).map(
               ({ url, image, alt = "Image" }, index) => (
                 <HoverLink key={index} to={url}>
                   <GatsbyImage alt={alt} image={image} />

@@ -11,6 +11,7 @@ import Block from "./Block";
 import GridAligner from "./GridAligner";
 import { RichTextBlock } from "../../blocks/RichText";
 import { ActionInfoBlock } from "../../blocks/ActionInfo";
+import { PersonBlock } from "../../blocks/Person";
 
 const extractContentOfBlock = (
   block:
@@ -25,6 +26,8 @@ const extractContentOfBlock = (
     return <ActionInfoBlock {...(block as ContentfulActionBlock)} />;
   } else if (!!(block as ContentfulLink).url) {
     return null;
+  } else if (!!(block as ContentfulPerson).socialLinks) {
+    return <PersonBlock {...(block as ContentfulPerson)} />;
   }
 };
 
@@ -36,27 +39,19 @@ const GridBlock: React.FC<ContentfulGrid> = ({
   alignColumnsOnMobile,
   ratio,
 }) => {
+  const columns = [column_1, column_2, column_3, column_4];
+  const reversed = alignColumnsOnMobile === "fromRightToLeft";
+
   return (
-    <GridAligner reversed={alignColumnsOnMobile === "fromRightToLeft"}>
-      {!!column_1 && (
-        <div style={{ flex: Number(ratio![0]) / 100 }}>
-          {column_1.map((block) => extractContentOfBlock(block! as any))}
-        </div>
-      )}
-      {!!column_2 && (
-        <div style={{ flex: Number(ratio![1]) / 100 }}>
-          {column_2.map((block) => extractContentOfBlock(block! as any))}
-        </div>
-      )}
-      {!!column_3 && (
-        <div style={{ flex: Number(ratio![2]) / 100 }}>
-          {column_3.map((block) => extractContentOfBlock(block! as any))}
-        </div>
-      )}
-      {!!column_4 && (
-        <div style={{ flex: Number(ratio![3]) / 100 }}>
-          {column_4.map((block) => extractContentOfBlock(block! as any))}
-        </div>
+    <GridAligner reversed={reversed}>
+      {columns.map((column, index) =>
+        column ? (
+          <div style={{ flex: Number(ratio![index]) / 100 }}>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {column.map((block) => extractContentOfBlock(block! as any))}
+            </div>
+          </div>
+        ) : null
       )}
     </GridAligner>
   );

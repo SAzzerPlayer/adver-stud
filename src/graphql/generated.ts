@@ -247,6 +247,7 @@ export enum ContentfulActionBlockFieldsEnum {
   ButtonActionblockIllustrationNodeLocale = "button___actionblock___illustration___node_locale",
   ButtonActionblockIllustrationPlaceholderUrl = "button___actionblock___illustration___placeholderUrl",
   ButtonActionblockIllustrationPublicUrl = "button___actionblock___illustration___publicUrl",
+  ButtonActionblockIllustrationSize = "button___actionblock___illustration___size",
   ButtonActionblockIllustrationSpaceId = "button___actionblock___illustration___spaceId",
   ButtonActionblockIllustrationTitle = "button___actionblock___illustration___title",
   ButtonActionblockIllustrationUpdatedAt = "button___actionblock___illustration___updatedAt",
@@ -431,6 +432,7 @@ export enum ContentfulActionBlockFieldsEnum {
   ButtonImageResizeSrc = "button___image___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   ButtonImageResizeWidth = "button___image___resize___width",
+  ButtonImageSize = "button___image___size",
   ButtonImageSpaceId = "button___image___spaceId",
   ButtonImageSysRevision = "button___image___sys___revision",
   ButtonImageSysType = "button___image___sys___type",
@@ -498,6 +500,7 @@ export enum ContentfulActionBlockFieldsEnum {
   ButtonPersonImageNodeLocale = "button___person___image___node_locale",
   ButtonPersonImagePlaceholderUrl = "button___person___image___placeholderUrl",
   ButtonPersonImagePublicUrl = "button___person___image___publicUrl",
+  ButtonPersonImageSize = "button___person___image___size",
   ButtonPersonImageSpaceId = "button___person___image___spaceId",
   ButtonPersonImageTitle = "button___person___image___title",
   ButtonPersonImageUpdatedAt = "button___person___image___updatedAt",
@@ -1022,6 +1025,7 @@ export enum ContentfulActionBlockFieldsEnum {
   IllustrationResizeSrc = "illustration___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   IllustrationResizeWidth = "illustration___resize___width",
+  IllustrationSize = "illustration___size",
   IllustrationSpaceId = "illustration___spaceId",
   IllustrationSysRevision = "illustration___sys___revision",
   IllustrationSysType = "illustration___sys___type",
@@ -1306,6 +1310,7 @@ export type ContentfulAsset = ContentfulReference &
     placeholderUrl?: Maybe<Scalars["String"]>;
     publicUrl: Scalars["String"];
     resize?: Maybe<RemoteFileResize>;
+    size?: Maybe<Scalars["Int"]>;
     spaceId?: Maybe<Scalars["String"]>;
     sys?: Maybe<ContentfulAssetSys>;
     title?: Maybe<Scalars["String"]>;
@@ -1527,6 +1532,7 @@ export enum ContentfulAssetFieldsEnum {
   ResizeSrc = "resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   ResizeWidth = "resize___width",
+  Size = "size",
   SpaceId = "spaceId",
   SysRevision = "sys___revision",
   SysType = "sys___type",
@@ -1592,6 +1598,7 @@ export type ContentfulAssetFilterInput = {
   placeholderUrl?: InputMaybe<StringQueryOperatorInput>;
   publicUrl?: InputMaybe<StringQueryOperatorInput>;
   resize?: InputMaybe<RemoteFileResizeFilterInput>;
+  size?: InputMaybe<IntQueryOperatorInput>;
   spaceId?: InputMaybe<StringQueryOperatorInput>;
   sys?: InputMaybe<ContentfulAssetSysFilterInput>;
   title?: InputMaybe<StringQueryOperatorInput>;
@@ -3194,6 +3201,7 @@ export enum ContentfulLinkFieldsEnum {
   ActionblockButtonImageNodeLocale = "actionblock___button___image___node_locale",
   ActionblockButtonImagePlaceholderUrl = "actionblock___button___image___placeholderUrl",
   ActionblockButtonImagePublicUrl = "actionblock___button___image___publicUrl",
+  ActionblockButtonImageSize = "actionblock___button___image___size",
   ActionblockButtonImageSpaceId = "actionblock___button___image___spaceId",
   ActionblockButtonImageTitle = "actionblock___button___image___title",
   ActionblockButtonImageUpdatedAt = "actionblock___button___image___updatedAt",
@@ -3382,6 +3390,7 @@ export enum ContentfulLinkFieldsEnum {
   ActionblockIllustrationResizeSrc = "actionblock___illustration___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   ActionblockIllustrationResizeWidth = "actionblock___illustration___resize___width",
+  ActionblockIllustrationSize = "actionblock___illustration___size",
   ActionblockIllustrationSpaceId = "actionblock___illustration___spaceId",
   ActionblockIllustrationSysRevision = "actionblock___illustration___sys___revision",
   ActionblockIllustrationSysType = "actionblock___illustration___sys___type",
@@ -3782,6 +3791,7 @@ export enum ContentfulLinkFieldsEnum {
   ImageResizeSrc = "image___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   ImageResizeWidth = "image___resize___width",
+  ImageSize = "image___size",
   ImageSpaceId = "image___spaceId",
   ImageSysRevision = "image___sys___revision",
   ImageSysType = "image___sys___type",
@@ -3940,6 +3950,7 @@ export enum ContentfulLinkFieldsEnum {
   PersonImageResizeSrc = "person___image___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   PersonImageResizeWidth = "person___image___resize___width",
+  PersonImageSize = "person___image___size",
   PersonImageSpaceId = "person___image___spaceId",
   PersonImageSysRevision = "person___image___sys___revision",
   PersonImageSysType = "person___image___sys___type",
@@ -4016,6 +4027,7 @@ export enum ContentfulLinkFieldsEnum {
   PersonSocialLinksImageNodeLocale = "person___socialLinks___image___node_locale",
   PersonSocialLinksImagePlaceholderUrl = "person___socialLinks___image___placeholderUrl",
   PersonSocialLinksImagePublicUrl = "person___socialLinks___image___publicUrl",
+  PersonSocialLinksImageSize = "person___socialLinks___image___size",
   PersonSocialLinksImageSpaceId = "person___socialLinks___image___spaceId",
   PersonSocialLinksImageTitle = "person___socialLinks___image___title",
   PersonSocialLinksImageUpdatedAt = "person___socialLinks___image___updatedAt",
@@ -4153,6 +4165,7 @@ export enum ContentfulLinkFieldsEnum {
   SiteoptionsBottomBarLogoImageNodeLocale = "siteoptions___bottomBarLogo___image___node_locale",
   SiteoptionsBottomBarLogoImagePlaceholderUrl = "siteoptions___bottomBarLogo___image___placeholderUrl",
   SiteoptionsBottomBarLogoImagePublicUrl = "siteoptions___bottomBarLogo___image___publicUrl",
+  SiteoptionsBottomBarLogoImageSize = "siteoptions___bottomBarLogo___image___size",
   SiteoptionsBottomBarLogoImageSpaceId = "siteoptions___bottomBarLogo___image___spaceId",
   SiteoptionsBottomBarLogoImageTitle = "siteoptions___bottomBarLogo___image___title",
   SiteoptionsBottomBarLogoImageUpdatedAt = "siteoptions___bottomBarLogo___image___updatedAt",
@@ -4249,6 +4262,7 @@ export enum ContentfulLinkFieldsEnum {
   SiteoptionsBottomBarSocialLinksImageNodeLocale = "siteoptions___bottomBarSocialLinks___image___node_locale",
   SiteoptionsBottomBarSocialLinksImagePlaceholderUrl = "siteoptions___bottomBarSocialLinks___image___placeholderUrl",
   SiteoptionsBottomBarSocialLinksImagePublicUrl = "siteoptions___bottomBarSocialLinks___image___publicUrl",
+  SiteoptionsBottomBarSocialLinksImageSize = "siteoptions___bottomBarSocialLinks___image___size",
   SiteoptionsBottomBarSocialLinksImageSpaceId = "siteoptions___bottomBarSocialLinks___image___spaceId",
   SiteoptionsBottomBarSocialLinksImageTitle = "siteoptions___bottomBarSocialLinks___image___title",
   SiteoptionsBottomBarSocialLinksImageUpdatedAt = "siteoptions___bottomBarSocialLinks___image___updatedAt",
@@ -4345,6 +4359,7 @@ export enum ContentfulLinkFieldsEnum {
   SiteoptionsBottomBarTabsImageNodeLocale = "siteoptions___bottomBarTabs___image___node_locale",
   SiteoptionsBottomBarTabsImagePlaceholderUrl = "siteoptions___bottomBarTabs___image___placeholderUrl",
   SiteoptionsBottomBarTabsImagePublicUrl = "siteoptions___bottomBarTabs___image___publicUrl",
+  SiteoptionsBottomBarTabsImageSize = "siteoptions___bottomBarTabs___image___size",
   SiteoptionsBottomBarTabsImageSpaceId = "siteoptions___bottomBarTabs___image___spaceId",
   SiteoptionsBottomBarTabsImageTitle = "siteoptions___bottomBarTabs___image___title",
   SiteoptionsBottomBarTabsImageUpdatedAt = "siteoptions___bottomBarTabs___image___updatedAt",
@@ -4485,6 +4500,7 @@ export enum ContentfulLinkFieldsEnum {
   SiteoptionsTopBarLogoImageNodeLocale = "siteoptions___topBarLogo___image___node_locale",
   SiteoptionsTopBarLogoImagePlaceholderUrl = "siteoptions___topBarLogo___image___placeholderUrl",
   SiteoptionsTopBarLogoImagePublicUrl = "siteoptions___topBarLogo___image___publicUrl",
+  SiteoptionsTopBarLogoImageSize = "siteoptions___topBarLogo___image___size",
   SiteoptionsTopBarLogoImageSpaceId = "siteoptions___topBarLogo___image___spaceId",
   SiteoptionsTopBarLogoImageTitle = "siteoptions___topBarLogo___image___title",
   SiteoptionsTopBarLogoImageUpdatedAt = "siteoptions___topBarLogo___image___updatedAt",
@@ -4581,6 +4597,7 @@ export enum ContentfulLinkFieldsEnum {
   SiteoptionsTopBarSocialLinksImageNodeLocale = "siteoptions___topBarSocialLinks___image___node_locale",
   SiteoptionsTopBarSocialLinksImagePlaceholderUrl = "siteoptions___topBarSocialLinks___image___placeholderUrl",
   SiteoptionsTopBarSocialLinksImagePublicUrl = "siteoptions___topBarSocialLinks___image___publicUrl",
+  SiteoptionsTopBarSocialLinksImageSize = "siteoptions___topBarSocialLinks___image___size",
   SiteoptionsTopBarSocialLinksImageSpaceId = "siteoptions___topBarSocialLinks___image___spaceId",
   SiteoptionsTopBarSocialLinksImageTitle = "siteoptions___topBarSocialLinks___image___title",
   SiteoptionsTopBarSocialLinksImageUpdatedAt = "siteoptions___topBarSocialLinks___image___updatedAt",
@@ -4677,6 +4694,7 @@ export enum ContentfulLinkFieldsEnum {
   SiteoptionsTopBarTabsImageNodeLocale = "siteoptions___topBarTabs___image___node_locale",
   SiteoptionsTopBarTabsImagePlaceholderUrl = "siteoptions___topBarTabs___image___placeholderUrl",
   SiteoptionsTopBarTabsImagePublicUrl = "siteoptions___topBarTabs___image___publicUrl",
+  SiteoptionsTopBarTabsImageSize = "siteoptions___topBarTabs___image___size",
   SiteoptionsTopBarTabsImageSpaceId = "siteoptions___topBarTabs___image___spaceId",
   SiteoptionsTopBarTabsImageTitle = "siteoptions___topBarTabs___image___title",
   SiteoptionsTopBarTabsImageUpdatedAt = "siteoptions___topBarTabs___image___updatedAt",
@@ -6197,6 +6215,7 @@ export enum ContentfulPersonFieldsEnum {
   ImageResizeSrc = "image___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   ImageResizeWidth = "image___resize___width",
+  ImageSize = "image___size",
   ImageSpaceId = "image___spaceId",
   ImageSysRevision = "image___sys___revision",
   ImageSysType = "image___sys___type",
@@ -6313,6 +6332,7 @@ export enum ContentfulPersonFieldsEnum {
   SocialLinksActionblockIllustrationNodeLocale = "socialLinks___actionblock___illustration___node_locale",
   SocialLinksActionblockIllustrationPlaceholderUrl = "socialLinks___actionblock___illustration___placeholderUrl",
   SocialLinksActionblockIllustrationPublicUrl = "socialLinks___actionblock___illustration___publicUrl",
+  SocialLinksActionblockIllustrationSize = "socialLinks___actionblock___illustration___size",
   SocialLinksActionblockIllustrationSpaceId = "socialLinks___actionblock___illustration___spaceId",
   SocialLinksActionblockIllustrationTitle = "socialLinks___actionblock___illustration___title",
   SocialLinksActionblockIllustrationUpdatedAt = "socialLinks___actionblock___illustration___updatedAt",
@@ -6497,6 +6517,7 @@ export enum ContentfulPersonFieldsEnum {
   SocialLinksImageResizeSrc = "socialLinks___image___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   SocialLinksImageResizeWidth = "socialLinks___image___resize___width",
+  SocialLinksImageSize = "socialLinks___image___size",
   SocialLinksImageSpaceId = "socialLinks___image___spaceId",
   SocialLinksImageSysRevision = "socialLinks___image___sys___revision",
   SocialLinksImageSysType = "socialLinks___image___sys___type",
@@ -6564,6 +6585,7 @@ export enum ContentfulPersonFieldsEnum {
   SocialLinksPersonImageNodeLocale = "socialLinks___person___image___node_locale",
   SocialLinksPersonImagePlaceholderUrl = "socialLinks___person___image___placeholderUrl",
   SocialLinksPersonImagePublicUrl = "socialLinks___person___image___publicUrl",
+  SocialLinksPersonImageSize = "socialLinks___person___image___size",
   SocialLinksPersonImageSpaceId = "socialLinks___person___image___spaceId",
   SocialLinksPersonImageTitle = "socialLinks___person___image___title",
   SocialLinksPersonImageUpdatedAt = "socialLinks___person___image___updatedAt",
@@ -7117,6 +7139,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   BottomBarLogoActionblockIllustrationNodeLocale = "bottomBarLogo___actionblock___illustration___node_locale",
   BottomBarLogoActionblockIllustrationPlaceholderUrl = "bottomBarLogo___actionblock___illustration___placeholderUrl",
   BottomBarLogoActionblockIllustrationPublicUrl = "bottomBarLogo___actionblock___illustration___publicUrl",
+  BottomBarLogoActionblockIllustrationSize = "bottomBarLogo___actionblock___illustration___size",
   BottomBarLogoActionblockIllustrationSpaceId = "bottomBarLogo___actionblock___illustration___spaceId",
   BottomBarLogoActionblockIllustrationTitle = "bottomBarLogo___actionblock___illustration___title",
   BottomBarLogoActionblockIllustrationUpdatedAt = "bottomBarLogo___actionblock___illustration___updatedAt",
@@ -7301,6 +7324,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   BottomBarLogoImageResizeSrc = "bottomBarLogo___image___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   BottomBarLogoImageResizeWidth = "bottomBarLogo___image___resize___width",
+  BottomBarLogoImageSize = "bottomBarLogo___image___size",
   BottomBarLogoImageSpaceId = "bottomBarLogo___image___spaceId",
   BottomBarLogoImageSysRevision = "bottomBarLogo___image___sys___revision",
   BottomBarLogoImageSysType = "bottomBarLogo___image___sys___type",
@@ -7368,6 +7392,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   BottomBarLogoPersonImageNodeLocale = "bottomBarLogo___person___image___node_locale",
   BottomBarLogoPersonImagePlaceholderUrl = "bottomBarLogo___person___image___placeholderUrl",
   BottomBarLogoPersonImagePublicUrl = "bottomBarLogo___person___image___publicUrl",
+  BottomBarLogoPersonImageSize = "bottomBarLogo___person___image___size",
   BottomBarLogoPersonImageSpaceId = "bottomBarLogo___person___image___spaceId",
   BottomBarLogoPersonImageTitle = "bottomBarLogo___person___image___title",
   BottomBarLogoPersonImageUpdatedAt = "bottomBarLogo___person___image___updatedAt",
@@ -7633,6 +7658,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   BottomBarSocialLinksActionblockIllustrationNodeLocale = "bottomBarSocialLinks___actionblock___illustration___node_locale",
   BottomBarSocialLinksActionblockIllustrationPlaceholderUrl = "bottomBarSocialLinks___actionblock___illustration___placeholderUrl",
   BottomBarSocialLinksActionblockIllustrationPublicUrl = "bottomBarSocialLinks___actionblock___illustration___publicUrl",
+  BottomBarSocialLinksActionblockIllustrationSize = "bottomBarSocialLinks___actionblock___illustration___size",
   BottomBarSocialLinksActionblockIllustrationSpaceId = "bottomBarSocialLinks___actionblock___illustration___spaceId",
   BottomBarSocialLinksActionblockIllustrationTitle = "bottomBarSocialLinks___actionblock___illustration___title",
   BottomBarSocialLinksActionblockIllustrationUpdatedAt = "bottomBarSocialLinks___actionblock___illustration___updatedAt",
@@ -7817,6 +7843,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   BottomBarSocialLinksImageResizeSrc = "bottomBarSocialLinks___image___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   BottomBarSocialLinksImageResizeWidth = "bottomBarSocialLinks___image___resize___width",
+  BottomBarSocialLinksImageSize = "bottomBarSocialLinks___image___size",
   BottomBarSocialLinksImageSpaceId = "bottomBarSocialLinks___image___spaceId",
   BottomBarSocialLinksImageSysRevision = "bottomBarSocialLinks___image___sys___revision",
   BottomBarSocialLinksImageSysType = "bottomBarSocialLinks___image___sys___type",
@@ -7884,6 +7911,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   BottomBarSocialLinksPersonImageNodeLocale = "bottomBarSocialLinks___person___image___node_locale",
   BottomBarSocialLinksPersonImagePlaceholderUrl = "bottomBarSocialLinks___person___image___placeholderUrl",
   BottomBarSocialLinksPersonImagePublicUrl = "bottomBarSocialLinks___person___image___publicUrl",
+  BottomBarSocialLinksPersonImageSize = "bottomBarSocialLinks___person___image___size",
   BottomBarSocialLinksPersonImageSpaceId = "bottomBarSocialLinks___person___image___spaceId",
   BottomBarSocialLinksPersonImageTitle = "bottomBarSocialLinks___person___image___title",
   BottomBarSocialLinksPersonImageUpdatedAt = "bottomBarSocialLinks___person___image___updatedAt",
@@ -8149,6 +8177,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   BottomBarTabsActionblockIllustrationNodeLocale = "bottomBarTabs___actionblock___illustration___node_locale",
   BottomBarTabsActionblockIllustrationPlaceholderUrl = "bottomBarTabs___actionblock___illustration___placeholderUrl",
   BottomBarTabsActionblockIllustrationPublicUrl = "bottomBarTabs___actionblock___illustration___publicUrl",
+  BottomBarTabsActionblockIllustrationSize = "bottomBarTabs___actionblock___illustration___size",
   BottomBarTabsActionblockIllustrationSpaceId = "bottomBarTabs___actionblock___illustration___spaceId",
   BottomBarTabsActionblockIllustrationTitle = "bottomBarTabs___actionblock___illustration___title",
   BottomBarTabsActionblockIllustrationUpdatedAt = "bottomBarTabs___actionblock___illustration___updatedAt",
@@ -8333,6 +8362,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   BottomBarTabsImageResizeSrc = "bottomBarTabs___image___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   BottomBarTabsImageResizeWidth = "bottomBarTabs___image___resize___width",
+  BottomBarTabsImageSize = "bottomBarTabs___image___size",
   BottomBarTabsImageSpaceId = "bottomBarTabs___image___spaceId",
   BottomBarTabsImageSysRevision = "bottomBarTabs___image___sys___revision",
   BottomBarTabsImageSysType = "bottomBarTabs___image___sys___type",
@@ -8400,6 +8430,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   BottomBarTabsPersonImageNodeLocale = "bottomBarTabs___person___image___node_locale",
   BottomBarTabsPersonImagePlaceholderUrl = "bottomBarTabs___person___image___placeholderUrl",
   BottomBarTabsPersonImagePublicUrl = "bottomBarTabs___person___image___publicUrl",
+  BottomBarTabsPersonImageSize = "bottomBarTabs___person___image___size",
   BottomBarTabsPersonImageSpaceId = "bottomBarTabs___person___image___spaceId",
   BottomBarTabsPersonImageTitle = "bottomBarTabs___person___image___title",
   BottomBarTabsPersonImageUpdatedAt = "bottomBarTabs___person___image___updatedAt",
@@ -8760,6 +8791,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   TopBarLogoActionblockIllustrationNodeLocale = "topBarLogo___actionblock___illustration___node_locale",
   TopBarLogoActionblockIllustrationPlaceholderUrl = "topBarLogo___actionblock___illustration___placeholderUrl",
   TopBarLogoActionblockIllustrationPublicUrl = "topBarLogo___actionblock___illustration___publicUrl",
+  TopBarLogoActionblockIllustrationSize = "topBarLogo___actionblock___illustration___size",
   TopBarLogoActionblockIllustrationSpaceId = "topBarLogo___actionblock___illustration___spaceId",
   TopBarLogoActionblockIllustrationTitle = "topBarLogo___actionblock___illustration___title",
   TopBarLogoActionblockIllustrationUpdatedAt = "topBarLogo___actionblock___illustration___updatedAt",
@@ -8944,6 +8976,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   TopBarLogoImageResizeSrc = "topBarLogo___image___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   TopBarLogoImageResizeWidth = "topBarLogo___image___resize___width",
+  TopBarLogoImageSize = "topBarLogo___image___size",
   TopBarLogoImageSpaceId = "topBarLogo___image___spaceId",
   TopBarLogoImageSysRevision = "topBarLogo___image___sys___revision",
   TopBarLogoImageSysType = "topBarLogo___image___sys___type",
@@ -9011,6 +9044,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   TopBarLogoPersonImageNodeLocale = "topBarLogo___person___image___node_locale",
   TopBarLogoPersonImagePlaceholderUrl = "topBarLogo___person___image___placeholderUrl",
   TopBarLogoPersonImagePublicUrl = "topBarLogo___person___image___publicUrl",
+  TopBarLogoPersonImageSize = "topBarLogo___person___image___size",
   TopBarLogoPersonImageSpaceId = "topBarLogo___person___image___spaceId",
   TopBarLogoPersonImageTitle = "topBarLogo___person___image___title",
   TopBarLogoPersonImageUpdatedAt = "topBarLogo___person___image___updatedAt",
@@ -9276,6 +9310,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   TopBarSocialLinksActionblockIllustrationNodeLocale = "topBarSocialLinks___actionblock___illustration___node_locale",
   TopBarSocialLinksActionblockIllustrationPlaceholderUrl = "topBarSocialLinks___actionblock___illustration___placeholderUrl",
   TopBarSocialLinksActionblockIllustrationPublicUrl = "topBarSocialLinks___actionblock___illustration___publicUrl",
+  TopBarSocialLinksActionblockIllustrationSize = "topBarSocialLinks___actionblock___illustration___size",
   TopBarSocialLinksActionblockIllustrationSpaceId = "topBarSocialLinks___actionblock___illustration___spaceId",
   TopBarSocialLinksActionblockIllustrationTitle = "topBarSocialLinks___actionblock___illustration___title",
   TopBarSocialLinksActionblockIllustrationUpdatedAt = "topBarSocialLinks___actionblock___illustration___updatedAt",
@@ -9460,6 +9495,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   TopBarSocialLinksImageResizeSrc = "topBarSocialLinks___image___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   TopBarSocialLinksImageResizeWidth = "topBarSocialLinks___image___resize___width",
+  TopBarSocialLinksImageSize = "topBarSocialLinks___image___size",
   TopBarSocialLinksImageSpaceId = "topBarSocialLinks___image___spaceId",
   TopBarSocialLinksImageSysRevision = "topBarSocialLinks___image___sys___revision",
   TopBarSocialLinksImageSysType = "topBarSocialLinks___image___sys___type",
@@ -9527,6 +9563,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   TopBarSocialLinksPersonImageNodeLocale = "topBarSocialLinks___person___image___node_locale",
   TopBarSocialLinksPersonImagePlaceholderUrl = "topBarSocialLinks___person___image___placeholderUrl",
   TopBarSocialLinksPersonImagePublicUrl = "topBarSocialLinks___person___image___publicUrl",
+  TopBarSocialLinksPersonImageSize = "topBarSocialLinks___person___image___size",
   TopBarSocialLinksPersonImageSpaceId = "topBarSocialLinks___person___image___spaceId",
   TopBarSocialLinksPersonImageTitle = "topBarSocialLinks___person___image___title",
   TopBarSocialLinksPersonImageUpdatedAt = "topBarSocialLinks___person___image___updatedAt",
@@ -9792,6 +9829,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   TopBarTabsActionblockIllustrationNodeLocale = "topBarTabs___actionblock___illustration___node_locale",
   TopBarTabsActionblockIllustrationPlaceholderUrl = "topBarTabs___actionblock___illustration___placeholderUrl",
   TopBarTabsActionblockIllustrationPublicUrl = "topBarTabs___actionblock___illustration___publicUrl",
+  TopBarTabsActionblockIllustrationSize = "topBarTabs___actionblock___illustration___size",
   TopBarTabsActionblockIllustrationSpaceId = "topBarTabs___actionblock___illustration___spaceId",
   TopBarTabsActionblockIllustrationTitle = "topBarTabs___actionblock___illustration___title",
   TopBarTabsActionblockIllustrationUpdatedAt = "topBarTabs___actionblock___illustration___updatedAt",
@@ -9976,6 +10014,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   TopBarTabsImageResizeSrc = "topBarTabs___image___resize___src",
   /** @deprecated Sorting on fields that need arguments to resolve is deprecated. */
   TopBarTabsImageResizeWidth = "topBarTabs___image___resize___width",
+  TopBarTabsImageSize = "topBarTabs___image___size",
   TopBarTabsImageSpaceId = "topBarTabs___image___spaceId",
   TopBarTabsImageSysRevision = "topBarTabs___image___sys___revision",
   TopBarTabsImageSysType = "topBarTabs___image___sys___type",
@@ -10043,6 +10082,7 @@ export enum ContentfulSiteOptionsFieldsEnum {
   TopBarTabsPersonImageNodeLocale = "topBarTabs___person___image___node_locale",
   TopBarTabsPersonImagePlaceholderUrl = "topBarTabs___person___image___placeholderUrl",
   TopBarTabsPersonImagePublicUrl = "topBarTabs___person___image___publicUrl",
+  TopBarTabsPersonImageSize = "topBarTabs___person___image___size",
   TopBarTabsPersonImageSpaceId = "topBarTabs___person___image___spaceId",
   TopBarTabsPersonImageTitle = "topBarTabs___person___image___title",
   TopBarTabsPersonImageUpdatedAt = "topBarTabs___person___image___updatedAt",
@@ -15886,6 +15926,7 @@ export type QueryContentfulAssetArgs = {
   placeholderUrl?: InputMaybe<StringQueryOperatorInput>;
   publicUrl?: InputMaybe<StringQueryOperatorInput>;
   resize?: InputMaybe<RemoteFileResizeFilterInput>;
+  size?: InputMaybe<IntQueryOperatorInput>;
   spaceId?: InputMaybe<StringQueryOperatorInput>;
   sys?: InputMaybe<ContentfulAssetSysFilterInput>;
   title?: InputMaybe<StringQueryOperatorInput>;
@@ -16430,6 +16471,7 @@ export enum RemoteFilePlaceholder {
   Blurred = "BLURRED",
   DominantColor = "DOMINANT_COLOR",
   None = "NONE",
+  TracedSvg = "TRACED_SVG",
 }
 
 export type RemoteFileResize = {
@@ -18385,114 +18427,98 @@ export type PagesQueryQuery = {
   };
 };
 
-export type FindSiteMainOptionsBottomTabQueryVariables = Exact<{
-  [key: string]: never;
-}>;
+export type GetAllSiteOptionsQueryVariables = Exact<{ [key: string]: never }>;
 
-export type FindSiteMainOptionsBottomTabQuery = {
+export type GetAllSiteOptionsQuery = {
   __typename?: "Query";
-  contentfulSiteOptions?: {
-    __typename?: "ContentfulSiteOptions";
-    id: string;
-    node_locale: string;
-    contentfulid?: string | null;
-    contentful_id: string;
-    bottomBarLogo?: {
-      __typename?: "ContentfulLink";
-      id: string;
+  allContentfulSiteOptions: {
+    __typename?: "ContentfulSiteOptionsConnection";
+    nodes: Array<{
+      __typename?: "ContentfulSiteOptions";
       node_locale: string;
-      title?: string | null;
-      url?: {
-        __typename?: "contentfulLinkUrlTextNode";
-        url?: string | null;
-      } | null;
-      image?: {
-        __typename?: "ContentfulAsset";
-        gatsbyImageData?: any | null;
-        description?: string | null;
-      } | null;
-    } | null;
-    bottomBarTabs?: Array<{
-      __typename?: "ContentfulLink";
       id: string;
-      node_locale: string;
-      title?: string | null;
-      url?: {
-        __typename?: "contentfulLinkUrlTextNode";
-        url?: string | null;
-      } | null;
-    } | null> | null;
-    bottomBarSocialLinks?: Array<{
-      __typename?: "ContentfulLink";
-      id: string;
-      node_locale: string;
-      url?: {
-        __typename?: "contentfulLinkUrlTextNode";
-        url?: string | null;
-      } | null;
-      image?: {
-        __typename?: "ContentfulAsset";
+      topBarLogo?: {
+        __typename?: "ContentfulLink";
         id: string;
-        description?: string | null;
-        gatsbyImage?: any | null;
+        node_locale: string;
+        title?: string | null;
+        url?: {
+          __typename?: "contentfulLinkUrlTextNode";
+          url?: string | null;
+        } | null;
+        image?: {
+          __typename?: "ContentfulAsset";
+          gatsbyImageData?: any | null;
+          description?: string | null;
+        } | null;
       } | null;
-    } | null> | null;
-  } | null;
-};
-
-export type FindSiteMainOptionsTopTabQueryVariables = Exact<{
-  [key: string]: never;
-}>;
-
-export type FindSiteMainOptionsTopTabQuery = {
-  __typename?: "Query";
-  contentfulSiteOptions?: {
-    __typename?: "ContentfulSiteOptions";
-    id: string;
-    node_locale: string;
-    contentfulid?: string | null;
-    contentful_id: string;
-    topBarLogo?: {
-      __typename?: "ContentfulLink";
-      id: string;
-      node_locale: string;
-      title?: string | null;
-      url?: {
-        __typename?: "contentfulLinkUrlTextNode";
-        url?: string | null;
-      } | null;
-      image?: {
-        __typename?: "ContentfulAsset";
-        gatsbyImageData?: any | null;
-        description?: string | null;
-      } | null;
-    } | null;
-    topBarTabs?: Array<{
-      __typename?: "ContentfulLink";
-      id: string;
-      node_locale: string;
-      title?: string | null;
-      url?: {
-        __typename?: "contentfulLinkUrlTextNode";
-        url?: string | null;
-      } | null;
-    } | null> | null;
-    topBarSocialLinks?: Array<{
-      __typename?: "ContentfulLink";
-      id: string;
-      node_locale: string;
-      url?: {
-        __typename?: "contentfulLinkUrlTextNode";
-        url?: string | null;
-      } | null;
-      image?: {
-        __typename?: "ContentfulAsset";
+      topBarTabs?: Array<{
+        __typename?: "ContentfulLink";
         id: string;
-        description?: string | null;
-        gatsbyImage?: any | null;
+        node_locale: string;
+        title?: string | null;
+        url?: {
+          __typename?: "contentfulLinkUrlTextNode";
+          url?: string | null;
+        } | null;
+      } | null> | null;
+      topBarSocialLinks?: Array<{
+        __typename?: "ContentfulLink";
+        id: string;
+        node_locale: string;
+        url?: {
+          __typename?: "contentfulLinkUrlTextNode";
+          url?: string | null;
+        } | null;
+        image?: {
+          __typename?: "ContentfulAsset";
+          id: string;
+          description?: string | null;
+          gatsbyImage?: any | null;
+        } | null;
+      } | null> | null;
+      bottomBarLogo?: {
+        __typename?: "ContentfulLink";
+        id: string;
+        node_locale: string;
+        title?: string | null;
+        url?: {
+          __typename?: "contentfulLinkUrlTextNode";
+          url?: string | null;
+        } | null;
+        image?: {
+          __typename?: "ContentfulAsset";
+          gatsbyImageData?: any | null;
+          description?: string | null;
+        } | null;
       } | null;
-    } | null> | null;
-  } | null;
+      bottomBarTabs?: Array<{
+        __typename?: "ContentfulLink";
+        id: string;
+        node_locale: string;
+        title?: string | null;
+        url?: {
+          __typename?: "contentfulLinkUrlTextNode";
+          url?: string | null;
+        } | null;
+      } | null> | null;
+      bottomBarSocialLinks?: Array<{
+        __typename?: "ContentfulLink";
+        id: string;
+        node_locale: string;
+        url?: {
+          __typename?: "contentfulLinkUrlTextNode";
+          url?: string | null;
+        } | null;
+        image?: {
+          __typename?: "ContentfulAsset";
+          id: string;
+          description?: string | null;
+          gatsbyImage?: any | null;
+        } | null;
+      } | null> | null;
+    }>;
+  };
 };
 
 export type TabsColumnFragment = {
@@ -18577,6 +18603,7 @@ export type TabsColumnFragment = {
               socialLinks?: Array<{
                 __typename?: "ContentfulLink";
                 id: string;
+                node_locale: string;
                 title?: string | null;
                 url?: {
                   __typename?: "contentfulLinkUrlTextNode";
@@ -19048,6 +19075,7 @@ export type TabsFragment = {
                 socialLinks?: Array<{
                   __typename?: "ContentfulLink";
                   id: string;
+                  node_locale: string;
                   title?: string | null;
                   url?: {
                     __typename?: "contentfulLinkUrlTextNode";
@@ -19954,6 +19982,7 @@ export type GetAllSiteContentQuery = {
                             socialLinks?: Array<{
                               __typename?: "ContentfulLink";
                               id: string;
+                              node_locale: string;
                               title?: string | null;
                               url?: {
                                 __typename?: "contentfulLinkUrlTextNode";
@@ -20597,6 +20626,7 @@ export const TabsColumnFragmentDoc = `
           }
           socialLinks {
             id
+            node_locale
             title
             url {
               url
@@ -20916,132 +20946,96 @@ export const usePagesQueryQuery = <TData = PagesQueryQuery, TError = unknown>(
     ),
     options
   );
-export const FindSiteMainOptionsBottomTabDocument = `
-    query FindSiteMainOptionsBottomTab {
-  contentfulSiteOptions(contentfulid: {regex: "/Main/"}) {
-    id
-    node_locale
-    contentfulid
-    contentful_id
-    bottomBarLogo {
-      id
+export const GetAllSiteOptionsDocument = `
+    query GetAllSiteOptions {
+  allContentfulSiteOptions {
+    nodes {
       node_locale
-      title
-      url {
-        url
-      }
-      image {
-        gatsbyImageData
-        description
-      }
-    }
-    bottomBarTabs {
       id
-      node_locale
-      title
-      url {
-        url
-      }
-    }
-    bottomBarSocialLinks {
-      id
-      node_locale
-      url {
-        url
-      }
-      image {
+      topBarLogo {
         id
-        description
-        gatsbyImage(width: 32, height: 32)
+        node_locale
+        title
+        url {
+          url
+        }
+        image {
+          gatsbyImageData
+          description
+        }
+      }
+      topBarTabs {
+        id
+        node_locale
+        title
+        url {
+          url
+        }
+      }
+      topBarSocialLinks {
+        id
+        node_locale
+        url {
+          url
+        }
+        image {
+          id
+          description
+          gatsbyImage(width: 32, height: 32)
+        }
+      }
+      bottomBarLogo {
+        id
+        node_locale
+        title
+        url {
+          url
+        }
+        image {
+          gatsbyImageData
+          description
+        }
+      }
+      bottomBarTabs {
+        id
+        node_locale
+        title
+        url {
+          url
+        }
+      }
+      bottomBarSocialLinks {
+        id
+        node_locale
+        url {
+          url
+        }
+        image {
+          id
+          description
+          gatsbyImage(width: 32, height: 32)
+        }
       }
     }
   }
 }
     `;
-export const useFindSiteMainOptionsBottomTabQuery = <
-  TData = FindSiteMainOptionsBottomTabQuery,
+export const useGetAllSiteOptionsQuery = <
+  TData = GetAllSiteOptionsQuery,
   TError = unknown
 >(
   dataSource: { endpoint: string; fetchParams?: RequestInit },
-  variables?: FindSiteMainOptionsBottomTabQueryVariables,
-  options?: UseQueryOptions<FindSiteMainOptionsBottomTabQuery, TError, TData>
+  variables?: GetAllSiteOptionsQueryVariables,
+  options?: UseQueryOptions<GetAllSiteOptionsQuery, TError, TData>
 ) =>
-  useQuery<FindSiteMainOptionsBottomTabQuery, TError, TData>(
+  useQuery<GetAllSiteOptionsQuery, TError, TData>(
     variables === undefined
-      ? ["FindSiteMainOptionsBottomTab"]
-      : ["FindSiteMainOptionsBottomTab", variables],
-    fetcher<
-      FindSiteMainOptionsBottomTabQuery,
-      FindSiteMainOptionsBottomTabQueryVariables
-    >(
+      ? ["GetAllSiteOptions"]
+      : ["GetAllSiteOptions", variables],
+    fetcher<GetAllSiteOptionsQuery, GetAllSiteOptionsQueryVariables>(
       dataSource.endpoint,
       dataSource.fetchParams || {},
-      FindSiteMainOptionsBottomTabDocument,
-      variables
-    ),
-    options
-  );
-export const FindSiteMainOptionsTopTabDocument = `
-    query FindSiteMainOptionsTopTab {
-  contentfulSiteOptions(contentfulid: {regex: "/Main/"}) {
-    id
-    node_locale
-    contentfulid
-    contentful_id
-    topBarLogo {
-      id
-      node_locale
-      title
-      url {
-        url
-      }
-      image {
-        gatsbyImageData
-        description
-      }
-    }
-    topBarTabs {
-      id
-      node_locale
-      title
-      url {
-        url
-      }
-    }
-    topBarSocialLinks {
-      id
-      node_locale
-      url {
-        url
-      }
-      image {
-        id
-        description
-        gatsbyImage(width: 32, height: 32)
-      }
-    }
-  }
-}
-    `;
-export const useFindSiteMainOptionsTopTabQuery = <
-  TData = FindSiteMainOptionsTopTabQuery,
-  TError = unknown
->(
-  dataSource: { endpoint: string; fetchParams?: RequestInit },
-  variables?: FindSiteMainOptionsTopTabQueryVariables,
-  options?: UseQueryOptions<FindSiteMainOptionsTopTabQuery, TError, TData>
-) =>
-  useQuery<FindSiteMainOptionsTopTabQuery, TError, TData>(
-    variables === undefined
-      ? ["FindSiteMainOptionsTopTab"]
-      : ["FindSiteMainOptionsTopTab", variables],
-    fetcher<
-      FindSiteMainOptionsTopTabQuery,
-      FindSiteMainOptionsTopTabQueryVariables
-    >(
-      dataSource.endpoint,
-      dataSource.fetchParams || {},
-      FindSiteMainOptionsTopTabDocument,
+      GetAllSiteOptionsDocument,
       variables
     ),
     options
