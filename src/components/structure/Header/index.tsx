@@ -3,12 +3,15 @@ import Styled from "./styles";
 import { HoverLink, Icon } from "src/components/shared";
 import { colors } from "src/styles";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { getTopBarSocialTabs, getTopBarTabs } from "./funcs";
-import { ContentfulSiteOptions } from "../../../graphql/generated";
+import { TPageOptions } from "../../../types";
 
-const Header: React.FC<ContentfulSiteOptions> = (props) => {
-  const logoUrl = props.topBarLogo?.url?.url || "/";
-  const logoTitle = props.topBarLogo?.title || "AdverStud";
+const Header: React.FC<TPageOptions> = ({
+  topBarLogo,
+  topBarLinks,
+  topBarSocialLinks,
+}) => {
+  const logoUrl = topBarLogo.url.url || "/";
+  const logoTitle = topBarLogo.title || "AdverStud";
 
   return (
     <Styled.Container>
@@ -22,17 +25,24 @@ const Header: React.FC<ContentfulSiteOptions> = (props) => {
           <Icon name={"close"} size={24} />
         </Styled.MenuLabel>
         <Styled.Tabs>
-          {getTopBarTabs(props).map(({ url, title, locale }, index) => (
-            <HoverLink key={index} to={url} locale={locale}>
+          {topBarLinks.map(({ url, node_locale, title }, index) => (
+            <HoverLink key={index} to={url.url} locale={node_locale}>
               <h6>{title}</h6>
             </HoverLink>
           ))}
         </Styled.Tabs>
         <Styled.Social>
-          {getTopBarSocialTabs(props).map(
-            ({ url, image, alt = "Image" }, index) => (
-              <HoverLink key={index} to={url}>
-                <GatsbyImage alt={alt} image={image} />
+          {topBarSocialLinks.map(
+            ({ url, image, title, node_locale }, index) => (
+              <HoverLink key={index} to={url.url} locale={node_locale}>
+                {image ? (
+                  <GatsbyImage
+                    alt={image.description}
+                    image={image.gatsbyImageData}
+                  />
+                ) : (
+                  <h6>title</h6>
+                )}
               </HoverLink>
             )
           )}

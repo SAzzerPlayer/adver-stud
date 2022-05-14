@@ -1,23 +1,25 @@
 import React from "react";
-import { ContentfulActionBlock } from "src/graphql/generated";
 import { TextContent, Container } from "./styles";
 import { YellowHoverLink } from "src/components/shared";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { TActionBlock } from "../../../types";
 
-export const ActionInfoBlock: React.FC<ContentfulActionBlock> = ({
+export const ActionInfoBlock: React.FC<TActionBlock> = ({
   textPosition = "onLeftSide",
   article,
   button,
   illustration,
-  node_locale,
 }) => {
   const reversed = textPosition === "onRightSide";
   const content = [
     <TextContent key={"content"}>
-      {!!article ? renderRichText({ raw: article.raw!, references: [] }) : null}
+      {!!article ? renderRichText({ raw: article.raw, references: [] }) : null}
       {!!button?.title ? (
-        <YellowHoverLink to={button.url?.url! || "/"} locale={node_locale}>
+        <YellowHoverLink
+          to={button.url.url! || "/"}
+          locale={button.node_locale}
+        >
           {button.title}
         </YellowHoverLink>
       ) : null}

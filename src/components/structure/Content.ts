@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { breakpoints, getGapStyle } from "src/styles";
+import { breakpoints } from "src/styles";
 
 export default styled.main`
   display: flex;

@@ -1,11 +1,10 @@
 import React from "react";
-import { ContentfulPerson } from "../../../graphql/generated";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Styled from "./styles";
-import { RichTextBlock } from "../RichText";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
+import {TPersonBlock} from "../../../types";
 
-export const PersonBlock: React.FC<ContentfulPerson> = ({
+export const PersonBlock: React.FC<TPersonBlock> = ({
   image,
   description,
 }) => {

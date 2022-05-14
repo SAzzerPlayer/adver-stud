@@ -1,15 +1,7 @@
 import React from "react";
-import { ContentfulTextBlock } from "src/graphql/generated";
 import styled from "styled-components";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
-import { Options } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
-
-const options: Options = {
-  renderMark: {
-    [BLOCKS.LIST_ITEM]: (node) => <li>{node}</li>,
-  },
-};
+import { TTextBlock } from "../../../types";
 
 const parseAlignTextTo = (type: string) => {
   if (type === "Left") {
@@ -29,7 +21,7 @@ const parseAlignTextToFlex = (type: string) => {
   return "flex-end";
 };
 
-export const RichTextBlock: React.FC<ContentfulTextBlock> = ({
+export const RichTextBlock: React.FC<TTextBlock> = ({
   alignTextTo = "left",
   text,
 }) => {

@@ -1,14 +1,17 @@
 import React from "react";
 import { SEO } from "src/components/SEO";
 import { Page, Header, Content, Footer } from "src/components/structure";
-import { ContentfulPage, ContentfulSiteOptions } from "src/graphql/generated";
 import { GlobalStyle } from "src/components/GlobalStyle";
 import { ContentBlock } from "src/components/structure/ContentBlock";
+import { TPage } from "../types";
 
-const Template: React.FC<any> = ({ pageContext }) => {
-  const { title, description, content, node_locale, options } =
-    pageContext as ContentfulPage & { options: ContentfulSiteOptions };
-  console.log(pageContext);
+interface ITemplateProps {
+  pageContext: TPage;
+}
+
+const Template: React.FC<ITemplateProps> = ({ pageContext }) => {
+  const { title, description, content, options } = pageContext;
+
   return (
     <>
       <SEO title={title!} description={description?.description} />
@@ -21,8 +24,8 @@ const Template: React.FC<any> = ({ pageContext }) => {
             flex: 1,
           }}
         >
-          {content?.filter(Boolean).map((c, index) => (
-            <ContentBlock {...c!} key={index} />
+          {content.filter(Boolean).map((c, index) => (
+            <ContentBlock {...c} key={index} />
           ))}
         </Content>
         <Footer {...options} />
