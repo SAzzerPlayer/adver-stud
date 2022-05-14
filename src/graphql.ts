@@ -50,6 +50,7 @@ export const getAllPagesDocument = `
     
     fragment ActionBlock on ContentfulActionBlock {
       id
+      type
       textPosition
       illustration {
         title
@@ -69,6 +70,7 @@ export const getAllPagesDocument = `
     
     fragment PersonBlock on ContentfulPerson {
       id
+      type
       image {
         title
         description
@@ -84,6 +86,7 @@ export const getAllPagesDocument = `
     
     fragment TextBlock on ContentfulTextBlock {
       id
+      type
       text {
         raw
       }
@@ -92,6 +95,7 @@ export const getAllPagesDocument = `
     
     fragment TipListBlock on ContentfulTipList {
       id
+      type
       amountOfColumns
       tipMarker
       style
@@ -102,6 +106,7 @@ export const getAllPagesDocument = `
     
     fragment TableBlockColumn on ContentfulTableColumn {
       id
+      type
       align
       title
       content {
@@ -111,6 +116,7 @@ export const getAllPagesDocument = `
     
     fragment TableBlock on ContentfulTable {
       id
+      type
       numerateRows
       columns {
         ...TableBlockColumn
@@ -119,6 +125,7 @@ export const getAllPagesDocument = `
     
     fragment GridBlock on ContentfulGrid {
       id
+      type
       ratio
       alignColumnsOnMobile
       column_1 {
@@ -153,6 +160,7 @@ export const getAllPagesDocument = `
     
     fragment TabsBlockColumn on ContentfulTabsColumn {
       id
+      type
       title
       content {
         ...TextBlock
@@ -166,6 +174,7 @@ export const getAllPagesDocument = `
     
     fragment TabsBlock on ContentfulTabs {
       id
+      type
       initialTab
       tabs {
         ...TabsBlockColumn
@@ -174,6 +183,7 @@ export const getAllPagesDocument = `
     
     fragment ContentBlock on ContentfulContentBlock {
       id
+      type
       margin
       blocks {
         ...TableBlock

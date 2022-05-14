@@ -44,7 +44,7 @@ export type TActionBlock = {
 
 export type TPersonBlock = {
   id: string;
-  type: "person";
+  type: "person-block";
   image: TImage;
   socialLinks?: TLink[];
   description: TRichText;
@@ -69,7 +69,7 @@ export type TTipListBlockTipMarker =
 
 export type TTipListBlock = {
   id: string;
-  type: "tip-list";
+  type: "tip-list-block";
   style: TTipListBlockStyle;
   tipMarker: TTipListBlockTipMarker;
   amountOfColumns: number;
@@ -80,7 +80,7 @@ export type TTableBlockColumnTextAlign = "left" | "center" | "right";
 
 export type TTableBlockColumn = {
   id: string;
-  type: "table-column";
+  type: "table-block-column";
   title: string;
   content: TRichText;
   align: TTableBlockColumnTextAlign;
@@ -88,7 +88,7 @@ export type TTableBlockColumn = {
 
 export type TTableBlock = {
   id: string;
-  type: "table";
+  type: "table-block";
   numerateRows: boolean;
   columns: TTableBlockColumn[];
 };
@@ -129,7 +129,7 @@ export type TGridBlockAlignColumns = "fromLeftToRight" | "fromRightToLeft";
 
 export type TGridBlock = {
   id: string;
-  type: "grid";
+  type: "grid-block";
   ratio: TGridBlockRatio[];
   alignColumnsOnMobile: TGridBlockAlignColumns;
   column_1: TGridBlockColumn;
@@ -150,13 +150,14 @@ export type TTabsBlockColumnContent = TTabsBlockColumnContentBlock[];
 
 export type TTabsBlockColumn = {
   id: string;
-  type: "tabs-column";
+  type: "tabs-block-column";
   title: string;
   content: TTabsBlockColumnContent;
 };
 
 export type TTabsBlock = {
   id: string;
+  type: "tabs-block";
   initialTab: number;
   tabs: TTabsBlockColumn[];
 };
@@ -176,7 +177,7 @@ export type TContentBlockColumn = TContentBlockColumnBlock[];
 
 export type TContentBlock = {
   id: string;
-  type: "content-block";
+  type: "content";
   margin: TContentBlockMargin;
   blocks: TContentBlockColumn;
 };
