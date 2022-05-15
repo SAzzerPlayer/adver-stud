@@ -7,9 +7,9 @@ import {
   TTableBlock,
   TTextBlock,
   TTipListBlock,
-} from "../../../../types";
+} from "src/types";
 import Styles from "./styles";
-import Block from "../index";
+import Block from "..";
 
 const renderBlock = (block: TGridBlockColumnBlock) => {
   if ((block as TTextBlock).type === "text-block") {
@@ -27,7 +27,7 @@ const renderBlock = (block: TGridBlockColumnBlock) => {
 };
 
 const GridBlock: React.FC<TGridBlock> = ({
-  //alignColumnsOnMobile,
+  alignColumnsOnMobile,
   ratio,
   column_1,
   column_2,
@@ -35,16 +35,10 @@ const GridBlock: React.FC<TGridBlock> = ({
   column_4,
 }) => {
   const columns = [column_1, column_2, column_3, column_4];
-  //const reversed = alignColumnsOnMobile === "fromLeftToRight";
   return (
-    <Styles.Container>
+    <Styles.Container alignColumnsOnMobile={alignColumnsOnMobile}>
       {columns.filter(Boolean).map((column, index) => (
-        <Styles.Column
-          key={index}
-          style={{
-            flex: +ratio[index] / 100,
-          }}
-        >
+        <Styles.Column key={index} ratio={ratio[index]}>
           {column?.map((block) => (
             <React.Fragment key={block.id}>{renderBlock(block)}</React.Fragment>
           ))}
