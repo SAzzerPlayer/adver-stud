@@ -14,8 +14,7 @@ const Container = styled.div<{ reversed?: boolean }>`
     align-items: flex-start;
 
     img {
-      max-width: 328px;
-      max-height: 328px;
+      max-width: 416px;
     }
   }
 
@@ -28,7 +27,7 @@ const TextContent = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  
+
   h6,
   p,
   a,

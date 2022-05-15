@@ -55,7 +55,7 @@ export const getAllPagesDocument = `
       illustration {
         title
         description
-        gatsbyImageData(quality: 80, width: 416, height: 416)
+        gatsbyImageData(quality: 80, width: 416, height: 416, aspectRatio: 1)
       }
       article {
         raw
@@ -74,7 +74,7 @@ export const getAllPagesDocument = `
       image {
         title
         description
-        gatsbyImageData
+        gatsbyImageData(quality: 80, aspectRatio: 1)
       }
       socialLinks {
         ...SocialLink

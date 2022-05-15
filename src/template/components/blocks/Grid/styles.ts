@@ -5,9 +5,19 @@ import { breakpoints } from "src/styles";
 const Container = styled.div<{ alignColumnsOnMobile: TGridBlockAlignColumns }>`
   display: flex;
   justify-content: space-between;
+
+  > * + * {
+    margin-left: 16px;
+  }
+
   @media (max-width: ${breakpoints.device}) {
     flex-direction: ${({ alignColumnsOnMobile }) =>
-      alignColumnsOnMobile === "fromLeftToRight" ? "column-reverse" : "column"};
+      alignColumnsOnMobile === "fromRightToLeft" ? "column-reverse" : "column"};
+    
+    > * {
+      margin-left: 0;
+      margin-bottom: 16px;
+    }
   }
 `;
 
