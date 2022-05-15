@@ -9,7 +9,12 @@ const Container = styled.div<{ align: TTextBlockAlignTo }>`
     if (align === "Center") return "center";
     if (align === "Right") return "flex-end";
   }};
-  
+  text-align: ${({ align }) => {
+    if (align === "Left") return "left";
+    if (align === "Center") return "center";
+    if (align === "Right") return "right";
+  }};
+
   h6,
   p,
   a,
@@ -22,7 +27,6 @@ const Container = styled.div<{ align: TTextBlockAlignTo }>`
     margin: 1.25em 0 !important;
     line-height: 160%;
   }
-  
 `;
 
 export default {

@@ -2,6 +2,7 @@ export const getAllPagesDocument = `
     fragment Link on ContentfulLink {
       id
       title
+      node_locale
       url {
         url
       }
@@ -15,6 +16,7 @@ export const getAllPagesDocument = `
     fragment SocialLink on ContentfulLink {
       id
       title
+      node_locale
       url {
         url
       }
@@ -61,10 +63,7 @@ export const getAllPagesDocument = `
         raw
       }
       button {
-        title
-        url {
-          url
-        }
+        ...Link
       }
     }
     

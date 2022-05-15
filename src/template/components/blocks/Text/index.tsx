@@ -1,5 +1,5 @@
 import React from "react";
-import { TTextBlock } from "../../../../types";
+import { TTextBlock } from "src/types";
 import Styles from "./styles";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 

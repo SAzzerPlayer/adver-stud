@@ -12,6 +12,7 @@ const ActionBlock: React.FC<TActionBlock> = ({
   illustration,
 }) => {
   const reversed = textPosition === "onRightSide";
+  console.log(button);
   const content = [
     <Styles.TextContent key={"content"}>
       {!!article ? renderRichText({ raw: article.raw, references: [] }) : null}

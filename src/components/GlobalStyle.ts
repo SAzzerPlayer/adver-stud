@@ -66,6 +66,10 @@ export const GlobalStyle = createGlobalStyle`
     color: ${colors.accentBlack};
   }
   
+  b, strong {
+    font-weight: 900;
+  }
+  
   @font-face {
     font-display: swap;
     font-style: normal;

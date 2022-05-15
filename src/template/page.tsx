@@ -1,19 +1,22 @@
 import React from "react";
 import { SEO } from "src/components/SEO";
 import { GlobalStyle } from "src/components/GlobalStyle";
-import { TPage } from "../types";
+import { TLocale, TPage } from "../types";
 import Structure from "./components/structure";
 import Block from "./components/blocks";
+import { DefaultLocaleContext } from "src/context/DefaultLocale";
 
 interface ITemplateProps {
-  pageContext: TPage;
+  pageContext: TPage & { defaultLocale: TLocale };
 }
 
 const Template: React.FC<ITemplateProps> = ({ pageContext }) => {
-  const { title, description, content, options } = pageContext;
+  const { title, description, content, options, node_locale } = pageContext;
 
   return (
-    <>
+    <DefaultLocaleContext.Provider
+      value={{ ...pageContext.defaultLocale, currentPageLocale: node_locale }}
+    >
       <SEO title={title!} description={description?.description} />
       <GlobalStyle />
       <Structure.Page>
@@ -25,7 +28,7 @@ const Template: React.FC<ITemplateProps> = ({ pageContext }) => {
         </Structure.Content>
         <Structure.Footer {...options} />
       </Structure.Page>
-    </>
+    </DefaultLocaleContext.Provider>
   );
 };
 

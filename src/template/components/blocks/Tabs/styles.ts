@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { colors } from "../../../../styles";
+import { colors, getGapStyle } from "../../../../styles";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  ${getGapStyle("1em", "column")};
 `;
 
 const TabsWrapper = styled.div`

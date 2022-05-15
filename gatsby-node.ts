@@ -9,7 +9,6 @@ const createPages: GatsbyNode["createPages"] = async ({ actions, graphql }) => {
     .data as TGetAllPagesQuery;
 
   const defaultLocale = locales.nodes.find((e) => e.default);
-
   for (const node of pages.nodes) {
     const localePrefix =
       node.node_locale !== defaultLocale?.code ? `/${node.node_locale}` : "";
@@ -19,6 +18,7 @@ const createPages: GatsbyNode["createPages"] = async ({ actions, graphql }) => {
       component: path.resolve("src/template/page.tsx"),
       context: {
         ...node,
+        defaultLocale,
       },
     });
   }

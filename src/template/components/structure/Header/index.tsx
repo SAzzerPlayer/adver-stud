@@ -16,7 +16,7 @@ const Header: React.FC<TPageOptions> = ({
   return (
     <Styled.Container>
       <Styled.Content>
-        <HoverLink to={logoUrl}>
+        <HoverLink to={logoUrl} locale={topBarLogo.node_locale}>
           <h4 style={{ color: colors.accentDarkBlack }}>{logoTitle}</h4>
         </HoverLink>
         <Styled.MenuCheckbox />
