@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import {colors} from "../../../../styles";
+import { colors } from "../../../../styles";
 
 const Container = styled.div`
   font-family: Lora, Roboto, serif;
-  
+
   table {
     width: 100%;
     border-spacing: 8px;
-    
-    td,th {
+
+    td,
+    th {
       padding: 12px 6px;
       text-align: center;
     }
@@ -17,6 +18,8 @@ const Container = styled.div`
       border-radius: 16px;
     }
   }
+
+  overflow: auto;
 `;
 
 export default {

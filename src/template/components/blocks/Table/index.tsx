@@ -1,73 +1,51 @@
 import React from "react";
-import { TTableBlock } from "src/types";
+import { TTableBlock, TTableBlockColumn } from "src/types";
 import Styles from "./styles";
-import { renderRichText } from "gatsby-source-contentful/rich-text";
-import { BLOCKS } from "@contentful/rich-text-types";
+import { breakpoints } from "src/styles";
+import Table from "./UIComponent";
+
+type TBreakpoint = keyof typeof breakpoints;
 
 const TableBlock: React.FC<TTableBlock> = ({ numerateRows, columns }) => {
-  const [titles, setTitles] = React.useState<string[]>([]);
-  const [rows, setRows] = React.useState<React.ReactNode[][]>([]);
+  const [breakpoint, setBreakpoint] = React.useState<TBreakpoint>("monitor");
 
-  React.useLayoutEffect(() => {
-    const newRows: typeof rows = [];
+  React.useEffect(() => {
+    const listener = () => {
+      const width = window.innerWidth;
+      if (width <= +breakpoints.device.split("px")[0]) {
+        setBreakpoint("device");
+      } else if (width <= +breakpoints.laptop.split("px")[0]) {
+        setBreakpoint("laptop");
+      } else {
+        setBreakpoint("monitor");
+      }
+    };
+    listener();
+    window.addEventListener("resize", listener);
+    return () => window.removeEventListener("resize", listener);
+  }, []);
+
+  const tables = React.useMemo(() => {
+    const arr: TTableBlockColumn[][] = [[]];
+    const maxAmount = (() => {
+      if (breakpoint === "device") return 2;
+      if (breakpoint === "laptop") return 4;
+      return 7;
+    })();
     for (let i = 0; i < columns.length; i++) {
-      let j = 0;
-      renderRichText(
-        {
-          raw: columns[i].content.raw,
-          references: [],
-        },
-        {
-          renderNode: {
-            [BLOCKS.LIST_ITEM]: (node, children) => {
-              if (Array.isArray(newRows[j])) {
-                newRows[j][i] = children;
-              } else {
-                newRows[j] = [];
-                for (let z = 0; z < columns.length; z++) {
-                  newRows[j][z] = z === i ? children : null;
-                }
-              }
-              j++;
-              return null;
-            },
-          },
-        }
-      );
+      if (i > 0 && i % maxAmount === 0) {
+        arr.push([]);
+      }
+      arr[arr.length - 1][i % maxAmount] = columns[i];
     }
-    setRows(newRows);
-    setTitles(columns.map(({ title }) => title));
-  }, [columns]);
+    return arr;
+  }, [columns, breakpoint]);
 
   return (
     <Styles.Container>
-      <table>
-        {(numerateRows || titles.find((t) => !!t)) && (
-          <thead>
-            <tr>
-              {numerateRows && <th>№</th>}
-              {titles.map((title, index) => (
-                <th key={index}>{title}</th>
-              ))}
-            </tr>
-          </thead>
-        )}
-        <tbody>
-          {rows.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {numerateRows && <td>{rowIndex + 1}</td>}
-              {row.map((item, columnIndex) => (
-                <td
-                  key={columnIndex}
-                  style={!item ? { background: "transparent" } : undefined}
-                >
-                  {item}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {tables.map((columns, index) => (
+        <Table key={index} numerateRows={numerateRows} columns={columns} />
+      ))}
     </Styles.Container>
   );
 };
