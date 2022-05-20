@@ -90,9 +90,9 @@ const Table: React.FC<ITableProps> = ({ columns, numerateRows }) => {
                       ? colors.tintYellow
                       : "transparent",
                     textAlign: (() => {
-                      if (columns[columnIndex].align === "left") {
+                      if (columns[columnIndex]?.align === "left") {
                         return "left";
-                      } else if (columns[columnIndex].align === "right") {
+                      } else if (columns[columnIndex]?.align === "right") {
                         return "right";
                       }
                       return "center";
