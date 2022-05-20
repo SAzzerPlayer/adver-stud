@@ -3,6 +3,7 @@ import React from "react";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { colors } from "../../../../styles";
+import Styles from "./styles";
 
 interface ITableProps {
   numerateRows: boolean;
@@ -43,7 +44,7 @@ const Table: React.FC<ITableProps> = ({ columns, numerateRows }) => {
   }, [columns]);
 
   return (
-    <table>
+    <Styles.Table>
       {(numerateRows || columns.find((c) => !!c.title)) && (
         <thead>
           <tr>
@@ -104,7 +105,7 @@ const Table: React.FC<ITableProps> = ({ columns, numerateRows }) => {
           </tr>
         ))}
       </tbody>
-    </table>
+    </Styles.Table>
   );
 };
 
