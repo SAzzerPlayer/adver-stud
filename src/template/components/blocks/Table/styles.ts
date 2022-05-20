@@ -13,6 +13,7 @@ const Table = styled.table`
   td,
   th {
     padding: 12px 6px;
+    text-align: center;
   }
 
   td {

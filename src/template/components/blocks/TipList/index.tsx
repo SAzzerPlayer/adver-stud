@@ -2,7 +2,7 @@ import React from "react";
 import { TRichText, TTipListBlock } from "src/types";
 import Styles from "./styles";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
-import { BLOCKS } from "@contentful/rich-text-types";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { Icon } from "src/components/shared";
 import { colors } from "src/styles";
 

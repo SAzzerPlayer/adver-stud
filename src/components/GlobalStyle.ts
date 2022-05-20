@@ -3,14 +3,14 @@ import { colors, breakpoints } from "src/styles";
 
 export const GlobalStyle = createGlobalStyle`
   html {
-    font-size: 14px;
+    font-size: 16px;
 
     @media (max-width: ${breakpoints.laptop}) {
-      font-size: 12px;
+      font-size: 14px;
     }
 
     @media (max-width: ${breakpoints.device}) {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
   
