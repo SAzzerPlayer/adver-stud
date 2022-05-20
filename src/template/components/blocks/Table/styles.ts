@@ -1,27 +1,27 @@
 import styled from "styled-components";
-import { colors } from "../../../../styles";
+import { colors } from "src/styles";
 
 const Container = styled.div`
   font-family: Lora, Roboto, serif;
+  overflow: auto;
+`;
 
-  table {
-    width: 100%;
-    border-spacing: 8px;
+const Table = styled.table`
+  width: 100%;
+  border-spacing: 8px;
 
-    td,
-    th {
-      padding: 12px 6px;
-      text-align: center;
-    }
-    td {
-      background: ${colors.tintYellow};
-      border-radius: 16px;
-    }
+  td,
+  th {
+    padding: 12px 6px;
   }
 
-  overflow: auto;
+  td {
+    background: ${colors.tintYellow};
+    border-radius: 16px;
+  }
 `;
 
 export default {
   Container,
+  Table,
 };

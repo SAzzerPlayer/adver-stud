@@ -2,6 +2,7 @@ import { TTableBlockColumn } from "../../../../types";
 import React from "react";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { BLOCKS } from "@contentful/rich-text-types";
+import { colors } from "../../../../styles";
 
 interface ITableProps {
   numerateRows: boolean;
@@ -9,7 +10,6 @@ interface ITableProps {
 }
 
 const Table: React.FC<ITableProps> = ({ columns, numerateRows }) => {
-  const [titles, setTitles] = React.useState<string[]>([]);
   const [rows, setRows] = React.useState<React.ReactNode[][]>([]);
 
   React.useLayoutEffect(() => {
@@ -24,7 +24,6 @@ const Table: React.FC<ITableProps> = ({ columns, numerateRows }) => {
         {
           renderNode: {
             [BLOCKS.LIST_ITEM]: (node, children) => {
-              console.log(node);
               if (Array.isArray(newRows[j])) {
                 newRows[j][i] = children;
               } else {
@@ -41,16 +40,15 @@ const Table: React.FC<ITableProps> = ({ columns, numerateRows }) => {
       );
     }
     setRows(newRows);
-    setTitles(columns.map(({ title }) => title));
   }, [columns]);
 
   return (
     <table>
-      {(numerateRows || titles.find((t) => !!t)) && (
+      {(numerateRows || columns.find((c) => !!c.title)) && (
         <thead>
           <tr>
             {numerateRows && <th>№</th>}
-            {titles.map((title, index) => (
+            {columns.map(({ title }, index) => (
               <th key={index}>{title}</th>
             ))}
           </tr>
@@ -86,9 +84,19 @@ const Table: React.FC<ITableProps> = ({ columns, numerateRows }) => {
                 <td
                   key={columnIndex}
                   colSpan={column.colSpan}
-                  style={
-                    !column.render ? { background: "transparent" } : undefined
-                  }
+                  style={{
+                    background: column.render
+                      ? colors.tintYellow
+                      : "transparent",
+                    textAlign: (() => {
+                      if (columns[columnIndex].align === "left") {
+                        return "left";
+                      } else if (columns[columnIndex].align === "right") {
+                        return "right";
+                      }
+                      return "center";
+                    })(),
+                  }}
                 >
                   {column.render}
                 </td>
