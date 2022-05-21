@@ -44,7 +44,7 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-sharp",
       options: {
         defaults: {
-          formats: ["png", "webp", "auto"],
+          formats: ["auto", "avif", "webp", "png"],
           placeholder: `blurred`,
           quality: 80,
           breakpoints: Object.values(breakpoints)

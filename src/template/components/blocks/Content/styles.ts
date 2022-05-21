@@ -5,9 +5,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: inherit;
-  margin: 5.75em 0;
+  margin: 5em 0;
   @media (max-width: ${breakpoints.device}) {
-    margin: 3em 0;
+    margin: 2.5em 0;
   }
 `;
 

@@ -52,7 +52,7 @@ const ContentRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
   width: 100%;
 `;
 
@@ -61,7 +61,7 @@ const Tabs = styled.div`
   flex-direction: row;
   align-items: center;
   ${getGapStyle("3em", "row")};
-  margin: 0 16px;
+  margin: 0 1em;
   > a {
     > h6 {
       font-weight: 600;

@@ -4,12 +4,12 @@ import { getGapStyle } from "../../../../styles";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  ${getGapStyle("8px", "column")};
+  ${getGapStyle("0.5em", "column")};
   .photo {
     max-width: 512px;
   }
   .social-icon {
-    max-width: 32px;
+    max-width: 2em;
   }
 `;
 

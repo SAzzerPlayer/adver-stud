@@ -16,7 +16,7 @@ const TabsWrapper = styled.div`
 
 const Tab = styled.p<{ active?: boolean }>`
   padding: 1em;
-  border-radius: 30px;
+  border-radius: 2em;
   background: ${({ active }) =>
     active ? colors.accentYellow : colors.backgroundWhite};
   font-family: Lora, Roboto, serif;
@@ -27,11 +27,11 @@ const Tab = styled.p<{ active?: boolean }>`
   margin: 4px;
 
   :hover {
-    opacity: 0.9;
+    opacity: 0.65;
   }
 
   :active {
-    opacity: 0.65;
+    opacity: 0.9;
   }
 `;
 

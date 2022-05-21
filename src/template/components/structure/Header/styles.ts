@@ -67,7 +67,7 @@ const Tabs = styled.div.attrs({ className: "tabs" })`
   flex-direction: row;
   align-items: center;
   ${getGapStyle("3em", "row")};
-  margin: 0 16px;
+  margin: 0 1em;
   > a {
     > h6 {
       text-align: center;

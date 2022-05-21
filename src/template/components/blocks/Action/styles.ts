@@ -37,7 +37,7 @@ const TextContent = styled.div`
   em,
   mark,
   u {
-    margin: 1.25em 0 !important;
+    margin: 1em 0 !important;
   }
 `;
 
