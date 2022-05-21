@@ -16,7 +16,7 @@ const Container = styled.div<{ alignColumnsOnMobile: TGridBlockAlignColumns }>`
 
     > * {
       margin-left: 0;
-      margin-bottom: 1em;
+      margin-bottom: 2em;
     }
   }
 `;
