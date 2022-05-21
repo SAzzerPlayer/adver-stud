@@ -17,13 +17,16 @@ export const UnorderedList = styled.ul<{ columns: number }>`
     }
     return parts.join(" ");
   }};
-  grid-gap: 16px;
   list-style: none;
   padding: 0;
   margin: 0;
+  
+  grid-gap: 16px;
+  padding-right: 16px; //compensate
 
   @media (max-width: ${breakpoints.device}) {
     grid-template-columns: 100%;
+    padding: 0;
   }
 `;
 
