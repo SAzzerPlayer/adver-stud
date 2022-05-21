@@ -23,7 +23,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     white-space: pre-wrap;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+    word-break: break-all;
   }
   
   h1, h2, h3, h4, h5, h6 {
