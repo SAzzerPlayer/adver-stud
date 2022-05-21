@@ -111,7 +111,7 @@ const Social = styled.div.attrs({ className: "social" })`
   ${getGapStyle("1em", "row")};
 
   > a {
-    height: 32px;
+    height: 2em;
   }
 
   @media (max-width: ${breakpoints.laptop}) {

@@ -7,7 +7,7 @@ const Container = styled.div<{ alignColumnsOnMobile: TGridBlockAlignColumns }>`
   justify-content: space-between;
 
   > * + * {
-    margin-left: 1em;
+    margin-left: 3em;
   }
 
   @media (max-width: ${breakpoints.device}) {

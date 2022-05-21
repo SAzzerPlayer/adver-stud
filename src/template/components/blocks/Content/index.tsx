@@ -32,9 +32,9 @@ const renderBlock = (block: TContentBlockColumnBlock) => {
   return null;
 };
 
-const ContentBlock: React.FC<TContentBlock> = ({ blocks }) => {
+const ContentBlock: React.FC<TContentBlock> = ({ blocks, margin }) => {
   return (
-    <Styles.Container>
+    <Styles.Container margin={margin}>
       <Styles.Wrapper>
         {blocks.map((b) => (
           <React.Fragment key={b.id}>{renderBlock(b)}</React.Fragment>

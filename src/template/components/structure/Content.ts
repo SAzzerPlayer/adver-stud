@@ -9,4 +9,5 @@ export default styled.main`
   justify-content: flex-start;
   max-width: ${breakpoints.monitor};
   width: 100%;
+  padding-bottom: 5em;
 `;
