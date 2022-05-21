@@ -51,18 +51,30 @@ export const GlobalStyle = createGlobalStyle`
   
   h3 {
     font-size: 2.25em;
+    @media (max-width: ${breakpoints.device}) {
+      font-size: 1.35em;
+    }
   }
   
   h4 {
     font-size: 1.5em;
+    @media (max-width: ${breakpoints.device}) {
+      font-size: 1.25em;
+    }
   }
   
   h5 {
     font-size: 1.25em;
+    @media (max-width: ${breakpoints.device}) {
+      font-size: 1.125em;
+    }
   }
   
   h6 {
     font-size: 1.125em;
+    @media (max-width: ${breakpoints.device}) {
+      font-size: 1.05em;
+    }
   }
   
   p, a {
