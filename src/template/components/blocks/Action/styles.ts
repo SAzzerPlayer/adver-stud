@@ -7,6 +7,10 @@ const Container = styled.div<{ reversed?: boolean }>`
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  
+  & > * {
+    margin: 0 1em;
+  }
 
   @media (max-width: ${breakpoints.device}) {
     flex-direction: column-reverse;
@@ -16,11 +20,13 @@ const Container = styled.div<{ reversed?: boolean }>`
     img {
       max-width: 416px;
     }
+
+
+    & > * {
+      margin: 1em 0;
+    }
   }
 
-  & > * {
-    margin: 0 24px;
-  }
 `;
 
 const TextContent = styled.div`

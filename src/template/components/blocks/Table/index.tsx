@@ -3,27 +3,10 @@ import { TTableBlock, TTableBlockColumn } from "src/types";
 import Styles from "./styles";
 import { breakpoints } from "src/styles";
 import Table from "./UIComponent";
-
-type TBreakpoint = keyof typeof breakpoints;
+import { useCurrentBreakpoint } from "../../../../styles/hooks";
 
 const TableBlock: React.FC<TTableBlock> = ({ numerateRows, columns }) => {
-  const [breakpoint, setBreakpoint] = React.useState<TBreakpoint>("monitor");
-
-  React.useEffect(() => {
-    const listener = () => {
-      const width = window.innerWidth;
-      if (width <= +breakpoints.device.split("px")[0]) {
-        setBreakpoint("device");
-      } else if (width <= +breakpoints.laptop.split("px")[0]) {
-        setBreakpoint("laptop");
-      } else {
-        setBreakpoint("monitor");
-      }
-    };
-    listener();
-    window.addEventListener("resize", listener);
-    return () => window.removeEventListener("resize", listener);
-  }, []);
+  const breakpoint = useCurrentBreakpoint();
 
   const tables = React.useMemo(() => {
     const arr: TTableBlockColumn[][] = [[]];

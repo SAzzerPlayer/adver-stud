@@ -15,14 +15,14 @@ const TabsWrapper = styled.div`
 `;
 
 const Tab = styled.p<{ active?: boolean }>`
-  padding: 1em;
+  padding: 0.75em 1.25em;
   border-radius: 2em;
   background: ${({ active }) =>
     active ? colors.accentYellow : colors.backgroundWhite};
   font-family: Lora, Roboto, serif;
   line-height: 160%;
   cursor: pointer;
-  min-width: 10em;
+  min-width: 6em;
   text-align: center;
   margin: 4px;
 

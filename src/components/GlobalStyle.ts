@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     white-space: pre-wrap;
     overflow-wrap: break-word;
-    word-break: break-all;
+    word-break: break-word;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -37,14 +37,23 @@ export const GlobalStyle = createGlobalStyle`
   
   h1 {
     font-size: 3.75em;
+    @media (max-width: ${breakpoints.device}) {
+      font-size: 2.5em;
+    }
   }
   
   h2 {
     font-size: 3.25em;
+    @media(max-width: ${breakpoints.device}) {
+      font-size: 1.75em;
+    }
   }
   
   h3 {
     font-size: 2.25em;
+    @media(max-width: ${breakpoints.device}) {
+      font-size: 1.6em;
+    }
   }
   
   h4 {
